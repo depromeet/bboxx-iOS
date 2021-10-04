@@ -11,7 +11,7 @@
 		4527B84227083E0E003FD4F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4527B84127083E0E003FD4F9 /* ContentView.swift */; };
 		4527B84427083E11003FD4F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4527B84327083E11003FD4F9 /* Assets.xcassets */; };
 		4527B84727083E11003FD4F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4527B84627083E11003FD4F9 /* Preview Assets.xcassets */; };
-		459209F3270B38CF0005A515 /* MicrophoneMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459209F2270B38CF0005A515 /* MicrophoneMonitor.swift */; };
+		459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */; };
 		6A02124D270A1BA9002828D9 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A02124C270A1BA9002828D9 /* APICall.swift */; };
 		6A021258270A1CA0002828D9 /* FeelingNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A021257270A1CA0002828D9 /* FeelingNotes.swift */; };
 		6A02125C270A1EBC002828D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A02125B270A1EBC002828D9 /* AppDelegate.swift */; };
@@ -25,7 +25,7 @@
 		4527B84327083E11003FD4F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4527B84627083E11003FD4F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4527B84827083E11003FD4F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		459209F2270B38CF0005A515 /* MicrophoneMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneMonitor.swift; sourceTree = "<group>"; };
+		459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementViewModel.swift; sourceTree = "<group>"; };
 		6A02124C270A1BA9002828D9 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		6A021257270A1CA0002828D9 /* FeelingNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNotes.swift; sourceTree = "<group>"; };
 		6A02125B270A1EBC002828D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		45570FF4270AFEF100ECE13D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				459209F2270B38CF0005A515 /* MicrophoneMonitor.swift */,
+				459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -203,9 +203,9 @@
 			files = (
 				4527B84227083E0E003FD4F9 /* ContentView.swift in Sources */,
 				6A021258270A1CA0002828D9 /* FeelingNotes.swift in Sources */,
+				459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */,
 				4527B84027083E0E003FD4F9 /* BBOXX_iOSApp.swift in Sources */,
 				6A02125C270A1EBC002828D9 /* AppDelegate.swift in Sources */,
-				459209F3270B38CF0005A515 /* MicrophoneMonitor.swift in Sources */,
 				6A02124D270A1BA9002828D9 /* APICall.swift in Sources */,
 				6A02125F270A1F38002828D9 /* LoginView.swift in Sources */,
 			);
