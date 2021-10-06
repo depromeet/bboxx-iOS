@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  BBOXX-iOS
-//
-//  Created by eunwoo on 2021/10/02.
-//
-
 import SwiftUI
 
 struct ContentView: View {
