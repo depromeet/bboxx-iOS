@@ -19,7 +19,7 @@ develop: default
 
 ## Architecture
 
-**MVVM**
+~~Clean Architecture for SwiftUI~~ -> **MVVM**
 
 ~~BBOXX iOS 아키텍쳐: [Clean Architecture for SwiftUI](https://nalexn.github.io/clean-architecture-swiftui/)~~
 
