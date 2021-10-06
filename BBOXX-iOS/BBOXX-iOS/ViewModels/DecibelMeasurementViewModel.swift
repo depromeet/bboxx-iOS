@@ -25,11 +25,11 @@ class DecibelMeasurementViewModel: ObservableObject {
         }
     }
     
-    func initMonitoring() {
+    func setUpMonitoring() {
         let audioSession = AVAudioSession.sharedInstance()
         
         // 4 실제로 오디오 녹음을 저장하지 않기 때문에 임시 디렉토리에 가까움, 오디오 설정
-        let url = URL(fileURLWithPath: "/dev/null", isDirectory: true)
+        let tempUrl = URL(fileURLWithPath: "/dev/null", isDirectory: true)
         let recorderSettings: [String:Any] = [
             AVFormatIDKey: NSNumber(value: kAudioFormatAppleLossless),
             AVSampleRateKey: 44100.0,
@@ -39,7 +39,7 @@ class DecibelMeasurementViewModel: ObservableObject {
         
         // 5 오디오를 녹음하는 부분
         do {
-            recorder = try AVAudioRecorder(url: url, settings: recorderSettings)
+            recorder = try AVAudioRecorder(url: tempUrl, settings: recorderSettings)
             try audioSession.setCategory(.playAndRecord, mode: .default, options: [])
             
             startMonitoring()
