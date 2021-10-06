@@ -8,6 +8,7 @@ target 'BBOXX-iOS' do
   pod 'KakaoSDKCommon'  
   pod 'KakaoSDKAuth'  
   pod 'KakaoSDKUser'
+  pod 'KakaoSDKLink'
 
   # Pods for BBOXX-iOS
 
