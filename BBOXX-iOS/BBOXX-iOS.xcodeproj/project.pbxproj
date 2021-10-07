@@ -33,6 +33,7 @@
 		6A021257270A1CA0002828D9 /* FeelingNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNotes.swift; sourceTree = "<group>"; };
 		6A02125B270A1EBC002828D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A02125E270A1F38002828D9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6A9BC453270ED63000308491 /* BBOXX-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BBOXX-iOS.entitlements"; sourceTree = "<group>"; };
 		EFDA4AFAF25925429B7FB3F5 /* Pods-BBOXX-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBOXX-iOS.release.xcconfig"; path = "Target Support Files/Pods-BBOXX-iOS/Pods-BBOXX-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +70,7 @@
 		4527B83E27083E0E003FD4F9 /* BBOXX-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				6A9BC453270ED63000308491 /* BBOXX-iOS.entitlements */,
 				6A021248270A1A71002828D9 /* System */,
 				6A021247270A1A6A002828D9 /* Utilities */,
 				6A021241270A18A1002828D9 /* Models */,
@@ -404,6 +406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BBOXX-iOS/BBOXX-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"BBOXX-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 93A6S4WHC4;
@@ -427,6 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BBOXX-iOS/BBOXX-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"BBOXX-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 93A6S4WHC4;
