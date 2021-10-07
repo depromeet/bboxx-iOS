@@ -59,9 +59,7 @@ class DecibelMeasurementViewModel: ObservableObject {
             self.decibel = self.recorder?.averagePower(forChannel: 0) ?? 0
             
             // 최고 데시벨 갱신
-            if self.decibel > self.maxDecibel {
-                self.maxDecibel = self.decibel
-            }
+            self.maxDecibel = max(self.maxDecibel, self.decibel)
             
             self.timeLeft -= 1
             
