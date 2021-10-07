@@ -1,14 +1,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var viewModel = LoginViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        switch viewModel.state {
+        case .signedIn: ContentView()
+        case .signedOut: LoginView(viewModel: viewModel)
+        }
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+    
+    // TODO: add check signInState logic
 }
