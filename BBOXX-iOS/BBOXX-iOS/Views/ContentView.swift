@@ -2,12 +2,12 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var viewModel = LoginViewModel()
+    @ObservedObject var viewModel = SignInViewModel()
     
     var body: some View {
         switch viewModel.state {
         case .signedIn: ContentView()
-        case .signedOut: LoginView(viewModel: viewModel)
+        case .signedOut: SignInView(viewModel: viewModel)
         }
     }
     

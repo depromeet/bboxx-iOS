@@ -2,7 +2,7 @@ import SwiftUI
 import UIKit
 import AuthenticationServices
 
-struct LoginView: View {
+struct SignInView: View {
     
     @ObservedObject var viewModel: LoginViewModel
     
@@ -23,15 +23,6 @@ struct LoginView: View {
             AppleSignInButton().onTapGesture {
                 self.viewModel.attemptAppleSignIn()
             }
-        }
-    }
-}
-struct Login: View {
-    @ObservedObject var loginViewModel: LoginViewModel
-    
-    var body: some View {
-        AppleSignInButton().onTapGesture {
-            self.loginViewModel.attemptAppleSignIn()
         }
     }
 }
