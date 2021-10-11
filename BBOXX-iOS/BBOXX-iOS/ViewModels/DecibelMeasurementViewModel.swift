@@ -7,9 +7,9 @@ class DecibelMeasurementViewModel: ObservableObject {
     private var recorder: AVAudioRecorder?
     private var timer: Timer?
     
-    // 2 데시벨과 최대 데시벨 변수 선언
-    @Published var decibel: Float = 0.0
-    var maxDecibel: Float = -160.0 // 최저(-160)로 초기화
+    // 2 평균 데시벨과 최대 데시벨 변수 선언
+    @Published var average: Float = 0
+    var peak: Float = 0
     
     var timeLeft = 3
     
@@ -56,10 +56,14 @@ class DecibelMeasurementViewModel: ObservableObject {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (timer) in
             // 7 1초마다 오디오 전력 값 업데이트
             self.recorder?.updateMeters()
-            self.decibel = self.recorder?.averagePower(forChannel: 0) ?? 0
             
-            // 최고 데시벨 갱신
-            self.maxDecibel = max(self.maxDecibel, self.decibel)
+            self.average = self.recorder?.averagePower(forChannel: 0) ?? 0
+            self.peak = self.recorder?.peakPower(forChannel: 0) ?? 0
+            
+            // 측정되는 단위는 dBFS이므로 실제 dB 값을 얻기 위한 보정
+            let correction: Float = 100
+            self.average = self.average + correction
+            self.peak = self.peak + correction
             
             self.timeLeft -= 1
             
