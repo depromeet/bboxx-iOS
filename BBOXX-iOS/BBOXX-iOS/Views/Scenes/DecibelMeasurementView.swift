@@ -26,7 +26,7 @@ struct DecibelMeasurementView: View {
                     .rotationEffect(Angle(degrees: -90))
                 
                 Button(action: {
-                    self.startLoading()
+                    self.startMeasuring()
                 }) {
                     if showMic {
                         Image(systemName: "mic.fill")
@@ -49,7 +49,7 @@ struct DecibelMeasurementView: View {
         }
     }
     
-    func startLoading() {
+    func startMeasuring() {
         self.showMic.toggle()
         self.decibelMeasurementViewModel.setUpMonitoring()
     }
