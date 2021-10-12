@@ -11,6 +11,8 @@ class DecibelMeasurementViewModel: ObservableObject {
     @Published var average: Float = 0
     var peak: Float = 0
     
+    var guideString = "힘든 일을 생각하며\n힘껏 소리질러봐!"
+    var circleProgress: CGFloat = 0
     var timeLeft = 3
     
     init() {
@@ -65,12 +67,21 @@ class DecibelMeasurementViewModel: ObservableObject {
             self.average = self.average + correction
             self.peak = self.peak + correction
             
+            self.circleProgress += 0.4
             self.timeLeft -= 1
             
-            // 3초 후 모니터링 종료
-            if self.timeLeft == 0 {
+            switch self.timeLeft {
+            case 2:
+                self.guideString = "더 크게 네 감정을\n마음껏 소리쳐봐!"
+                break
+            case 1:
+                self.guideString = "마지막까지 네 안에 있는\n모든 감정을 털어놓아봐!"
                 self.endMonitoring()
+                break
+            default:
+                break
             }
+            
         })
     }
     
