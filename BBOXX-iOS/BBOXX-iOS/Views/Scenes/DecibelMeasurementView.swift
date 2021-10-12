@@ -10,9 +10,10 @@ struct DecibelMeasurementView: View {
         VStack {
             Text(self.decibelMeasurementViewModel.guideString)
                 .font(.custom("HelveticaNeue", size: 24))
+                .multilineTextAlignment(.center)
                 
             Spacer()
-                .frame(height: 50)
+                .frame(height: 65)
             
             ZStack {
                 Circle()
@@ -29,8 +30,8 @@ struct DecibelMeasurementView: View {
                     self.startMeasuring()
                 }) {
                     if showMic {
-                        Image(systemName: "mic.fill")
-                            .frame(width: 32, height: 32)
+                        Image("mic.fill")
+                            .frame(width: 30, height: 32)
                     } else {
                         Text("\(self.decibelMeasurementViewModel.timeLeft)")
                         
@@ -45,7 +46,7 @@ struct DecibelMeasurementView: View {
             }
             
             Spacer()
-                .frame(height: 50)
+                .frame(height: 65)
         }
     }
     
