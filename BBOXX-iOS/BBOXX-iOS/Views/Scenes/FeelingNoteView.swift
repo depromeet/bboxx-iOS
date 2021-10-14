@@ -14,62 +14,68 @@ struct FeelingNoteView: View {
             
             Spacer().frame(height: 20)
             
-            HStack {
-                Text(self.feelingNoteViewModel.dateString)
-                    .font(.custom("HelveticaNeue", size: 16))
-                    .padding(.leading, 20)
+            VStack{
+                Spacer().frame(height: 16)
                 
-                Spacer()
-                
-                Button(action: {
+                HStack {
+                    Text(self.feelingNoteViewModel.dateString)
+                        .font(.custom("HelveticaNeue", size: 16))
+                        .padding(.leading, 20)
                     
-                }) {
-                    Image("redo")
-                        .frame(width: 16, height: 18)
-                    Text("다시쓰기")
+                    Spacer()
+                    
+                    Button(action: {
+                        
+                    }) {
+                        Image("redo")
+                            .frame(width: 16, height: 18)
+                        Text("다시쓰기")
+                    }
+                    .font(.custom("HelveticaNeue", size: 18))
+                    
+                    .padding(.trailing, 17)
                 }
-                .font(.custom("HelveticaNeue", size: 18))
                 
-                .padding(.trailing, 17)
-            }
-            
-            Spacer().frame(height: 15)
-            
-            ScrollView() {
-                TextField("지금 네 감정은..", text: $title)
-                    .font(.custom("HelveticaNeue", size: 20))
-                    
-                    .padding(.leading, 20)
-                    .padding(.trailing, 20)
+                Spacer().frame(height: 15)
                 
-                TextEditor(text: $content)
-                    .font(.custom("HelveticaNeue", size: 16))
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 200, maxHeight: .infinity)
-                    .border(Color.yellow)
+                ScrollView() {
+                    TextField("지금 네 감정은..", text: $title)
+                        .font(.custom("HelveticaNeue", size: 20))
+                        
+                        .padding(.leading, 20)
+                        .padding(.trailing, 20)
                     
-                    .padding(.top, 10)
-                    .padding(.leading, 20)
-                    .padding(.trailing, 20)
-            }
-            
-            Spacer().frame(height: 13)
-            
-            HStack {
-                Spacer()
+                    TextEditor(text: $content)
+                        .font(.custom("HelveticaNeue", size: 16))
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 200, maxHeight: .infinity)
+                        .border(Color.yellow)
+                        
+                        .padding(.top, 10)
+                        .padding(.leading, 20)
+                        .padding(.trailing, 20)
+                }
                 
-                Text("0/1200")
-                    .font(.custom("HelveticaNeue", size: 12))
+                Spacer().frame(height: 13)
+                
+                HStack {
+                    Spacer()
                     
-                    .padding(.trailing, 21)
+                    Text("0/1200")
+                        .font(.custom("HelveticaNeue", size: 12))
+                        
+                        .padding(.trailing, 20)
+                        .padding(.bottom, 24)
+                }
             }
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.black, lineWidth: 1)
+            )
             
-            //            .frame(maxWidth: .infinity)
-            //            .overlay(
-            //                RoundedRectangle(cornerRadius: 20)
-            //                    .stroke(Color.black, lineWidth: 1)
-            //            )
+            .padding(.leading, 25)
+            .padding(.trailing, 25)
             
-            Spacer().frame(height: 21)
+            Spacer().frame(height: 17)
             
             Button("다 썼어", action: {
                 
