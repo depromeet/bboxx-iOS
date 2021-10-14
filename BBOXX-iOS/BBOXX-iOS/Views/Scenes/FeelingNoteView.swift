@@ -15,7 +15,7 @@ struct FeelingNoteView: View {
             Spacer().frame(height: 20)
             
             VStack{
-                Spacer().frame(height: 16)
+                Spacer().frame(height: 15)
                 
                 HStack {
                     Text(self.feelingNoteViewModel.dateString)
@@ -28,11 +28,11 @@ struct FeelingNoteView: View {
                         
                     }) {
                         Image("redo")
-                            .frame(width: 16, height: 18)
+                            .frame(width: 7, height: 4)
+                        
                         Text("다시쓰기")
+                            .font(.custom("HelveticaNeue", size: 15))
                     }
-                    .font(.custom("HelveticaNeue", size: 18))
-                    
                     .padding(.trailing, 17)
                 }
                 
@@ -60,7 +60,7 @@ struct FeelingNoteView: View {
                 HStack {
                     Spacer()
                     
-                    Text("0/1200")
+                    Text("\(self.content.count)/1200")
                         .font(.custom("HelveticaNeue", size: 12))
                         
                         .padding(.trailing, 20)
@@ -77,7 +77,7 @@ struct FeelingNoteView: View {
             
             Spacer().frame(height: 17)
             
-            Button("다 썼어", action: {
+            Button("다 썼어!", action: {
                 
             })
             .frame(maxWidth: .infinity, maxHeight: 54)
