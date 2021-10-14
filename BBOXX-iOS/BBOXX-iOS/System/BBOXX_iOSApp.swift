@@ -8,7 +8,7 @@ struct BBOXX_iOSApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FeelingNoteView()
         }
     }
 }
