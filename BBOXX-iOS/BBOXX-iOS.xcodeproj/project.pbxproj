@@ -13,6 +13,7 @@
 		4527B84727083E11003FD4F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4527B84627083E11003FD4F9 /* Preview Assets.xcassets */; };
 		453AF0CF27180C77000DB2CA /* FeelingNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453AF0CE27180C77000DB2CA /* FeelingNoteViewModel.swift */; };
 		4551D8CA271574EE00EF8149 /* FeelingNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551D8C9271574EE00EF8149 /* FeelingNoteView.swift */; };
+		45530D4E271925AC002DCF57 /* WrappedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45530D4D271925AC002DCF57 /* WrappedTextView.swift */; };
 		4554A02A270EAA1B00A558CB /* DecibelMeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554A029270EAA1B00A558CB /* DecibelMeasurementView.swift */; };
 		459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */; };
 		6A02124D270A1BA9002828D9 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A02124C270A1BA9002828D9 /* APICall.swift */; };
@@ -33,6 +34,7 @@
 		4527B84827083E11003FD4F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453AF0CE27180C77000DB2CA /* FeelingNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteViewModel.swift; sourceTree = "<group>"; };
 		4551D8C9271574EE00EF8149 /* FeelingNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteView.swift; sourceTree = "<group>"; };
+		45530D4D271925AC002DCF57 /* WrappedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedTextView.swift; sourceTree = "<group>"; };
 		4554A029270EAA1B00A558CB /* DecibelMeasurementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementView.swift; sourceTree = "<group>"; };
 		459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementViewModel.swift; sourceTree = "<group>"; };
 		6A02124C270A1BA9002828D9 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		6A021247270A1A6A002828D9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				45530D4D271925AC002DCF57 /* WrappedTextView.swift */,
 				6A02124C270A1BA9002828D9 /* APICall.swift */,
 			);
 			path = Utilities;
@@ -284,6 +287,7 @@
 				453AF0CF27180C77000DB2CA /* FeelingNoteViewModel.swift in Sources */,
 				6A021258270A1CA0002828D9 /* FeelingNotes.swift in Sources */,
 				459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */,
+				45530D4E271925AC002DCF57 /* WrappedTextView.swift in Sources */,
 				4527B84027083E0E003FD4F9 /* BBOXX_iOSApp.swift in Sources */,
 				6A02125C270A1EBC002828D9 /* AppDelegate.swift in Sources */,
 				6A02124D270A1BA9002828D9 /* APICall.swift in Sources */,

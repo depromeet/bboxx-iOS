@@ -7,6 +7,9 @@ struct FeelingNoteView: View {
     @State private var title: String = ""
     @State private var content: String = ""
     
+    let textViewMinHeight: CGFloat = 150
+    @State private var textViewHeight: CGFloat?
+    
     var body: some View {
         VStack {
             Text("지금 네 감정을 글로 써봐")
@@ -29,6 +32,7 @@ struct FeelingNoteView: View {
                     }) {
                         Image("redo")
                             .frame(width: 7, height: 4)
+                            .padding(.trailing, 5)
                         
                         Text("다시쓰기")
                             .font(.custom("HelveticaNeue", size: 15))
@@ -45,12 +49,10 @@ struct FeelingNoteView: View {
                         .padding(.leading, 20)
                         .padding(.trailing, 20)
                     
-                    TextEditor(text: $content)
+                    WrappedTextView(text: $content, textDidChange: self.textDidChange)
                         .font(.custom("HelveticaNeue", size: 16))
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 200, maxHeight: .infinity)
-                        .border(Color.yellow)
-                        
-                        .padding(.top, 10)
+                        .frame(height: textViewHeight ?? textViewMinHeight)
+                    
                         .padding(.leading, 20)
                         .padding(.trailing, 20)
                 }
@@ -90,6 +92,10 @@ struct FeelingNoteView: View {
             .padding(.trailing, 25)
             .padding(.bottom, 20)
         }
+    }
+    
+    private func textDidChange(_ textView: UITextView) {
+        self.textViewHeight = max(textView.contentSize.height, textViewMinHeight)
     }
 }
 
