@@ -1,9 +1,13 @@
 import SwiftUI
 
 struct NotificationListView: View {
+    
     var body: some View {
         List() {
-            NotificationCell()
+            ForEach(1..<10) { _ in
+                NotificationCell()
+            }
+            
         }
     }
 }
