@@ -1,4 +1,6 @@
 import SwiftUI
+import Firebase
+import GoogleSignIn
 
 @main
 struct BBOXX_iOSApp: App {
@@ -11,4 +13,11 @@ struct BBOXX_iOSApp: App {
             ContentView()
         }
     }
+}
+
+extension BBOXX_iOSApp {
+  private func setupAuthentication() {
+    let googleSignInConfig = GIDConfiguration.init(clientID: ClientId.google)
+    FirebaseApp.configure()
+  }
 }

@@ -1,4 +1,5 @@
 import Combine
+import GoogleSignIn
 
 class SignInViewModel: ObservableObject {
     
@@ -13,6 +14,12 @@ class SignInViewModel: ObservableObject {
         
     func attemptAppleSignIn() {
         appleSignInCoordinator.handleAuthorizationAppleIDButtonPress()
+    }
+    
+    func attemptGoogleSignIn() {
+        if GIDSignIn.sharedInstance.currentUser == nil {
+            // TODO: presenting Sign In View
+        }
     }
     
 }
