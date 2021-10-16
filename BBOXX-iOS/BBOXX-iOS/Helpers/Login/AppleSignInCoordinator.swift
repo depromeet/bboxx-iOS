@@ -2,10 +2,10 @@ import AuthenticationServices
 
 // Used in login view model
 class AppleSignInCoordinator: NSObject, ASAuthorizationControllerDelegate {
-    var loginService: LoginService
-    var loginViewModel: LoginViewModel
+    var loginService: SignInService
+    var loginViewModel: SignInViewModel
     
-    init(loginService: LoginService = LoginAPI(), loginVM: LoginViewModel) {
+    init(loginService: SignInService = SignInService(), loginVM: SignInViewModel) {
         self.loginViewModel = loginVM
         self.loginService = loginService
     }

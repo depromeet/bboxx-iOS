@@ -4,7 +4,7 @@ import AuthenticationServices
 
 struct SignInView: View {
     
-    @ObservedObject var viewModel: LoginViewModel
+    @ObservedObject var viewModel: SignInViewModel
     
     var body: some View {
         VStack {

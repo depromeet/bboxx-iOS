@@ -1,5 +1,6 @@
+import Foundation
 
-class loginService {
+class SignInService {
     // TODO: Authorize task with Server
     func callAppleAuthCallback() {
         
