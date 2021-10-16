@@ -1,13 +1,15 @@
 import SwiftUI
 
-struct NotificationView: View {
+struct NotificationListView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List() {
+            NotificationCell()
+        }
     }
 }
 
-struct NotificationView_Previews: PreviewProvider {
+struct NotificationListView_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationView()
+        NotificationListView()
     }
 }
