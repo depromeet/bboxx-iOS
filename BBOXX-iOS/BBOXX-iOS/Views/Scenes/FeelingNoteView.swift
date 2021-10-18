@@ -61,6 +61,7 @@ struct FeelingNoteView: View {
                 .padding(.bottom, 30)
             }
             .background(Color.white)
+            .cornerRadius(24, corners: [.topLeft, .topRight])
             
             .padding(.top, 20)
             
