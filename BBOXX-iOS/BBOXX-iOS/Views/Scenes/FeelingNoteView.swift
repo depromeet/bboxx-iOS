@@ -7,79 +7,41 @@ struct FeelingNoteView: View {
     @State private var title: String = ""
     @State private var content: String = ""
     
-    let textViewMinHeight: CGFloat = 150
-    @State private var textViewHeight: CGFloat?
+    //let textViewMinHeight: CGFloat = 150
+    //@State private var textViewHeight: CGFloat?
     
     var body: some View {
-        VStack {
-            Text("지금 네 감정을 글로 써봐")
-                .font(.custom("HelveticaNeue", size: 20))
+        VStack(alignment: .leading) {
+            Text("네 감정을 글로 담아봐")
+                .font(.custom("HelveticaNeue", size: 24))
             
-            Spacer().frame(height: 20)
+                .padding(.top, 10)
             
-            VStack{
-                Spacer().frame(height: 15)
+            HStack {
+                Text("09. 17. 월요일")
+                    .font(.custom("HelveticaNeue", size: 12))
                 
-                HStack {
-                    Text(self.feelingNoteViewModel.dateString)
-                        .font(.custom("HelveticaNeue", size: 16))
-                        .padding(.leading, 20)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        
-                    }) {
-                        Image("redo")
-                            .frame(width: 7, height: 4)
-                            .padding(.trailing, 5)
-                        
-                        Text("다시쓰기")
-                            .font(.custom("HelveticaNeue", size: 15))
-                    }
-                    .padding(.trailing, 17)
-                }
+                Spacer()
                 
-                Spacer().frame(height: 15)
-                
-                ScrollView() {
-                    TextField("지금 네 감정은..", text: $title)
-                        .font(.custom("HelveticaNeue", size: 20))
-                        
-                        .padding(.leading, 20)
-                        .padding(.trailing, 20)
-                    
-                    WrappedTextView(text: $content, textDidChange: self.textDidChange)
-                        .font(.custom("HelveticaNeue", size: 16))
-                        .frame(height: textViewHeight ?? textViewMinHeight)
-                    
-                        .padding(.leading, 20)
-                        .padding(.trailing, 20)
-                }
-                
-                Spacer().frame(height: 13)
-                
-                HStack {
-                    Spacer()
-                    
-                    Text("\(self.content.count)/1200")
-                        .font(.custom("HelveticaNeue", size: 12))
-                        
-                        .padding(.trailing, 20)
-                        .padding(.bottom, 24)
-                }
+                Text("0/1200")
+                    .font(.custom("HelveticaNeue", size: 12))
             }
-            .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.black, lineWidth: 1)
-            )
+            .padding(.top, 30)
             
-            .padding(.leading, 25)
-            .padding(.trailing, 25)
+            TextField("지금 내 감정은..", text: $title)
+                .font(.custom("HelveticaNeue", size: 20))
+                
+                .padding(.top, 16)
+                .padding(.trailing, 32)
             
-            Spacer().frame(height: 17)
+            TextEditor(text: $content)
+                .font(.custom("HelveticaNeue", size: 16))
+                .border(Color.yellow)
+                
+                .padding(.top, 20)
+                .padding(.trailing, 7)
             
-            Button("다 썼어!", action: {
+            Button("다 썼어", action: {
                 
             })
             .frame(maxWidth: .infinity, maxHeight: 54)
@@ -88,14 +50,11 @@ struct FeelingNoteView: View {
                     .stroke(Color.black, lineWidth: 1)
             )
             
-            .padding(.leading, 25)
-            .padding(.trailing, 25)
-            .padding(.bottom, 20)
+            .padding(.top, 20)
+            .padding(.bottom, 30)
         }
-    }
-    
-    private func textDidChange(_ textView: UITextView) {
-        self.textViewHeight = max(textView.contentSize.height, textViewMinHeight)
+        .padding(.leading, 24)
+        .padding(.trailing, 24)
     }
 }
 
