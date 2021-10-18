@@ -17,7 +17,7 @@ struct FeelingNoteView: View {
             
             VStack {
                 HStack {
-                    Text("09. 17. 월요일")
+                    Text(self.feelingNoteViewModel.dateString)
                         .font(.custom("HelveticaNeue", size: 12))
                     
                     Spacer()
@@ -51,9 +51,9 @@ struct FeelingNoteView: View {
                 Button("다 썼어", action: {
                     
                 })
-                .frame(maxWidth: .infinity, maxHeight: 54)
+                .frame(maxWidth: .infinity, maxHeight: 56)
                 .background(Color.yellow)
-                .cornerRadius(10)
+                .cornerRadius(16)
                 
                 .padding(.top, 20)
                 .padding(.leading, 24)
