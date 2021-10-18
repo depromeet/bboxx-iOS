@@ -7,9 +7,6 @@ struct FeelingNoteView: View {
     @State private var title: String = ""
     @State private var content: String = ""
     
-    //let textViewMinHeight: CGFloat = 150
-    //@State private var textViewHeight: CGFloat?
-    
     var body: some View {
         VStack(alignment: .leading) {
             Text("네 감정을 글로 담아봐")
@@ -25,7 +22,7 @@ struct FeelingNoteView: View {
                     
                     Spacer()
                     
-                    Text("0/1200")
+                    Text("\(content.count)/1200")
                         .font(.custom("HelveticaNeue", size: 12))
                 }
                 .padding(.top, 30)
@@ -39,11 +36,15 @@ struct FeelingNoteView: View {
                     .padding(.leading, 24)
                     .padding(.trailing, 56)
                 
+                Divider()
+                    .padding(.top, 10)
+                    .padding(.leading, 24)
+                    .padding(.trailing, 24)
+                
                 TextEditor(text: $content)
                     .font(.custom("HelveticaNeue", size: 16))
-                    .border(Color.yellow)
                     
-                    .padding(.top, 20)
+                    .padding(.top, 10)
                     .padding(.leading, 24)
                     .padding(.trailing, 31)
                 
@@ -51,20 +52,20 @@ struct FeelingNoteView: View {
                     
                 })
                 .frame(maxWidth: .infinity, maxHeight: 54)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.black, lineWidth: 1)
-                )
+                .background(Color.yellow)
+                .cornerRadius(10)
                 
                 .padding(.top, 20)
                 .padding(.leading, 24)
                 .padding(.trailing, 24)
                 .padding(.bottom, 30)
             }
-            .background(Color.gray)
+            .background(Color.white)
             
             .padding(.top, 20)
+            
         }
+        .background(Color.yellow)
     }
 }
 
