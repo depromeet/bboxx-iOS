@@ -16,45 +16,55 @@ struct FeelingNoteView: View {
                 .font(.custom("HelveticaNeue", size: 24))
             
                 .padding(.top, 10)
+                .padding(.leading, 24)
             
-            HStack {
-                Text("09. 17. 월요일")
-                    .font(.custom("HelveticaNeue", size: 12))
+            VStack {
+                HStack {
+                    Text("09. 17. 월요일")
+                        .font(.custom("HelveticaNeue", size: 12))
+                    
+                    Spacer()
+                    
+                    Text("0/1200")
+                        .font(.custom("HelveticaNeue", size: 12))
+                }
+                .padding(.top, 30)
+                .padding(.leading, 24)
+                .padding(.trailing, 24)
                 
-                Spacer()
+                TextField("지금 내 감정은..", text: $title)
+                    .font(.custom("HelveticaNeue", size: 20))
+                    
+                    .padding(.top, 16)
+                    .padding(.leading, 24)
+                    .padding(.trailing, 56)
                 
-                Text("0/1200")
-                    .font(.custom("HelveticaNeue", size: 12))
-            }
-            .padding(.top, 30)
-            
-            TextField("지금 내 감정은..", text: $title)
-                .font(.custom("HelveticaNeue", size: 20))
+                TextEditor(text: $content)
+                    .font(.custom("HelveticaNeue", size: 16))
+                    .border(Color.yellow)
+                    
+                    .padding(.top, 20)
+                    .padding(.leading, 24)
+                    .padding(.trailing, 31)
                 
-                .padding(.top, 16)
-                .padding(.trailing, 32)
-            
-            TextEditor(text: $content)
-                .font(.custom("HelveticaNeue", size: 16))
-                .border(Color.yellow)
+                Button("다 썼어", action: {
+                    
+                })
+                .frame(maxWidth: .infinity, maxHeight: 54)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.black, lineWidth: 1)
+                )
                 
                 .padding(.top, 20)
-                .padding(.trailing, 7)
-            
-            Button("다 썼어", action: {
-                
-            })
-            .frame(maxWidth: .infinity, maxHeight: 54)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black, lineWidth: 1)
-            )
+                .padding(.leading, 24)
+                .padding(.trailing, 24)
+                .padding(.bottom, 30)
+            }
+            .background(Color.gray)
             
             .padding(.top, 20)
-            .padding(.bottom, 30)
         }
-        .padding(.leading, 24)
-        .padding(.trailing, 24)
     }
 }
 
