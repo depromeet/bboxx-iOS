@@ -1,13 +1,13 @@
 import AuthenticationServices
 
-// Used in login view model
+// Used in Sign In view model
 class AppleSignInCoordinator: NSObject, ASAuthorizationControllerDelegate {
-    var loginService: SignInService
-    var loginViewModel: SignInViewModel
+    var signInService: SignInService
+    var signInViewModel: SignInViewModel
     
-    init(loginService: SignInService = SignInService(), loginVM: SignInViewModel) {
-        self.loginViewModel = loginVM
-        self.loginService = loginService
+    init(signInService: SignInService = SignInService(), signInVM: SignInViewModel) {
+        self.signInViewModel = signInVM
+        self.signInService = signInService
     }
     
     // Shows Sign in with Apple UI
@@ -31,12 +31,10 @@ class AppleSignInCoordinator: NSObject, ASAuthorizationControllerDelegate {
             let fullName = appleIDCredential.fullName
             let email = appleIDCredential.email ?? ""
             let name = (fullName?.givenName ?? "") + (" ") + (fullName?.familyName ?? "")
-            
-            
             // TODO: - Make network request to backend
             // Save user details or fetch them
             // Sign in with Apple only gives full name and email once
-//            loginService.callAppleAuthCallback()
+            // signInService.callAppleAuthCallback()
         default:
             break
         }

@@ -10,7 +10,7 @@ class SignInViewModel: ObservableObject {
     
     @Published var state: SignInState = .signedOut
     
-    private lazy var appleSignInCoordinator = AppleSignInCoordinator(loginVM: self)
+    private lazy var appleSignInCoordinator = AppleSignInCoordinator(signInVM: self)
         
     func attemptAppleSignIn() {
         appleSignInCoordinator.handleAuthorizationAppleIDButtonPress()
@@ -21,5 +21,4 @@ class SignInViewModel: ObservableObject {
             // TODO: presenting Sign In View
         }
     }
-    
 }
