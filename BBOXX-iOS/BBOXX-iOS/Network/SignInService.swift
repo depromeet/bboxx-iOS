@@ -5,4 +5,8 @@ class SignInService {
     func callAppleAuthCallback() {
         
     }
+    
+    func callGoogleAuthCallback() {
+        
+    }
 }

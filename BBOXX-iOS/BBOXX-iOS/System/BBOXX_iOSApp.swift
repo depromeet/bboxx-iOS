@@ -14,10 +14,3 @@ struct BBOXX_iOSApp: App {
         }
     }
 }
-
-extension BBOXX_iOSApp {
-  private func setupAuthentication() {
-    let googleSignInConfig = GIDConfiguration.init(clientID: ClientId.google)
-    FirebaseApp.configure()
-  }
-}
