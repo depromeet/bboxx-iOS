@@ -1,4 +1,6 @@
 import SwiftUI
+import Firebase
+import GoogleSignIn
 
 @main
 struct BBOXX_iOSApp: App {
