@@ -21,7 +21,6 @@ class UserService {
                 do {
                     let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
                     let result = try JSONDecoder().decode(Response.self, from: json)
-                    print("success: \(result.data.nickname)")
                     completion(.success(result))
                     
                 } catch(let error) {

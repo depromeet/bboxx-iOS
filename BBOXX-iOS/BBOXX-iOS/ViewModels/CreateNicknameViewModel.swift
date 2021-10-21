@@ -2,7 +2,11 @@ import Foundation
 
 class CreateNicknameViewModel: ObservableObject {
     
-    var nickname: String = ""
+    @Published var nickname: String = ""
+    
+    init() {
+        redoButtonDidTap()
+    }
     
     func redoButtonDidTap() {
         UserService.shared.createNickname { (result) in

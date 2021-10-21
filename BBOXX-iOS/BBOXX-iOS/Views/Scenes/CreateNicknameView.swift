@@ -8,6 +8,7 @@ struct CreateNicknameView: View {
         VStack {
             Text("너를 뭐라고 부를까?")
                 .font(.custom("HelveticaNeue", size: 24))
+                .bold()
             
                 .padding(.top, 115)
 
@@ -18,10 +19,11 @@ struct CreateNicknameView: View {
             
             Text(viewModel.nickname)
                 .font(.custom("HelveticaNeue", size: 20))
+                .bold()
                 .multilineTextAlignment(.center)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 56)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 16)
+                    RoundedRectangle(cornerRadius: 12)
                         .stroke(Color.black, lineWidth: 2)
                 )
             
@@ -30,25 +32,28 @@ struct CreateNicknameView: View {
             Button(action: {
                 viewModel.redoButtonDidTap()
             }) {
-                Image("redo")
-                    .frame(width: 20, height: 20)
-                    .padding(.trailing, 6)
-                
-                Text("다시 고를래")
+                Text("다시 고르기")
                     .font(.custom("HelveticaNeue", size: 16))
+                    .bold()
+                    .foregroundColor(.white)
             }
-            .padding(.top, 20)
+            .frame(maxWidth: 126, maxHeight: 47)
+            .background(Color.gray)
+            .cornerRadius(30)
+            
+            .padding(.top, 18)
             
             Spacer()
             
             Button(action: {}, label: {
                 Text("마음에 들어")
                     .font(.custom("HelveticaNeue", size: 18))
+                    .bold()
                     .foregroundColor(.white)
             })
             .frame(maxWidth: .infinity, maxHeight: 56)
             .background(Color.black)
-            .cornerRadius(16)
+            .cornerRadius(10)
             
             .padding(.bottom, 30)
         }
