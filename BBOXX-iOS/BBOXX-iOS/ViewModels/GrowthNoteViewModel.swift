@@ -1,7 +1,6 @@
 import Foundation
 
-class FeelingNoteViewModel: ObservableObject {
-    
+class GrowthNoteViewModel: ObservableObject {
     var dateString: String = ""
     
     init() {

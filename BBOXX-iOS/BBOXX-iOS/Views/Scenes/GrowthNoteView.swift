@@ -1,8 +1,8 @@
 import SwiftUI
 
-struct FeelingNoteView: View {
+struct GrowthNoteView: View {
     
-    @ObservedObject var feelingNoteViewModel = FeelingNoteViewModel()
+    @ObservedObject var growthNoteViewModel = GrowthNoteViewModel()
     
     @State private var title: String = ""
     @State private var content: String = ""
@@ -21,7 +21,7 @@ struct FeelingNoteView: View {
                 
                 VStack {
                     HStack {
-                        Text(self.feelingNoteViewModel.dateString)
+                        Text(self.growthNoteViewModel.dateString)
                             .font(.custom("HelveticaNeue", size: 12))
                         
                         Spacer()
@@ -53,8 +53,8 @@ struct FeelingNoteView: View {
                         .padding(.trailing, 31)
                     
                     Button("다 썼어", action: {
-                        cardShown.toggle()
-                        cardDismissal.toggle()
+                        //cardShown.toggle()
+                        //cardDismissal.toggle()
                     })
                     .frame(maxWidth: .infinity, maxHeight: 56)
                     .background(Color.yellow)
@@ -82,11 +82,10 @@ struct FeelingNoteView: View {
         }
         
     }
-
 }
 
-struct FeelingNoteView_Previews: PreviewProvider {
+struct GrowthNoteView_Previews: PreviewProvider {
     static var previews: some View {
-        FeelingNoteView()
+        GrowthNoteView()
     }
 }
