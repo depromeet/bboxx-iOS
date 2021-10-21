@@ -15,6 +15,7 @@
 		4551D8CA271574EE00EF8149 /* FeelingNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551D8C9271574EE00EF8149 /* FeelingNoteView.swift */; };
 		45530D4E271925AC002DCF57 /* WrappedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45530D4D271925AC002DCF57 /* WrappedTextView.swift */; };
 		4554A02A270EAA1B00A558CB /* DecibelMeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554A029270EAA1B00A558CB /* DecibelMeasurementView.swift */; };
+		458C257327212F6C00E48195 /* NotificationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C257227212F6C00E48195 /* NotificationListViewModel.swift */; };
 		459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */; };
 		45AB2112271A9E0F00404122 /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB2111271A9E0F00404122 /* NotificationListView.swift */; };
 		45AB2115271A9ECD00404122 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB2114271A9ECD00404122 /* NotificationCell.swift */; };
@@ -39,6 +40,7 @@
 		4551D8C9271574EE00EF8149 /* FeelingNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteView.swift; sourceTree = "<group>"; };
 		45530D4D271925AC002DCF57 /* WrappedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedTextView.swift; sourceTree = "<group>"; };
 		4554A029270EAA1B00A558CB /* DecibelMeasurementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementView.swift; sourceTree = "<group>"; };
+		458C257227212F6C00E48195 /* NotificationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewModel.swift; sourceTree = "<group>"; };
 		459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementViewModel.swift; sourceTree = "<group>"; };
 		45AB2111271A9E0F00404122 /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
 		45AB2114271A9ECD00404122 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */,
 				453AF0CE27180C77000DB2CA /* FeelingNoteViewModel.swift */,
+				458C257227212F6C00E48195 /* NotificationListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				4527B84027083E0E003FD4F9 /* BBOXX_iOSApp.swift in Sources */,
 				6A02125C270A1EBC002828D9 /* AppDelegate.swift in Sources */,
 				45AB2119271A9F6800404122 /* Notification.swift in Sources */,
+				458C257327212F6C00E48195 /* NotificationListViewModel.swift in Sources */,
 				6A02124D270A1BA9002828D9 /* APICall.swift in Sources */,
 				6A02125F270A1F38002828D9 /* LoginView.swift in Sources */,
 				45AB2112271A9E0F00404122 /* NotificationListView.swift in Sources */,
