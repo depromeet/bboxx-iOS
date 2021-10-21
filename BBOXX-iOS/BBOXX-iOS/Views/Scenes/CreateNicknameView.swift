@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct CreateNicknameView: View {
+    
+    @ObservedObject var viewModel = CreateNicknameViewModel()
+    
     var body: some View {
         VStack {
             Text("너를 뭐라고 부를까?")
@@ -13,7 +16,7 @@ struct CreateNicknameView: View {
             
                 .padding(.top, 11)
             
-            Text("사랑스러운딸기")
+            Text(viewModel.nickname)
                 .font(.custom("HelveticaNeue", size: 20))
                 .multilineTextAlignment(.center)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 56)
@@ -25,7 +28,7 @@ struct CreateNicknameView: View {
                 .padding(.top, 50)
             
             Button(action: {
-                // 랜덤 생성된 닉네임 서버에서 받아오기
+                viewModel.redoButtonDidTap()
             }) {
                 Image("redo")
                     .frame(width: 20, height: 20)

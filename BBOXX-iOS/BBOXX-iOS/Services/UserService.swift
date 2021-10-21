@@ -6,7 +6,7 @@ class UserService {
         
     static let shared = UserService()
     
-    func createNickname(){
+    func createNickname(_ completion: @escaping (Result<Response, Error>) -> ()) {
         let url = APIConstants.BaseURL + "api/v1/generate-member-nickname"
         
         let header: HTTPHeaders = [
@@ -16,20 +16,19 @@ class UserService {
         ]
         
         AF.request(url, method: .post, headers: header).responseJSON { (response) in
-            do {
-                let decoder = JSONDecoder()
-                
-                switch (response.result) {
-                case .success:
-                    let result = try decoder.decode(Response.self, from: response.data!)
-                    print("success: \(result)")
-                    break
-                case .failure(let error):
-                    print("errorCode: \(error._code)")
-                    print("errorDescription: \(error.errorDescription!)")
+            switch response.result {
+            case .success(let jsonData):
+                do {
+                    let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
+                    let result = try JSONDecoder().decode(Response.self, from: json)
+                    print("success: \(result.data.nickname)")
+                    completion(.success(result))
+                    
+                } catch(let error) {
+                    completion(.failure(error))
                 }
-            } catch let parsingError {
-                print("Error: ", parsingError)
+            case .failure(let error):
+                completion(.failure(error))
             }
         }.resume()
     }
