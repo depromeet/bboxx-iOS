@@ -46,7 +46,7 @@ class SignInViewModel: ObservableObject {
                     return
                 }
                 
-                // Credential
+                // TODO: Credential
 //                let credential = GoogleAuthProvider.credential(withIDToken: idToken,
 //                                                               accessToken: authentication.accessToken)
                 
