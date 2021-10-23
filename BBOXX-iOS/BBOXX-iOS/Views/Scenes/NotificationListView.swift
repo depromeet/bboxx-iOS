@@ -11,23 +11,36 @@ struct NotificationListView: View {
     ]
     
     init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 24)!, .foregroundColor : UIColor.brown]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 24) ?? .systemFont(ofSize: 24), .foregroundColor : UIColor.brown]
     }
     
     var body: some View {
         NavigationView {
-            List() {
-                ForEach(self.notificationList, id: \.id) { noti in
-                    NotificationCell(notification: noti)
-                }
-                .onDelete(perform: deleteNotification)
-            }.navigationTitle(Text("나의 타임머신"))
-            
-            .padding(.trailing, 10)
-            
+            if notificationList.count == 0 {
+                VStack() {
+                    Image("")
+                        .frame(width: 160, height: 160)
+                        .background(Color.gray)
+                    
+                    Text("네게 온 알림이 아직 없어")
+                        .font(.custom("HelveticaNeue", size: 18))
+                        
+                        .padding(.top, 20)
+                        .padding(.bottom, 56)
+                                        
+                }.navigationTitle(Text("나의 타임머신"))
+                
+            } else {
+                List() {
+                    ForEach(self.notificationList, id: \.id) { noti in
+                        NotificationCell(notification: noti)
+                    }
+                    .onDelete(perform: deleteNotification)
+                }.navigationTitle(Text("나의 타임머신"))
+            }
         }
         .padding(.leading, 10)
-        
+        .padding(.trailing, 10)
     }
     
     func deleteNotification(at offsets: IndexSet) {
