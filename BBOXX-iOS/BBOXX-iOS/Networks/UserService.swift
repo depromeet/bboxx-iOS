@@ -7,7 +7,7 @@ class UserService {
     static let shared = UserService()
     
     func createNickname(_ completion: @escaping (Result<Response, Error>) -> ()) {
-        let url = APIConstants.BaseURL + "api/v1/generate-member-nickname"
+        let url = Secret.BaseURL + "api/v1/generate-member-nickname"
         
         let header: HTTPHeaders = [
             "Content-Type" : "application/json;charset=UTF-8",
