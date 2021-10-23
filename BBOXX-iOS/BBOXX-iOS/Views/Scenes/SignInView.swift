@@ -2,13 +2,6 @@ import SwiftUI
 import UIKit
 import AuthenticationServices
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignInView(viewModel: SignInViewModel())
-            .previewDevice("iPhone 12")
-    }
-}
-
 // TODO: manage the asset names("") with Enum
 struct SignInView: View {
     
