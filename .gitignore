@@ -90,3 +90,9 @@ fastlane/test_output
 iOSInjectionProject/
 BBOXX-iOS/.DS_Store
 .DS_Store
+
+# Firebase
+BBOXX-iOS/BBOXX-iOS/GoogleService-Info.plist
+
+# Secret
+BBOXX-iOS/BBOXX-iOS/System/Secret.swift
