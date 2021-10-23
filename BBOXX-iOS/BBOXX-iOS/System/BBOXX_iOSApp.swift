@@ -1,4 +1,6 @@
 import SwiftUI
+import Firebase
+import GoogleSignIn
 
 @main
 struct BBOXX_iOSApp: App {
@@ -8,7 +10,7 @@ struct BBOXX_iOSApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }
