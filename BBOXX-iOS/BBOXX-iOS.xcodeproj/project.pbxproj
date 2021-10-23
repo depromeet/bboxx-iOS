@@ -16,10 +16,16 @@
 		4554A02A270EAA1B00A558CB /* DecibelMeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554A029270EAA1B00A558CB /* DecibelMeasurementView.swift */; };
 		45817753271DBD8700036086 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45817752271DBD8700036086 /* RoundedCorner.swift */; };
 		45817756271DBE0100036086 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45817755271DBE0100036086 /* View+Extension.swift */; };
+		4581E9B227202E7A00DEEC76 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581E9B127202E7A00DEEC76 /* UserService.swift */; };
 		459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */; };
+		459E5AFE271FB6F5000D3F53 /* CreateNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E5AFD271FB6F5000D3F53 /* CreateNicknameView.swift */; };
 		45A6222D271E6D2600B13459 /* GrowthNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6222C271E6D2600B13459 /* GrowthNoteView.swift */; };
 		45A62230271E6E4900B13459 /* GrowthNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6222F271E6E4900B13459 /* GrowthNoteViewModel.swift */; };
 		45A6223B271EA68600B13459 /* BottomCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6223A271EA68600B13459 /* BottomCard.swift */; };
+		45C84DAA27240396000E4886 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45C84DA927240396000E4886 /* GoogleService-Info.plist */; };
+		45C84DB527240462000E4886 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C84DB427240462000E4886 /* Secret.swift */; };
+		45CE93512720FECF00ED60C5 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE93502720FECF00ED60C5 /* Response.swift */; };
+		45CE93542721067900ED60C5 /* CreateNicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE93532721067900ED60C5 /* CreateNicknameViewModel.swift */; };
 		6A02124D270A1BA9002828D9 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A02124C270A1BA9002828D9 /* APICall.swift */; };
 		6A021258270A1CA0002828D9 /* FeelingNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A021257270A1CA0002828D9 /* FeelingNotes.swift */; };
 		6A02125C270A1EBC002828D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A02125B270A1EBC002828D9 /* AppDelegate.swift */; };
@@ -47,10 +53,16 @@
 		4554A029270EAA1B00A558CB /* DecibelMeasurementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementView.swift; sourceTree = "<group>"; };
 		45817752271DBD8700036086 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		45817755271DBE0100036086 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		4581E9B127202E7A00DEEC76 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementViewModel.swift; sourceTree = "<group>"; };
+		459E5AFD271FB6F5000D3F53 /* CreateNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameView.swift; sourceTree = "<group>"; };
 		45A6222C271E6D2600B13459 /* GrowthNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteView.swift; sourceTree = "<group>"; };
 		45A6222F271E6E4900B13459 /* GrowthNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteViewModel.swift; sourceTree = "<group>"; };
 		45A6223A271EA68600B13459 /* BottomCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCard.swift; sourceTree = "<group>"; };
+		45C84DA927240396000E4886 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		45C84DB427240462000E4886 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		45CE93502720FECF00ED60C5 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		45CE93532721067900ED60C5 /* CreateNicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameViewModel.swift; sourceTree = "<group>"; };
 		6A02124C270A1BA9002828D9 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		6A021257270A1CA0002828D9 /* FeelingNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNotes.swift; sourceTree = "<group>"; };
 		6A02125B270A1EBC002828D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +119,7 @@
 				45570FF4270AFEF100ECE13D /* ViewModels */,
 				4527B84327083E11003FD4F9 /* Assets.xcassets */,
 				4527B84827083E11003FD4F9 /* Info.plist */,
+				45C84DA927240396000E4886 /* GoogleService-Info.plist */,
 				4527B84527083E11003FD4F9 /* Preview Content */,
 			);
 			path = "BBOXX-iOS";
@@ -125,6 +138,7 @@
 			children = (
 				459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */,
 				453AF0CE27180C77000DB2CA /* FeelingNoteViewModel.swift */,
+				45CE93532721067900ED60C5 /* CreateNicknameViewModel.swift */,
 				45A6222F271E6E4900B13459 /* GrowthNoteViewModel.swift */,
 				6A5311BB2723EB8300B14768 /* SignInViewModel.swift */,
 			);
@@ -160,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				6A021257270A1CA0002828D9 /* FeelingNotes.swift */,
+				45CE93502720FECF00ED60C5 /* Response.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +195,7 @@
 			children = (
 				4527B83F27083E0E003FD4F9 /* BBOXX_iOSApp.swift */,
 				6A02125B270A1EBC002828D9 /* AppDelegate.swift */,
+				45C84DB427240462000E4886 /* Secret.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -199,6 +215,7 @@
 				4554A029270EAA1B00A558CB /* DecibelMeasurementView.swift */,
 				4551D8C9271574EE00EF8149 /* FeelingNoteView.swift */,
 				45A6222C271E6D2600B13459 /* GrowthNoteView.swift */,
+				459E5AFD271FB6F5000D3F53 /* CreateNicknameView.swift */,
 				6A20E5E12723CBFF00876996 /* SignInView.swift */,
 				6ACBC5B42723EE67002E1E55 /* SplashView.swift */,
 				6ACBC5B62723EE88002E1E55 /* OnboardingView.swift */,
@@ -225,6 +242,7 @@
 		6ACBC5AF2723ECEF002E1E55 /* Networks */ = {
 			isa = PBXGroup;
 			children = (
+				4581E9B127202E7A00DEEC76 /* UserService.swift */,
 				6ACBC5B02723ED15002E1E55 /* SignInService.swift */,
 			);
 			path = Networks;
@@ -291,6 +309,7 @@
 			files = (
 				4527B84727083E11003FD4F9 /* Preview Assets.xcassets in Resources */,
 				4527B84427083E11003FD4F9 /* Assets.xcassets in Resources */,
+				45C84DAA27240396000E4886 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,22 +366,27 @@
 				4551D8CA271574EE00EF8149 /* FeelingNoteView.swift in Sources */,
 				4527B84227083E0E003FD4F9 /* ContentView.swift in Sources */,
 				453AF0CF27180C77000DB2CA /* FeelingNoteViewModel.swift in Sources */,
+				45CE93512720FECF00ED60C5 /* Response.swift in Sources */,
 				6A5311BC2723EB8300B14768 /* SignInViewModel.swift in Sources */,
 				6A021258270A1CA0002828D9 /* FeelingNotes.swift in Sources */,
 				6ACBC5B72723EE88002E1E55 /* OnboardingView.swift in Sources */,
 				459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */,
+				4581E9B227202E7A00DEEC76 /* UserService.swift in Sources */,
 				4527B84027083E0E003FD4F9 /* BBOXX_iOSApp.swift in Sources */,
+				459E5AFE271FB6F5000D3F53 /* CreateNicknameView.swift in Sources */,
 				45A6222D271E6D2600B13459 /* GrowthNoteView.swift in Sources */,
 				6ACBC5B12723ED15002E1E55 /* SignInService.swift in Sources */,
 				6A02125C270A1EBC002828D9 /* AppDelegate.swift in Sources */,
 				45A6223B271EA68600B13459 /* BottomCard.swift in Sources */,
 				6A02124D270A1BA9002828D9 /* APICall.swift in Sources */,
+				45CE93542721067900ED60C5 /* CreateNicknameViewModel.swift in Sources */,
 				45817753271DBD8700036086 /* RoundedCorner.swift in Sources */,
 				45A62230271E6E4900B13459 /* GrowthNoteViewModel.swift in Sources */,
 				45817756271DBE0100036086 /* View+Extension.swift in Sources */,
 				6A20E5E22723CBFF00876996 /* SignInView.swift in Sources */,
 				6ACBC5B52723EE67002E1E55 /* SplashView.swift in Sources */,
 				6ACBC5B32723ED70002E1E55 /* ImageAssets.swift in Sources */,
+				45C84DB527240462000E4886 /* Secret.swift in Sources */,
 				6ACBC5AE2723ECB9002E1E55 /* AppleSignInCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
