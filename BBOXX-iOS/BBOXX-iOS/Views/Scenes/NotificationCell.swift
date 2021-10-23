@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct NotificationCell: View {
-    
-    @ObservedObject var viewModel = NotificationListViewModel()
+        
+    let notification: Notification
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(viewModel.dateString)
+                Text("10. 23.")
                     .font(.custom("HelveticaNeue", size: 14))
                 
                     .padding(.top, 16)
