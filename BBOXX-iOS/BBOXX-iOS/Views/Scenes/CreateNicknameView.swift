@@ -23,7 +23,7 @@ struct CreateNicknameView: View {
                 .multilineTextAlignment(.center)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 56)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 12)
+                    RoundedRectangle(cornerRadius: 16)
                         .stroke(Color.black, lineWidth: 2)
                 )
             
@@ -32,16 +32,16 @@ struct CreateNicknameView: View {
             Button(action: {
                 viewModel.redoButtonDidTap()
             }) {
+                Image("redo")
+                    .frame(width: 20, height: 20)
+                    .padding(.trailing, 6)
+                
                 Text("다시 고르기")
                     .font(.custom("HelveticaNeue", size: 16))
                     .bold()
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
             }
-            .frame(maxWidth: 126, maxHeight: 47)
-            .background(Color.gray)
-            .cornerRadius(30)
-            
-            .padding(.top, 18)
+            .padding(.top, 20)
             
             Spacer()
             
@@ -53,7 +53,7 @@ struct CreateNicknameView: View {
             })
             .frame(maxWidth: .infinity, maxHeight: 56)
             .background(Color.black)
-            .cornerRadius(10)
+            .cornerRadius(16)
             
             .padding(.bottom, 30)
         }
