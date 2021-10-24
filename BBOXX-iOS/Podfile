@@ -10,6 +10,11 @@ target 'BBOXX-iOS' do
   pod 'KakaoSDKAuth'  
   pod 'KakaoSDKUser'
   pod 'KakaoSDKLink'
+  
+  # Google Login
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
   # Pods for BBOXX-iOS
 

@@ -12,7 +12,7 @@ class FeelingNoteViewModel: ObservableObject {
         let nowDate = Date() // 현재의 Date
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "yy. MM. dd. EEEEE"
+        dateFormatter.dateFormat = "MM. dd. EEEEE"
         dateFormatter.locale = Locale(identifier:"ko_KR")
         dateString = dateFormatter.string(from: nowDate)
     }
