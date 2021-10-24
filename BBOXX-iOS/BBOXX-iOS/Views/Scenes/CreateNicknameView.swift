@@ -32,7 +32,7 @@ struct CreateNicknameView: View {
             Button(action: {
                 viewModel.redoButtonDidTap()
             }) {
-                Image("redo")
+                Image(ImageAsset.redoButton)
                     .frame(width: 20, height: 20)
                     .padding(.trailing, 6)
                 

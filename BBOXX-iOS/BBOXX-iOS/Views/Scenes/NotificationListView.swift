@@ -18,7 +18,7 @@ struct NotificationListView: View {
         NavigationView {
             if notificationList.count == 0 {
                 VStack() {
-                    Image("emptyBox")
+                    Image(ImageAsset.emptyBoxIcon)
                         .frame(width: 160, height: 160)
                     
                     Text("네게 온 알림이 아직 없어.")
