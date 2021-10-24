@@ -32,6 +32,6 @@ struct NotificationCell: View {
                 .padding(.bottom, 20)
         }
         .background(Color.yellow)
-        .cornerRadius(10)
+        .cornerRadius(14)
     }
 }
