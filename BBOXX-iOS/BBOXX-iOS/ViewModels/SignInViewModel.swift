@@ -1,7 +1,9 @@
 import Combine
-import GoogleSignIn
 import FirebaseAuth
 import Firebase
+import GoogleSignIn
+import KakaoSDKAuth
+import KakaoSDKUser
 import SwiftUI
 import UIKit
 
@@ -52,6 +54,29 @@ class SignInViewModel: ObservableObject {
                 
                 // Using Token
             }
+        }
+    }
+    
+    func attemptKakaoSignIn() {
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            // If KakaoTalk is installed, log in from KakaoTalk
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                //print(error)
+            }
+        }else{
+            // If KakaoTalk is not installed, log in from Safari
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                //print(error)
+            }
+        }
+        
+        UserApi.shared.me() {(user, error) in
+            // Get user information
+            let email = user?.kakaoAccount?.email
+            let age = user?.kakaoAccount?.ageRange
+            let gender = user?.kakaoAccount?.gender
+            
+            print("\(email), \(age), \(gender)")
         }
     }
 }
