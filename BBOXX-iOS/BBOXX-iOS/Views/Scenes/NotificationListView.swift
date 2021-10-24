@@ -18,12 +18,12 @@ struct NotificationListView: View {
         NavigationView {
             if notificationList.count == 0 {
                 VStack() {
-                    Image("")
+                    Image("emptyBox")
                         .frame(width: 160, height: 160)
-                        .background(Color.gray)
                     
-                    Text("네게 온 알림이 아직 없어")
+                    Text("네게 온 알림이 아직 없어.")
                         .font(.custom("HelveticaNeue", size: 18))
+                        .bold()
                         
                         .padding(.top, 20)
                         .padding(.bottom, 56)
