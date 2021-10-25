@@ -1,8 +1,8 @@
 import SwiftUI
 
-struct GrowthNoteView: View {
+struct GrowthNoteWritingView: View {
     
-    @ObservedObject var growthNoteViewModel = GrowthNoteViewModel()
+    @ObservedObject var viewModel = GrowthNoteWritingViewModel()
     
     @State private var title: String = ""
     @State private var content: String = ""
@@ -21,7 +21,7 @@ struct GrowthNoteView: View {
                 
                 VStack {
                     HStack {
-                        Text(self.growthNoteViewModel.dateString)
+                        Text(self.viewModel.dateString)
                             .font(.custom("HelveticaNeue", size: 12))
                         
                         Spacer()
@@ -84,8 +84,8 @@ struct GrowthNoteView: View {
     }
 }
 
-struct GrowthNoteView_Previews: PreviewProvider {
+struct GrowthNoteWritingView_Previews: PreviewProvider {
     static var previews: some View {
-        GrowthNoteView()
+        GrowthNoteWritingView()
     }
 }

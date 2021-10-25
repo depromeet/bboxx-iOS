@@ -1,8 +1,8 @@
 import SwiftUI
 
-struct FeelingNoteView: View {
+struct FeelingNoteWritingView: View {
     
-    @ObservedObject var feelingNoteViewModel = FeelingNoteViewModel()
+    @ObservedObject var viewModel = FeelingNoteWritingViewModel()
     
     @State private var title: String = ""
     @State private var content: String = ""
@@ -21,7 +21,7 @@ struct FeelingNoteView: View {
                 
                 VStack {
                     HStack {
-                        Text(self.feelingNoteViewModel.dateString)
+                        Text(self.viewModel.dateString)
                             .font(.custom("HelveticaNeue", size: 12))
                         
                         Spacer()
@@ -85,8 +85,8 @@ struct FeelingNoteView: View {
 
 }
 
-struct FeelingNoteView_Previews: PreviewProvider {
+struct FeelingNoteWritingView_Previews: PreviewProvider {
     static var previews: some View {
-        FeelingNoteView()
+        FeelingNoteWritingView()
     }
 }
