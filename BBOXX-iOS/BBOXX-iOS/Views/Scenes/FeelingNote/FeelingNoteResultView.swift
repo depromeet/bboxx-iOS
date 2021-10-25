@@ -18,6 +18,13 @@ struct FeelingNoteResultView: View {
                 
                 .padding(.top, 20)
             
+            Image(ImageAsset.toolTip)
+                .frame(maxWidth: 147, maxHeight: 61)
+            
+                .padding(.top, 20)
+                .padding(.leading, 5)
+                .padding(.bottom, -15)
+            
             HStack(spacing: 15) {
                 Button(action: {}, label: {
                     Text("소리지르기")
@@ -40,7 +47,6 @@ struct FeelingNoteResultView: View {
                 .background(Color.black)
                 .cornerRadius(16)
             }
-            .padding(.top, 75)
             .padding(.bottom, 30)
         }
         .frame(maxHeight: .infinity)
