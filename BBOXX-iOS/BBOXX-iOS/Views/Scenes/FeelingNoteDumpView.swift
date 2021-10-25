@@ -75,7 +75,7 @@ struct FeelingNoteDumpView: View {
                 .padding(.trailing, 24)
             }
             .background(Color.white)
-            .cornerRadius(24, corners: [.topLeft, .topRight])
+            .cornerRadius(24)
             
             .padding(.top, 20)
             
