@@ -1,6 +1,6 @@
 import Foundation
 
-class GrowthNoteViewModel: ObservableObject {
+class GrowthNoteWritingViewModel: ObservableObject {
     var dateString: String = ""
     
     init() {

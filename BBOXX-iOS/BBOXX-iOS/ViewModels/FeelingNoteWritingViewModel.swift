@@ -1,6 +1,6 @@
 import Foundation
 
-class FeelingNoteViewModel: ObservableObject {
+class FeelingNoteWritingViewModel: ObservableObject {
     
     var dateString: String = ""
     
