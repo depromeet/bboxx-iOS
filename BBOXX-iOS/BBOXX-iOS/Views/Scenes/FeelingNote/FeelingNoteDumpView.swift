@@ -83,9 +83,3 @@ struct FeelingNoteDumpView: View {
         .background(Color("BboxxBackgroundColor").ignoresSafeArea())
     }
 }
-
-struct FeelingNoteDumpView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeelingNoteDumpView()
-    }
-}
