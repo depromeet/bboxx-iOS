@@ -65,7 +65,7 @@ struct FeelingNoteReviewView: View {
             }
             .background(
                 LinearGradient(gradient: Gradient(stops: [
-                    .init(color: Color(UIColor.white).opacity(0.02), location: 0),
+                    .init(color: Color(UIColor.white).opacity(0.05), location: 0),
                     .init(color: .white, location: 0.2)
                 ]), startPoint: .top, endPoint: .bottom)
             )
