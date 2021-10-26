@@ -1,6 +1,7 @@
 import Foundation
 
-class GrowthNoteViewModel: ObservableObject {
+class NotificationListViewModel: ObservableObject {
+    
     var dateString: String = ""
     
     init() {
@@ -11,7 +12,7 @@ class GrowthNoteViewModel: ObservableObject {
         let nowDate = Date() // 현재의 Date
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "MM. dd. EEEEE"
+        dateFormatter.dateFormat = "MM. dd."
         dateFormatter.locale = Locale(identifier:"ko_KR")
         dateString = dateFormatter.string(from: nowDate)
     }

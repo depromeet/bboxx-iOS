@@ -3,4 +3,7 @@ enum ImageAsset {
     static let startWithAppleButton = "startWithAppleButton"
     static let startWithGoogleButton = "startWithGoogleButton"
     static let startWithKakaoButton = "startWithKakaoButton"
+    static let toolTip = "toolTip"
+    static let emptyBoxIcon = "emptyBoxIcon"
+    static let redoButton = "redoButton"
 }

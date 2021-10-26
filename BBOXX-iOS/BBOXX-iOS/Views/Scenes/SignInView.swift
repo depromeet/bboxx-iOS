@@ -48,7 +48,9 @@ struct SignInView: View {
                         .frame(maxWidth: .infinity,maxHeight: 54, alignment: .center)
                 })
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    viewModel.attemptKakaoSignIn()
+                }, label: {
                     Image(ImageAsset.startWithKakaoButton)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
