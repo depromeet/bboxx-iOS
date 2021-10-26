@@ -20,6 +20,7 @@
 		458C257327212F6C00E48195 /* NotificationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C257227212F6C00E48195 /* NotificationListViewModel.swift */; };
 		459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */; };
 		4594B3112727B8CE00318B3B /* FeelingNoteReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */; };
+		4594B3142727C7AA00318B3B /* FeelingNoteReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */; };
 		459E5AFE271FB6F5000D3F53 /* CreateNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E5AFD271FB6F5000D3F53 /* CreateNicknameView.swift */; };
 		45A6222D271E6D2600B13459 /* GrowthNoteWritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6222C271E6D2600B13459 /* GrowthNoteWritingView.swift */; };
 		45A62230271E6E4900B13459 /* GrowthNoteWritingViewModelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6222F271E6E4900B13459 /* GrowthNoteWritingViewModelModel.swift */; };
@@ -66,6 +67,7 @@
 		458C257227212F6C00E48195 /* NotificationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewModel.swift; sourceTree = "<group>"; };
 		459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementViewModel.swift; sourceTree = "<group>"; };
 		4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteReviewView.swift; sourceTree = "<group>"; };
+		4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteReviewViewModel.swift; sourceTree = "<group>"; };
 		459E5AFD271FB6F5000D3F53 /* CreateNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameView.swift; sourceTree = "<group>"; };
 		45A6222C271E6D2600B13459 /* GrowthNoteWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteWritingView.swift; sourceTree = "<group>"; };
 		45A6222F271E6E4900B13459 /* GrowthNoteWritingViewModelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteWritingViewModelModel.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				453AF0CE27180C77000DB2CA /* FeelingNoteWritingViewModel.swift */,
 				45B1EA73272685A0006FC5F3 /* FeelingNoteDumpViewModel.swift */,
 				45B1EA7B2726880F006FC5F3 /* FeelingNoteResultViewModel.swift */,
+				4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */,
 			);
 			path = FeelingNote;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				6ACBC5B32723ED70002E1E55 /* ImageAssets.swift in Sources */,
 				45C84DB527240462000E4886 /* Secret.swift in Sources */,
 				45B1EA7C2726880F006FC5F3 /* FeelingNoteResultViewModel.swift in Sources */,
+				4594B3142727C7AA00318B3B /* FeelingNoteReviewViewModel.swift in Sources */,
 				6ACBC5AE2723ECB9002E1E55 /* AppleSignInCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

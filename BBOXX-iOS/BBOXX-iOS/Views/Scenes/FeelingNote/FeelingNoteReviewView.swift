@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct FeelingNoteReviewView: View {
+    
+    @ObservedObject var viewModel = FeelingNoteReviewViewModel()
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("예전에 네가 느낀 감정이야")
@@ -11,7 +14,7 @@ struct FeelingNoteReviewView: View {
             
             ScrollView() {
                 VStack(alignment: .leading) {
-                    Text("10. 26. 화요일")
+                    Text(self.viewModel.dateString)
                         .font(.custom("HelveticaNeue", size: 12))
                     
                         .padding(.top, 30)
