@@ -71,7 +71,7 @@ class DecibelMeasurementViewModel: ObservableObject {
             
             switch self.timeLeft {
             case 2:
-                self.guideString = "조금만 더!"
+                self.guideString = "\n조금만 더!"
                 self.secondsImage = ImageAsset.twoSeconds
                 break
             case 1:

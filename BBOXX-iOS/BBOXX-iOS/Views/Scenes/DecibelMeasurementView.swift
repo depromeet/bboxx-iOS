@@ -5,7 +5,7 @@ struct DecibelMeasurementView: View {
     @ObservedObject var viewModel = DecibelMeasurementViewModel()
     
     @State var showMic = true
-        
+    
     var body: some View {
         VStack {
             if showMic {
@@ -21,28 +21,23 @@ struct DecibelMeasurementView: View {
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
             }
-                
-//            Spacer()
-//                .frame(height: 46)
             
-            ZStack {
-                Button(action: {
-                    self.startMeasuring()
-                }) {
-                    if showMic {
-                        Image(ImageAsset.micButton)
-                    } else {
-                        Image(self.viewModel.secondsImage)
-
-                    }
+            Button(action: {
+                self.startMeasuring()
+            }) {
+                if showMic {
+                    Image(ImageAsset.micButton)
+                } else {
+                    Image(self.viewModel.secondsImage)
+                    
                 }
-                .frame(width: 165, height: 165, alignment: .center)
             }
+            .frame(width: 165, height: 165, alignment: .center)
             
-//            Spacer()
-//                .frame(height: 46)
+            .padding(.top, 46)
+            .padding(.bottom, 46)
         }
-
+        
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black).ignoresSafeArea()
     }
