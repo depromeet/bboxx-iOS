@@ -21,6 +21,7 @@
 		459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */; };
 		4594B3112727B8CE00318B3B /* FeelingNoteReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */; };
 		4594B3142727C7AA00318B3B /* FeelingNoteReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */; };
+		4594B3172727C98400318B3B /* GrowthNoteResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3162727C98400318B3B /* GrowthNoteResultView.swift */; };
 		459E5AFE271FB6F5000D3F53 /* CreateNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E5AFD271FB6F5000D3F53 /* CreateNicknameView.swift */; };
 		45A6222D271E6D2600B13459 /* GrowthNoteWritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6222C271E6D2600B13459 /* GrowthNoteWritingView.swift */; };
 		45A62230271E6E4900B13459 /* GrowthNoteWritingViewModelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6222F271E6E4900B13459 /* GrowthNoteWritingViewModelModel.swift */; };
@@ -68,6 +69,7 @@
 		459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementViewModel.swift; sourceTree = "<group>"; };
 		4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteReviewView.swift; sourceTree = "<group>"; };
 		4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteReviewViewModel.swift; sourceTree = "<group>"; };
+		4594B3162727C98400318B3B /* GrowthNoteResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteResultView.swift; sourceTree = "<group>"; };
 		459E5AFD271FB6F5000D3F53 /* CreateNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameView.swift; sourceTree = "<group>"; };
 		45A6222C271E6D2600B13459 /* GrowthNoteWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteWritingView.swift; sourceTree = "<group>"; };
 		45A6222F271E6E4900B13459 /* GrowthNoteWritingViewModelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteWritingViewModelModel.swift; sourceTree = "<group>"; };
@@ -176,6 +178,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4594B3192727C99E00318B3B /* GrowthNote */ = {
+			isa = PBXGroup;
+			children = (
+				45A6222C271E6D2600B13459 /* GrowthNoteWritingView.swift */,
+				4594B3162727C98400318B3B /* GrowthNoteResultView.swift */,
+			);
+			path = GrowthNote;
+			sourceTree = "<group>";
+		};
 		45B1EA79272687D4006FC5F3 /* FeelingNote */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,8 +268,8 @@
 			isa = PBXGroup;
 			children = (
 				45B1EA79272687D4006FC5F3 /* FeelingNote */,
+				4594B3192727C99E00318B3B /* GrowthNote */,
 				4554A029270EAA1B00A558CB /* DecibelMeasurementView.swift */,
-				45A6222C271E6D2600B13459 /* GrowthNoteWritingView.swift */,
 				45AB2111271A9E0F00404122 /* NotificationListView.swift */,
 				45AB2114271A9ECD00404122 /* NotificationCell.swift */,
 				459E5AFD271FB6F5000D3F53 /* CreateNicknameView.swift */,
@@ -412,6 +423,7 @@
 				4551D8CA271574EE00EF8149 /* FeelingNoteWritingView.swift in Sources */,
 				45B1EA77272687CF006FC5F3 /* FeelingNoteResultView.swift in Sources */,
 				4527B84227083E0E003FD4F9 /* ContentView.swift in Sources */,
+				4594B3172727C98400318B3B /* GrowthNoteResultView.swift in Sources */,
 				453AF0CF27180C77000DB2CA /* FeelingNoteWritingViewModel.swift in Sources */,
 				45AB2115271A9ECD00404122 /* NotificationCell.swift in Sources */,
 				45CE93512720FECF00ED60C5 /* Response.swift in Sources */,

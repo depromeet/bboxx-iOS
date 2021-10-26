@@ -80,9 +80,3 @@ struct FeelingNoteReviewView: View {
 
     }
 }
-
-struct FeelingNoteReviewView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeelingNoteReviewView()
-    }
-}
