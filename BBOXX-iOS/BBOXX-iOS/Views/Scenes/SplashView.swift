@@ -7,7 +7,7 @@ struct SplashView: View {
     var body: some View {
         
         ZStack{
-            OnboardingView()
+            OnBoardingView()
             ZStack {
                 Color("BboxxBackgroundColor")
                     .ignoresSafeArea()
