@@ -11,8 +11,8 @@ class DecibelMeasurementViewModel: ObservableObject {
     @Published var average: Float = 0
     var peak: Float = 0
     
-    var guideString = "힘든 일을 생각하며\n힘껏 소리질러!"
-    var timeLeft = 4
+    var guideString = "더 크게\n마음껏 소리쳐!!!!"
+    var timeLeft = 3
     var secondsImage = ImageAsset.threeSeconds
     
     init() {
@@ -70,9 +70,6 @@ class DecibelMeasurementViewModel: ObservableObject {
             self.timeLeft -= 1
             
             switch self.timeLeft {
-            case 3:
-                self.guideString = "더 크게\n마음껏 소리쳐!!!!"
-                break
             case 2:
                 self.guideString = "조금만 더!"
                 self.secondsImage = ImageAsset.twoSeconds
