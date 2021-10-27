@@ -20,6 +20,7 @@
 		458C257327212F6C00E48195 /* NotificationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C257227212F6C00E48195 /* NotificationListViewModel.swift */; };
 		458DEEFF272965840033B8CC /* GrowthNoteCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DEEFE272965840033B8CC /* GrowthNoteCollectionView.swift */; };
 		458DEF0227296D640033B8CC /* GrowthNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DEF0127296D640033B8CC /* GrowthNoteCell.swift */; };
+		458DEF052729707A0033B8CC /* GrowthNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DEF042729707A0033B8CC /* GrowthNote.swift */; };
 		459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */; };
 		4594B3112727B8CE00318B3B /* FeelingNoteReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */; };
 		4594B3142727C7AA00318B3B /* FeelingNoteReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */; };
@@ -73,6 +74,7 @@
 		458C257227212F6C00E48195 /* NotificationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewModel.swift; sourceTree = "<group>"; };
 		458DEEFE272965840033B8CC /* GrowthNoteCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteCollectionView.swift; sourceTree = "<group>"; };
 		458DEF0127296D640033B8CC /* GrowthNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteCell.swift; sourceTree = "<group>"; };
+		458DEF042729707A0033B8CC /* GrowthNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNote.swift; sourceTree = "<group>"; };
 		459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementViewModel.swift; sourceTree = "<group>"; };
 		4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteReviewView.swift; sourceTree = "<group>"; };
 		4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteReviewViewModel.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				45AB2118271A9F6800404122 /* Notification.swift */,
 				45CE93502720FECF00ED60C5 /* Response.swift */,
 				6AE861972727158E00D0619E /* OnboardingScreen.swift */,
+				458DEF042729707A0033B8CC /* GrowthNote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				45B1EA77272687CF006FC5F3 /* FeelingNoteResultView.swift in Sources */,
 				4527B84227083E0E003FD4F9 /* ContentView.swift in Sources */,
 				4594B3172727C98400318B3B /* GrowthNoteResultView.swift in Sources */,
+				458DEF052729707A0033B8CC /* GrowthNote.swift in Sources */,
 				453AF0CF27180C77000DB2CA /* FeelingNoteWritingViewModel.swift in Sources */,
 				45AB2115271A9ECD00404122 /* NotificationCell.swift in Sources */,
 				45CE93512720FECF00ED60C5 /* Response.swift in Sources */,
