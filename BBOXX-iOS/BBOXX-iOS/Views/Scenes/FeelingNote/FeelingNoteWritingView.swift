@@ -15,6 +15,7 @@ struct FeelingNoteWritingView: View {
             VStack(alignment: .leading) {
                 Text("네 감정을 글로 담아봐")
                     .font(.custom("Pretendard-Bold", size: 24))
+                    .foregroundColor(Color("BboxxTextColor"))
                     
                     .padding(.top, 10)
                     .padding(.leading, 24)
@@ -23,11 +24,15 @@ struct FeelingNoteWritingView: View {
                     HStack {
                         Text(self.viewModel.dateString)
                             .font(.custom("Pretendard-Medium", size: 12))
+                            .foregroundColor(Color("BboxxGrayColor"))
+                            .opacity(0.85)
                         
                         Spacer()
                         
                         Text("\(content.count)/1200")
                             .font(.custom("Pretendard-Regular", size: 12))
+                            .foregroundColor(Color("BboxxGrayColor"))
+                            .opacity(0.4)
                     }
                     .padding(.top, 30)
                     .padding(.leading, 24)
@@ -58,9 +63,10 @@ struct FeelingNoteWritingView: View {
                     }, label: {
                         Text("다 썼어")
                             .font(.custom("Pretendard-SemiBold", size: 18))
+                            .foregroundColor(.white)
                     })
                     .frame(maxWidth: .infinity, maxHeight: 56)
-                    .background(Color.yellow)
+                    .background(Color("BboxxGrayColor"))
                     .cornerRadius(16)
                     
                     .padding(.top, 20)
