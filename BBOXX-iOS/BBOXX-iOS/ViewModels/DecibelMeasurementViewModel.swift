@@ -11,9 +11,9 @@ class DecibelMeasurementViewModel: ObservableObject {
     @Published var average: Float = 0
     var peak: Float = 0
     
-    var guideString = "힘든 일을 생각하며\n힘껏 소리질러봐!"
-    var circleProgress: CGFloat = 0
+    var guideString = "더 크게\n마음껏 소리쳐!!!!"
     var timeLeft = 3
+    var secondsImage = ImageAsset.threeSeconds
     
     init() {
         // 3 오디오 권한 확인
@@ -66,22 +66,24 @@ class DecibelMeasurementViewModel: ObservableObject {
             let correction: Float = 100
             self.average = self.average + correction
             self.peak = self.peak + correction
-            
-            self.circleProgress += 0.4
+                                    
             self.timeLeft -= 1
             
             switch self.timeLeft {
             case 2:
-                self.guideString = "더 크게 네 감정을\n마음껏 소리쳐봐!"
+                self.guideString = "\n조금만 더!"
+                self.secondsImage = ImageAsset.twoSeconds
                 break
             case 1:
-                self.guideString = "마지막까지 네 안에 있는\n모든 감정을 털어놓아봐!"
+                self.secondsImage = ImageAsset.oneSeconds
+                break
+            case 0:
                 self.endMonitoring()
                 break
             default:
                 break
             }
-            
+                  
         })
     }
     
