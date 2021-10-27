@@ -38,34 +38,7 @@ struct FeelingNoteReviewView: View {
             
             .padding(.top, 20)
             
-            VStack {
-                Button(action: {}, label: {
-                    Text("다시보니 괜찮아졌어")
-                        .font(.custom("HelveticaNeue", size: 18))
-                        .bold()
-                        .foregroundColor(.white)
-                })
-                .frame(maxWidth: .infinity, minHeight: 56)
-                .background(Color.black)
-                .cornerRadius(16)
-                
-                .padding(.top, 42)
-                .padding(.leading, 24)
-                .padding(.trailing, 24)
-                
-                Button(action: {}, label: {
-                    Text("완전히 버리고싶어")
-                        .font(.custom("HelveticaNeue", size: 18))
-                        .bold()
-                        .foregroundColor(.gray)
-                })
-                .frame(maxWidth: .infinity, minHeight: 42)
-                
-                .padding(.top, 10)
-                .padding(.leading, 24)
-                .padding(.trailing, 24)
-                .padding(.bottom, 20)
-            }
+            CustomTwoButton(firstButtonText: "다시보니 괜찮아졌어", secondButtonText: "완전히 버리고싶어")
             .background(
                 LinearGradient(gradient: Gradient(stops: [
                     .init(color: Color(UIColor.white).opacity(0.05), location: 0),
