@@ -14,7 +14,7 @@ struct GrowthNoteCollectionView: View {
     
     var body: some View {
         NavigationView {
-            VStack() {
+            VStack {
                 HStack(alignment: .center) {
                     Button(action: {}, label: {
                         Image(ImageAsset.leftSmallIcon)
@@ -33,17 +33,44 @@ struct GrowthNoteCollectionView: View {
                     })
                 }
                 .padding(.top, 20)
+                
+                if self.growthNoteList.count == 0 {
+                    VStack(alignment: .center) {
+                        
+                        Image(ImageAsset.emptyBoxIcon)
+                            .frame(width: 160, height: 160, alignment: .center)
+                        
+                        Text("아직 쓴 글이 없어.\n네가 얼만큼 성장했는지 글로 써봐.")
+                            .font(.custom("HelveticaNeue", size: 18))
+                            .multilineTextAlignment(.center)
+                        
+                            .padding(.top, 20)
 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 16) {
-                        ForEach(growthNoteList, id: \.id) { growthNote in
-                            GrowthNoteCell(date: growthNote.date, title: growthNote.title, content: growthNote.content)
+                        Button(action: {}, label: {
+                            Text("이전 감정 보러가기")
+                                .font(.custom("HelveticaNeue", size: 16))
+                                .foregroundColor(.white)
+                        })
+                        .frame(maxWidth: 166, maxHeight: 46)
+                        .background(Color.black)
+                        .cornerRadius(14)
+                        
+                        .padding(.top, 20)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+                } else {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 16) {
+                            ForEach(growthNoteList, id: \.id) { growthNote in
+                                GrowthNoteCell(date: growthNote.date, title: growthNote.title, content: growthNote.content)
+                            }
                         }
                     }
-                }                
-                .padding(.top, 20)
-                .padding(.leading, 30)
-                .padding(.bottom, 41)
+                    .padding(.top, 20)
+                    .padding(.leading, 30)
+                    .padding(.bottom, 41)
+                }
                 
             }.navigationTitle(Text("성장일기"))
             

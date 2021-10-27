@@ -39,6 +39,7 @@ struct GrowthNoteCell: View {
         }
         .frame(width: 315, height: 450)
         .background(Color.green)
+        .cornerRadius(20)
     }
     
 }
