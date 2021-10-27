@@ -18,6 +18,8 @@
 		45817756271DBE0100036086 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45817755271DBE0100036086 /* View+Extension.swift */; };
 		4581E9B227202E7A00DEEC76 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581E9B127202E7A00DEEC76 /* UserService.swift */; };
 		458C257327212F6C00E48195 /* NotificationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C257227212F6C00E48195 /* NotificationListViewModel.swift */; };
+		458DEEFF272965840033B8CC /* GrowthNoteCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DEEFE272965840033B8CC /* GrowthNoteCollectionView.swift */; };
+		458DEF0227296D640033B8CC /* GrowthNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DEF0127296D640033B8CC /* GrowthNoteCell.swift */; };
 		459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */; };
 		4594B3112727B8CE00318B3B /* FeelingNoteReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */; };
 		4594B3142727C7AA00318B3B /* FeelingNoteReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */; };
@@ -69,6 +71,8 @@
 		45817755271DBE0100036086 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		4581E9B127202E7A00DEEC76 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		458C257227212F6C00E48195 /* NotificationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewModel.swift; sourceTree = "<group>"; };
+		458DEEFE272965840033B8CC /* GrowthNoteCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteCollectionView.swift; sourceTree = "<group>"; };
+		458DEF0127296D640033B8CC /* GrowthNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteCell.swift; sourceTree = "<group>"; };
 		459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementViewModel.swift; sourceTree = "<group>"; };
 		4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteReviewView.swift; sourceTree = "<group>"; };
 		4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteReviewViewModel.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 			children = (
 				45A6222C271E6D2600B13459 /* GrowthNoteWritingView.swift */,
 				4594B3162727C98400318B3B /* GrowthNoteResultView.swift */,
+				458DEEFE272965840033B8CC /* GrowthNoteCollectionView.swift */,
+				458DEF0127296D640033B8CC /* GrowthNoteCell.swift */,
 			);
 			path = GrowthNote;
 			sourceTree = "<group>";
@@ -428,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				458DEF0227296D640033B8CC /* GrowthNoteCell.swift in Sources */,
 				4554A02A270EAA1B00A558CB /* DecibelMeasurementView.swift in Sources */,
 				4551D8CA271574EE00EF8149 /* FeelingNoteWritingView.swift in Sources */,
 				45B1EA77272687CF006FC5F3 /* FeelingNoteResultView.swift in Sources */,
@@ -442,6 +449,7 @@
 				6ACBC5B72723EE88002E1E55 /* OnboardingView.swift in Sources */,
 				459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */,
 				6AE8619A272717B200D0619E /* OffsetPageTabView.swift in Sources */,
+				458DEEFF272965840033B8CC /* GrowthNoteCollectionView.swift in Sources */,
 				4581E9B227202E7A00DEEC76 /* UserService.swift in Sources */,
 				4527B84027083E0E003FD4F9 /* BBOXX_iOSApp.swift in Sources */,
 				45B1EA74272685A0006FC5F3 /* FeelingNoteDumpViewModel.swift in Sources */,
