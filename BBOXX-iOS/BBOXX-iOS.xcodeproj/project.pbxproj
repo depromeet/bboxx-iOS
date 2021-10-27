@@ -18,6 +18,15 @@
 		45817756271DBE0100036086 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45817755271DBE0100036086 /* View+Extension.swift */; };
 		4581E9B227202E7A00DEEC76 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581E9B127202E7A00DEEC76 /* UserService.swift */; };
 		458C257327212F6C00E48195 /* NotificationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C257227212F6C00E48195 /* NotificationListViewModel.swift */; };
+		458F31482729285200F4C7EA /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 458F313F2729285200F4C7EA /* Pretendard-Regular.otf */; };
+		458F31492729285200F4C7EA /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 458F31402729285200F4C7EA /* Pretendard-Bold.otf */; };
+		458F314A2729285200F4C7EA /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 458F31412729285200F4C7EA /* Pretendard-Thin.otf */; };
+		458F314B2729285200F4C7EA /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 458F31422729285200F4C7EA /* Pretendard-Medium.otf */; };
+		458F314C2729285200F4C7EA /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 458F31432729285200F4C7EA /* Pretendard-Black.otf */; };
+		458F314D2729285200F4C7EA /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 458F31442729285200F4C7EA /* Pretendard-ExtraLight.otf */; };
+		458F314E2729285200F4C7EA /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 458F31452729285200F4C7EA /* Pretendard-Light.otf */; };
+		458F314F2729285200F4C7EA /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 458F31462729285200F4C7EA /* Pretendard-ExtraBold.otf */; };
+		458F31502729285200F4C7EA /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 458F31472729285200F4C7EA /* Pretendard-SemiBold.otf */; };
 		459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */; };
 		4594B3112727B8CE00318B3B /* FeelingNoteReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */; };
 		4594B3142727C7AA00318B3B /* FeelingNoteReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */; };
@@ -69,6 +78,15 @@
 		45817755271DBE0100036086 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		4581E9B127202E7A00DEEC76 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		458C257227212F6C00E48195 /* NotificationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewModel.swift; sourceTree = "<group>"; };
+		458F313F2729285200F4C7EA /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		458F31402729285200F4C7EA /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		458F31412729285200F4C7EA /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		458F31422729285200F4C7EA /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		458F31432729285200F4C7EA /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		458F31442729285200F4C7EA /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		458F31452729285200F4C7EA /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		458F31462729285200F4C7EA /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		458F31472729285200F4C7EA /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementViewModel.swift; sourceTree = "<group>"; };
 		4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteReviewView.swift; sourceTree = "<group>"; };
 		4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteReviewViewModel.swift; sourceTree = "<group>"; };
@@ -137,6 +155,7 @@
 		4527B83E27083E0E003FD4F9 /* BBOXX-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				458F3152272929AA00F4C7EA /* Supporting Files */,
 				6ACBC5AF2723ECEF002E1E55 /* Networks */,
 				6ACBC5AB2723EC6D002E1E55 /* Helpers */,
 				45817759271DBF4100036086 /* Extensions */,
@@ -146,7 +165,6 @@
 				6A02124A270A1AD8002828D9 /* Views */,
 				45570FF4270AFEF100ECE13D /* ViewModels */,
 				4527B84327083E11003FD4F9 /* Assets.xcassets */,
-				4527B84827083E11003FD4F9 /* Info.plist */,
 				45C84DA927240396000E4886 /* GoogleService-Info.plist */,
 				4527B84527083E11003FD4F9 /* Preview Content */,
 			);
@@ -183,6 +201,31 @@
 				45817755271DBE0100036086 /* View+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		458F31352729280200F4C7EA /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				458F31432729285200F4C7EA /* Pretendard-Black.otf */,
+				458F31402729285200F4C7EA /* Pretendard-Bold.otf */,
+				458F31462729285200F4C7EA /* Pretendard-ExtraBold.otf */,
+				458F31442729285200F4C7EA /* Pretendard-ExtraLight.otf */,
+				458F31452729285200F4C7EA /* Pretendard-Light.otf */,
+				458F31422729285200F4C7EA /* Pretendard-Medium.otf */,
+				458F313F2729285200F4C7EA /* Pretendard-Regular.otf */,
+				458F31472729285200F4C7EA /* Pretendard-SemiBold.otf */,
+				458F31412729285200F4C7EA /* Pretendard-Thin.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		458F3152272929AA00F4C7EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				458F31352729280200F4C7EA /* Font */,
+				4527B84827083E11003FD4F9 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		4594B3192727C99E00318B3B /* GrowthNote */ = {
@@ -373,8 +416,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				458F314D2729285200F4C7EA /* Pretendard-ExtraLight.otf in Resources */,
+				458F314B2729285200F4C7EA /* Pretendard-Medium.otf in Resources */,
 				4527B84727083E11003FD4F9 /* Preview Assets.xcassets in Resources */,
+				458F31502729285200F4C7EA /* Pretendard-SemiBold.otf in Resources */,
+				458F314E2729285200F4C7EA /* Pretendard-Light.otf in Resources */,
+				458F31492729285200F4C7EA /* Pretendard-Bold.otf in Resources */,
+				458F31482729285200F4C7EA /* Pretendard-Regular.otf in Resources */,
+				458F314F2729285200F4C7EA /* Pretendard-ExtraBold.otf in Resources */,
+				458F314A2729285200F4C7EA /* Pretendard-Thin.otf in Resources */,
 				4527B84427083E11003FD4F9 /* Assets.xcassets in Resources */,
+				458F314C2729285200F4C7EA /* Pretendard-Black.otf in Resources */,
 				45C84DAA27240396000E4886 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,7 +653,7 @@
 				DEVELOPMENT_TEAM = 93A6S4WHC4;
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "";
-				INFOPLIST_FILE = "BBOXX-iOS/Info.plist";
+				INFOPLIST_FILE = "BBOXX-iOS/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -625,7 +677,7 @@
 				DEVELOPMENT_TEAM = 93A6S4WHC4;
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "";
-				INFOPLIST_FILE = "BBOXX-iOS/Info.plist";
+				INFOPLIST_FILE = "BBOXX-iOS/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
