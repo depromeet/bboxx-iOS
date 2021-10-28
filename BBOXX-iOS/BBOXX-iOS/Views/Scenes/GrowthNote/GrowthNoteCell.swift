@@ -36,6 +36,12 @@ struct GrowthNoteCell: View {
                 .padding(.trailing, 20)
             
             Spacer()
+            
+            TagView(tags: ["cat", "dog", "cat", "rabbit", "왜그랬지", "이불차기기"])
+                .frame(height: 120)
+                .background(Color.yellow)
+                
+                .padding(.leading, 18)
         }
         .frame(width: 315, height: 450)
         .background(Color.green)
