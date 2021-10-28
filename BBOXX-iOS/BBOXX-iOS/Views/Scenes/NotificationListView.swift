@@ -12,6 +12,7 @@ struct NotificationListView: View {
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Pretendard-Bold", size: 24) ?? .systemFont(ofSize: 24), .foregroundColor : UIColor(named: "BboxxTextColor") ?? .black]
+        UITableView.appearance().backgroundColor = UIColor(named: "BboxxBackgroundColor")
     }
     
     var body: some View {
