@@ -43,7 +43,7 @@ struct GrowthNoteCell: View {
                 .padding(.leading, 10)
         }
         .frame(width: 315, height: 450)
-        .background(Color.green)
+        .background(Color.white)
         .cornerRadius(20)
     }
     
