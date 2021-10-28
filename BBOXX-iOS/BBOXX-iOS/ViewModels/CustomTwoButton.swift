@@ -14,12 +14,11 @@ struct CustomTwoButton: View {
         VStack {
             Button(action: {}, label: {
                 Text(firstButtonText)
-                    .font(.custom("HelveticaNeue", size: 18))
-                    .bold()
+                    .font(.custom("Pretendard-SemiBold", size: 18))
                     .foregroundColor(.white)
             })
             .frame(maxWidth: .infinity, minHeight: 56)
-            .background(Color.black)
+            .background(Color("BboxxTextColor"))
             .cornerRadius(16)
             
             .padding(.top, 42)
@@ -28,9 +27,8 @@ struct CustomTwoButton: View {
             
             Button(action: {}, label: {
                 Text(secondButtonText)
-                    .font(.custom("HelveticaNeue", size: 18))
-                    .bold()
-                    .foregroundColor(.gray)
+                    .font(.custom("Pretendard-SemiBold", size: 18))
+                    .foregroundColor(Color("BboxxGrayColor").opacity(0.4))
             })
             .frame(maxWidth: .infinity, minHeight: 42)
             
