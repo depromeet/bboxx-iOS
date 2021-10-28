@@ -26,6 +26,7 @@
 		4594B3112727B8CE00318B3B /* FeelingNoteReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */; };
 		4594B3142727C7AA00318B3B /* FeelingNoteReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */; };
 		4594B3172727C98400318B3B /* GrowthNoteResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3162727C98400318B3B /* GrowthNoteResultView.swift */; };
+		4596D1DF272A64CB00047C74 /* GrowthNoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4596D1DE272A64CB00047C74 /* GrowthNoteDetailView.swift */; };
 		459E5AFE271FB6F5000D3F53 /* CreateNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E5AFD271FB6F5000D3F53 /* CreateNicknameView.swift */; };
 		45A6222D271E6D2600B13459 /* GrowthNoteWritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6222C271E6D2600B13459 /* GrowthNoteWritingView.swift */; };
 		45A62230271E6E4900B13459 /* GrowthNoteWritingViewModelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6222F271E6E4900B13459 /* GrowthNoteWritingViewModelModel.swift */; };
@@ -81,6 +82,7 @@
 		4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteReviewView.swift; sourceTree = "<group>"; };
 		4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteReviewViewModel.swift; sourceTree = "<group>"; };
 		4594B3162727C98400318B3B /* GrowthNoteResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteResultView.swift; sourceTree = "<group>"; };
+		4596D1DE272A64CB00047C74 /* GrowthNoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteDetailView.swift; sourceTree = "<group>"; };
 		459E5AFD271FB6F5000D3F53 /* CreateNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameView.swift; sourceTree = "<group>"; };
 		45A6222C271E6D2600B13459 /* GrowthNoteWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteWritingView.swift; sourceTree = "<group>"; };
 		45A6222F271E6E4900B13459 /* GrowthNoteWritingViewModelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteWritingViewModelModel.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				4594B3162727C98400318B3B /* GrowthNoteResultView.swift */,
 				458DEEFE272965840033B8CC /* GrowthNoteCollectionView.swift */,
 				458DEF0127296D640033B8CC /* GrowthNoteCell.swift */,
+				4596D1DE272A64CB00047C74 /* GrowthNoteDetailView.swift */,
 			);
 			path = GrowthNote;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				4581E9B227202E7A00DEEC76 /* UserService.swift in Sources */,
 				4527B84027083E0E003FD4F9 /* BBOXX_iOSApp.swift in Sources */,
 				45B1EA74272685A0006FC5F3 /* FeelingNoteDumpViewModel.swift in Sources */,
+				4596D1DF272A64CB00047C74 /* GrowthNoteDetailView.swift in Sources */,
 				459E5AFE271FB6F5000D3F53 /* CreateNicknameView.swift in Sources */,
 				45B1EA4B272660CC006FC5F3 /* FeelingNoteDumpView.swift in Sources */,
 				45A6222D271E6D2600B13459 /* GrowthNoteWritingView.swift in Sources */,
