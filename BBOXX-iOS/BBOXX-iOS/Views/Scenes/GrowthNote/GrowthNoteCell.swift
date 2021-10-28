@@ -4,11 +4,13 @@ struct GrowthNoteCell: View {
     var date: String = ""
     var title: String = ""
     var content: String = ""
+    var feelings: [String] = []
     
-    init(date: String, title: String, content: String) {
+    init(date: String, title: String, content: String, feelings: [String]) {
         self.date = date
         self.title = title
         self.content = content
+        self.feelings = feelings
     }
     
     var body: some View {
@@ -34,14 +36,11 @@ struct GrowthNoteCell: View {
                 .padding(.top, 10)
                 .padding(.leading, 20)
                 .padding(.trailing, 20)
-            
-            Spacer()
-            
-            TagView(tags: ["cat", "dog", "cat", "rabbit", "왜그랬지", "이불차기기"])
+                        
+            TagView(tags: self.feelings)
                 .frame(height: 120)
-                .background(Color.yellow)
                 
-                .padding(.leading, 18)
+                .padding(.leading, 10)
         }
         .frame(width: 315, height: 450)
         .background(Color.green)
