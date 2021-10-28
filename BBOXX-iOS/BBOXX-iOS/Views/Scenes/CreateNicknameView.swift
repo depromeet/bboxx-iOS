@@ -5,7 +5,7 @@ struct CreateNicknameView: View {
     @ObservedObject var viewModel = CreateNicknameViewModel()
     
     var body: some View {
-        VStack {            
+        VStack {
             Text("너를 뭐라고 부를까?")
                 .font(.custom("Pretendard-Bold", size: 24))
             

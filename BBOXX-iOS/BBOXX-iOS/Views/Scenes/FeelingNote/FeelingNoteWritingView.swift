@@ -51,7 +51,8 @@ struct FeelingNoteWritingView: View {
                         .padding(.trailing, 24)
                     
                     TextEditor(text: $content)
-                        .font(.custom("HelveticaNeue", size: 16))
+                        .font(.custom("Pretendard-Regular", size: 16))
+                        .foregroundColor(Color("BboxxTextColor"))
                         
                         .padding(.top, 10)
                         .padding(.leading, 24)
