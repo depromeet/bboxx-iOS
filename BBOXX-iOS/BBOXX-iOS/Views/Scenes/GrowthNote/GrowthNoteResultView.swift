@@ -4,8 +4,8 @@ struct GrowthNoteResultView: View {
     var body: some View {
         VStack(alignment: .center) {
             Text("네 감정을 담은 성장일기를 썼어")
-                .font(.custom("HelveticaNeue", size: 24))
-                .bold()
+                .font(.custom("Pretendard-Bold", size: 24))
+                .foregroundColor(Color("BboxxTextColor"))
 
                 .padding(.top, 34)
             
@@ -19,12 +19,11 @@ struct GrowthNoteResultView: View {
             
             Button(action: {}, label: {
                 Text("보러가기")
-                    .font(.custom("HelveticaNeue", size: 18))
-                    .bold()
+                    .font(.custom("Pretendard-SemiBold", size: 18))
                     .foregroundColor(.white)
             })
             .frame(maxWidth: .infinity, maxHeight: 56)
-            .background(Color.black)
+            .background(Color("BboxxGrayColor"))
             .cornerRadius(16)
             
             .padding(.bottom, 30)
