@@ -13,12 +13,12 @@ struct SplashView: View {
                 Image(ImageAsset.splash_background2)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .background("BboxxGrayColor")
+                    .background(Color("BboxxGrayColor"))
                 ZStack {
                     Image(ImageAsset.splash_background1)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .background("BboxxGrayColor")
+                        .background(Color("BboxxGrayColor"))
                 }
                 .opacity(removeSplash1 ? 0 : 1)
             }
