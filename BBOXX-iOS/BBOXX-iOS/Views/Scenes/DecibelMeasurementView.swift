@@ -21,7 +21,11 @@ struct DecibelMeasurementView: View {
                         .multilineTextAlignment(.center)
                 }
                 
-                NavigationLink(destination: DecibelMeasurementResultView(decibel: self.viewModel.peak), tag: 1, selection: self.$viewModel.tag) {
+                NavigationLink(destination: DecibelMeasurementResultView(
+                                decibel: self.viewModel.peak,
+                                title: self.viewModel.title,
+                    backgroundColor: self.viewModel.backgroundColor
+                ), tag: 1, selection: self.$viewModel.tag) {
                     EmptyView()
                 }
                 

@@ -10,7 +10,7 @@ struct BBOXX_iOSApp: App {
     
     var body: some Scene {
         WindowGroup {
-            DecibelMeasurementResultView(decibel: 120)
+            SplashView()
         }
     }
 }

@@ -3,19 +3,21 @@ import SwiftUI
 struct DecibelMeasurementResultView: View {
     
     var decibel: Int = 0
+    var title: String = ""
+    var backgroundColor: Color = Color.white
     
-    init(decibel: Float) {
+    init(decibel: Float, title: String, backgroundColor: Color) {
         self.decibel = Int(decibel)
+        self.title = title
+        self.backgroundColor = backgroundColor
     }
     
     var body: some View {
-        NavigationView {
             VStack(alignment: .leading) {
-                Text("운석이 충돌한 줄 알았어!\n속 시원하게 다 게웠어?☄️")
+                Text(title)
                     .font(.custom("Pretendard-Bold", size: 20))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
-                    
                     .padding(.top, 35)
                 
                 HStack {
@@ -51,7 +53,7 @@ struct DecibelMeasurementResultView: View {
                 }
                 .padding(.top, 24)
                 
-                Spacer()
+                //Spacer()
                 
                 HStack {
                     Spacer()
@@ -88,8 +90,7 @@ struct DecibelMeasurementResultView: View {
             .padding(.leading, 24)
             .padding(.trailing, 24)
             
-            .background(Color.red).ignoresSafeArea()
-            //.frame(maxWidth: .infinity, maxHeight: .infinity)
-        }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(backgroundColor).ignoresSafeArea()
     }
 }
