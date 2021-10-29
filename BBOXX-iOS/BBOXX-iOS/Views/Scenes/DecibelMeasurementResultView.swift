@@ -60,9 +60,8 @@ struct DecibelMeasurementResultView: View {
                 HStack {
                     Spacer()
                     
-                    Image("")
+                    Image(ImageAsset.stoneIcon)
                         .frame(width: 199, height: 217)
-                        .background(Color.gray)
                 }
                 .padding(.top, 11)
                 

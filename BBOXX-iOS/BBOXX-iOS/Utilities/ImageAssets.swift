@@ -19,4 +19,5 @@ enum ImageAsset {
     static let trashIcon = "trashIcon"
     static let hugIcon = "hugIcon"
     static let writingIcon = "writingIcon"
+    static let stoneIcon = "stoneIcon"
 }
