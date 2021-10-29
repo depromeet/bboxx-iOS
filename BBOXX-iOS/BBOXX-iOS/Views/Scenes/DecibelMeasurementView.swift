@@ -2,57 +2,58 @@ import SwiftUI
 
 struct DecibelMeasurementView: View {
     
-    @ObservedObject var decibelMeasurementViewModel = DecibelMeasurementViewModel()
+    @ObservedObject var viewModel = DecibelMeasurementViewModel()
     
     @State var showMic = true
-        
+    
     var body: some View {
-        VStack {
-            Text(self.decibelMeasurementViewModel.guideString)
-                .font(.custom("HelveticaNeue", size: 24))
-                .multilineTextAlignment(.center)
+        NavigationView {
+            VStack {
+                if showMic {
+                    Text("힘든 일을 생각하며\n힘껏 소리질러!")
+                        .font(.custom("Pretendard-Bold", size: 28))
+                        .foregroundColor(Color("BboxxBackgroundColor"))
+                        .multilineTextAlignment(.center)
+                } else {
+                    Text(self.viewModel.guideString)
+                        .font(.custom("Pretendard-Bold", size: 28))
+                        .foregroundColor(Color("BboxxBackgroundColor"))
+                        .multilineTextAlignment(.center)
+                }
                 
-            Spacer()
-                .frame(height: 65)
-            
-            ZStack {
-                Circle()
-                    .stroke(Color.black, lineWidth: 3)
-                    .frame(width: 172, height: 172)
-                
-                Circle()
-                    .trim(from: 0.0, to: self.decibelMeasurementViewModel.circleProgress)
-                    .stroke(Color.white, lineWidth: 3)
-                    .frame(width: 172, height: 172)
-                    .rotationEffect(Angle(degrees: -90))
+                NavigationLink(destination: DecibelMeasurementResultView(
+                                decibel: self.viewModel.peak,
+                                title: self.viewModel.title,
+                    backgroundColor: self.viewModel.backgroundColor
+                )
+                .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(false), tag: 1, selection: self.$viewModel.tag) {
+                    EmptyView()
+                }
                 
                 Button(action: {
                     self.startMeasuring()
                 }) {
                     if showMic {
-                        Image("mic.fill")
-                            .frame(width: 30, height: 32)
+                        Image(ImageAsset.micButton)
                     } else {
-                        Text("\(self.decibelMeasurementViewModel.timeLeft)")
-                        
+                        Image(self.viewModel.secondsImage)
                     }
                 }
-                .font(.custom("HelveticaNeue", size: 40))
-                .frame(width: 160, height: 160, alignment: .center)
-                .foregroundColor(.black)
-                .background(Color.yellow)
-                .cornerRadius(160)
+                .frame(width: 165, height: 165, alignment: .center)
                 
+                .padding(.top, 46)
+                .padding(.bottom, 46)
             }
             
-            Spacer()
-                .frame(height: 65)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.black).ignoresSafeArea()
         }
     }
     
     func startMeasuring() {
         self.showMic.toggle()
-        self.decibelMeasurementViewModel.setUpMonitoring()
+        self.viewModel.setUpMonitoring()
     }
 }
 
