@@ -45,7 +45,9 @@ struct CreateNicknameView: View {
             
             Spacer()
             
-            Button(action: {}, label: {
+            Button(action: {
+                UserDefaults.standard.set($viewModel.nickname, forKey: UserDefaults.nickNameKey)
+            }, label: {
                 Text("마음에 들어")
                     .font(.custom("HelveticaNeue", size: 18))
                     .bold()
