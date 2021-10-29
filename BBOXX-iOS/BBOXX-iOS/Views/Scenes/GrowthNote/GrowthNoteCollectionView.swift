@@ -4,8 +4,10 @@ struct GrowthNoteCollectionView: View {
     
     @ObservedObject var viewModel = GrowthNoteCollectionViewModel()
     
+    @State var tag: Int? = 0
+
     init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 24) ?? .systemFont(ofSize: 24), .foregroundColor : UIColor.brown]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Pretendard-Bold", size: 24) ?? .systemFont(ofSize: 24), .foregroundColor : UIColor(named: "BboxxTextColor") ?? .black]
     }
     
     var body: some View {
@@ -62,10 +64,19 @@ struct GrowthNoteCollectionView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
 
                 } else {
+                    NavigationLink(destination:
+                                    GrowthNoteDetailView()
+                                   , tag: 1, selection: self.$tag) {
+                        EmptyView()
+                    }
+                    
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 16) {
                             ForEach(self.viewModel.growthNoteList, id: \.id) { growthNote in
                                 GrowthNoteCell(date: growthNote.date, title: growthNote.title, content: growthNote.content, feelings: growthNote.feelings)
+                                    .onTapGesture {
+                                        self.tag = 1
+                                    }
                             }
                         }
                     }
