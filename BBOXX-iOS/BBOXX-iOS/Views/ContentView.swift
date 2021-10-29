@@ -6,7 +6,7 @@ struct ContentView: View {
     
     var body: some View {
         switch viewModel.state {
-        case .signedIn: ContentView()
+        case .signedIn: MainView()
         case .signedOut: SignInView(viewModel: viewModel)
         }
     }

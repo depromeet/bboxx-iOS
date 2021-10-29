@@ -57,16 +57,18 @@ class SignInViewModel: ObservableObject {
         }
     }
     
-    func attemptKakaoSignIn() {
+    func attemptKakaoSignIn(completion: @escaping () -> Void) {
         if (UserApi.isKakaoTalkLoginAvailable()) {
             // If KakaoTalk is installed, log in from KakaoTalk
             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                 //print(error)
+                completion()
             }
         }else{
             // If KakaoTalk is not installed, log in from Safari
             UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                 //print(error)
+                completion()
             }
         }
         
@@ -75,7 +77,6 @@ class SignInViewModel: ObservableObject {
             let email = user?.kakaoAccount?.email
             let age = user?.kakaoAccount?.ageRange
             let gender = user?.kakaoAccount?.gender
-            
             print("\(email), \(age), \(gender)")
         }
     }
