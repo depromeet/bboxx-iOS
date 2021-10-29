@@ -15,7 +15,7 @@ struct MainEmptySelectionView: View {
                     )
                 VStack {
                     VStack(spacing: 120) {
-                        NavigationLink(destination: DecibelMeasurementView()) {
+                        NavigationLink(destination: DecibelMeasurementView().navigationBarHidden(true)) {
                             Image(ImageAsset.main_empty_selection_shouting)
                                 .resizable()
                                 .frame(width: 250, height: 130)

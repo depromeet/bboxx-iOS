@@ -55,7 +55,7 @@ struct MainView: View {
                         .offset(y: 15)
                     Spacer()
                     HStack(spacing: 140) {
-                        NavigationLink(destination: MainEmptySelectionView()) {
+                        NavigationLink(destination: MainEmptySelectionView().navigationBarHidden(true)) {
                             Image(ImageAsset.emptyingIcon)
                                 .resizable()
                                 .frame(width: 60, height: 60)
