@@ -11,4 +11,7 @@ enum ImageAsset {
     static let oneSeconds = "oneSeconds"
     static let twoSeconds = "twoSeconds"
     static let threeSeconds = "threeSeconds"
+    
+    static let leftSmallIcon = "leftSmallIcon"
+    static let rightSmallIcon = "rightSmallIcon"
 }
