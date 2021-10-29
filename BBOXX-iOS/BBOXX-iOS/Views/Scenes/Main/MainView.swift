@@ -62,7 +62,7 @@ struct MainView: View {
                         }
                         .frame(width: 20, height: 20)
                         .padding(.trailing, 6)
-                        NavigationLink(destination: NotificationListView()) {
+                        NavigationLink(destination: NotificationListView().navigationBarHidden(true)) {
                             Image(ImageAsset.timeMachineIcon)
                                 .resizable()
                                 .frame(width: 60, height: 60)

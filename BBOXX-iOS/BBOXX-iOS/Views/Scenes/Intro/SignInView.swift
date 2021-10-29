@@ -40,14 +40,14 @@ struct SignInView: View {
                     
                     Button(action: {
                         viewModel.attemptGoogleSignIn()
-                        NavigationLink(destination: MainView()){
+                        NavigationLink(destination: MainView().navigationBarHidden(true)){
                             Image(ImageAsset.startWithGoogleButton)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: .infinity,maxHeight: 54, alignment: .center)
                         }
                     }, label: {})
-                    NavigationLink(destination: CreateNicknameView(), isActive: $shouldMoveToNextView){
+                    NavigationLink(destination: CreateNicknameView().navigationBarHidden(true), isActive: $shouldMoveToNextView){
                         Button(action: {
                             viewModel.attemptKakaoSignIn{
                                 shouldMoveToNextView = true
