@@ -104,9 +104,8 @@ struct CardContent: View {
                 
                 .padding(.top, 8)
             
-            Image("")
+            Image(ImageAsset.trashIcon)
                 .frame(width: 200, height: 200, alignment: .center)
-                .background(Color.gray)
                 
                 .padding(.top, 20)
             

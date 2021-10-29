@@ -46,14 +46,13 @@ struct TagView: View {
 
     private func item(for text: String) -> some View {
         Text(text)
-            .font(.custom("HelveticaNeue", size: 14))
-            .foregroundColor(Color.white)
+            .font(.custom("Pretendard-Medium", size: 14))
+            .foregroundColor(.white)
             .padding()
             .lineLimit(1)
-            .background(Color.black)
+            .background(Color("BboxxGrayColor"))
             .frame(height: 34)
             .cornerRadius(20)
-            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
     }
 
     private func viewHeightReader(_ binding: Binding<CGFloat>) -> some View {

@@ -14,9 +14,8 @@ struct FeelingNoteResultView: View {
                 
                 .padding(.top, 10)
             
-            Image("")
+            Image(ImageAsset.hugIcon)
                 .frame(maxWidth: .infinity, maxHeight: 315, alignment: .center)
-                .background(Color.yellow)
                 
                 .padding(.top, 20)
             

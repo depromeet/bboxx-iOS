@@ -14,4 +14,8 @@ enum ImageAsset {
     
     static let leftSmallIcon = "leftSmallIcon"
     static let rightSmallIcon = "rightSmallIcon"
+    
+    static let trashIcon = "trashIcon"
+    static let hugIcon = "hugIcon"
+    static let writingIcon = "writingIcon"
 }

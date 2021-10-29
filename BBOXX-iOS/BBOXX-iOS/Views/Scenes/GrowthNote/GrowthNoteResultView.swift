@@ -11,9 +11,8 @@ struct GrowthNoteResultView: View {
             
             Spacer()
             
-            Image("")
+            Image(ImageAsset.writingIcon)
                 .frame(maxWidth: .infinity, maxHeight: 315)
-                .background(Color.yellow)
                         
             Spacer()
             

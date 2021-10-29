@@ -20,7 +20,8 @@ struct GrowthNoteCollectionView: View {
                     })
                     
                     Text("2021년 10월")
-                        .font(.custom("HelveticaNeue", size: 18))
+                        .font(.custom("Pretendard-SemiBold", size: 18))
+                        .foregroundColor(Color("BboxxTextColor"))
                     
                         .padding(.leading, 10)
                         .padding(.trailing, 10)
@@ -41,18 +42,19 @@ struct GrowthNoteCollectionView: View {
                             .frame(width: 160, height: 160, alignment: .center)
                         
                         Text("아직 쓴 글이 없어.\n네가 얼만큼 성장했는지 글로 써봐.")
-                            .font(.custom("HelveticaNeue", size: 18))
+                            .font(.custom("Pretendard-SemiBold", size: 18))
+                            .foregroundColor(Color("BboxxTextColor"))
                             .multilineTextAlignment(.center)
                         
                             .padding(.top, 20)
 
                         Button(action: {}, label: {
                             Text("이전 감정 보러가기")
-                                .font(.custom("HelveticaNeue", size: 16))
+                                .font(.custom("Pretendard-SemiBold", size: 16))
                                 .foregroundColor(.white)
                         })
                         .frame(maxWidth: 166, maxHeight: 46)
-                        .background(Color.black)
+                        .background(Color("BboxxGrayColor"))
                         .cornerRadius(14)
                         
                         .padding(.top, 20)

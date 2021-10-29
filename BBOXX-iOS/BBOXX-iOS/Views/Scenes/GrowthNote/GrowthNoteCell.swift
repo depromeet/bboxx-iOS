@@ -16,22 +16,24 @@ struct GrowthNoteCell: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(self.date)
-                .font(.custom("HelveticaNeue", size: 12))
+                .font(.custom("Pretendard-Medium", size: 12))
+                .foregroundColor(.white)
             
                 .padding(.top, 20)
                 .padding(.leading, 20)
                 .padding(.trailing, 20)
             
             Text(self.title)
-                .font(.custom("HelveticaNeue", size: 20))
-                .bold()
+                .font(.custom("Pretendard-Bold", size: 20))
+                .foregroundColor(.white)
                 
                 .padding(.top, 10)
                 .padding(.leading, 20)
                 .padding(.trailing, 20)
             
             Text(self.content)
-                .font(.custom("HelveticaNeue", size: 16))
+                .font(.custom("Pretendard-Regular", size: 16))
+                .foregroundColor(.white)
             
                 .padding(.top, 10)
                 .padding(.leading, 20)
@@ -43,7 +45,7 @@ struct GrowthNoteCell: View {
                 .padding(.leading, 10)
         }
         .frame(width: 315, height: 450)
-        .background(Color.white)
+        .background(Color(red: 164 / 255, green: 93 / 255, blue: 99 / 255))
         .cornerRadius(20)
     }
     
