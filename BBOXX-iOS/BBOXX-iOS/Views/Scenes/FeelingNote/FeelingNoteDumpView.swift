@@ -1,6 +1,15 @@
 import SwiftUI
 
 struct FeelingNoteDumpView: View {
+    
+    var title: String = ""
+    var content: String = ""
+    
+    init(title: String, content: String) {
+        self.title = title
+        self.content = content
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("네 힘든 감정을 정리해볼래?")
@@ -29,13 +38,13 @@ struct FeelingNoteDumpView: View {
                     }
                     .padding(.top, 30)
                     
-                    Text("아 정말 힘들다")
+                    Text(title)
                         .font(.custom("Pretendard-Bold", size: 20))
                         .foregroundColor(Color("BboxxTextColor"))
 
                         .padding(.top, 27)
                     
-                    Text("오늘 너무 힘들어.. 끝나고 중요한 약속이 있었는데 갑자기 일이 생겼다. 미안하다고 하고 허겁지겁 일을 끝내가려는데 갑자기 약속도 취소되고.. 왜이렇게 되는 일이 없냐 ㅠ... 진짜 짜증나오늘 너무 힘들어.. 끝나고 중요한 약속이 있었는데 갑자기 일이 생겼다. 미안하다고 하고 허겁지겁 일을 끝내가려는데 갑자기 약속도 취소되고.. 왜이렇게 되는 일이 없냐 ㅠ... 진짜 짜증나오늘 너무 힘들어.. 끝나고 중요한 약속이 있었는데 갑자기 일이 생겼다. ")
+                    Text(content)
                         .font(.custom("Pretendard-Regular", size: 16))
                         .foregroundColor(Color("BboxxGrayColor"))
                         
@@ -52,7 +61,7 @@ struct FeelingNoteDumpView: View {
                             ForEach(0..<10) { index in
                                 Image("")
                                     .frame(width: 80, height: 80)
-                                    .background(Color.green)
+                                    .background(Color("BboxxGrayColor"))
                             }
                         }
                     }
