@@ -14,19 +14,12 @@ struct FeelingNoteWritingView: View {
     
     var body: some View {
         NavigationView {
-            NavigationLink(destination:
-                            FeelingNoteDumpView(title: self.title, content: self.content)
-                           , tag: 1, selection: self.$tag) {
-                EmptyView()
-            }
-            
             ZStack {
                 VStack(alignment: .leading) {
                     Text("네 감정을 글로 담아봐")
                         .font(.custom("Pretendard-Bold", size: 24))
                         .foregroundColor(Color("BboxxTextColor"))
                         
-                        .padding(.top, 10)
                         .padding(.leading, 24)
                     
                     VStack {
@@ -66,6 +59,14 @@ struct FeelingNoteWritingView: View {
                             .padding(.top, 10)
                             .padding(.leading, 24)
                             .padding(.trailing, 31)
+                        
+                        NavigationLink(destination:
+                                        FeelingNoteDumpView(title: self.title, content: self.content)
+                                        .navigationBarBackButtonHidden(false)
+                                        .navigationBarHidden(true)
+                                       , tag: 1, selection: self.$tag) {
+                            EmptyView()
+                        }
                         
                         Button(action: {
                             self.tag = 1

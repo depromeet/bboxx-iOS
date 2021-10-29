@@ -25,7 +25,9 @@ struct DecibelMeasurementView: View {
                                 decibel: self.viewModel.peak,
                                 title: self.viewModel.title,
                     backgroundColor: self.viewModel.backgroundColor
-                ), tag: 1, selection: self.$viewModel.tag) {
+                )
+                .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(false), tag: 1, selection: self.$viewModel.tag) {
                     EmptyView()
                 }
                 

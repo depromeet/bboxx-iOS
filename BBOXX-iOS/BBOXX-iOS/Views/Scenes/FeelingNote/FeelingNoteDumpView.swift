@@ -1,9 +1,11 @@
 import SwiftUI
 
 struct FeelingNoteDumpView: View {
-    
+        
     var title: String = ""
     var content: String = ""
+    
+    @State private var tag: Int? = 0
     
     init(title: String, content: String) {
         self.title = title
@@ -11,16 +13,16 @@ struct FeelingNoteDumpView: View {
     }
     
     var body: some View {
+        NavigationView {
         VStack(alignment: .leading) {
             Text("네 힘든 감정을 정리해볼래?")
                 .font(.custom("Pretendard-Bold", size: 24))
                 .foregroundColor(Color("BboxxGrayColor"))
 
-                .padding(.top, 10)
                 .padding(.leading, 24)
             
-            ScrollView() {
-                LazyVStack(alignment: .leading) {
+            VStack(alignment: .leading) {
+                ScrollView() {
                     HStack {
                         Text("오늘")
                             .font(.custom("Pretendard-Medium", size: 28))
@@ -49,7 +51,7 @@ struct FeelingNoteDumpView: View {
                         .foregroundColor(Color("BboxxGrayColor"))
                         
                         .padding(.top, 10)
-                    
+                                    
                     Text("내 감정은..")
                         .font(.custom("Pretendard-Bold", size: 20))
                         .foregroundColor(Color("BboxxTextColor"))
@@ -69,8 +71,18 @@ struct FeelingNoteDumpView: View {
                     
                     .padding(.top, 40)
                     .padding(.trailing, -24)
+                    
+                    NavigationLink(destination:
+                                    FeelingNoteResultView()
+                                    .navigationBarBackButtonHidden(false)
+                                    .navigationBarHidden(true)
+                                   , tag: 1, selection: self.$tag) {
+                        EmptyView()
+                    }
                         
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.tag = 1
+                    }, label: {
                         Text("버릴래")
                             .font(.custom("Pretendard-SemiBold", size: 18))
                             .foregroundColor(.white)
@@ -92,5 +104,7 @@ struct FeelingNoteDumpView: View {
             
         }
         .background(Color("BboxxBackgroundColor").ignoresSafeArea())
+        }
+        
     }
 }

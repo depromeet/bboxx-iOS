@@ -6,6 +6,8 @@ struct DecibelMeasurementResultView: View {
     var title: String = ""
     var backgroundColor: Color = Color.white
     
+    @State var tag: Int? = 0
+    
     init(decibel: Float, title: String, backgroundColor: Color) {
         self.decibel = Int(decibel)
         self.title = title
@@ -64,8 +66,17 @@ struct DecibelMeasurementResultView: View {
                 }
                 .padding(.top, 11)
                 
+                NavigationLink(destination: FeelingNoteWritingView()
+                                .navigationBarBackButtonHidden(false)
+                                .navigationBarHidden(true)
+                , tag: 1, selection: self.$tag) {
+                    EmptyView()
+                }
+                
                 HStack(spacing: 15) {
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.tag = 1
+                    }, label: {
                         Text("감정일기 쓰기")
                             .font(.custom("Pretendard-SemiBold", size: 18))
                             .foregroundColor(Color("BboxxGrayColor").opacity(0.5))
