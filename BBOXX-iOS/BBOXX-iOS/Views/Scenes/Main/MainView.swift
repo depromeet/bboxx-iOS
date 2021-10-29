@@ -54,22 +54,19 @@ struct MainView: View {
                         .padding(.leading, 30)
                         .offset(y: 15)
                     Spacer()
-                    HStack(spacing: 135) {
-                        Button {
-                            print("Edit button was tapped")
-                        } label: {
+                    HStack(spacing: 140) {
+                        NavigationLink(destination: MainEmptySelectionView()) {
                             Image(ImageAsset.emptyingIcon)
                                 .resizable()
                                 .frame(width: 60, height: 60)
                         }
-                        .frame(width: 50, height: 50)
+                        .frame(width: 20, height: 20)
                         .padding(.trailing, 6)
                         NavigationLink(destination: NotificationListView()) {
                             Image(ImageAsset.timeMachineIcon)
                                 .resizable()
                                 .frame(width: 60, height: 60)
                         }
-                        
                         .frame(width: 20, height: 20)
                         .padding(.trailing, 6)
                     }
@@ -82,9 +79,9 @@ struct MainView: View {
                             .frame(width: 40, height: 40)
                     }
                     .fullScreenCover(isPresented: $showGrowthView){
-                        //GrowthCollectionView().edgesIngoringSafeArea(.all)
+                        GrowthNoteCollectionView()
                     }
-                    .frame(width: 50, height: 50)
+                    .frame(width: 60, height: 60)
                     .padding(.trailing, 6)
                 }
                 .edgesIgnoringSafeArea(.all)
