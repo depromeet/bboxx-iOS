@@ -6,6 +6,7 @@ enum ImageAsset {
     static let toolTip = "toolTip"
     static let emptyBoxIcon = "emptyBoxIcon"
     static let redoButton = "redoButton"
+    static let redoWhiteButton = "redoWhiteButton"
     
     static let micButton = "micButton"
     static let oneSeconds = "oneSeconds"

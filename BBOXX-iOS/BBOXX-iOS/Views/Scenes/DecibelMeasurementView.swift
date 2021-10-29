@@ -7,37 +7,42 @@ struct DecibelMeasurementView: View {
     @State var showMic = true
     
     var body: some View {
-        VStack {
-            if showMic {
-                Text("힘든 일을 생각하며\n힘껏 소리질러!")
-                    .font(.custom("Pretendard-Bold", size: 28))
-                    .foregroundColor(Color("BboxxBackgroundColor"))
-                    .multilineTextAlignment(.center)
-            } else {
-                Text(self.viewModel.guideString)
-                    .font(.custom("Pretendard-Bold", size: 28))
-                    .foregroundColor(Color("BboxxBackgroundColor"))
-                    .multilineTextAlignment(.center)
-            }
-            
-            Button(action: {
-                self.startMeasuring()
-            }) {
+        NavigationView {
+            VStack {
                 if showMic {
-                    Image(ImageAsset.micButton)
+                    Text("힘든 일을 생각하며\n힘껏 소리질러!")
+                        .font(.custom("Pretendard-Bold", size: 28))
+                        .foregroundColor(Color("BboxxBackgroundColor"))
+                        .multilineTextAlignment(.center)
                 } else {
-                    Image(self.viewModel.secondsImage)
-                    
+                    Text(self.viewModel.guideString)
+                        .font(.custom("Pretendard-Bold", size: 28))
+                        .foregroundColor(Color("BboxxBackgroundColor"))
+                        .multilineTextAlignment(.center)
                 }
+                
+                NavigationLink(destination: DecibelMeasurementResultView(decibel: self.viewModel.peak), tag: 1, selection: self.$viewModel.tag) {
+                    EmptyView()
+                }
+                
+                Button(action: {
+                    self.startMeasuring()
+                }) {
+                    if showMic {
+                        Image(ImageAsset.micButton)
+                    } else {
+                        Image(self.viewModel.secondsImage)
+                    }
+                }
+                .frame(width: 165, height: 165, alignment: .center)
+                
+                .padding(.top, 46)
+                .padding(.bottom, 46)
             }
-            .frame(width: 165, height: 165, alignment: .center)
             
-            .padding(.top, 46)
-            .padding(.bottom, 46)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.black).ignoresSafeArea()
         }
-        
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black).ignoresSafeArea()
     }
     
     func startMeasuring() {

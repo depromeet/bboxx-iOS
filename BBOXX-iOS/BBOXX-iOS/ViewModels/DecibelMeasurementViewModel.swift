@@ -1,5 +1,6 @@
 import Foundation
 import AVFoundation
+import SwiftUI
 
 class DecibelMeasurementViewModel: ObservableObject {
     
@@ -14,6 +15,8 @@ class DecibelMeasurementViewModel: ObservableObject {
     var guideString = "더 크게\n마음껏 소리쳐!!!!"
     var timeLeft = 3
     var secondsImage = ImageAsset.threeSeconds
+    
+    @Published var tag: Int? = 0
     
     init() {
         // 3 오디오 권한 확인
@@ -78,6 +81,7 @@ class DecibelMeasurementViewModel: ObservableObject {
                 self.secondsImage = ImageAsset.oneSeconds
                 break
             case 0:
+                self.tag = 1
                 self.endMonitoring()
                 break
             default:
