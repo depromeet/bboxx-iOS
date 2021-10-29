@@ -38,6 +38,14 @@ struct FeelingNoteResultView: View {
                     EmptyView()
                 }
                 
+                NavigationLink(destination:
+                                MainView()
+                                .navigationBarBackButtonHidden(false)
+                                .navigationBarHidden(true)
+                               , tag: 2, selection: self.$tag) {
+                    EmptyView()
+                }
+                
                 HStack(spacing: 15) {
                     Button(action: {
                         self.tag = 1
@@ -52,6 +60,7 @@ struct FeelingNoteResultView: View {
                     )
                     
                     Button(action: {
+                        self.tag = 2
                     }, label: {
                         Text("홈으로")
                             .font(.custom("Pretendard-SemiBold", size: 18))

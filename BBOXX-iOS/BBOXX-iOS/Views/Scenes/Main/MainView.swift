@@ -69,6 +69,7 @@ struct MainView: View {
                                 .resizable()
                                 .frame(width: 60, height: 60)
                         }
+                        
                         .frame(width: 20, height: 20)
                         .padding(.trailing, 6)
                     }

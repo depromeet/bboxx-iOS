@@ -218,8 +218,6 @@
 				45A6223A271EA68600B13459 /* BottomCard.swift */,
 				459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */,
 				458C257227212F6C00E48195 /* NotificationListViewModel.swift */,
-				45CE93532721067900ED60C5 /* CreateNicknameViewModel.swift */,
-				6A5311BB2723EB8300B14768 /* SignInViewModel.swift */,
 				45B7B6862728EB15006B8B9E /* CustomTwoButton.swift */,
 				4593F9C7272A38B50006F8A2 /* TagView.swift */,
 				4589B58D272BDFAE00A5F60E /* DecibelMeasurementResultViewModel.swift */,
@@ -409,8 +407,8 @@
 		6AC41438272C222500935C43 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
-				6A5311BB2723EB8300B14768 /* SignInViewModel.swift */,
 				45CE93532721067900ED60C5 /* CreateNicknameViewModel.swift */,
+				6A5311BB2723EB8300B14768 /* SignInViewModel.swift */,
 				6AC41441272C57B400935C43 /* OnboardingViewModel.swift */,
 			);
 			path = Intro;
