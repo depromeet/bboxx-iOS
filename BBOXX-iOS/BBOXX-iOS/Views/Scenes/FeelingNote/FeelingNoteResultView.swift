@@ -4,11 +4,13 @@ struct FeelingNoteResultView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("부끄럼쟁이 딸기야,\n좀 후련해졌어?")
-                .font(.custom("HelveticaNeue", size: 24))
-                .bold()
+                .font(.custom("Pretendard-Bold", size: 24))
+                .foregroundColor(Color("BboxxGrayColor"))
             
             Text("너는 소중한 사람이니까 행복해지면 좋겠어.")
-                .font(.custom("HelveticaNeue", size: 14))
+                .font(.custom("Pretendard-Regular", size: 14))
+                .foregroundColor(Color("BboxxGrayColor"))
+                .opacity(0.7)
                 
                 .padding(.top, 10)
             
@@ -28,23 +30,21 @@ struct FeelingNoteResultView: View {
             HStack(spacing: 15) {
                 Button(action: {}, label: {
                     Text("소리지르기")
-                        .font(.custom("HelveticaNeue", size: 18))
-                        .bold()
-                        .foregroundColor(.black)
+                        .font(.custom("Pretendard-SemiBold", size: 18))
+                        .foregroundColor(Color("BboxxGrayColor").opacity(0.85))
                 })
                 .frame(maxWidth: .infinity, minHeight: 56)
                 .overlay(RoundedRectangle(cornerRadius: 16)
-                            .stroke(Color.black, lineWidth: 2)
+                            .stroke(Color("BboxxGrayColor").opacity(0.85), lineWidth: 2)
                 )
                 
                 Button(action: {}, label: {
                     Text("홈으로")
-                        .font(.custom("HelveticaNeue", size: 18))
-                        .bold()
+                        .font(.custom("Pretendard-SemiBold", size: 18))
                         .foregroundColor(.white)
                 })
                 .frame(maxWidth: .infinity, minHeight: 56)
-                .background(Color.black)
+                .background(Color("BboxxGrayColor"))
                 .cornerRadius(16)
             }
             .padding(.bottom, 30)
@@ -55,11 +55,5 @@ struct FeelingNoteResultView: View {
         .padding(.trailing, 24)
         
         .background(Color("BboxxBackgroundColor").ignoresSafeArea())
-    }
-}
-
-struct FeelingNoteResultView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeelingNoteResultView()
     }
 }

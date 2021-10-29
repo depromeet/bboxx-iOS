@@ -10,15 +10,13 @@ struct DecibelMeasurementView: View {
         VStack {
             if showMic {
                 Text("힘든 일을 생각하며\n힘껏 소리질러!")
-                    .font(.custom("HelveticaNeue", size: 28))
-                    .bold()
-                    .foregroundColor(.white)
+                    .font(.custom("Pretendard-Bold", size: 28))
+                    .foregroundColor(Color("BboxxBackgroundColor"))
                     .multilineTextAlignment(.center)
             } else {
                 Text(self.viewModel.guideString)
-                    .font(.custom("HelveticaNeue", size: 28))
-                    .bold()
-                    .foregroundColor(.white)
+                    .font(.custom("Pretendard-Bold", size: 28))
+                    .foregroundColor(Color("BboxxBackgroundColor"))
                     .multilineTextAlignment(.center)
             }
             
