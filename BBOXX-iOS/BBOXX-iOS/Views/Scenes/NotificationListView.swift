@@ -9,6 +9,7 @@ struct NotificationListView: View {
         Notification(currentDate: "10. 23.", date: "n일 전", content: "자이언트펭귄! 한달 전(2021년 10월 20일)에 쓴 일기가 도착했어 📬 한번 읽어볼래? 자이언트펭귄! 한달 전(2021년 10월 20일)에 쓴 일기가 도착했어 📬 한번 읽어볼래"),
         Notification(currentDate: "10. 23.", date: "n일 전", content: "자이언트펭귄! 한달 전(2021년 10월 20일)에 쓴 일기가 도착했어 📬 한번 읽어볼래? 자이언트펭귄! 한달 전(2021년 10월 20일)에 쓴 일기가 도착했어 📬 한번 읽어볼래")
     ]
+    @State var tag: Int? = 0
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Pretendard-Bold", size: 24) ?? .systemFont(ofSize: 24), .foregroundColor : UIColor(named: "BboxxTextColor") ?? .black]
@@ -29,9 +30,20 @@ struct NotificationListView: View {
                         .padding(.top, 20)
                         .padding(.bottom, 56)
                 } else {
+                    NavigationLink(destination:
+                                    FeelingNoteReviewView()
+                                    .navigationBarBackButtonHidden(false)
+                                    .navigationBarHidden(true)
+                                   , tag: 1, selection: self.$tag) {
+                        EmptyView()
+                    }
+                    
                     List() {
                         ForEach(self.notificationList, id: \.id) { noti in
                             NotificationCell(notification: noti)
+                                .onTapGesture {
+                                    self.tag = 1
+                                }
                         }
                         .onDelete(perform: deleteNotification)
                         .listRowBackground(Color("BboxxBackgroundColor"))
@@ -57,3 +69,4 @@ struct NotificationListView_Previews: PreviewProvider {
         NotificationListView()
     }
 }
+
