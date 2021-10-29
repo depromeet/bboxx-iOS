@@ -18,10 +18,16 @@
 		45817756271DBE0100036086 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45817755271DBE0100036086 /* View+Extension.swift */; };
 		4581E9B227202E7A00DEEC76 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581E9B127202E7A00DEEC76 /* UserService.swift */; };
 		458C257327212F6C00E48195 /* NotificationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C257227212F6C00E48195 /* NotificationListViewModel.swift */; };
+		458DEEFF272965840033B8CC /* GrowthNoteCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DEEFE272965840033B8CC /* GrowthNoteCollectionView.swift */; };
+		458DEF0227296D640033B8CC /* GrowthNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DEF0127296D640033B8CC /* GrowthNoteCell.swift */; };
+		458DEF052729707A0033B8CC /* GrowthNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DEF042729707A0033B8CC /* GrowthNote.swift */; };
 		459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */; };
+		4593F9C8272A38B50006F8A2 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593F9C7272A38B50006F8A2 /* TagView.swift */; };
 		4594B3112727B8CE00318B3B /* FeelingNoteReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */; };
 		4594B3142727C7AA00318B3B /* FeelingNoteReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */; };
 		4594B3172727C98400318B3B /* GrowthNoteResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3162727C98400318B3B /* GrowthNoteResultView.swift */; };
+		4596D1DF272A64CB00047C74 /* GrowthNoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4596D1DE272A64CB00047C74 /* GrowthNoteDetailView.swift */; };
+		4596D1E3272A6A8900047C74 /* GrowthNoteCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4596D1E2272A6A8900047C74 /* GrowthNoteCollectionViewModel.swift */; };
 		459E5AFE271FB6F5000D3F53 /* CreateNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E5AFD271FB6F5000D3F53 /* CreateNicknameView.swift */; };
 		45A6222D271E6D2600B13459 /* GrowthNoteWritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6222C271E6D2600B13459 /* GrowthNoteWritingView.swift */; };
 		45A62230271E6E4900B13459 /* GrowthNoteWritingViewModelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6222F271E6E4900B13459 /* GrowthNoteWritingViewModelModel.swift */; };
@@ -69,10 +75,16 @@
 		45817755271DBE0100036086 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		4581E9B127202E7A00DEEC76 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		458C257227212F6C00E48195 /* NotificationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewModel.swift; sourceTree = "<group>"; };
+		458DEEFE272965840033B8CC /* GrowthNoteCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteCollectionView.swift; sourceTree = "<group>"; };
+		458DEF0127296D640033B8CC /* GrowthNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteCell.swift; sourceTree = "<group>"; };
+		458DEF042729707A0033B8CC /* GrowthNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNote.swift; sourceTree = "<group>"; };
 		459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementViewModel.swift; sourceTree = "<group>"; };
+		4593F9C7272A38B50006F8A2 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteReviewView.swift; sourceTree = "<group>"; };
 		4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteReviewViewModel.swift; sourceTree = "<group>"; };
 		4594B3162727C98400318B3B /* GrowthNoteResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteResultView.swift; sourceTree = "<group>"; };
+		4596D1DE272A64CB00047C74 /* GrowthNoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteDetailView.swift; sourceTree = "<group>"; };
+		4596D1E2272A6A8900047C74 /* GrowthNoteCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteCollectionViewModel.swift; sourceTree = "<group>"; };
 		459E5AFD271FB6F5000D3F53 /* CreateNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameView.swift; sourceTree = "<group>"; };
 		45A6222C271E6D2600B13459 /* GrowthNoteWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteWritingView.swift; sourceTree = "<group>"; };
 		45A6222F271E6E4900B13459 /* GrowthNoteWritingViewModelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteWritingViewModelModel.swift; sourceTree = "<group>"; };
@@ -165,14 +177,15 @@
 			isa = PBXGroup;
 			children = (
 				45B1EA7A272687EB006FC5F3 /* FeelingNote */,
+				4596D1E1272A6A3400047C74 /* GrowthNote */,
 				45817752271DBD8700036086 /* RoundedCorner.swift */,
 				45A6223A271EA68600B13459 /* BottomCard.swift */,
 				459209F6270B3BC70005A515 /* DecibelMeasurementViewModel.swift */,
 				458C257227212F6C00E48195 /* NotificationListViewModel.swift */,
 				45CE93532721067900ED60C5 /* CreateNicknameViewModel.swift */,
-				45A6222F271E6E4900B13459 /* GrowthNoteWritingViewModelModel.swift */,
 				6A5311BB2723EB8300B14768 /* SignInViewModel.swift */,
 				45B7B6862728EB15006B8B9E /* CustomTwoButton.swift */,
+				4593F9C7272A38B50006F8A2 /* TagView.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -190,6 +203,18 @@
 			children = (
 				45A6222C271E6D2600B13459 /* GrowthNoteWritingView.swift */,
 				4594B3162727C98400318B3B /* GrowthNoteResultView.swift */,
+				458DEEFE272965840033B8CC /* GrowthNoteCollectionView.swift */,
+				458DEF0127296D640033B8CC /* GrowthNoteCell.swift */,
+				4596D1DE272A64CB00047C74 /* GrowthNoteDetailView.swift */,
+			);
+			path = GrowthNote;
+			sourceTree = "<group>";
+		};
+		4596D1E1272A6A3400047C74 /* GrowthNote */ = {
+			isa = PBXGroup;
+			children = (
+				45A6222F271E6E4900B13459 /* GrowthNoteWritingViewModelModel.swift */,
+				4596D1E2272A6A8900047C74 /* GrowthNoteCollectionViewModel.swift */,
 			);
 			path = GrowthNote;
 			sourceTree = "<group>";
@@ -240,6 +265,7 @@
 				45AB2118271A9F6800404122 /* Notification.swift */,
 				45CE93502720FECF00ED60C5 /* Response.swift */,
 				6AE861972727158E00D0619E /* OnboardingScreen.swift */,
+				458DEF042729707A0033B8CC /* GrowthNote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -428,11 +454,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				458DEF0227296D640033B8CC /* GrowthNoteCell.swift in Sources */,
 				4554A02A270EAA1B00A558CB /* DecibelMeasurementView.swift in Sources */,
 				4551D8CA271574EE00EF8149 /* FeelingNoteWritingView.swift in Sources */,
 				45B1EA77272687CF006FC5F3 /* FeelingNoteResultView.swift in Sources */,
 				4527B84227083E0E003FD4F9 /* ContentView.swift in Sources */,
 				4594B3172727C98400318B3B /* GrowthNoteResultView.swift in Sources */,
+				458DEF052729707A0033B8CC /* GrowthNote.swift in Sources */,
 				453AF0CF27180C77000DB2CA /* FeelingNoteWritingViewModel.swift in Sources */,
 				45AB2115271A9ECD00404122 /* NotificationCell.swift in Sources */,
 				45CE93512720FECF00ED60C5 /* Response.swift in Sources */,
@@ -442,11 +470,14 @@
 				6ACBC5B72723EE88002E1E55 /* OnboardingView.swift in Sources */,
 				459209F7270B3BC70005A515 /* DecibelMeasurementViewModel.swift in Sources */,
 				6AE8619A272717B200D0619E /* OffsetPageTabView.swift in Sources */,
+				458DEEFF272965840033B8CC /* GrowthNoteCollectionView.swift in Sources */,
 				4581E9B227202E7A00DEEC76 /* UserService.swift in Sources */,
 				4527B84027083E0E003FD4F9 /* BBOXX_iOSApp.swift in Sources */,
 				45B1EA74272685A0006FC5F3 /* FeelingNoteDumpViewModel.swift in Sources */,
+				4596D1DF272A64CB00047C74 /* GrowthNoteDetailView.swift in Sources */,
 				459E5AFE271FB6F5000D3F53 /* CreateNicknameView.swift in Sources */,
 				45B1EA4B272660CC006FC5F3 /* FeelingNoteDumpView.swift in Sources */,
+				4596D1E3272A6A8900047C74 /* GrowthNoteCollectionViewModel.swift in Sources */,
 				45A6222D271E6D2600B13459 /* GrowthNoteWritingView.swift in Sources */,
 				6ACBC5B12723ED15002E1E55 /* SignInService.swift in Sources */,
 				6A02125C270A1EBC002828D9 /* AppDelegate.swift in Sources */,
@@ -468,6 +499,7 @@
 				45B1EA7C2726880F006FC5F3 /* FeelingNoteResultViewModel.swift in Sources */,
 				4594B3142727C7AA00318B3B /* FeelingNoteReviewViewModel.swift in Sources */,
 				6ACBC5AE2723ECB9002E1E55 /* AppleSignInCoordinator.swift in Sources */,
+				4593F9C8272A38B50006F8A2 /* TagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
