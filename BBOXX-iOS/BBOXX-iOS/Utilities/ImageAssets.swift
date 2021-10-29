@@ -34,4 +34,9 @@ enum ImageAsset {
     static let hugIcon = "hugIcon"
     static let writingIcon = "writingIcon"
     static let stoneIcon = "stoneIcon"
+    static let main_empty_selection_backButton = "main_empty_selection_backButton"
+    static let main_empty_selection_shouting = "main_empty_selection_shouting"
+    static let main_empty_selection_feelingNote = "main_empty_selection_feelingNote"
+    static let main_empty_selection_background = "main_empty_selection_background"
+    static let main_empty_selection_full_background = "main_empty_selection_full_background"
 }
