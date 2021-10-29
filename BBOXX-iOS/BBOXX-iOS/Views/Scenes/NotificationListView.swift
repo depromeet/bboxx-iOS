@@ -31,7 +31,7 @@ struct NotificationListView: View {
                         .padding(.bottom, 56)
                 } else {
                     NavigationLink(destination:
-                                    FeelingNoteReviewView()
+                                    FeelingNoteReviewView().navigationBarHidden(true)
                                     .navigationBarBackButtonHidden(false)
                                     .navigationBarHidden(true)
                                    , tag: 1, selection: self.$tag) {

@@ -19,7 +19,7 @@ struct OnboardingLastView: View {
                         .frame(width: (getScreenBounds().width / 2) * 2, height: getScreenBounds().width / 2)
                         .scaleEffect(getScreenBounds().height < 750 ? 0.7 : 1)
                     VStack(spacing: 10) {
-                        NavigationLink(destination: SignInView(viewModel: SignInViewModel())){
+                        NavigationLink(destination: SignInView(viewModel: SignInViewModel()).navigationBarHidden(true)){
                             Button(action: {}, label: {
                                 Text("응, 좋아")
                                     .foregroundColor(Color.white)

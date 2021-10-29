@@ -65,7 +65,7 @@ struct GrowthNoteCollectionView: View {
 
                 } else {
                     NavigationLink(destination:
-                                    GrowthNoteDetailView()
+                                    GrowthNoteDetailView().navigationBarHidden(true)
                                    , tag: 1, selection: self.$tag) {
                         EmptyView()
                     }

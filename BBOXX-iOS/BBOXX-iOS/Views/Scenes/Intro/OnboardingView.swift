@@ -39,7 +39,7 @@ struct OnBoardingView: View {
             .ignoresSafeArea(.container, edges: .all)
             .overlay(
                 Button(action: {
-                }) { NavigationLink(destination: OnboardingLastView()) {
+                }) { NavigationLink(destination: OnboardingLastView().navigationBarHidden(true)) {
                     Text("건너뛰기")
                         .fontWeight(.semibold)
                         .grayscale(6.0)
@@ -51,7 +51,7 @@ struct OnBoardingView: View {
                 ,alignment: .bottom
             )
             NavigationLink(destination:
-                            OnboardingLastView()
+                            OnboardingLastView().navigationBarHidden(true)
                             .navigationBarBackButtonHidden(true)
                             .navigationBarHidden(false), tag: 0, selection: self.$viewModel.tag) {
                 EmptyView()
