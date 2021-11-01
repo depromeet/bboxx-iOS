@@ -6,10 +6,27 @@ struct GrowthNoteDetailView: View {
     var body: some View {
         ScrollView() {
             VStack(alignment: .leading) {
+                HStack {
+                    Button(action: {
+                    }, label: {
+                        Image(ImageAsset.backButton)
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(.white)
+                    })
+                    .frame(
+                        alignment: .topLeading
+                    )
+                }
+                .padding(.top, 16)
+                .padding(.leading, 16)
+                
                 Text(self.growthNote.date)
                     .font(.custom("Pretendard-Medium", size: 12))
                     .foregroundColor(.white)
                 
+                    .padding(.top, 20)
                     .padding(.leading, 24)
                     .padding(.trailing, 24)
                 
@@ -40,6 +57,8 @@ struct GrowthNoteDetailView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 164 / 255, green: 93 / 255, blue: 99 / 255).ignoresSafeArea())
+        
+        .navigationBarHidden(true)
     }
 }
 
