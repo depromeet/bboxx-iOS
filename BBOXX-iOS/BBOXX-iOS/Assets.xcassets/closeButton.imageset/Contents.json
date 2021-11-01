@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "redoredo.white.1x.png",
+      "filename" : "closeButton.1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "redoredo.white.2x.png",
+      "filename" : "closeButton.2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "redoredo.white.3x.png",
+      "filename" : "closeButton.3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

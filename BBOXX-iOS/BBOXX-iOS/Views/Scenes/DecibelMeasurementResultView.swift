@@ -42,16 +42,18 @@ struct DecibelMeasurementResultView: View {
                 
                 HStack {
                     Button(action: {
-                    }) {
-                        Image(ImageAsset.redoWhiteButton)
+                    }, label: {
+                        Image(ImageAsset.redoButton)
+                            .renderingMode(.template)
                             .frame(width: 20, height: 20)
+                            .foregroundColor(.white)
                             
                             .padding(.trailing, 7)
                         
                         Text("다시 해보기")
                             .font(.custom("Pretendard-SemiBold", size: 16))
                             .foregroundColor(.white)
-                    }
+                    })
                 }
                 .padding(.top, 24)
                 

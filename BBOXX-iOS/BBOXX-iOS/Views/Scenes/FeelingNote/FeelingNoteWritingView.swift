@@ -102,7 +102,7 @@ struct FeelingNoteWritingView: View {
                             .padding(.trailing, 31)
                         
                         NavigationLink(destination:
-                                        FeelingNoteDumpView(title: self.title, content: self.content)
+                                        FeelingNoteRemindView(title: self.title, content: self.content)
                                         .navigationBarBackButtonHidden(false)
                                         .navigationBarHidden(true)
                                        , tag: 1, selection: self.$tag) {

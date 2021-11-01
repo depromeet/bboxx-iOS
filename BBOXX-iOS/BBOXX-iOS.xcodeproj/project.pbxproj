@@ -47,8 +47,8 @@
 		45AB2112271A9E0F00404122 /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB2111271A9E0F00404122 /* NotificationListView.swift */; };
 		45AB2115271A9ECD00404122 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB2114271A9ECD00404122 /* NotificationCell.swift */; };
 		45AB2119271A9F6800404122 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB2118271A9F6800404122 /* Notification.swift */; };
-		45B1EA4B272660CC006FC5F3 /* FeelingNoteDumpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B1EA4A272660CC006FC5F3 /* FeelingNoteDumpView.swift */; };
-		45B1EA74272685A0006FC5F3 /* FeelingNoteDumpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B1EA73272685A0006FC5F3 /* FeelingNoteDumpViewModel.swift */; };
+		45B1EA4B272660CC006FC5F3 /* FeelingNoteRemindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B1EA4A272660CC006FC5F3 /* FeelingNoteRemindView.swift */; };
+		45B1EA74272685A0006FC5F3 /* FeelingNoteRemindViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B1EA73272685A0006FC5F3 /* FeelingNoteRemindViewModel.swift */; };
 		45B1EA77272687CF006FC5F3 /* FeelingNoteResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B1EA76272687CF006FC5F3 /* FeelingNoteResultView.swift */; };
 		45B1EA7C2726880F006FC5F3 /* FeelingNoteResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B1EA7B2726880F006FC5F3 /* FeelingNoteResultViewModel.swift */; };
 		45B7B6872728EB15006B8B9E /* CustomTwoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7B6862728EB15006B8B9E /* CustomTwoButton.swift */; };
@@ -122,8 +122,8 @@
 		45AB2111271A9E0F00404122 /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
 		45AB2114271A9ECD00404122 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		45AB2118271A9F6800404122 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		45B1EA4A272660CC006FC5F3 /* FeelingNoteDumpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteDumpView.swift; sourceTree = "<group>"; };
-		45B1EA73272685A0006FC5F3 /* FeelingNoteDumpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteDumpViewModel.swift; sourceTree = "<group>"; };
+		45B1EA4A272660CC006FC5F3 /* FeelingNoteRemindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteRemindView.swift; sourceTree = "<group>"; };
+		45B1EA73272685A0006FC5F3 /* FeelingNoteRemindViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteRemindViewModel.swift; sourceTree = "<group>"; };
 		45B1EA76272687CF006FC5F3 /* FeelingNoteResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteResultView.swift; sourceTree = "<group>"; };
 		45B1EA7B2726880F006FC5F3 /* FeelingNoteResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteResultViewModel.swift; sourceTree = "<group>"; };
 		45B7B6862728EB15006B8B9E /* CustomTwoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTwoButton.swift; sourceTree = "<group>"; };
@@ -286,7 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				4551D8C9271574EE00EF8149 /* FeelingNoteWritingView.swift */,
-				45B1EA4A272660CC006FC5F3 /* FeelingNoteDumpView.swift */,
+				45B1EA4A272660CC006FC5F3 /* FeelingNoteRemindView.swift */,
 				45B1EA76272687CF006FC5F3 /* FeelingNoteResultView.swift */,
 				4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */,
 			);
@@ -297,7 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				453AF0CE27180C77000DB2CA /* FeelingNoteWritingViewModel.swift */,
-				45B1EA73272685A0006FC5F3 /* FeelingNoteDumpViewModel.swift */,
+				45B1EA73272685A0006FC5F3 /* FeelingNoteRemindViewModel.swift */,
 				45B1EA7B2726880F006FC5F3 /* FeelingNoteResultViewModel.swift */,
 				4594B3132727C7AA00318B3B /* FeelingNoteReviewViewModel.swift */,
 			);
@@ -590,11 +590,11 @@
 				458DEEFF272965840033B8CC /* GrowthNoteCollectionView.swift in Sources */,
 				4581E9B227202E7A00DEEC76 /* UserService.swift in Sources */,
 				4527B84027083E0E003FD4F9 /* BBOXX_iOSApp.swift in Sources */,
-				45B1EA74272685A0006FC5F3 /* FeelingNoteDumpViewModel.swift in Sources */,
+				45B1EA74272685A0006FC5F3 /* FeelingNoteRemindViewModel.swift in Sources */,
 				45A83B37272C71FB0057D4C1 /* Secret.swift in Sources */,
 				4596D1DF272A64CB00047C74 /* GrowthNoteDetailView.swift in Sources */,
 				459E5AFE271FB6F5000D3F53 /* CreateNicknameView.swift in Sources */,
-				45B1EA4B272660CC006FC5F3 /* FeelingNoteDumpView.swift in Sources */,
+				45B1EA4B272660CC006FC5F3 /* FeelingNoteRemindView.swift in Sources */,
 				4596D1E3272A6A8900047C74 /* GrowthNoteCollectionViewModel.swift in Sources */,
 				45A6222D271E6D2600B13459 /* GrowthNoteWritingView.swift in Sources */,
 				6ACBC5B12723ED15002E1E55 /* SignInService.swift in Sources */,

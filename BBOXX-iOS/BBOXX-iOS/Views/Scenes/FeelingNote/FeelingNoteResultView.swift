@@ -7,9 +7,30 @@ struct FeelingNoteResultView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
+                HStack {
+                    Spacer()
+
+                    Button(action: {
+                        
+                    }, label: {
+                        Image(ImageAsset.closeButton)
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(Color("BboxxGrayColor"))
+                    })
+                    .frame(
+                        alignment: .topTrailing
+                    )
+                    .padding(.top, 16)
+                    .padding(.trailing, 20)
+                }
+                
                 Text("부끄럼쟁이 딸기야,\n좀 후련해졌어?")
                     .font(.custom("Pretendard-Bold", size: 24))
                     .foregroundColor(Color("BboxxGrayColor"))
+                
+                    .padding(.top, 19)
                 
                 Text("너는 소중한 사람이니까 행복해지면 좋겠어.")
                     .font(.custom("Pretendard-Regular", size: 14))
@@ -78,6 +99,7 @@ struct FeelingNoteResultView: View {
             .padding(.trailing, 24)
             
             .background(Color("BboxxBackgroundColor").ignoresSafeArea())
+            .navigationBarHidden(true)
         }
     }
 }
