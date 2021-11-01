@@ -134,10 +134,12 @@ struct FeelingNoteWritingView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("BboxxBackgroundColor").ignoresSafeArea())
                 
-                BottomCard(cardShown: $cardShown,
+                BottomCard(firstButtonText: "계속 할래",
+                           secondButtonText: "그만 쓸래",
+                           cardShown: $cardShown,
                            cardDissmissal: $cardDismissal,
                            height: UIScreen.main.bounds.height/1.5) {
-                    CardContent()
+                    CardContent(title: "그만 쓰고싶어?", subTitle: "돌아가면 쓰던 글이 지워져.")
                 }
                 .animation(.default)
             }
