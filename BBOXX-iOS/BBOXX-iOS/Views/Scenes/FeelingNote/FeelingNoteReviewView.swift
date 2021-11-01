@@ -9,10 +9,27 @@ struct FeelingNoteReviewView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
+                HStack {
+                    Button(action: {
+                    }, label: {
+                        Image(ImageAsset.backButton)
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(Color("BboxxTextColor").opacity(0.7))
+                    })
+                    .frame(
+                        alignment: .topLeading
+                    )
+                }
+                .padding(.top, 16)
+                .padding(.leading, 16)
+                
                 Text("예전에 네가 느낀 감정이야")
                     .font(.custom("Pretendard-Bold", size: 24))
                     .foregroundColor(Color("BboxxTextColor"))
                     
+                    .padding(.top, 20)
                     .padding(.leading, 24)
                 
                 ScrollView() {
@@ -89,6 +106,8 @@ struct FeelingNoteReviewView: View {
                 .padding(.top, -46)
             }
             .background(Color("BboxxBackgroundColor").ignoresSafeArea())
+            
+            .navigationBarHidden(true)
         }
         
     }
