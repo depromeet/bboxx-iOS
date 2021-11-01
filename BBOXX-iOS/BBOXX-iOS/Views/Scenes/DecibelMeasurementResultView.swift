@@ -16,11 +16,26 @@ struct DecibelMeasurementResultView: View {
     
     var body: some View {
             VStack(alignment: .leading) {
+                HStack {
+                    Spacer()
+
+                    Button(action: {
+                        
+                    }, label: {
+                        Image(ImageAsset.closeButton)
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(Color("BboxxGrayColor"))
+                    })
+                    .padding(.top, 16)
+                    .padding(.trailing, -4)
+                }
+                
                 Text(title)
                     .font(.custom("Pretendard-Bold", size: 20))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
-                    .padding(.top, 35)
                 
                 HStack {
                     Text("\(self.decibel)")
