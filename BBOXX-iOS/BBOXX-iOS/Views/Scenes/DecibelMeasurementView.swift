@@ -9,6 +9,23 @@ struct DecibelMeasurementView: View {
     var body: some View {
         NavigationView {
             VStack {
+                HStack {
+                    Button(action: {
+                    }, label: {
+                        Image(ImageAsset.backButton)
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(Color("BboxxBackgroundColor").opacity(0.7))
+                    })
+
+                    Spacer()
+                }
+                .padding(.top, 36)
+                .padding(.leading, 16)
+                
+                Spacer()
+                
                 if showMic {
                     Text("힘든 일을 생각하며\n힘껏 소리질러!")
                         .font(.custom("Pretendard-Bold", size: 28))
@@ -44,10 +61,13 @@ struct DecibelMeasurementView: View {
                 
                 .padding(.top, 46)
                 .padding(.bottom, 46)
-            }
-            
+                
+                Spacer()
+                
+            }.navigationBarHidden(true)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.black).ignoresSafeArea()
+                
         }
     }
     

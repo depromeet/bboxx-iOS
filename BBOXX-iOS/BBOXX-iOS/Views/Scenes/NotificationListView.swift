@@ -12,23 +12,52 @@ struct NotificationListView: View {
     @State var tag: Int? = 0
     
     init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Pretendard-Bold", size: 24) ?? .systemFont(ofSize: 24), .foregroundColor : UIColor(named: "BboxxTextColor") ?? .black]
         UITableView.appearance().backgroundColor = UIColor(named: "BboxxBackgroundColor")
     }
     
     var body: some View {
         NavigationView {
             VStack {
+                HStack {
+                    Button(action: {
+                    }, label: {
+                        Image(ImageAsset.backButton)
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(Color("BboxxTextColor").opacity(0.7))
+                    })
+                    
+                    Spacer()
+                }
+                .padding(.top, 36)
+                .padding(.leading, 16)
+                
+                HStack {
+                    Text("나의 타임머신")
+                        .font(.custom("Pretendard-Bold", size: 24))
+                        .foregroundColor(Color("BboxxTextColor"))
+                    
+                        .padding(.top, 26)
+                        .padding(.leading, 24)
+                        
+                    Spacer()
+                }
+                
                 if notificationList.count == 0 {
+                    Spacer()
+                    
                     Image(ImageAsset.emptyBoxIcon)
                         .frame(width: 160, height: 160)
                     
-                    Text("네게 온 알림이 아직 없어.")
+                    Text("아직 타임머신이 도착하지 않았어.")
                         .font(.custom("Pretendard-Bold", size: 18))
                         .foregroundColor(Color("BboxxTextColor"))
                         
                         .padding(.top, 20)
                         .padding(.bottom, 56)
+                    
+                    Spacer()
                 } else {
                     NavigationLink(destination:
                                     FeelingNoteReviewView().navigationBarHidden(true)
@@ -50,7 +79,7 @@ struct NotificationListView: View {
                     }
                 }
                 
-            }.navigationTitle(Text("나의 타임머신"))
+            }.navigationBarHidden(true)
             
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BboxxBackgroundColor")).ignoresSafeArea()

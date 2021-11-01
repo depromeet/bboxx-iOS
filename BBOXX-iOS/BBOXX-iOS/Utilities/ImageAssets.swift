@@ -20,7 +20,6 @@ enum ImageAsset {
     static let splash_logo = "splash_logo"
     static let splash_background1 = "splash_background1"
     static let splash_background2 = "splash_background2"
-    static let redoWhiteButton = "redoWhiteButton"
     
     static let micButton = "micButton"
     static let oneSeconds = "oneSeconds"
@@ -39,4 +38,6 @@ enum ImageAsset {
     static let main_empty_selection_feelingNote = "main_empty_selection_feelingNote"
     static let main_empty_selection_background = "main_empty_selection_background"
     static let main_empty_selection_full_background = "main_empty_selection_full_background"
+    static let backButton = "backButton"
+    static let closeButton = "closeButton"
 }

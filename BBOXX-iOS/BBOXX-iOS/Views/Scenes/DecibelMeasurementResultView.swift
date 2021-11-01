@@ -16,11 +16,26 @@ struct DecibelMeasurementResultView: View {
     
     var body: some View {
             VStack(alignment: .leading) {
+                HStack {
+                    Spacer()
+
+                    Button(action: {
+                        
+                    }, label: {
+                        Image(ImageAsset.closeButton)
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(Color("BboxxGrayColor"))
+                    })
+                    .padding(.top, 16)
+                    .padding(.trailing, -4)
+                }
+                
                 Text(title)
                     .font(.custom("Pretendard-Bold", size: 20))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
-                    .padding(.top, 35)
                 
                 HStack {
                     Text("\(self.decibel)")
@@ -42,16 +57,18 @@ struct DecibelMeasurementResultView: View {
                 
                 HStack {
                     Button(action: {
-                    }) {
-                        Image(ImageAsset.redoWhiteButton)
+                    }, label: {
+                        Image(ImageAsset.redoButton)
+                            .renderingMode(.template)
                             .frame(width: 20, height: 20)
+                            .foregroundColor(.white)
                             
                             .padding(.trailing, 7)
                         
                         Text("다시 해보기")
                             .font(.custom("Pretendard-SemiBold", size: 16))
                             .foregroundColor(.white)
-                    }
+                    })
                 }
                 .padding(.top, 24)
                 
