@@ -105,8 +105,9 @@ struct CardContent: View {
                 .padding(.top, 8)
             
             Image(ImageAsset.trashIcon)
-                .frame(width: 200, height: 200, alignment: .center)
-                
+                .resizable()
+                .frame(width: 180, height: 180, alignment: .center)
+
                 .padding(.top, 20)
             
         }

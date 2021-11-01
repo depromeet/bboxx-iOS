@@ -39,4 +39,5 @@ enum ImageAsset {
     static let main_empty_selection_feelingNote = "main_empty_selection_feelingNote"
     static let main_empty_selection_background = "main_empty_selection_background"
     static let main_empty_selection_full_background = "main_empty_selection_full_background"
+    static let backButton = "backButton"
 }

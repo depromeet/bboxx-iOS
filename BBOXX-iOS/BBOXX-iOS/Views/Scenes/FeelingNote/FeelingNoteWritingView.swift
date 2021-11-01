@@ -16,10 +16,51 @@ struct FeelingNoteWritingView: View {
         NavigationView {
             ZStack {
                 VStack(alignment: .leading) {
+                    HStack {
+                        Button(action: {
+                            cardShown.toggle()
+                            cardDismissal.toggle()
+                        }, label: {
+                            Image(ImageAsset.backButton)
+                                .renderingMode(.template)
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .foregroundColor(Color("BboxxTextColor").opacity(0.7))
+                        })
+                        .frame(
+                            alignment: .topLeading
+                        )
+                        .padding(.leading, 16)
+
+                        Spacer()
+
+                        Button(action: {
+                            self.title = ""
+                            self.content = ""
+                        }, label: {
+                            Image(ImageAsset.redoButton)
+                                .renderingMode(.template)
+                                .resizable()
+                                .frame(width: 16, height: 16)
+                                .foregroundColor(Color("BboxxGrayColor").opacity(0.6))
+
+                            Text("다시쓰기")
+                                .font(.custom("Pretendard-Medium", size: 14))
+                                .foregroundColor(Color("BboxxGrayColor").opacity(0.6))
+                        })
+                        .frame(
+                            alignment: .topTrailing
+                        )
+                        .padding(.top, 3)
+                        .padding(.trailing, 16)
+                    }
+                    .padding(.top, 16)
+                                        
                     Text("네 감정을 글로 담아봐")
                         .font(.custom("Pretendard-Bold", size: 24))
                         .foregroundColor(Color("BboxxTextColor"))
                         
+                        .padding(.top, 26)
                         .padding(.leading, 24)
                     
                     VStack {
@@ -70,8 +111,6 @@ struct FeelingNoteWritingView: View {
                         
                         Button(action: {
                             self.tag = 1
-                            //                        cardShown.toggle()
-                            //                        cardDismissal.toggle()
                         }, label: {
                             Text("다 썼어")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
@@ -102,6 +141,7 @@ struct FeelingNoteWritingView: View {
                 }
                 .animation(.default)
             }
+            .navigationBarHidden(true)
         }
         
     }
