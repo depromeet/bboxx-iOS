@@ -213,8 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				6AC41438272C222500935C43 /* Intro */,
-				45B1EA7A272687EB006FC5F3 /* FeelingNote */,
 				6AC41437272C221E00935C43 /* Main */,
+				45B1EA7A272687EB006FC5F3 /* FeelingNote */,
 				4596D1E1272A6A3400047C74 /* GrowthNote */,
 				45817752271DBD8700036086 /* RoundedCorner.swift */,
 				45A6223A271EA68600B13459 /* BottomCard.swift */,
@@ -366,8 +366,8 @@
 			isa = PBXGroup;
 			children = (
 				6AC4143127285BA700935C43 /* Intro */,
-				45B1EA79272687D4006FC5F3 /* FeelingNote */,
 				6AC41436272C221200935C43 /* Main */,
+				45B1EA79272687D4006FC5F3 /* FeelingNote */,
 				4594B3192727C99E00318B3B /* GrowthNote */,
 				4554A029270EAA1B00A558CB /* DecibelMeasurementView.swift */,
 				4589B589272BD50000A5F60E /* DecibelMeasurementResultView.swift */,
