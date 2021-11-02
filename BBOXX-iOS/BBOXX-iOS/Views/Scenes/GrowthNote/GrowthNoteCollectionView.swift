@@ -5,14 +5,21 @@ struct GrowthNoteCollectionView: View {
     @ObservedObject var viewModel = GrowthNoteCollectionViewModel()
     
     @State var tag: Int? = 0
-
-    init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Pretendard-Bold", size: 24) ?? .systemFont(ofSize: 24), .foregroundColor : UIColor(named: "BboxxTextColor") ?? .black]
-    }
     
     var body: some View {
         NavigationView {
             VStack {
+                HStack {
+                    Text("성장일기")
+                        .font(.custom("Pretendard-Bold", size: 24))
+                        .foregroundColor(Color("BboxxTextColor"))
+                    
+                        .padding(.top, 80)
+                        .padding(.leading, 24)
+                        
+                    Spacer()
+                }
+                
                 HStack(alignment: .center) {
                     Button(action: {
                         self.viewModel.leftButtonDidTap()
@@ -85,7 +92,7 @@ struct GrowthNoteCollectionView: View {
                     .padding(.bottom, 41)
                 }
                 
-            }.navigationTitle(Text("성장일기"))
+            }.navigationBarHidden(true)
             
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BboxxBackgroundColor").ignoresSafeArea())

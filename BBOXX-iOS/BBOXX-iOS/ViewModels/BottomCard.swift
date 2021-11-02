@@ -3,16 +3,23 @@ import SwiftUI
 struct BottomCard<Content: View>: View {
     let content: Content
     
+    var firstButtonText: String = ""
+    var secondButtonText: String = ""
+    
     @Binding var cardShown: Bool
     @Binding var cardDissmissal: Bool
     
     let height: CGFloat
     
-    init(cardShown: Binding<Bool>,
+    init(firstButtonText: String,
+         secondButtonText: String,
+         cardShown: Binding<Bool>,
          cardDissmissal: Binding<Bool>,
          height: CGFloat,
          @ViewBuilder content: () -> Content
     ) {
+        self.firstButtonText = firstButtonText
+        self.secondButtonText = secondButtonText
         self.height = height
         _cardShown = cardShown
         _cardDissmissal = cardDissmissal
@@ -41,9 +48,9 @@ struct BottomCard<Content: View>: View {
 
                     HStack {
                         Button(action: {
-                            // 뒤로 가기 액션
+                            self.dismiss()
                         }, label: {
-                            Text("그만쓸래")
+                            Text(firstButtonText)
                                 .font(.custom("Pretendard-SemiBold", size: 18))
                                 .foregroundColor(Color("BboxxTextColor"))
                                 .opacity(0.6)
@@ -53,15 +60,16 @@ struct BottomCard<Content: View>: View {
                         Spacer().frame(width: 19)
                         
                         Button(action: {
-                            self.dismiss()
+                            // 뒤로 가기 액션
                         }, label: {
-                            Text("계속쓸래")
+                            Text(secondButtonText)
                                 .font(.custom("Pretendard-SemiBold", size: 18))
                                 .foregroundColor(Color.white)
                         })
                         .frame(width: 156, height: 56, alignment: .center)
                         .background(Color("BboxxGrayColor"))
                         .cornerRadius(16)
+                        
                     }
                     .padding(.top, 38)
                     .padding(.leading, 20)
@@ -89,15 +97,24 @@ struct BottomCard<Content: View>: View {
 }
 
 struct CardContent: View {
+    
+    var title: String = ""
+    var subTitle: String = ""
+    
+    init(title: String, subTitle: String) {
+        self.title = title
+        self.subTitle = subTitle
+    }
+    
     var body: some View {
         VStack(alignment: .center) {
-            Text("그만쓰고싶어?")
+            Text(title)
                 .font(.custom("Pretendard-Bold", size: 28))
                 .foregroundColor(Color("BboxxTextColor"))
                 
                 .padding(.top, 40)
             
-            Text("돌아가면 쓰던 글이 없어져.")
+            Text(subTitle)
                 .font(.custom("Pretendard-Regular", size: 16))
                 .foregroundColor(Color("BboxxGrayColor"))
                 .opacity(0.6)
@@ -105,8 +122,9 @@ struct CardContent: View {
                 .padding(.top, 8)
             
             Image(ImageAsset.trashIcon)
-                .frame(width: 200, height: 200, alignment: .center)
-                
+                .resizable()
+                .frame(width: 180, height: 180, alignment: .center)
+
                 .padding(.top, 20)
             
         }
