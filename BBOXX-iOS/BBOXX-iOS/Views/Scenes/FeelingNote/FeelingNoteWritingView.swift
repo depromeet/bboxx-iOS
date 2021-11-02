@@ -9,9 +9,7 @@ struct FeelingNoteWritingView: View {
     
     @State private var cardShown: Bool = false
     @State private var cardDismissal: Bool = false
-    
-    @State private var tag: Int? = 0
-    
+        
     var body: some View {
         NavigationView {
             ZStack {
@@ -103,27 +101,19 @@ struct FeelingNoteWritingView: View {
                         
                         NavigationLink(destination:
                                         FeelingNoteRemindView(title: self.title, content: self.content)
-                                        .navigationBarBackButtonHidden(false)
-                                        .navigationBarHidden(true)
-                                       , tag: 1, selection: self.$tag) {
-                            EmptyView()
-                        }
-                        
-                        Button(action: {
-                            self.tag = 1
-                        }, label: {
+                                        .navigationBarHidden(true)) {
                             Text("다 썼어")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
                                 .foregroundColor(.white)
-                        })
-                        .frame(maxWidth: .infinity, maxHeight: 56)
-                        .background(Color("BboxxGrayColor"))
-                        .cornerRadius(16)
-                        
-                        .padding(.top, 20)
-                        .padding(.leading, 24)
-                        .padding(.trailing, 24)
-                        .padding(.bottom, 30)
+                                .frame(maxWidth: .infinity, maxHeight: 56)
+                                .background(Color("BboxxGrayColor"))
+                                .cornerRadius(16)
+                                
+                                .padding(.top, 20)
+                                .padding(.leading, 24)
+                                .padding(.trailing, 24)
+                                .padding(.bottom, 30)
+                        }
                     }
                     .background(Color.white)
                     .cornerRadius(24, corners: [.topLeft, .topRight])
