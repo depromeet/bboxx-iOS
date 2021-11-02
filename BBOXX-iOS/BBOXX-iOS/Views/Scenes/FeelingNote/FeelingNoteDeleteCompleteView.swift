@@ -1,25 +1,26 @@
 import SwiftUI
 
-struct GrowthNoteResultView: View {
+struct FeelingNoteDeleteCompleteView: View {
     
     @State var tag: Int? = 0
     
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
-                Text("네 감정을 담은 성장일기를 썼어")
+                Text("네 이번 감정을 완전히 지웠어")
                     .font(.custom("Pretendard-Bold", size: 24))
                     .foregroundColor(Color("BboxxTextColor"))
                     
                     .padding(.top, 34)
                 
-                Text("한층 더 성장한 네 삶을 응원해")
+                Text("네 이번 감정을 완전히 지웠어")
                     .font(.custom("Pretendard-Regular", size: 14))
                     .foregroundColor(Color("BboxxGrayColor").opacity(0.7))
                     
                     .padding(.top, 11)
                 
-                Image(ImageAsset.writingIcon)
+                
+                Image(ImageAsset.heartBoxIcon)
                     .resizable()
                     .frame(maxWidth: 240, maxHeight: 240)
                 
@@ -58,8 +59,8 @@ struct GrowthNoteResultView: View {
     }
 }
 
-struct GrowthNoteResultView_Previews: PreviewProvider {
+struct FeelingNoteDeleteCompleteView_Previews: PreviewProvider {
     static var previews: some View {
-        GrowthNoteResultView()
+        FeelingNoteDeleteCompleteView()
     }
 }
