@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "대지 21@4x-3.png",
+      "filename" : "heartBox.1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "대지 21@4x-4.png",
+      "filename" : "heartBox.2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "대지 21@4x.png",
+      "filename" : "heartBox.3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

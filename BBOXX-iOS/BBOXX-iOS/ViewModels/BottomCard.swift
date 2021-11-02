@@ -61,6 +61,8 @@ struct BottomCard<Content: View>: View {
                         
                         Button(action: {
                             // 뒤로 가기 액션
+                            // 1. 성장일기의 경우, 그만쓸래 누르면 feelingReviewView로 돌아가야 한다
+                            // 2. 감정일기의 경우, 그만쓸래 누르면 카테고리 선택 or 소리치기 결과 페이지로 돌아감
                         }, label: {
                             Text(secondButtonText)
                                 .font(.custom("Pretendard-SemiBold", size: 18))

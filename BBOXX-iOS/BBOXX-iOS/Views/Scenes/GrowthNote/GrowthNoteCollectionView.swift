@@ -10,13 +10,29 @@ struct GrowthNoteCollectionView: View {
         NavigationView {
             VStack {
                 HStack {
+                    Spacer()
+
+                    Button(action: {
+                        
+                    }, label: {
+                        Image(ImageAsset.profileIcon)
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(Color("BboxxTextColor").opacity(0.7))
+                    })
+                    .padding(.top, 16)
+                    .padding(.trailing, 24)
+                }
+                
+                HStack {
                     Text("성장일기")
                         .font(.custom("Pretendard-Bold", size: 24))
                         .foregroundColor(Color("BboxxTextColor"))
-                    
-                        .padding(.top, 80)
-                        .padding(.leading, 24)
                         
+                        .padding(.top, 20)
+                        .padding(.leading, 24)
+                    
                     Spacer()
                 }
                 
@@ -31,7 +47,7 @@ struct GrowthNoteCollectionView: View {
                     Text("2021년 10월")
                         .font(.custom("Pretendard-SemiBold", size: 18))
                         .foregroundColor(Color("BboxxTextColor"))
-                    
+                        
                         .padding(.leading, 10)
                         .padding(.trailing, 10)
                     
@@ -48,15 +64,16 @@ struct GrowthNoteCollectionView: View {
                     VStack(alignment: .center) {
                         
                         Image(ImageAsset.emptyBoxIcon)
+                            .resizable()
                             .frame(width: 160, height: 160, alignment: .center)
                         
                         Text("아직 쓴 글이 없어.\n네가 얼만큼 성장했는지 글로 써봐.")
                             .font(.custom("Pretendard-SemiBold", size: 18))
                             .foregroundColor(Color("BboxxTextColor"))
                             .multilineTextAlignment(.center)
-                        
+                            
                             .padding(.top, 20)
-
+                        
                         Button(action: {}, label: {
                             Text("이전 감정 보러가기")
                                 .font(.custom("Pretendard-SemiBold", size: 16))
@@ -69,27 +86,30 @@ struct GrowthNoteCollectionView: View {
                         .padding(.top, 20)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-
+                    
                 } else {
                     NavigationLink(destination:
-                                    GrowthNoteDetailView().navigationBarHidden(true)
-                                   , tag: 1, selection: self.$tag) {
+                                    GrowthNoteDetailView().navigationBarHidden(true)) {
                         EmptyView()
                     }
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 16) {
                             ForEach(self.viewModel.growthNoteList, id: \.id) { growthNote in
-                                GrowthNoteCell(date: growthNote.date, title: growthNote.title, content: growthNote.content, feelings: growthNote.feelings)
-                                    .onTapGesture {
-                                        self.tag = 1
-                                    }
+                                NavigationLink(destination:
+                                                GrowthNoteDetailView().navigationBarHidden(true)
+                                ) {
+                                    GrowthNoteCell(date: growthNote.date, title: growthNote.title, content: growthNote.content, feelings: growthNote.feelings)
+                                }
                             }
                         }
                     }
                     .padding(.top, 20)
                     .padding(.leading, 30)
                     .padding(.bottom, 41)
+                    
+                    Spacer()
+
                 }
                 
             }.navigationBarHidden(true)
