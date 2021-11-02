@@ -13,7 +13,7 @@ struct FeelingNoteDeleteCompleteView: View {
                     
                     .padding(.top, 34)
                 
-                Text("네 이번 감정을 완전히 지웠어")
+                Text("네 마음이 괜찮길 바래.")
                     .font(.custom("Pretendard-Regular", size: 14))
                     .foregroundColor(Color("BboxxGrayColor").opacity(0.7))
                     

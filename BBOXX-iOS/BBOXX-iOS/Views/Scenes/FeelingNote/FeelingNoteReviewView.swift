@@ -4,10 +4,10 @@ struct FeelingNoteReviewView: View {
     
     @ObservedObject var viewModel = FeelingNoteReviewViewModel()
     
-    @State var tag: Int? = 0
-    
     @State private var cardShown: Bool = false
     @State private var cardDismissal: Bool = false
+    
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
@@ -15,6 +15,7 @@ struct FeelingNoteReviewView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Button(action: {
+                            presentationMode.wrappedValue.dismiss()
                         }, label: {
                             Image(ImageAsset.backButton)
                                 .renderingMode(.template)
@@ -64,29 +65,19 @@ struct FeelingNoteReviewView: View {
                     
                     .padding(.top, 20)
                     
-                    NavigationLink(destination:
-                                    GrowthNoteWritingView()
-                                    .navigationBarBackButtonHidden(false)
-                                    .navigationBarHidden(true)
-                                   , tag: 1, selection: self.$tag) {
-                        EmptyView()
-                    }
-                    
                     VStack {
-                        Button(action: {
-                            self.tag = 1
-                        }, label: {
+                        NavigationLink(destination: GrowthNoteWritingView().navigationBarHidden(true)) {
                             Text("다시보니 괜찮아졌어")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
                                 .foregroundColor(.white)
-                        })
-                        .frame(maxWidth: .infinity, minHeight: 56)
-                        .background(Color("BboxxTextColor"))
-                        .cornerRadius(16)
-                        
-                        .padding(.top, 42)
-                        .padding(.leading, 24)
-                        .padding(.trailing, 24)
+                                .frame(maxWidth: .infinity, minHeight: 56)
+                                .background(Color("BboxxTextColor"))
+                                .cornerRadius(16)
+                                
+                                .padding(.top, 42)
+                                .padding(.leading, 24)
+                                .padding(.trailing, 24)
+                        }
                         
                         Button(action: {
                             cardShown.toggle()
