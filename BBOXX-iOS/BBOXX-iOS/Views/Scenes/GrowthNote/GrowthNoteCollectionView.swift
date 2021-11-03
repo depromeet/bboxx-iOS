@@ -86,18 +86,12 @@ struct GrowthNoteCollectionView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     
                 } else {
-                    NavigationLink(destination:
-                                    GrowthNoteDetailView().navigationBarHidden(true)) {
-                        EmptyView()
-                    }
-                    
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 16) {
-                            ForEach(self.viewModel.growthNoteList, id: \.id) { growthNote in
+                            ForEach(Array(viewModel.growthNoteList.enumerated()), id: \.offset) { index, growthNote in
                                 NavigationLink(destination:
-                                                GrowthNoteDetailView().navigationBarHidden(true)
-                                ) {
-                                    GrowthNoteCell(date: growthNote.date, title: growthNote.title, content: growthNote.content, feelings: growthNote.feelings)
+                                                GrowthNoteDetailView(backgroundColor: viewModel.setBackgroundColor(index)).navigationBarHidden(true)) {
+                                    GrowthNoteCell(date: growthNote.date, title: growthNote.title, content: growthNote.content, feelings: growthNote.feelings, backgroundColor: viewModel.setBackgroundColor(index))
                                 }
                             }
                         }
