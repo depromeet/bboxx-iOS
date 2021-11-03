@@ -1,9 +1,6 @@
 import SwiftUI
 
 struct FeelingNoteResultView: View {
-    
-    @State private var tag: Int? = 0
-    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
@@ -52,45 +49,30 @@ struct FeelingNoteResultView: View {
                     .padding(.leading, 5)
                     .padding(.bottom, -15)
                 
-                NavigationLink(destination:
-                                DecibelMeasurementView()
-                                .navigationBarBackButtonHidden(false)
-                                .navigationBarHidden(true)
-                               , tag: 1, selection: self.$tag) {
-                    EmptyView()
-                }
-                
-                NavigationLink(destination:
-                                MainView()
-                                .navigationBarBackButtonHidden(false)
-                                .navigationBarHidden(true)
-                               , tag: 2, selection: self.$tag) {
-                    EmptyView()
-                }
                 
                 HStack(spacing: 15) {
-                    Button(action: {
-                        self.tag = 1
-                    }, label: {
+                    NavigationLink(destination:
+                                    DecibelMeasurementView()
+                                    .navigationBarHidden(true)) {
                         Text("소리지르기")
                             .font(.custom("Pretendard-SemiBold", size: 18))
                             .foregroundColor(Color("BboxxGrayColor").opacity(0.85))
-                    })
-                    .frame(maxWidth: .infinity, minHeight: 56)
-                    .overlay(RoundedRectangle(cornerRadius: 16)
-                                .stroke(Color("BboxxGrayColor").opacity(0.85), lineWidth: 2)
-                    )
+                            .frame(maxWidth: .infinity, minHeight: 56)
+                            .overlay(RoundedRectangle(cornerRadius: 16)
+                                        .stroke(Color("BboxxGrayColor").opacity(0.85), lineWidth: 2)
+                            )
+                    }
                     
-                    Button(action: {
-                        self.tag = 2
-                    }, label: {
+                    NavigationLink(destination:
+                                    MainView()
+                                    .navigationBarHidden(true)) {
                         Text("홈으로")
                             .font(.custom("Pretendard-SemiBold", size: 18))
                             .foregroundColor(.white)
-                    })
-                    .frame(maxWidth: .infinity, minHeight: 56)
-                    .background(Color("BboxxGrayColor"))
-                    .cornerRadius(16)
+                            .frame(maxWidth: .infinity, minHeight: 56)
+                            .background(Color("BboxxGrayColor"))
+                            .cornerRadius(16)
+                    }
                 }
                 .padding(.bottom, 30)
             }

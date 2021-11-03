@@ -4,9 +4,7 @@ struct FeelingNoteRemindView: View {
     
     var title: String = ""
     var content: String = ""
-    
-    @State private var tag: Int? = 0
-    
+        
     init(title: String, content: String) {
         self.title = title
         self.content = content
