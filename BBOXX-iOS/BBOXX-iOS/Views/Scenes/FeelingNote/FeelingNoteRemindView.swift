@@ -15,30 +15,12 @@ struct FeelingNoteRemindView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                HStack {
-                    Spacer()
-
-                    Button(action: {
-                        
-                    }, label: {
-                        Image(ImageAsset.closeButton)
-                            .renderingMode(.template)
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                            .foregroundColor(Color("BboxxGrayColor"))
-                    })
-                    .frame(
-                        alignment: .topTrailing
-                    )
-                    .padding(.top, 16)
-                    .padding(.trailing, 20)
-                }
                 
                 Text("네 힘든 감정을 정리해볼래?")
                     .font(.custom("Pretendard-Bold", size: 24))
                     .foregroundColor(Color("BboxxGrayColor"))
                     
-                    .padding(.top, 19)
+                    .padding(.top, 59)
                     .padding(.leading, 24)
                 
                 ScrollView() {
