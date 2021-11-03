@@ -9,21 +9,22 @@ struct FeelingNoteResultView: View {
             VStack(alignment: .leading) {
                 HStack {
                     Spacer()
-
-                    Button(action: {
-                        
-                    }, label: {
+                    
+                    NavigationLink(destination:
+                                    MainView()
+                                    .navigationBarHidden(true)) {
                         Image(ImageAsset.closeButton)
                             .renderingMode(.template)
                             .resizable()
                             .frame(width: 24, height: 24)
                             .foregroundColor(Color("BboxxGrayColor"))
-                    })
-                    .frame(
-                        alignment: .topTrailing
-                    )
-                    .padding(.top, 16)
-                    .padding(.trailing, 20)
+                            .frame(
+                                alignment: .topTrailing
+                            )
+                            
+                            .padding(.top, 16)
+                            .padding(.trailing, -8)
+                    }
                 }
                 
                 Text("부끄럼쟁이 딸기야,\n좀 후련해졌어?")

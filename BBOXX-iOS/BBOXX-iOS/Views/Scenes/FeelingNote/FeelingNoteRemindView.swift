@@ -76,25 +76,17 @@ struct FeelingNoteRemindView: View {
                         
                         NavigationLink(destination:
                                         FeelingNoteResultView()
-                                        .navigationBarBackButtonHidden(false)
-                                        .navigationBarHidden(true)
-                                       , tag: 1, selection: self.$tag) {
-                            EmptyView()
-                        }
-                        
-                        Button(action: {
-                            self.tag = 1
-                        }, label: {
+                                        .navigationBarHidden(true)) {
                             Text("버릴래")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
                                 .foregroundColor(.white)
-                        })
-                        .frame(maxWidth: .infinity, minHeight: 56)
-                        .background(Color("BboxxGrayColor"))
-                        .cornerRadius(16)
-                        
-                        .padding(.top, 30)
-                        .padding(.bottom, 30)
+                                .frame(maxWidth: .infinity, minHeight: 56)
+                                .background(Color("BboxxGrayColor"))
+                                .cornerRadius(16)
+                                
+                                .padding(.top, 30)
+                                .padding(.bottom, 30)
+                        }
                     }
                     .padding(.leading, 24)
                     .padding(.trailing, 24)
