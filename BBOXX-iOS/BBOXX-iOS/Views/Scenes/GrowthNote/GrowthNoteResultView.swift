@@ -1,12 +1,29 @@
 import SwiftUI
 
 struct GrowthNoteResultView: View {
-    
-    @State var tag: Int? = 0
-    
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
+                HStack {
+                    Spacer()
+                    
+                    NavigationLink(destination:
+                                    MainView()
+                                    .navigationBarHidden(true)) {
+                        Image(ImageAsset.closeButton)
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(Color("BboxxGrayColor"))
+                            .frame(
+                                alignment: .topTrailing
+                            )
+                            
+                            .padding(.top, 16)
+                            .padding(.trailing, -8)
+                    }
+                }
+                
                 Text("네 감정을 담은 성장일기를 썼어")
                     .font(.custom("Pretendard-Bold", size: 24))
                     .foregroundColor(Color("BboxxTextColor"))
@@ -30,25 +47,19 @@ struct GrowthNoteResultView: View {
                 
                 NavigationLink(destination:
                                 GrowthNoteCollectionView()
-                                .navigationBarBackButtonHidden(false)
-                                .navigationBarHidden(true)
-                               , tag: 1, selection: self.$tag) {
-                    EmptyView()
-                }
-                
-                Button(action: {
-                    self.tag = 1
-                }, label: {
+                                .navigationBarHidden(true)) {
                     Text("보러가기")
                         .font(.custom("Pretendard-SemiBold", size: 18))
                         .foregroundColor(.white)
-                })
-                .frame(maxWidth: .infinity, maxHeight: 56)
-                .background(Color("BboxxGrayColor"))
-                .cornerRadius(16)
+                        .frame(maxWidth: .infinity, maxHeight: 56)
+                        .background(Color("BboxxGrayColor"))
+                        .cornerRadius(16)
+                }
                 
                 .padding(.bottom, 30)
-            }
+                
+            }.navigationBarHidden(true)
+            
             .padding(.leading, 24)
             .padding(.trailing, 24)
             

@@ -4,8 +4,6 @@ struct GrowthNoteCollectionView: View {
     
     @ObservedObject var viewModel = GrowthNoteCollectionViewModel()
     
-    @State var tag: Int? = 0
-    
     var body: some View {
         NavigationView {
             VStack {
