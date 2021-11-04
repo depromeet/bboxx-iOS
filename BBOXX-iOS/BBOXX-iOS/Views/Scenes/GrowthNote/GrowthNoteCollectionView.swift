@@ -23,12 +23,13 @@ struct GrowthNoteCollectionView: View {
                     .padding(.trailing, 24)
                 }
                 
+                Spacer()
+                
                 HStack {
                     Text("성장일기")
                         .font(.custom("Pretendard-Bold", size: 24))
                         .foregroundColor(Color("BboxxTextColor"))
                         
-                        .padding(.top, 20)
                         .padding(.leading, 24)
                     
                     Spacer()
