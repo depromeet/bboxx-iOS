@@ -31,7 +31,7 @@ struct DecibelMeasurementResultView: View {
                             .renderingMode(.template)
                             .resizable()
                             .frame(width: 24, height: 24)
-                            .foregroundColor(Color("BboxxGrayColor"))
+                            .foregroundColor(.white)
                         
                             .padding(.top, 16)
                             .padding(.trailing, -4)

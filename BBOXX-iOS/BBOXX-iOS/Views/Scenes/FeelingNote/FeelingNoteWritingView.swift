@@ -9,7 +9,12 @@ struct FeelingNoteWritingView: View {
     
     @State private var cardShown: Bool = false
     @State private var cardDismissal: Bool = false
-        
+    
+    @State var tag: Int? = 0
+    
+    @State private var buttonState: Bool = false
+    @State private var limitTextCount: Bool = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -29,9 +34,9 @@ struct FeelingNoteWritingView: View {
                             alignment: .topLeading
                         )
                         .padding(.leading, 16)
-
+                        
                         Spacer()
-
+                        
                         Button(action: {
                             self.title = ""
                             self.content = ""
@@ -41,7 +46,7 @@ struct FeelingNoteWritingView: View {
                                 .resizable()
                                 .frame(width: 16, height: 16)
                                 .foregroundColor(Color("BboxxGrayColor").opacity(0.6))
-
+                            
                             Text("다시쓰기")
                                 .font(.custom("Pretendard-Medium", size: 14))
                                 .foregroundColor(Color("BboxxGrayColor").opacity(0.6))
@@ -53,7 +58,7 @@ struct FeelingNoteWritingView: View {
                         .padding(.trailing, 16)
                     }
                     .padding(.top, 16)
-                                        
+                    
                     Text("네 감정을 글로 담아봐")
                         .font(.custom("Pretendard-Bold", size: 24))
                         .foregroundColor(Color("BboxxTextColor"))
@@ -70,10 +75,15 @@ struct FeelingNoteWritingView: View {
                             
                             Spacer()
                             
-                            Text("\(content.count)/1200")
+                            Text("\(content.count)")
                                 .font(.custom("Pretendard-Regular", size: 12))
-                                .foregroundColor(Color("BboxxGrayColor"))
-                                .opacity(0.4)
+                                .foregroundColor(limitTextCount ? Color(.red).opacity(0.6) : Color("BboxxGrayColor").opacity(0.4))
+                            
+                                .padding(.trailing, -9)
+                            
+                            Text("/1200")
+                                .font(.custom("Pretendard-Regular", size: 12))
+                                .foregroundColor(Color("BboxxGrayColor").opacity(0.4))
                         }
                         .padding(.top, 30)
                         .padding(.leading, 24)
@@ -94,6 +104,9 @@ struct FeelingNoteWritingView: View {
                         TextEditor(text: $content)
                             .font(.custom("Pretendard-Regular", size: 16))
                             .foregroundColor(Color("BboxxTextColor"))
+                            .onChange(of: content, perform: { value in
+                                changeButtonState()
+                            })
                             
                             .padding(.top, 10)
                             .padding(.leading, 24)
@@ -101,19 +114,27 @@ struct FeelingNoteWritingView: View {
                         
                         NavigationLink(destination:
                                         FeelingNoteRemindView(title: self.title, content: self.content)
-                                        .navigationBarHidden(true)) {
+                                        .navigationBarHidden(true), tag: 1, selection: $tag) {
+                            EmptyView()
+                        }
+                        
+                        Button(action: {
+                            self.tag = 1
+                        }, label: {
                             Text("다 썼어")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity, maxHeight: 56)
-                                .background(Color("BboxxGrayColor"))
-                                .cornerRadius(16)
-                                
-                                .padding(.top, 20)
-                                .padding(.leading, 24)
-                                .padding(.trailing, 24)
-                                .padding(.bottom, 30)
-                        }
+                                .foregroundColor(buttonState ? .white : Color("BboxxGrayColor").opacity(0.4))
+                        })
+                        .frame(maxWidth: .infinity, maxHeight: 56)
+                        .background(buttonState ? Color("BboxxGrayColor") : Color("BboxxGrayColor").opacity(0.2))
+                        .cornerRadius(16)
+                        .disabled(!buttonState)
+                        
+                        .padding(.top, 20)
+                        .padding(.leading, 24)
+                        .padding(.trailing, 24)
+                        .padding(.bottom, 30)
+
                     }
                     .background(Color.white)
                     .cornerRadius(24, corners: [.topLeft, .topRight])
@@ -136,6 +157,18 @@ struct FeelingNoteWritingView: View {
             .navigationBarHidden(true)
         }
         
+    }
+    
+    func changeButtonState() {
+        if title.count > 0 && content.count > 0 && content.count <= 1200 {
+            buttonState = true
+            limitTextCount = false
+        } else if content.count > 1200 {
+            buttonState = false
+            limitTextCount = true
+        } else {
+            buttonState = false
+        }
     }
     
 }

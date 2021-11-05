@@ -1,9 +1,9 @@
-import Foundation
+import SwiftUI
 
 class FeelingNoteWritingViewModel: ObservableObject {
     
     var dateString: String = ""
-    
+        
     init() {
         convertCurrentDate()
     }
@@ -16,4 +16,5 @@ class FeelingNoteWritingViewModel: ObservableObject {
         dateFormatter.locale = Locale(identifier:"ko_KR")
         dateString = dateFormatter.string(from: nowDate)
     }
+    
 }
