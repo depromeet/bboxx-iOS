@@ -15,22 +15,28 @@ struct DecibelMeasurementResultView: View {
     }
     
     var body: some View {
+        ZStack {
+            Color(UIColor(backgroundColor)).ignoresSafeArea()
+            
             VStack(alignment: .leading) {
                 HStack {
                     Spacer()
 
-                    Button(action: {
-                        
-                    }, label: {
+                    NavigationLink(destination:
+                                    MainView()
+                                    .navigationBarHidden(true)) {
                         Image(ImageAsset.closeButton)
                             .renderingMode(.template)
                             .resizable()
                             .frame(width: 24, height: 24)
                             .foregroundColor(Color("BboxxGrayColor"))
-                    })
-                    .padding(.top, 16)
-                    .padding(.trailing, -4)
+                        
+                            .padding(.top, 16)
+                            .padding(.trailing, -4)
+                    }
                 }
+                
+                Spacer()
                 
                 Text(title)
                     .font(.custom("Pretendard-Bold", size: 20))
@@ -72,7 +78,7 @@ struct DecibelMeasurementResultView: View {
                 }
                 .padding(.top, 24)
                 
-                //Spacer()
+                Spacer()
                 
                 HStack {
                     Spacer()
@@ -118,6 +124,6 @@ struct DecibelMeasurementResultView: View {
             .padding(.trailing, 24)
             
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(backgroundColor).ignoresSafeArea()
+        }
     }
 }

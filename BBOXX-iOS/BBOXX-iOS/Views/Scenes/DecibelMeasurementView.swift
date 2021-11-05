@@ -6,11 +6,14 @@ struct DecibelMeasurementView: View {
     
     @State var showMic = true
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
                     Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
                     }, label: {
                         Image(ImageAsset.backButton)
                             .renderingMode(.template)
@@ -43,8 +46,7 @@ struct DecibelMeasurementView: View {
                                 title: self.viewModel.title,
                     backgroundColor: self.viewModel.backgroundColor
                 )
-                .navigationBarBackButtonHidden(true)
-                .navigationBarHidden(false), tag: 1, selection: self.$viewModel.tag) {
+                .navigationBarHidden(true), tag: 1, selection: self.$viewModel.tag) {
                     EmptyView()
                 }
                 
@@ -66,7 +68,7 @@ struct DecibelMeasurementView: View {
                 
             }.navigationBarHidden(true)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.black).ignoresSafeArea()
+            .background(Color("BboxxGrayColor")).ignoresSafeArea()
                 
         }
     }
