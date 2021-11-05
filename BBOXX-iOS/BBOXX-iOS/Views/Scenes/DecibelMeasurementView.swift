@@ -44,7 +44,8 @@ struct DecibelMeasurementView: View {
                 NavigationLink(destination: DecibelMeasurementResultView(
                                 decibel: self.viewModel.peak,
                                 title: self.viewModel.title,
-                    backgroundColor: self.viewModel.backgroundColor
+                    backgroundColor: self.viewModel.backgroundColor,
+                    decibelResultImage: self.viewModel.decibelResultImage
                 )
                 .navigationBarHidden(true), tag: 1, selection: self.$viewModel.tag) {
                     EmptyView()

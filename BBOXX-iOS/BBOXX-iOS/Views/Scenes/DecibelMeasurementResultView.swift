@@ -5,13 +5,15 @@ struct DecibelMeasurementResultView: View {
     var decibel: Int = 0
     var title: String = ""
     var backgroundColor: Color = Color.white
+    var decibelResultImage: String = ImageAsset.decibelResultImage1
     
     @State var tag: Int? = 0
-    
-    init(decibel: Float, title: String, backgroundColor: Color) {
+        
+    init(decibel: Float, title: String, backgroundColor: Color, decibelResultImage: String) {
         self.decibel = Int(decibel)
         self.title = title
         self.backgroundColor = backgroundColor
+        self.decibelResultImage = decibelResultImage
     }
     
     var body: some View {
@@ -83,7 +85,8 @@ struct DecibelMeasurementResultView: View {
                 HStack {
                     Spacer()
                     
-                    Image(ImageAsset.stoneIcon)
+                    Image(decibelResultImage)
+                        .resizable()
                         .frame(width: 199, height: 217)
                 }
                 .padding(.top, 11)
