@@ -12,9 +12,6 @@ struct FeelingNoteWritingView: View {
     
     @State var tag: Int? = 0
     
-    @State private var buttonState: Bool = false
-    @State private var limitTextCount: Bool = false
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -77,7 +74,7 @@ struct FeelingNoteWritingView: View {
                             
                             Text("\(content.count)")
                                 .font(.custom("Pretendard-Regular", size: 12))
-                                .foregroundColor(limitTextCount ? Color(.red).opacity(0.6) : Color("BboxxGrayColor").opacity(0.4))
+                                .foregroundColor(viewModel.limitTextCount ? Color(.red).opacity(0.6) : Color("BboxxGrayColor").opacity(0.4))
                             
                                 .padding(.trailing, -9)
                             
@@ -105,7 +102,7 @@ struct FeelingNoteWritingView: View {
                             .font(.custom("Pretendard-Regular", size: 16))
                             .foregroundColor(Color("BboxxTextColor"))
                             .onChange(of: content, perform: { value in
-                                changeButtonState()
+                                self.viewModel.checkButtonState(title: title, content: content)
                             })
                             
                             .padding(.top, 10)
@@ -123,12 +120,12 @@ struct FeelingNoteWritingView: View {
                         }, label: {
                             Text("다 썼어")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
-                                .foregroundColor(buttonState ? .white : Color("BboxxGrayColor").opacity(0.4))
+                                .foregroundColor(viewModel.buttonState ? .white : Color("BboxxGrayColor").opacity(0.4))
                         })
                         .frame(maxWidth: .infinity, maxHeight: 56)
-                        .background(buttonState ? Color("BboxxGrayColor") : Color("BboxxGrayColor").opacity(0.2))
+                        .background(viewModel.buttonState ? Color("BboxxGrayColor") : Color("BboxxGrayColor").opacity(0.2))
                         .cornerRadius(16)
-                        .disabled(!buttonState)
+                        .disabled(!viewModel.buttonState)
                         
                         .padding(.top, 20)
                         .padding(.leading, 24)
@@ -157,18 +154,6 @@ struct FeelingNoteWritingView: View {
             .navigationBarHidden(true)
         }
         
-    }
-    
-    func changeButtonState() {
-        if title.count > 0 && content.count > 0 && content.count <= 1200 {
-            buttonState = true
-            limitTextCount = false
-        } else if content.count > 1200 {
-            buttonState = false
-            limitTextCount = true
-        } else {
-            buttonState = false
-        }
     }
     
 }
