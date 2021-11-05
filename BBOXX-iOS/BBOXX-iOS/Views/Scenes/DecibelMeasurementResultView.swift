@@ -7,8 +7,8 @@ struct DecibelMeasurementResultView: View {
     var backgroundColor: Color = Color.white
     var decibelResultImage: String = ImageAsset.decibelResultImage1
     
-    @State var tag: Int? = 0
-        
+    @Environment(\.presentationMode) var presentationMode
+
     init(decibel: Float, title: String, backgroundColor: Color, decibelResultImage: String) {
         self.decibel = Int(decibel)
         self.title = title
@@ -64,8 +64,9 @@ struct DecibelMeasurementResultView: View {
                 .padding(.top, 24)
                 
                 HStack {
-                    Button(action: {
-                    }, label: {
+                    NavigationLink(destination:
+                                    DecibelMeasurementView()
+                                    .navigationBarHidden(true)) {
                         Image(ImageAsset.redoButton)
                             .renderingMode(.template)
                             .frame(width: 20, height: 20)
@@ -76,7 +77,7 @@ struct DecibelMeasurementResultView: View {
                         Text("다시 해보기")
                             .font(.custom("Pretendard-SemiBold", size: 16))
                             .foregroundColor(.white)
-                    })
+                    }
                 }
                 .padding(.top, 24)
                 
@@ -91,24 +92,16 @@ struct DecibelMeasurementResultView: View {
                 }
                 .padding(.top, 11)
                 
-                NavigationLink(destination: FeelingNoteWritingView()
-                                .navigationBarBackButtonHidden(false)
-                                .navigationBarHidden(true)
-                , tag: 1, selection: self.$tag) {
-                    EmptyView()
-                }
-                
                 HStack(spacing: 15) {
-                    Button(action: {
-                        self.tag = 1
-                    }, label: {
+                    NavigationLink(destination: FeelingNoteWritingView()
+                                    .navigationBarHidden(true)) {
                         Text("감정일기 쓰기")
                             .font(.custom("Pretendard-SemiBold", size: 18))
                             .foregroundColor(Color("BboxxGrayColor").opacity(0.5))
-                    })
-                    .frame(maxWidth: .infinity, minHeight: 56)
-                    .background(Color("BboxxBackgroundColor"))
-                    .cornerRadius(16)
+                            .frame(maxWidth: .infinity, minHeight: 56)
+                            .background(Color("BboxxBackgroundColor"))
+                            .cornerRadius(16)
+                    }
                     
                     Button(action: {}, label: {
                         Text("감정 공유하기")
