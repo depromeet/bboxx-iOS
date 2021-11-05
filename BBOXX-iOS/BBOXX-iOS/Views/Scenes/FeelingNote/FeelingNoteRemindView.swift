@@ -4,9 +4,7 @@ struct FeelingNoteRemindView: View {
     
     var title: String = ""
     var content: String = ""
-    
-    @State private var tag: Int? = 0
-    
+        
     init(title: String, content: String) {
         self.title = title
         self.content = content
@@ -15,30 +13,12 @@ struct FeelingNoteRemindView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                HStack {
-                    Spacer()
-
-                    Button(action: {
-                        
-                    }, label: {
-                        Image(ImageAsset.closeButton)
-                            .renderingMode(.template)
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                            .foregroundColor(Color("BboxxGrayColor"))
-                    })
-                    .frame(
-                        alignment: .topTrailing
-                    )
-                    .padding(.top, 16)
-                    .padding(.trailing, 20)
-                }
                 
                 Text("네 힘든 감정을 정리해볼래?")
                     .font(.custom("Pretendard-Bold", size: 24))
                     .foregroundColor(Color("BboxxGrayColor"))
                     
-                    .padding(.top, 19)
+                    .padding(.top, 59)
                     .padding(.leading, 24)
                 
                 ScrollView() {
@@ -94,25 +74,17 @@ struct FeelingNoteRemindView: View {
                         
                         NavigationLink(destination:
                                         FeelingNoteResultView()
-                                        .navigationBarBackButtonHidden(false)
-                                        .navigationBarHidden(true)
-                                       , tag: 1, selection: self.$tag) {
-                            EmptyView()
-                        }
-                        
-                        Button(action: {
-                            self.tag = 1
-                        }, label: {
+                                        .navigationBarHidden(true)) {
                             Text("버릴래")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
                                 .foregroundColor(.white)
-                        })
-                        .frame(maxWidth: .infinity, minHeight: 56)
-                        .background(Color("BboxxGrayColor"))
-                        .cornerRadius(16)
-                        
-                        .padding(.top, 30)
-                        .padding(.bottom, 30)
+                                .frame(maxWidth: .infinity, minHeight: 56)
+                                .background(Color("BboxxGrayColor"))
+                                .cornerRadius(16)
+                                
+                                .padding(.top, 30)
+                                .padding(.bottom, 30)
+                        }
                     }
                     .padding(.leading, 24)
                     .padding(.trailing, 24)

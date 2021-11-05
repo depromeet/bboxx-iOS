@@ -9,9 +9,7 @@ struct GrowthNoteWritingView: View {
     
     @State private var cardShown: Bool = false
     @State private var cardDismissal: Bool = false
-    
-    @State private var tag: Int? = 0
-    
+        
     var body: some View {
         NavigationView {
             ZStack {
@@ -31,9 +29,9 @@ struct GrowthNoteWritingView: View {
                             alignment: .topLeading
                         )
                         .padding(.leading, 16)
-
+                        
                         Spacer()
-
+                        
                         Button(action: {
                             self.title = ""
                             self.content = ""
@@ -43,7 +41,7 @@ struct GrowthNoteWritingView: View {
                                 .resizable()
                                 .frame(width: 16, height: 16)
                                 .foregroundColor(Color("BboxxGrayColor").opacity(0.6))
-
+                            
                             Text("다시쓰기")
                                 .font(.custom("Pretendard-Medium", size: 14))
                                 .foregroundColor(Color("BboxxGrayColor").opacity(0.6))
@@ -103,28 +101,20 @@ struct GrowthNoteWritingView: View {
                         
                         NavigationLink(destination:
                                         GrowthNoteResultView()
-                                        .navigationBarBackButtonHidden(false)
-                                        .navigationBarHidden(true)
-                                       , tag: 1, selection: self.$tag) {
-                            EmptyView()
-                        }
-                        
-                        Button(action: {
-                            self.tag = 1
-
-                        }, label: {
+                                        .navigationBarHidden(true)) {
                             Text("다 썼어")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
                                 .foregroundColor(.white)
-                        })
-                        .frame(maxWidth: .infinity, maxHeight: 56)
-                        .background(Color("BboxxGrayColor"))
-                        .cornerRadius(16)
+                                .frame(maxWidth: .infinity, maxHeight: 56)
+                                .background(Color("BboxxGrayColor"))
+                                .cornerRadius(16)
+                                
+                                .padding(.top, 20)
+                                .padding(.leading, 24)
+                                .padding(.trailing, 24)
+                                .padding(.bottom, 30)
+                        }
                         
-                        .padding(.top, 20)
-                        .padding(.leading, 24)
-                        .padding(.trailing, 24)
-                        .padding(.bottom, 30)
                     }
                     .background(Color.white)
                     .cornerRadius(24, corners: [.topLeft, .topRight])

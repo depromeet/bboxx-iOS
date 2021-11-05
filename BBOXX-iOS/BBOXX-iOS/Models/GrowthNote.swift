@@ -1,7 +1,6 @@
 import Foundation
 
 struct GrowthNote {
-    let id = UUID()
     let date: String
     let title: String
     let content: String

@@ -5,12 +5,14 @@ struct GrowthNoteCell: View {
     var title: String = ""
     var content: String = ""
     var feelings: [String] = []
+    var backgroundColor: Color = .white
     
-    init(date: String, title: String, content: String, feelings: [String]) {
+    init(date: String, title: String, content: String, feelings: [String], backgroundColor: Color) {
         self.date = date
         self.title = title
         self.content = content
         self.feelings = feelings
+        self.backgroundColor = backgroundColor
     }
     
     var body: some View {
@@ -45,7 +47,7 @@ struct GrowthNoteCell: View {
                 .padding(.leading, 10)
         }
         .frame(width: 315, height: 450)
-        .background(Color(red: 164 / 255, green: 93 / 255, blue: 99 / 255))
+        .background(backgroundColor)
         .cornerRadius(20)
     }
     
