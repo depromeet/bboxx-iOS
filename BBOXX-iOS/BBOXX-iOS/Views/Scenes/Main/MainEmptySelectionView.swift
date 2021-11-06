@@ -22,7 +22,7 @@ struct MainEmptySelectionView: View {
                         }
                         .frame(width: 20, height: 20)
                         .padding(.trailing, 6)
-                        NavigationLink(destination: FeelingNoteWritingView()) {
+                        NavigationLink(destination: FeelingNoteWritingView().navigationBarHidden(true)) {
                             Image(ImageAsset.main_empty_selection_feelingNote)
                                 .resizable()
                                 .frame(width: 250, height: 130)

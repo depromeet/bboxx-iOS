@@ -3,6 +3,9 @@ import Foundation
 class GrowthNoteWritingViewModel: ObservableObject {
     var dateString: String = ""
     
+    @Published var buttonState: Bool = false
+    @Published var limitTextCount: Bool = false
+    
     init() {
         convertCurrentDate()
     }
@@ -14,5 +17,17 @@ class GrowthNoteWritingViewModel: ObservableObject {
         dateFormatter.dateFormat = "MM. dd. EEEE"
         dateFormatter.locale = Locale(identifier:"ko_KR")
         dateString = dateFormatter.string(from: nowDate)
+    }
+    
+    func checkButtonState(title: String, content: String) {
+        if title.count > 0 && content.count > 0 && content.count <= 1200 {
+            buttonState = true
+            limitTextCount = false
+        } else if content.count > 1200 {
+            buttonState = false
+            limitTextCount = true
+        } else {
+            buttonState = false
+        }
     }
 }

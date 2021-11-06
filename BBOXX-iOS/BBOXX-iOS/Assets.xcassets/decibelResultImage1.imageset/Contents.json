@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "profile.1x.png",
+      "filename" : "decibelResultImage1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "profile.2x.png",
+      "filename" : "decibelResultImage1-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "profile.3x.png",
+      "filename" : "decibelResultImage1-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

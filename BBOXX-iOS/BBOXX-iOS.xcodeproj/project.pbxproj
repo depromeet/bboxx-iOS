@@ -14,6 +14,7 @@
 		453AF0CF27180C77000DB2CA /* FeelingNoteWritingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453AF0CE27180C77000DB2CA /* FeelingNoteWritingViewModel.swift */; };
 		4551D8CA271574EE00EF8149 /* FeelingNoteWritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551D8C9271574EE00EF8149 /* FeelingNoteWritingView.swift */; };
 		4554A02A270EAA1B00A558CB /* DecibelMeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554A029270EAA1B00A558CB /* DecibelMeasurementView.swift */; };
+		457DA59B27302C2300A2F031 /* FeelingNoteDeleteCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457DA59A27302C2300A2F031 /* FeelingNoteDeleteCompleteView.swift */; };
 		45817753271DBD8700036086 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45817752271DBD8700036086 /* RoundedCorner.swift */; };
 		45817756271DBE0100036086 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45817755271DBE0100036086 /* View+Extension.swift */; };
 		4581E9B227202E7A00DEEC76 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581E9B127202E7A00DEEC76 /* UserService.swift */; };
@@ -39,6 +40,7 @@
 		4594B3172727C98400318B3B /* GrowthNoteResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594B3162727C98400318B3B /* GrowthNoteResultView.swift */; };
 		4596D1DF272A64CB00047C74 /* GrowthNoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4596D1DE272A64CB00047C74 /* GrowthNoteDetailView.swift */; };
 		4596D1E3272A6A8900047C74 /* GrowthNoteCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4596D1E2272A6A8900047C74 /* GrowthNoteCollectionViewModel.swift */; };
+		4597749F2734E85A003649F6 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597749E2734E85A003649F6 /* UserDefaults+Extension.swift */; };
 		459E5AFE271FB6F5000D3F53 /* CreateNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E5AFD271FB6F5000D3F53 /* CreateNicknameView.swift */; };
 		45A6222D271E6D2600B13459 /* GrowthNoteWritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6222C271E6D2600B13459 /* GrowthNoteWritingView.swift */; };
 		45A62230271E6E4900B13459 /* GrowthNoteWritingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6222F271E6E4900B13459 /* GrowthNoteWritingViewModel.swift */; };
@@ -68,7 +70,6 @@
 		6AC4143527285C5000935C43 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC4143427285C5000935C43 /* MainView.swift */; };
 		6AC4143A272C226000935C43 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC41439272C226000935C43 /* MainViewModel.swift */; };
 		6AC4143C272C37E100935C43 /* OnboardingLastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC4143B272C37E100935C43 /* OnboardingLastView.swift */; };
-		6AC4143E272C38ED00935C43 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC4143D272C38ED00935C43 /* UserDefaults+Extension.swift */; };
 		6AC41442272C57B400935C43 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC41441272C57B400935C43 /* OnboardingViewModel.swift */; };
 		6AC9D9FA27341CB000F72E0D /* SelectFeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC9D9F927341CB000F72E0D /* SelectFeelingView.swift */; };
 		6ACBC5AE2723ECB9002E1E55 /* AppleSignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACBC5AD2723ECB9002E1E55 /* AppleSignInCoordinator.swift */; };
@@ -93,6 +94,7 @@
 		453AF0CE27180C77000DB2CA /* FeelingNoteWritingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteWritingViewModel.swift; sourceTree = "<group>"; };
 		4551D8C9271574EE00EF8149 /* FeelingNoteWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteWritingView.swift; sourceTree = "<group>"; };
 		4554A029270EAA1B00A558CB /* DecibelMeasurementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementView.swift; sourceTree = "<group>"; };
+		457DA59A27302C2300A2F031 /* FeelingNoteDeleteCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingNoteDeleteCompleteView.swift; sourceTree = "<group>"; };
 		45817752271DBD8700036086 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		45817755271DBE0100036086 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		4581E9B127202E7A00DEEC76 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		4594B3162727C98400318B3B /* GrowthNoteResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteResultView.swift; sourceTree = "<group>"; };
 		4596D1DE272A64CB00047C74 /* GrowthNoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteDetailView.swift; sourceTree = "<group>"; };
 		4596D1E2272A6A8900047C74 /* GrowthNoteCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteCollectionViewModel.swift; sourceTree = "<group>"; };
+		4597749E2734E85A003649F6 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		459E5AFD271FB6F5000D3F53 /* CreateNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameView.swift; sourceTree = "<group>"; };
 		45A6222C271E6D2600B13459 /* GrowthNoteWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteWritingView.swift; sourceTree = "<group>"; };
 		45A6222F271E6E4900B13459 /* GrowthNoteWritingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteWritingViewModel.swift; sourceTree = "<group>"; };
@@ -147,7 +150,6 @@
 		6AC4143427285C5000935C43 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6AC41439272C226000935C43 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		6AC4143B272C37E100935C43 /* OnboardingLastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLastView.swift; sourceTree = "<group>"; };
-		6AC4143D272C38ED00935C43 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		6AC41441272C57B400935C43 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		6AC9D9F927341CB000F72E0D /* SelectFeelingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeelingView.swift; sourceTree = "<group>"; };
 		6ACBC5AD2723ECB9002E1E55 /* AppleSignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInCoordinator.swift; sourceTree = "<group>"; };
@@ -239,8 +241,12 @@
 			isa = PBXGroup;
 			children = (
 				45817755271DBE0100036086 /* View+Extension.swift */,
+<<<<<<< HEAD
 				6AC4143D272C38ED00935C43 /* UserDefaults+Extension.swift */,
 				6AB66E312736EB57009DADBE /* Image+Extension.swift */,
+=======
+				4597749E2734E85A003649F6 /* UserDefaults+Extension.swift */,
+>>>>>>> 7307f24fa8a9df76d5e827a4f51996758b6c048a
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -298,8 +304,12 @@
 				45B1EA4A272660CC006FC5F3 /* FeelingNoteRemindView.swift */,
 				45B1EA76272687CF006FC5F3 /* FeelingNoteResultView.swift */,
 				4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */,
+<<<<<<< HEAD
 				6AC9D9F927341CB000F72E0D /* SelectFeelingView.swift */,
 				6AB66E332736EBB8009DADBE /* FeelingButton.swift */,
+=======
+				457DA59A27302C2300A2F031 /* FeelingNoteDeleteCompleteView.swift */,
+>>>>>>> 7307f24fa8a9df76d5e827a4f51996758b6c048a
 			);
 			path = FeelingNote;
 			sourceTree = "<group>";
@@ -583,6 +593,7 @@
 				45B1EA77272687CF006FC5F3 /* FeelingNoteResultView.swift in Sources */,
 				4527B84227083E0E003FD4F9 /* ContentView.swift in Sources */,
 				4594B3172727C98400318B3B /* GrowthNoteResultView.swift in Sources */,
+				4597749F2734E85A003649F6 /* UserDefaults+Extension.swift in Sources */,
 				458DEF052729707A0033B8CC /* GrowthNote.swift in Sources */,
 				453AF0CF27180C77000DB2CA /* FeelingNoteWritingViewModel.swift in Sources */,
 				45AB2115271A9ECD00404122 /* NotificationCell.swift in Sources */,
@@ -590,6 +601,7 @@
 				6A5311BC2723EB8300B14768 /* SignInViewModel.swift in Sources */,
 				4589B58E272BDFAE00A5F60E /* DecibelMeasurementResultViewModel.swift in Sources */,
 				4589B58A272BD50000A5F60E /* DecibelMeasurementResultView.swift in Sources */,
+				457DA59B27302C2300A2F031 /* FeelingNoteDeleteCompleteView.swift in Sources */,
 				6AB89643272C777F006D35ED /* MainEmptySelectionView.swift in Sources */,
 				6A021258270A1CA0002828D9 /* FeelingNotes.swift in Sources */,
 				6AE861982727158E00D0619E /* OnboardingScreen.swift in Sources */,
@@ -612,8 +624,11 @@
 				6ACBC5B12723ED15002E1E55 /* SignInService.swift in Sources */,
 				6A02125C270A1EBC002828D9 /* AppDelegate.swift in Sources */,
 				45AB2119271A9F6800404122 /* Notification.swift in Sources */,
+<<<<<<< HEAD
 				6AC4143E272C38ED00935C43 /* UserDefaults+Extension.swift in Sources */,
 				6AB66E342736EBB8009DADBE /* FeelingButton.swift in Sources */,
+=======
+>>>>>>> 7307f24fa8a9df76d5e827a4f51996758b6c048a
 				458C257327212F6C00E48195 /* NotificationListViewModel.swift in Sources */,
 				45AB2112271A9E0F00404122 /* NotificationListView.swift in Sources */,
 				6AC4143527285C5000935C43 /* MainView.swift in Sources */,

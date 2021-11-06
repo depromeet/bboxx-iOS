@@ -59,7 +59,7 @@ struct CreateNicknameView: View {
                 
                 Button(action: {
                     self.tag = 1
-                    //UserDefaults.standard.set($viewModel.nickname, forKey: UserDefaults.nickNameKey)
+                    UserDefaults.standard.set(viewModel.nickname, forKey: "nickname")
                 }, label: {
                     Text("마음에 들어")
                         .font(.custom("Pretendard-SemiBold", size: 18))

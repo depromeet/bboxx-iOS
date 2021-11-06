@@ -10,7 +10,7 @@ struct GrowthNoteWritingView: View {
     @State private var cardShown: Bool = false
     @State private var cardDismissal: Bool = false
     
-    @State private var tag: Int? = 0
+    @State var tag: Int? = 0
     
     var body: some View {
         NavigationView {
@@ -31,9 +31,9 @@ struct GrowthNoteWritingView: View {
                             alignment: .topLeading
                         )
                         .padding(.leading, 16)
-
+                        
                         Spacer()
-
+                        
                         Button(action: {
                             self.title = ""
                             self.content = ""
@@ -43,7 +43,7 @@ struct GrowthNoteWritingView: View {
                                 .resizable()
                                 .frame(width: 16, height: 16)
                                 .foregroundColor(Color("BboxxGrayColor").opacity(0.6))
-
+                            
                             Text("다시쓰기")
                                 .font(.custom("Pretendard-Medium", size: 14))
                                 .foregroundColor(Color("BboxxGrayColor").opacity(0.6))
@@ -72,10 +72,15 @@ struct GrowthNoteWritingView: View {
                             
                             Spacer()
                             
-                            Text("\(content.count)/1200")
+                            Text("\(content.count)")
                                 .font(.custom("Pretendard-Regular", size: 12))
-                                .foregroundColor(Color("BboxxGrayColor"))
-                                .opacity(0.4)
+                                .foregroundColor(viewModel.limitTextCount ? Color(.red).opacity(0.6) : Color("BboxxGrayColor").opacity(0.4))
+                            
+                                .padding(.trailing, -9)
+                            
+                            Text("/1200")
+                                .font(.custom("Pretendard-Regular", size: 12))
+                                .foregroundColor(Color("BboxxGrayColor").opacity(0.4))
                         }
                         .padding(.top, 30)
                         .padding(.leading, 24)
@@ -96,6 +101,9 @@ struct GrowthNoteWritingView: View {
                         TextEditor(text: $content)
                             .font(.custom("Pretendard-Regular", size: 16))
                             .foregroundColor(Color("BboxxTextColor"))
+                            .onChange(of: content, perform: { value in
+                                self.viewModel.checkButtonState(title: title, content: content)
+                            })
                             
                             .padding(.top, 10)
                             .padding(.leading, 24)
@@ -103,28 +111,27 @@ struct GrowthNoteWritingView: View {
                         
                         NavigationLink(destination:
                                         GrowthNoteResultView()
-                                        .navigationBarBackButtonHidden(false)
-                                        .navigationBarHidden(true)
-                                       , tag: 1, selection: self.$tag) {
+                                        .navigationBarHidden(true), tag: 1, selection: $tag) {
                             EmptyView()
                         }
                         
                         Button(action: {
                             self.tag = 1
-
                         }, label: {
                             Text("다 썼어")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
-                                .foregroundColor(.white)
+                                .foregroundColor(viewModel.buttonState ? .white : Color("BboxxGrayColor").opacity(0.4))
                         })
                         .frame(maxWidth: .infinity, maxHeight: 56)
-                        .background(Color("BboxxGrayColor"))
+                        .background(viewModel.buttonState ? Color("BboxxGrayColor") : Color("BboxxGrayColor").opacity(0.2))
                         .cornerRadius(16)
+                        .disabled(!viewModel.buttonState)
                         
                         .padding(.top, 20)
                         .padding(.leading, 24)
                         .padding(.trailing, 24)
                         .padding(.bottom, 30)
+
                     }
                     .background(Color.white)
                     .cornerRadius(24, corners: [.topLeft, .topRight])
@@ -148,10 +155,6 @@ struct GrowthNoteWritingView: View {
         }
         
     }
+    
 }
 
-struct GrowthNoteWritingView_Previews: PreviewProvider {
-    static var previews: some View {
-        GrowthNoteWritingView()
-    }
-}

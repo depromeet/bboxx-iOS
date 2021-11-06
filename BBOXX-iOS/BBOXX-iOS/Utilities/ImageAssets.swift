@@ -26,18 +26,25 @@ enum ImageAsset {
     static let twoSeconds = "twoSeconds"
     static let threeSeconds = "threeSeconds"
     
+    static let decibelResultImage1 = "decibelResultImage1"
+    static let decibelResultImage2 = "decibelResultImage2"
+    static let decibelResultImage3 = "decibelResultImage3"
+    static let decibelResultImage4 = "decibelResultImage4"
+    static let decibelResultImage5 = "decibelResultImage5"
+    static let decibelResultImage6 = "decibelResultImage6"
+    
     static let leftSmallIcon = "leftSmallIcon"
     static let rightSmallIcon = "rightSmallIcon"
     
     static let trashIcon = "trashIcon"
     static let hugIcon = "hugIcon"
     static let writingIcon = "writingIcon"
-    static let stoneIcon = "stoneIcon"
     static let main_empty_selection_backButton = "main_empty_selection_backButton"
     static let main_empty_selection_shouting = "main_empty_selection_shouting"
     static let main_empty_selection_feelingNote = "main_empty_selection_feelingNote"
     static let main_empty_selection_background = "main_empty_selection_background"
     static let main_empty_selection_full_background = "main_empty_selection_full_background"
+    static let heartBoxIcon = "heartBoxIcon"
     static let backButton = "backButton"
     static let closeButton = "closeButton"
 }
