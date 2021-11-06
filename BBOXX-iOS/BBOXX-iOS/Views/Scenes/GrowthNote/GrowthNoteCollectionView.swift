@@ -73,16 +73,17 @@ struct GrowthNoteCollectionView: View {
                             
                             .padding(.top, 20)
                         
-                        Button(action: {}, label: {
+                        NavigationLink(destination:
+                                        NotificationListView().navigationBarHidden(true)) {
                             Text("이전 감정 보러가기")
                                 .font(.custom("Pretendard-SemiBold", size: 16))
                                 .foregroundColor(.white)
-                        })
-                        .frame(maxWidth: 166, maxHeight: 46)
-                        .background(Color("BboxxGrayColor"))
-                        .cornerRadius(14)
-                        
-                        .padding(.top, 20)
+                                .frame(maxWidth: 166, maxHeight: 46)
+                                .background(Color("BboxxGrayColor"))
+                                .cornerRadius(14)
+                                
+                                .padding(.top, 20)
+                        }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     

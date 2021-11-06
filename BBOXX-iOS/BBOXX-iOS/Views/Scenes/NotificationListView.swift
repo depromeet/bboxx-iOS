@@ -10,6 +10,8 @@ struct NotificationListView: View {
         Notification(currentDate: "10. 23.", date: "n일 전", content: "자이언트펭귄! 한달 전(2021년 10월 20일)에 쓴 일기가 도착했어 📬 한번 읽어볼래? 자이언트펭귄! 한달 전(2021년 10월 20일)에 쓴 일기가 도착했어 📬 한번 읽어볼래")
     ]
     
+    @Environment(\.presentationMode) var presentationMode
+    
     init() {
         UITableView.appearance().backgroundColor = UIColor(named: "BboxxBackgroundColor")
         UITableViewCell.appearance().selectionStyle = .none
@@ -23,6 +25,7 @@ struct NotificationListView: View {
                 VStack {
                     HStack {
                         Button(action: {
+                            self.presentationMode.wrappedValue.dismiss()
                         }, label: {
                             Image(ImageAsset.backButton)
                                 .renderingMode(.template)

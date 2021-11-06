@@ -19,6 +19,7 @@ class DecibelMeasurementViewModel: ObservableObject {
     @Published var tag: Int? = 0
     var title: String = ""
     var backgroundColor: Color = Color.white
+    var decibelResultImage: String = ImageAsset.decibelResultImage1
     
     init() {
         // 3 오디오 권한 확인
@@ -104,27 +105,33 @@ class DecibelMeasurementViewModel: ObservableObject {
         switch peak {
         case 0...50:
             title = "내가 너의 말을 들어 줄 수 있는\n친구가 되어 줄게🍃"
-            backgroundColor = Color(red: 106 / 255, green: 161 / 255, blue: 61 / 255)
+            backgroundColor = Color(red: 87 / 255, green: 197 / 255, blue: 151 / 255)
+            decibelResultImage = ImageAsset.decibelResultImage1
             break
         case 51...69:
             title = "괜찮아 괜찮아\n그럴 때도 있는거야☁️"
-            backgroundColor = Color(red: 168 / 255, green: 189 / 255, blue: 40 / 255)
+            backgroundColor = Color(red: 97 / 255, green: 165 / 255, blue: 203 / 255)
+            decibelResultImage = ImageAsset.decibelResultImage2
             break
         case 70...89:
             title = "좀더 크게 감정을 표현하고 나면\n기분이 나아질꺼야💥"
-            backgroundColor = Color(red: 239 / 255, green: 158 / 255, blue: 36 / 255)
+            backgroundColor = Color(red: 232 / 255, green: 166 / 255, blue: 38 / 255)
+            decibelResultImage = ImageAsset.decibelResultImage3
             break
         case 90...99:
             title = "잘했어. 속에 있는 건 다 풀어야해.\n불족어때?🔥"
-            backgroundColor = Color(red: 236 / 255, green: 120 / 255, blue: 55 / 255)
+            backgroundColor = Color(red: 225 / 255, green: 108 / 255, blue: 43 / 255)
+            decibelResultImage = ImageAsset.decibelResultImage4
             break
         case 70...89:
             title = "와, 마음 속에 허리케인이\n몰아치고 갔었네🌪"
-            backgroundColor = Color(red: 231 / 255, green: 92 / 255, blue: 61 / 255)
+            backgroundColor = Color(red: 106 / 255, green: 86 / 255, blue: 185 / 255)
+            decibelResultImage = ImageAsset.decibelResultImage5
             break
         default:
             title = "운석이 충돌한 줄 알았어!\n속 시원하게 다 게웠어?☄️"
-            backgroundColor = Color(red: 208 / 255, green: 65 / 255, blue: 65 / 255)
+            backgroundColor = Color(red: 202 / 255, green: 64 / 255, blue: 64 / 255)
+            decibelResultImage = ImageAsset.decibelResultImage6
             break
         }
     }

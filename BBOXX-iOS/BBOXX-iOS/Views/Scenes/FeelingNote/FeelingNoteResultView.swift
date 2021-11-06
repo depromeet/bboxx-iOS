@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct FeelingNoteResultView: View {
+    
+    @ObservedObject var viewModel = FeelingNoteResultViewModel()
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
@@ -24,7 +27,9 @@ struct FeelingNoteResultView: View {
                     }
                 }
                 
-                Text("부끄럼쟁이 딸기야,\n좀 후련해졌어?")
+                Spacer()
+                
+                Text("\(viewModel.nickName)야,\n좀 후련해졌어?")
                     .font(.custom("Pretendard-Bold", size: 24))
                     .foregroundColor(Color("BboxxGrayColor"))
                 
@@ -38,9 +43,12 @@ struct FeelingNoteResultView: View {
                     .padding(.top, 10)
                 
                 Image(ImageAsset.hugIcon)
+                    .resizable()
                     .frame(maxWidth: .infinity, maxHeight: 315, alignment: .center)
                     
                     .padding(.top, 20)
+                
+                Spacer()
                 
                 Image(ImageAsset.toolTip)
                     .frame(maxWidth: 147, maxHeight: 61)
