@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SelectTagView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @State var tags: [Tag] = TagList().tags
     @State var text: String = ""
     var selectedCount = 0
@@ -10,9 +11,9 @@ struct SelectTagView: View {
     var body: some View {
         VStack(spacing: 10) {
             HStack {
-                NavigationLink(destination:
-                                MainView()
-                                .navigationBarHidden(true)) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
                     Image(ImageAsset.backButton)
                         .renderingMode(.template)
                         .resizable()
