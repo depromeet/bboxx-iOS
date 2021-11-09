@@ -73,7 +73,6 @@
 		45D58AD9273A4DDD007FC785 /* MainEmptySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58AD7273A4DDD007FC785 /* MainEmptySelectionView.swift */; };
 		45D58ADA273A4DDD007FC785 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58AD8273A4DDD007FC785 /* MainView.swift */; };
 		45D58AE1273A4E04007FC785 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58ADD273A4E04007FC785 /* View+Extension.swift */; };
-		45D58AE2273A4E04007FC785 /* API+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58ADE273A4E04007FC785 /* API+Extension.swift */; };
 		45D58AE3273A4E04007FC785 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58ADF273A4E04007FC785 /* UserDefaults+Extension.swift */; };
 		45D58AE4273A4E04007FC785 /* Value+Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58AE0273A4E04007FC785 /* Value+Codable+Extension.swift */; };
 		45D58AEB273A4E42007FC785 /* DecibelMeasurementResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58AE7273A4E42007FC785 /* DecibelMeasurementResultViewModel.swift */; };
@@ -168,7 +167,6 @@
 		45D58AD7273A4DDD007FC785 /* MainEmptySelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainEmptySelectionView.swift; sourceTree = "<group>"; };
 		45D58AD8273A4DDD007FC785 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		45D58ADD273A4E04007FC785 /* View+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
-		45D58ADE273A4E04007FC785 /* API+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API+Extension.swift"; sourceTree = "<group>"; };
 		45D58ADF273A4E04007FC785 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		45D58AE0273A4E04007FC785 /* Value+Codable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Value+Codable+Extension.swift"; sourceTree = "<group>"; };
 		45D58AE7273A4E42007FC785 /* DecibelMeasurementResultViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecibelMeasurementResultViewModel.swift; sourceTree = "<group>"; };
@@ -271,7 +269,6 @@
 		45817759271DBF4100036086 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				45D58ADE273A4E04007FC785 /* API+Extension.swift */,
 				45D58ADF273A4E04007FC785 /* UserDefaults+Extension.swift */,
 				45D58AE0273A4E04007FC785 /* Value+Codable+Extension.swift */,
 				45D58ADD273A4E04007FC785 /* View+Extension.swift */,
@@ -715,7 +712,6 @@
 				45B7B6872728EB15006B8B9E /* CustomTwoButton.swift in Sources */,
 				45D58AD0273A4DCD007FC785 /* CreateNicknameView.swift in Sources */,
 				45C84DB527240462000E4886 /* Secret.swift in Sources */,
-				45D58AE2273A4E04007FC785 /* API+Extension.swift in Sources */,
 				45D58B02273A4E98007FC785 /* FeelingNoteReviewViewModel.swift in Sources */,
 				45D58AC4273A4DA5007FC785 /* GrowthNoteWritingView.swift in Sources */,
 				6ACBC5AE2723ECB9002E1E55 /* AppleSignInCoordinator.swift in Sources */,
