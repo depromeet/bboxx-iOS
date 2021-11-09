@@ -43,7 +43,7 @@ struct GrowthNoteCollectionView: View {
                             .frame(width: 24, height: 24)
                     })
                     
-                    Text("2021년 10월")
+                    Text(viewModel.dateString)
                         .font(.custom("Pretendard-SemiBold", size: 18))
                         .foregroundColor(Color("BboxxTextColor"))
                         
@@ -93,7 +93,11 @@ struct GrowthNoteCollectionView: View {
                             ForEach(Array(viewModel.growthNoteList.enumerated()), id: \.offset) { index, growthNote in
                                 NavigationLink(destination:
                                                 GrowthNoteDetailView(backgroundColor: viewModel.setBackgroundColor(index)).navigationBarHidden(true)) {
-                                    GrowthNoteCell(date: growthNote.date, title: growthNote.title, content: growthNote.content, feelings: growthNote.feelings, backgroundColor: viewModel.setBackgroundColor(index))
+                                    GrowthNoteCell(date: viewModel.dateString,
+                                                   title: growthNote.title,
+                                                   content: growthNote.content,
+                                                   feelings: growthNote.tags ?? [],
+                                                   backgroundColor: viewModel.setBackgroundColor(index))
                                 }
                             }
                         }

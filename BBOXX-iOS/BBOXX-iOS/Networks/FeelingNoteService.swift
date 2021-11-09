@@ -1,88 +1,28 @@
 import Alamofire
 
-class UserService {
+class FeelingNoteService{
     private init() {}
         
-    static let shared = UserService()
+    static let shared = FeelingNoteService()
     
-    func createNickname(_ completion: @escaping (Result<NicknameResponse, Error>) -> ()) {
-        let url = Secret.BaseURL + "generate-member-nickname"
+    //  호출 위치 : 감정일기 이모션들 가져올때
+    func getEmotions( _ completion: @escaping (Result<EmotionsResponse, Error>) -> ()) {
+        let url = Secret.BaseURL + "emotions"
         
+      
         let header: HTTPHeaders = [
             "Content-Type" : "application/json;charset=UTF-8",
             "Accept": "application/hal+json",
             //"Authorization": token
         ]
         
-        AF.request(url, method: .post, headers: header).responseJSON { (response) in
+        API.session.request(url, method: .get,  headers: header).responseJSON { (response) in
             switch response.result {
             case .success(let jsonData):
                 do {
                     let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
-                    let result = try JSONDecoder().decode(NicknameResponse.self, from: json)
-                    completion(.success(result))
-                    
-                } catch(let error) {
-                    completion(.failure(error))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }.resume()
-    }
-    
-    // 요청 위치 : 메인 화면에서 memberId를 받아와야 함 (서버에서 전달 받을때 id 라는 값이 memberId)
-    func getMe(_ completion: @escaping (Result<UserResponse, Error>) -> ()) {
-        let url = Secret.BaseURL + "me"
-        
-        let header: HTTPHeaders = [
-            "Content-Type" : "application/json;charset=UTF-8",
-            "Accept": "application/hal+json",
-            //"Authorization": token
-        ]
-        
-        API.session.request(url, method: .get, headers: header).responseJSON { (response) in
-            switch response.result {
-            case .success(let jsonData):
-                do {
-                    let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
-                    print(jsonData)
-                    let result = try JSONDecoder().decode(UserResponse.self, from: json)
-                    completion(.success(result))
-                    
-                } catch(let error) {
-                    print(error)
-                    completion(.failure(error))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }.resume()
-    }
-    
-    // 요청 위치 : 마이페이지
-    func getUserInfo(_ memberId: Int, _ completion: @escaping (Result<UserResponse, Error>) -> ()) {
-        let url = Secret.BaseURL + "members"
-        
-        let parameters: Parameters = ["memberId": memberId]
-        
-        let header: HTTPHeaders = [
-            "Content-Type" : "application/json;charset=UTF-8",
-            "Accept": "application/hal+json",
-            //"Authorization": token
-        ]
-        
-        API.session.request(url, method: .get, parameters: parameters, headers: header)
-            .debugLog()
-            .responseJSON { (response) in
-
-            switch response.result {
-            case .success(let jsonData):
-                do {
-                    let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
-                    print(jsonData)
-                    let result = try JSONDecoder().decode(UserResponse.self, from: json)
                    
+                    let result = try JSONDecoder().decode(EmotionsResponse.self, from: json)
                     completion(.success(result))
                     
                 } catch(let error) {
@@ -95,9 +35,46 @@ class UserService {
         }.resume()
     }
     
-    //  요청 위치 : 닉네임 변경
-    func updateNickname(_ memberId: Int, _ nickName: String, _ completion: @escaping (Result<UserResponse, Error>) -> ()) {
-        let url = Secret.BaseURL + "members"
+    //  호출 위치 : 감정일기 등록 할때
+    func postFeelingNote(_ categoryId: Int,_ content: String,_ emotionStatusList: [Int],_ memberId: Int, _ title: String, _ completion: @escaping (Result<Response, Error>) -> ()) {
+        let url = Secret.BaseURL + "emotions"
+        
+        let params: Parameters = [
+            "categoryId": categoryId,
+            "content": content,
+            "emotionStatusList": emotionStatusList,
+            "memberId": memberId,
+            "title": title
+        ]
+      
+        let header: HTTPHeaders = [
+            "Content-Type" : "application/json;charset=UTF-8",
+            "Accept": "application/hal+json",
+            //"Authorization": token
+        ]
+        
+        API.session.request(url, method: .post, parameters: params,  headers: header).responseJSON { (response) in
+            switch response.result {
+            case .success(let jsonData):
+                do {
+                    let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
+                   
+                    let result = try JSONDecoder().decode(Response.self, from: json)
+                    completion(.success(result))
+                    
+                } catch(let error) {
+                    print(error)
+                    completion(.failure(error))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }.resume()
+    }
+    
+    //  호출 위치 : 감정일기 불러올때
+    func getFeelingNote(_ emotionId: Int, _ completion: @escaping (Result<FeelingNoteResponse, Error>) -> ()) {
+        let url = Secret.BaseURL + "emotions"
         
         let header: HTTPHeaders = [
             "Content-Type" : "application/json;charset=UTF-8",
@@ -106,22 +83,16 @@ class UserService {
         ]
         
         let params: Parameters = [
-                "memberId": memberId,
-                "nickname": nickName
+            "emotionId": emotionId
         ]
         
-        
-        API.session.request(url, method: .put, parameters: params, headers: header)
-            .debugLog()
-            .responseJSON { (response) in
-
+        API.session.request(url, method: .get, parameters: params, headers: header).responseJSON { (response) in
             switch response.result {
             case .success(let jsonData):
                 do {
                     let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
-                    print(jsonData)
-                    
-                    let result = try JSONDecoder().decode(UserResponse.self, from: json)
+                   
+                    let result = try JSONDecoder().decode(FeelingNoteResponse.self, from: json)
                     completion(.success(result))
                     
                 } catch(let error) {
@@ -134,6 +105,31 @@ class UserService {
         }.resume()
     }
     
-    
+    func deleteFeelingNote(_ emotionId: Int, _ completion: @escaping (Result<Response, Error>) -> ()) {
+        let url = Secret.BaseURL + "emotions"
+        
+        let header: HTTPHeaders = [
+            "Content-Type" : "application/json;charset=UTF-8",
+            "Accept": "application/hal+json",
+            //"Authorization": token
+        ]
+        
+        API.session.request(url, method: .delete,  headers: header).responseJSON { (response) in
+            switch response.result {
+            case .success(let jsonData):
+                do {
+                    let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
+                   
+                    let result = try JSONDecoder().decode(Response.self, from: json)
+                    completion(.success(result))
+                    
+                } catch(let error) {
+                    print(error)
+                    completion(.failure(error))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }.resume()
+    }
 }
-

@@ -12,6 +12,8 @@ struct GrowthNoteWritingView: View {
     
     @State var tag: Int? = 0
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -75,7 +77,7 @@ struct GrowthNoteWritingView: View {
                             Text("\(content.count)")
                                 .font(.custom("Pretendard-Regular", size: 12))
                                 .foregroundColor(viewModel.limitTextCount ? Color(.red).opacity(0.6) : Color("BboxxGrayColor").opacity(0.4))
-                            
+                                
                                 .padding(.trailing, -9)
                             
                             Text("/1200")
@@ -131,7 +133,7 @@ struct GrowthNoteWritingView: View {
                         .padding(.leading, 24)
                         .padding(.trailing, 24)
                         .padding(.bottom, 30)
-
+                        
                     }
                     .background(Color.white)
                     .cornerRadius(24, corners: [.topLeft, .topRight])
@@ -142,12 +144,40 @@ struct GrowthNoteWritingView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("BboxxBackgroundColor").ignoresSafeArea())
                 
-                BottomCard(firstButtonText: "계속 할래",
-                           secondButtonText: "그만 쓸래",
-                           cardShown: $cardShown,
-                           cardDissmissal: $cardDismissal,
+                BottomCard(cardShown: $cardShown,
+                           cardDismissal: $cardDismissal,
                            height: UIScreen.main.bounds.height/1.5) {
+                    
                     CardContent(title: "그만 쓰고싶어?", subTitle: "돌아가면 쓰던 글이 지워져.")
+                    HStack {
+                        Button(action: {
+                            self.dismiss()
+                        }, label: {
+                            Text("계속 할래")
+                                .font(.custom("Pretendard-SemiBold", size: 18))
+                                .foregroundColor(Color("BboxxTextColor"))
+                                .opacity(0.6)
+                        })
+                        .frame(width: 156, height: 56, alignment: .center)
+                        
+                        Spacer().frame(width: 19)
+                        
+                        Button(action: {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            Text("그만 할래")
+                                .font(.custom("Pretendard-SemiBold", size: 18))
+                                .foregroundColor(Color.white)
+                        })
+                        .frame(width: 156, height: 56, alignment: .center)
+                        .background(Color("BboxxGrayColor"))
+                        .cornerRadius(16)
+                        
+                    }
+                    .padding(.top, 38)
+                    .padding(.leading, 20)
+                    .padding(.trailing, 20)
+                    .padding(.bottom, 30)
                 }
                 .animation(.default)
             }
@@ -156,5 +186,11 @@ struct GrowthNoteWritingView: View {
         
     }
     
+    func dismiss() {
+        cardDismissal.toggle()
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.25, execute: {
+            cardShown.toggle()
+        })
+    }
 }
 

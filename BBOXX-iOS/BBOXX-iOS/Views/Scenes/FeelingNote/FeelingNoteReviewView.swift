@@ -9,6 +9,8 @@ struct FeelingNoteReviewView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    @State var tag: Int? = 0
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -106,20 +108,59 @@ struct FeelingNoteReviewView: View {
                 }
                 .background(Color("BboxxBackgroundColor").ignoresSafeArea())
                 
-                BottomCard(firstButtonText: "아냐, 냅둘래",
-                           secondButtonText: "응, 지워줘",
-                           cardShown: $cardShown,
-                           cardDissmissal: $cardDismissal,
+                NavigationLink(destination:
+                                FeelingNoteDeleteCompleteView()
+                                .navigationBarHidden(true), tag: 1, selection: $tag) {
+                    EmptyView()
+                }
+                
+                BottomCard(cardShown: $cardShown,
+                           cardDismissal: $cardDismissal,
                            height: UIScreen.main.bounds.height/1.5) {
                     CardContent(title: "이전 감정을 완전히 지울까?", subTitle: "완전히 지우면 다시는 이 글을 볼 수 없어.")
+                    
+                    HStack {
+                        Button(action: {
+                            self.dismiss()
+                        }, label: {
+                            Text("아냐, 냅둘래")
+                                .font(.custom("Pretendard-SemiBold", size: 18))
+                                .foregroundColor(Color("BboxxTextColor"))
+                                .opacity(0.6)
+                        })
+                        .frame(width: 156, height: 56, alignment: .center)
+                        
+                        Spacer().frame(width: 19)
+                        
+                        Button(action: {
+                            self.tag = 1
+                        }, label: {
+                            Text("응, 지워줘")
+                                .font(.custom("Pretendard-SemiBold", size: 18))
+                                .foregroundColor(Color.white)
+                        })
+                        .frame(width: 156, height: 56, alignment: .center)
+                        .background(Color("BboxxGrayColor"))
+                        .cornerRadius(16)
+                        
+                    }
+                    .padding(.top, 38)
+                    .padding(.leading, 20)
+                    .padding(.trailing, 20)
+                    .padding(.bottom, 30)
                 }
                 .animation(.default)
+                
             }
-            
             .navigationBarHidden(true)
-            
         }
-        
+    }
+    
+    func dismiss() {
+        cardDismissal.toggle()
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.25, execute: {
+            cardShown.toggle()
+        })
     }
 }
 
