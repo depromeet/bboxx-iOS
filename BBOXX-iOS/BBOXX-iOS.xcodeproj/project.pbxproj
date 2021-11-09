@@ -304,11 +304,11 @@
 		4594B3192727C99E00318B3B /* GrowthNote */ = {
 			isa = PBXGroup;
 			children = (
-				45D58ABD273A4DA5007FC785 /* GrowthNoteCell.swift */,
+				45D58ABF273A4DA5007FC785 /* GrowthNoteWritingView.swift */,
 				45D58AC1273A4DA5007FC785 /* GrowthNoteCollectionView.swift */,
+				45D58ABD273A4DA5007FC785 /* GrowthNoteCell.swift */,
 				45D58ABE273A4DA5007FC785 /* GrowthNoteDetailView.swift */,
 				45D58AC0273A4DA5007FC785 /* GrowthNoteResultView.swift */,
-				45D58ABF273A4DA5007FC785 /* GrowthNoteWritingView.swift */,
 			);
 			path = GrowthNote;
 			sourceTree = "<group>";
@@ -325,11 +325,11 @@
 		45B1EA79272687D4006FC5F3 /* FeelingNote */ = {
 			isa = PBXGroup;
 			children = (
+				45D58AB5273A4D83007FC785 /* FeelingNoteWritingView.swift */,
 				45D58AB4273A4D83007FC785 /* FeelingNoteDeleteCompleteView.swift */,
 				45D58AB1273A4D83007FC785 /* FeelingNoteRemindView.swift */,
 				45D58AB3273A4D83007FC785 /* FeelingNoteResultView.swift */,
 				45D58AB2273A4D83007FC785 /* FeelingNoteReviewView.swift */,
-				45D58AB5273A4D83007FC785 /* FeelingNoteWritingView.swift */,
 			);
 			path = FeelingNote;
 			sourceTree = "<group>";

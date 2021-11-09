@@ -1,4 +1,5 @@
 import Foundation
+import SwiftKeychainWrapper
 
 // 참고 : https://velog.io/@jins0704/Alamofire%EC%97%90-%EB%8C%80%ED%95%B4
 
@@ -28,52 +29,23 @@ class CreateNicknameViewModel: ObservableObject {
             }
         }
     }
-//
-//    func requestMe(){
-//        UserService.shared.requestMe{ (result) in
-//            switch result{
-//            case .success(let response):
-//                if( response.code == "200"){
-//
-//                }
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//
-//        }
-//    }
-//
-//    func requestUserInfo(){
-//        UserService.shared.requestUerInfo(0){(result) in
-//            switch result{
-//            case .success(let response):
-//                if( response.code == "200"){
-//
-//                }
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
-//
-//    func updateNickname(){
-//        UserService.shared.updateUserInfo(0,self.nickname){(result) in
-//            switch result{
-//            case .success(let response):
-//                if( response.code == "200"){
-//
-//                }
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//
-//        }
-//    }
-//
-//    //  authData : 소셜 로그인 Token
-//    //  providerType : 소셜 로그인 종류 ("KAKAO", "GOOGLE", "APPLE" ##대문자로 보내야함)
-//    //  호출 위치 : 소셜 로그인 후
-//    //  response 데이터 token 값이 Jwt
+
+    func getMe(){
+        UserService.shared.getMe{ (result) in
+            switch result{
+            case .success(let response):
+                KeychainWrapper.standard.set(response.data.id, forKey: "memberId")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+
+        }
+    }
+    
+    //  authData : 소셜 로그인 Token
+    //  providerType : 소셜 로그인 종류 ("KAKAO", "GOOGLE", "APPLE" ##대문자로 보내야함)
+    //  호출 위치 : 소셜 로그인 후
+    //  response 데이터 token 값이 Jwt
 //    func authSignIn()  {
 //        AuthService.shared.signIn("Tasduat", "KAKAO"){(result) in
 //            switch result{
@@ -92,21 +64,6 @@ class CreateNicknameViewModel: ObservableObject {
 //    //  response 데이터 token 값이 Jwt
 //    func authSignUp() {
 //        AuthService.shared.signUp("Tasduat", self.nickname, "KAKAO"){(result) in
-//            switch result{
-//            case .success(let response):
-//                if( response.code == "200"){
-//
-//                }
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//
-//        }
-//    }
-//
-//    //  호출 위치 : 데시벨 등록
-//    func regiseterDeciber(){
-//        DecibelService.shared.registerDecibel(50, 0){(result) in
 //            switch result{
 //            case .success(let response):
 //                if( response.code == "200"){
