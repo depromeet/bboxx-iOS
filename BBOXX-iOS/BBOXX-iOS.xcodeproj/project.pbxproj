@@ -247,12 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				45817755271DBE0100036086 /* View+Extension.swift */,
-<<<<<<< HEAD
-				6AC4143D272C38ED00935C43 /* UserDefaults+Extension.swift */,
 				6AB66E312736EB57009DADBE /* Image+Extension.swift */,
-=======
 				4597749E2734E85A003649F6 /* UserDefaults+Extension.swift */,
->>>>>>> 7307f24fa8a9df76d5e827a4f51996758b6c048a
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -312,12 +308,9 @@
 				45B1EA4A272660CC006FC5F3 /* FeelingNoteRemindView.swift */,
 				45B1EA76272687CF006FC5F3 /* FeelingNoteResultView.swift */,
 				4594B3102727B8CE00318B3B /* FeelingNoteReviewView.swift */,
-<<<<<<< HEAD
 				6AC9D9F927341CB000F72E0D /* SelectFeelingView.swift */,
 				6AB66E332736EBB8009DADBE /* FeelingButton.swift */,
-=======
 				457DA59A27302C2300A2F031 /* FeelingNoteDeleteCompleteView.swift */,
->>>>>>> 7307f24fa8a9df76d5e827a4f51996758b6c048a
 			);
 			path = FeelingNote;
 			sourceTree = "<group>";
@@ -636,11 +629,8 @@
 				6ACBC5B12723ED15002E1E55 /* SignInService.swift in Sources */,
 				6A02125C270A1EBC002828D9 /* AppDelegate.swift in Sources */,
 				45AB2119271A9F6800404122 /* Notification.swift in Sources */,
-<<<<<<< HEAD
 				6AC4143E272C38ED00935C43 /* UserDefaults+Extension.swift in Sources */,
 				6AB66E342736EBB8009DADBE /* FeelingButton.swift in Sources */,
-=======
->>>>>>> 7307f24fa8a9df76d5e827a4f51996758b6c048a
 				458C257327212F6C00E48195 /* NotificationListViewModel.swift in Sources */,
 				45AB2112271A9E0F00404122 /* NotificationListView.swift in Sources */,
 				6AC4143527285C5000935C43 /* MainView.swift in Sources */,
