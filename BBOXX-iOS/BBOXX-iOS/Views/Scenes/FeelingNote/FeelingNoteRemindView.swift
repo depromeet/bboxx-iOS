@@ -2,13 +2,13 @@ import SwiftUI
 
 struct FeelingNoteRemindView: View {
     
+    @ObservedObject var viewModel = FeelingNoteRemindViewModel()
+    
     var title: String = ""
     var content: String = ""
-        
-    init(title: String, content: String) {
-        self.title = title
-        self.content = content
-    }
+    var category: String = "학업문제"
+    
+    @State var tag: Int? = 0
     
     var body: some View {
         NavigationView {
@@ -28,7 +28,7 @@ struct FeelingNoteRemindView: View {
                                 .font(.custom("Pretendard-Medium", size: 28))
                                 .foregroundColor(Color("BboxxTextColor"))
                             
-                            Text("학업문제")
+                            Text(category)
                                 .font(.custom("Pretendard-Bold", size: 28))
                                 .foregroundColor(Color("BboxxGrayColor"))
                                 
@@ -74,17 +74,26 @@ struct FeelingNoteRemindView: View {
                         
                         NavigationLink(destination:
                                         FeelingNoteResultView()
-                                        .navigationBarHidden(true)) {
+                                        .navigationBarHidden(true)
+                                       , tag: 1, selection: self.$tag) {
+                            EmptyView()
+                        }
+                        
+                        Button(action: {
+                            self.tag = 1
+                            
+                        }, label: {
                             Text("버릴래")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
                                 .foregroundColor(.white)
-                                .frame(maxWidth: .infinity, minHeight: 56)
-                                .background(Color("BboxxGrayColor"))
-                                .cornerRadius(16)
-                                
-                                .padding(.top, 30)
-                                .padding(.bottom, 30)
-                        }
+                        })
+                        .frame(maxWidth: .infinity, minHeight: 56)
+                        .background(Color("BboxxGrayColor"))
+                        .cornerRadius(16)
+                        
+                        .padding(.top, 30)
+                        .padding(.bottom, 30)
+                        
                     }
                     .padding(.leading, 24)
                     .padding(.trailing, 24)
@@ -99,11 +108,5 @@ struct FeelingNoteRemindView: View {
             .background(Color("BboxxBackgroundColor").ignoresSafeArea())
         }
         
-    }
-}
-
-struct FeelingNoteRemindView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeelingNoteRemindView(title: "", content: "")
     }
 }

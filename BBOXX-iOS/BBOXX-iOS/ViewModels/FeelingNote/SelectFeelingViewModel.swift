@@ -2,7 +2,7 @@ import Foundation
 
 class SelectFeelingViewModel: ObservableObject {
     // TODO: change type of 'feelings'
-    var feelings: [Emotion] = []
+    //var feelings: [Emotion] = []
     
     init() {
         self.fetchFeelings()
@@ -14,6 +14,6 @@ class SelectFeelingViewModel: ObservableObject {
 }
 
 // TODO: remove
-struct Emotion: Identifiable {
-    var id: ObjectIdentifier
-}
+//struct Emotion: Identifiable {
+//    var id: ObjectIdentifier
+//}

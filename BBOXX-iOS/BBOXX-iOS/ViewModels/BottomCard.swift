@@ -2,27 +2,20 @@ import SwiftUI
 
 struct BottomCard<Content: View>: View {
     let content: Content
-    
-    var firstButtonText: String = ""
-    var secondButtonText: String = ""
-    
+        
     @Binding var cardShown: Bool
-    @Binding var cardDissmissal: Bool
+    @Binding var cardDismissal: Bool
     
     let height: CGFloat
     
-    init(firstButtonText: String,
-         secondButtonText: String,
-         cardShown: Binding<Bool>,
-         cardDissmissal: Binding<Bool>,
+    init(cardShown: Binding<Bool>,
+         cardDismissal: Binding<Bool>,
          height: CGFloat,
          @ViewBuilder content: () -> Content
     ) {
-        self.firstButtonText = firstButtonText
-        self.secondButtonText = secondButtonText
         self.height = height
         _cardShown = cardShown
-        _cardDissmissal = cardDissmissal
+        _cardDismissal = cardDismissal
         self.content = content()
     }
     
@@ -46,43 +39,43 @@ struct BottomCard<Content: View>: View {
                 VStack {
                     content
 
-                    HStack {
-                        Button(action: {
-                            self.dismiss()
-                        }, label: {
-                            Text(firstButtonText)
-                                .font(.custom("Pretendard-SemiBold", size: 18))
-                                .foregroundColor(Color("BboxxTextColor"))
-                                .opacity(0.6)
-                        })
-                        .frame(width: 156, height: 56, alignment: .center)
-                        
-                        Spacer().frame(width: 19)
-                        
-                        Button(action: {
-                            // 뒤로 가기 액션
-                            // 1. 성장일기의 경우, 그만쓸래 누르면 feelingReviewView로 돌아가야 한다
-                            // 2. 감정일기의 경우, 그만쓸래 누르면 카테고리 선택 or 소리치기 결과 페이지로 돌아감
-                        }, label: {
-                            Text(secondButtonText)
-                                .font(.custom("Pretendard-SemiBold", size: 18))
-                                .foregroundColor(Color.white)
-                        })
-                        .frame(width: 156, height: 56, alignment: .center)
-                        .background(Color("BboxxGrayColor"))
-                        .cornerRadius(16)
-                        
-                    }
-                    .padding(.top, 38)
-                    .padding(.leading, 20)
-                    .padding(.trailing, 20)
-                    .padding(.bottom, 30)
+//                    HStack {
+//                        Button(action: {
+//                            self.dismiss()
+//                        }, label: {
+//                            Text(firstButtonText)
+//                                .font(.custom("Pretendard-SemiBold", size: 18))
+//                                .foregroundColor(Color("BboxxTextColor"))
+//                                .opacity(0.6)
+//                        })
+//                        .frame(width: 156, height: 56, alignment: .center)
+//
+//                        Spacer().frame(width: 19)
+//
+//                        Button(action: {
+//                            // 뒤로 가기 액션
+//                            // 1. 성장일기의 경우, 그만쓸래 누르면 feelingReviewView로 돌아가야 한다
+//                            // 2. 감정일기의 경우, 그만쓸래 누르면 카테고리 선택 or 소리치기 결과 페이지로 돌아감
+//                        }, label: {
+//                            Text(secondButtonText)
+//                                .font(.custom("Pretendard-SemiBold", size: 18))
+//                                .foregroundColor(Color.white)
+//                        })
+//                        .frame(width: 156, height: 56, alignment: .center)
+//                        .background(Color("BboxxGrayColor"))
+//                        .cornerRadius(16)
+//
+//                    }
+//                    .padding(.top, 38)
+//                    .padding(.leading, 20)
+//                    .padding(.trailing, 20)
+//                    .padding(.bottom, 30)
                 }
                 .background(Color.white)
                 .cornerRadius(24, corners: [.topLeft, .topRight])
 
                 .frame(minWidth: 0, maxWidth: .infinity, maxHeight: height)
-                .offset(y: cardDissmissal && cardShown ? 0 : height)
+                .offset(y: cardDismissal && cardShown ? 0 : height)
                 .animation(Animation.default.delay(0.2))
                 
             }
@@ -91,7 +84,7 @@ struct BottomCard<Content: View>: View {
     }
     
     func dismiss() {
-        cardDissmissal.toggle()
+        cardDismissal.toggle()
         DispatchQueue.main.asyncAfter(deadline: .now()+0.25, execute: {
             cardShown.toggle()
         })

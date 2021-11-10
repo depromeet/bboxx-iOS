@@ -6,6 +6,9 @@ target 'BBOXX-iOS' do
   use_frameworks!
 
   pod 'Alamofire'
+  pod 'SwiftKeychainWrapper'
+
+  # Kakao Login
   pod 'KakaoSDKCommon'  
   pod 'KakaoSDKAuth'  
   pod 'KakaoSDKUser'

@@ -12,6 +12,8 @@ struct FeelingNoteWritingView: View {
     
     @State var tag: Int? = 0
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -142,12 +144,39 @@ struct FeelingNoteWritingView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("BboxxBackgroundColor").ignoresSafeArea())
                 
-                BottomCard(firstButtonText: "계속 할래",
-                           secondButtonText: "그만 쓸래",
-                           cardShown: $cardShown,
-                           cardDissmissal: $cardDismissal,
+                BottomCard(cardShown: self.$cardShown,
+                           cardDismissal: self.$cardDismissal,
                            height: UIScreen.main.bounds.height/1.5) {
                     CardContent(title: "그만 쓰고싶어?", subTitle: "돌아가면 쓰던 글이 지워져.")
+                    HStack {
+                        Button(action: {
+                            self.dismiss()
+                        }, label: {
+                            Text("계속 할래")
+                                .font(.custom("Pretendard-SemiBold", size: 18))
+                                .foregroundColor(Color("BboxxTextColor"))
+                                .opacity(0.6)
+                        })
+                        .frame(width: 156, height: 56, alignment: .center)
+                        
+                        Spacer().frame(width: 19)
+                        
+                        Button(action: {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            Text("그만 할래")
+                                .font(.custom("Pretendard-SemiBold", size: 18))
+                                .foregroundColor(Color.white)
+                        })
+                        .frame(width: 156, height: 56, alignment: .center)
+                        .background(Color("BboxxGrayColor"))
+                        .cornerRadius(16)
+                        
+                    }
+                    .padding(.top, 38)
+                    .padding(.leading, 20)
+                    .padding(.trailing, 20)
+                    .padding(.bottom, 30)
                 }
                 .animation(.default)
             }
@@ -156,6 +185,12 @@ struct FeelingNoteWritingView: View {
         
     }
     
+    func dismiss() {
+        cardDismissal.toggle()
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.25, execute: {
+            cardShown.toggle()
+        })
+    }
 }
 
 struct FeelingNoteWritingView_Previews: PreviewProvider {

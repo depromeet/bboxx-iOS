@@ -123,6 +123,7 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
+  - SwiftKeychainWrapper (4.0.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -133,6 +134,7 @@ DEPENDENCIES:
   - KakaoSDKCommon
   - KakaoSDKLink
   - KakaoSDKUser
+  - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
@@ -157,6 +159,7 @@ SPEC REPOS:
     - KakaoSDKUser
     - nanopb
     - PromisesObjC
+    - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
@@ -180,7 +183,8 @@ SPEC CHECKSUMS:
   KakaoSDKUser: c4bdbca17b05ce7a25c67176ac68b6b0c8b1db56
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
 
-PODFILE CHECKSUM: bcfc96dbb1f0c1838702eac0ef56f483a4427c4c
+PODFILE CHECKSUM: ea1c5c504c656e3f7971e1b85303ec47216a0c3e
 
 COCOAPODS: 1.11.2
