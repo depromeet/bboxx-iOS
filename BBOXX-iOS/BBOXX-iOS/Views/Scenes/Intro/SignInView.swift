@@ -7,6 +7,7 @@ struct SignInView: View {
     
     @ObservedObject var viewModel: SignInViewModel
     @State var shouldMoveToNextView: Bool = false
+
     var body: some View{
         NavigationView{
             VStack {
@@ -47,11 +48,19 @@ struct SignInView: View {
                                 .frame(maxWidth: .infinity,maxHeight: 54, alignment: .center)
                         }
                     }, label: {})
-                    NavigationLink(destination: CreateNicknameView().navigationBarHidden(true), isActive: $shouldMoveToNextView){
+                    
+                    
+                    NavigationLink(destination:
+                                    CreateNicknameView()
+                                    .navigationBarHidden(true), tag: 1, selection: $viewModel.tag) {
+                        EmptyView()
+                    }
+                    
+                    NavigationLink(destination: MainView().navigationBarHidden(true), isActive: $shouldMoveToNextView){
                         Button(action: {
                             viewModel.attemptKakaoSignIn{
                                 shouldMoveToNextView = true
-                            }
+                            } 
                         }, label: {
                             Image(ImageAsset.startWithKakaoButton)
                                 .resizable()
