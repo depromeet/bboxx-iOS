@@ -47,4 +47,7 @@ enum ImageAsset {
     static let heartBoxIcon = "heartBoxIcon"
     static let backButton = "backButton"
     static let closeButton = "closeButton"
+    
+    static let select_category_image = "select_category_image"
+    static let select_category_pickView = "select_category_pickView"
 }
