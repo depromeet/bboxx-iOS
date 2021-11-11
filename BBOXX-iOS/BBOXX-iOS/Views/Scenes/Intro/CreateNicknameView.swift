@@ -1,11 +1,10 @@
 import SwiftUI
+import SwiftKeychainWrapper
 
 struct CreateNicknameView: View {
     
     @ObservedObject var viewModel = CreateNicknameViewModel()
-    
-    @State var tag: Int? = 0
-    
+        
     var body: some View {
         NavigationView {
             VStack {
@@ -57,7 +56,9 @@ struct CreateNicknameView: View {
                 }
                 
                 Button(action: {
-                    viewModel.createNickname()
+                    viewModel.signUp(KeychainWrapper.standard.string(forKey: "authData") ?? "",
+                                     viewModel.nickname,
+                                     UserDefaults.standard.string(forKey: "providerType") ?? "")
                 }, label: {
                     Text("마음에 들어")
                         .font(.custom("Pretendard-SemiBold", size: 18))

@@ -23,16 +23,8 @@ class CreateNicknameViewModel: ObservableObject {
         UserService.shared.createNickname { (result) in
             switch result {
             case .success(let response):
-                switch response.code {
-                case "200":
-                    self.nickname = response.data.nickname
-                    self.signUp(KeychainWrapper.standard.string(forKey: "authData") ?? "",
-                                self.nickname,
-                                UserDefaults.standard.string(forKey: "providerType") ?? "")
-                    UserDefaults.standard.set(self.nickname, forKey: "nickname")
-                default:
-                    print(response.code)
-                }
+                self.nickname = response.data.nickname
+                UserDefaults.standard.set(self.nickname, forKey: "nickname")
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -43,14 +35,9 @@ class CreateNicknameViewModel: ObservableObject {
         AuthService.shared.signUp(authData, nickname, providerType){(result) in
             switch result{
             case .success(let response):
-                switch response.code {
-                case "200":
-                    self.tag = 1
-                    self.getMe()
-                    KeychainWrapper.standard.set(response.data.token, forKey: "token")
-                default:
-                    print(response.code)
-                }
+                self.tag = 1
+                self.getMe()
+                KeychainWrapper.standard.set(response.data.token, forKey: "token")
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -62,12 +49,7 @@ class CreateNicknameViewModel: ObservableObject {
         UserService.shared.getMe{ (result) in
             switch result{
             case .success(let response):
-                switch response.code {
-                case "200":
-                    KeychainWrapper.standard.set(response.data.id, forKey: "memberId")
-                default:
-                    print(response.code)
-                }
+                KeychainWrapper.standard.set(response.data.id, forKey: "memberId")
             case .failure(let error):
                 print(error.localizedDescription)
             }

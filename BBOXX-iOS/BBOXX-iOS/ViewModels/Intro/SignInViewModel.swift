@@ -92,18 +92,16 @@ class SignInViewModel: ObservableObject {
         AuthService.shared.signIn(authData, providerType){(result) in
             switch result{
             case .success(let response):
-                switch response.code {
-                case "200":
+                if !response.data.token.isEmpty {
                     self.tag = 1
                     KeychainWrapper.standard.set(response.data.token, forKey: "token")
                     self.getMe()
-                case "401", "403":
+                } else {
                     // 로그인 실패 시, 닉네임 생성 화면으로 이동
                     self.tag = 2
-                    // 로그인 실패 시, 회원가입을 위해 소셜 로그인 토큰 값과 소셜 정보 저장
+                    // 회원가입을 위해 소셜 로그인 토큰 값과 소셜 정보 저장
                     KeychainWrapper.standard.set(authData, forKey: "authData")
                     UserDefaults.standard.setValue(providerType, forKey: "providerType")
-                default:
                     print(response.code)
                 }
                 
@@ -118,12 +116,7 @@ class SignInViewModel: ObservableObject {
         UserService.shared.getMe{ (result) in
             switch result{
             case .success(let response):
-                switch response.code {
-                case "200":
-                    KeychainWrapper.standard.set(response.data.id, forKey: "memberId")
-                default:
-                    print(response.code)
-                }
+                KeychainWrapper.standard.set(response.data.id, forKey: "memberId")
             case .failure(let error):
                 print(error.localizedDescription)
             }
