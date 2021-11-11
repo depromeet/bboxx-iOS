@@ -12,9 +12,7 @@ class CreateNicknameViewModel: ObservableObject {
     @Published var tag: Int? = 0
     
     init() {
-        createNickname()
-        //regiseterDeciber()
-        
+        createNickname()        
     }
     
     func redoButtonDidTap() {
@@ -47,8 +45,9 @@ class CreateNicknameViewModel: ObservableObject {
             case .success(let response):
                 switch response.code {
                 case "200":
-                    KeychainWrapper.standard.set(response.data.token, forKey: "token")
                     self.tag = 1
+                    self.getMe()
+                    KeychainWrapper.standard.set(response.data.token, forKey: "token")
                 default:
                     print(response.code)
                 }

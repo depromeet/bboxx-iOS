@@ -51,14 +51,13 @@ struct CreateNicknameView: View {
                 
                 NavigationLink(destination:
                                 MainView()
-                                .navigationBarBackButtonHidden(false)
                                 .navigationBarHidden(true)
-                               , tag: 1, selection: self.$tag) {
+                               , tag: 1, selection: self.$viewModel.tag) {
                     EmptyView()
                 }
                 
                 Button(action: {
-
+                    viewModel.createNickname()
                 }, label: {
                     Text("마음에 들어")
                         .font(.custom("Pretendard-SemiBold", size: 18))
