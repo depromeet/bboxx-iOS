@@ -9,10 +9,10 @@ class CreateNicknameViewModel: ObservableObject {
     
     @Published var nickname: String = ""
     
+    @Published var tag: Int? = 0
+    
     init() {
-        createNickname()
-        //regiseterDeciber()
-        
+        createNickname()        
     }
     
     func redoButtonDidTap() {
@@ -24,12 +24,27 @@ class CreateNicknameViewModel: ObservableObject {
             switch result {
             case .success(let response):
                 self.nickname = response.data.nickname
+                UserDefaults.standard.set(self.nickname, forKey: "nickname")
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
+    
+    func signUp(_ authData: String, _ nickname: String, _ providerType: String) {
+        AuthService.shared.signUp(authData, nickname, providerType){(result) in
+            switch result{
+            case .success(let response):
+                self.tag = 1
+                self.getMe()
+                KeychainWrapper.standard.set(response.data.token, forKey: "token")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
 
+        }
+    }
+    
     func getMe(){
         UserService.shared.getMe{ (result) in
             switch result{
@@ -41,38 +56,4 @@ class CreateNicknameViewModel: ObservableObject {
 
         }
     }
-    
-    //  authData : 소셜 로그인 Token
-    //  providerType : 소셜 로그인 종류 ("KAKAO", "GOOGLE", "APPLE" ##대문자로 보내야함)
-    //  호출 위치 : 소셜 로그인 후
-    //  response 데이터 token 값이 Jwt
-//    func authSignIn()  {
-//        AuthService.shared.signIn("Tasduat", "KAKAO"){(result) in
-//            switch result{
-//            case .success(let response):
-//                if( response.code == "200"){
-//
-//                }
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//
-//        }
-//    }
-//
-//    //  호출 위치 : 닉네임 확정 후 다음 화면으로 넘어갈때
-//    //  response 데이터 token 값이 Jwt
-//    func authSignUp() {
-//        AuthService.shared.signUp("Tasduat", self.nickname, "KAKAO"){(result) in
-//            switch result{
-//            case .success(let response):
-//                if( response.code == "200"){
-//
-//                }
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//
-//        }
-//    }
 }

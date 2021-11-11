@@ -5,6 +5,7 @@ import GoogleSignIn
 import KakaoSDKAuth
 import KakaoSDKUser
 import SwiftUI
+import SwiftKeychainWrapper
 import UIKit
 
 class SignInViewModel: ObservableObject {
@@ -13,14 +14,16 @@ class SignInViewModel: ObservableObject {
     private(set) var commentSecondLine = "나랑 함께할 수 있어"
     
     enum SignInState {
-      case signedIn
-      case signedOut
+        case signedIn
+        case signedOut
     }
     
     @Published var state: SignInState = .signedOut
     
+    @Published var tag: Int? = 0
+    
     private lazy var appleSignInCoordinator = AppleSignInCoordinator(signInVM: self)
-        
+    
     func attemptAppleSignIn() {
         appleSignInCoordinator.handleAuthorizationAppleIDButtonPress()
     }
@@ -29,10 +32,10 @@ class SignInViewModel: ObservableObject {
         if GIDSignIn.sharedInstance.currentUser == nil {
             // TODO: presenting Sign In View
             guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-
+            
             // Create Google Sign In configuration object.
             let config = GIDConfiguration(clientID: clientID)
-
+            
             // Sign in flow
             GIDSignIn.sharedInstance.signIn(with: config, presenting: (UIApplication.shared.windows.first?.rootViewController)!) { [unowned self] user, error in
                 
@@ -49,26 +52,30 @@ class SignInViewModel: ObservableObject {
                 }
                 
                 // TODO: Credential
-//                let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-//                                                               accessToken: authentication.accessToken)
+                //                let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                //                                                               accessToken: authentication.accessToken)
                 
                 // Using Token
             }
         }
     }
     
-    func attemptKakaoSignIn(completion: @escaping () -> Void) {
+    func attemptKakaoSignIn() {
         if (UserApi.isKakaoTalkLoginAvailable()) {
             // If KakaoTalk is installed, log in from KakaoTalk
             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                //print(error)
-                completion()
+                
+                if let authData = oauthToken?.accessToken {
+                    self.signIn(authData, ProviderType.kakao.rawValue)
+                }
             }
         }else{
             // If KakaoTalk is not installed, log in from Safari
             UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                //print(error)
-                completion()
+                
+                if let authData = oauthToken?.accessToken {
+                    self.signIn(authData, ProviderType.kakao.rawValue)
+                }
             }
         }
         
@@ -78,6 +85,41 @@ class SignInViewModel: ObservableObject {
             let age = user?.kakaoAccount?.ageRange
             let gender = user?.kakaoAccount?.gender
             print("\(email), \(age), \(gender)")
+        }
+    }
+    
+    func signIn(_ authData: String, _ providerType: String) {
+        AuthService.shared.signIn(authData, providerType){(result) in
+            switch result{
+            case .success(let response):
+                if response.data.token != "" {
+                    self.tag = 1
+                    KeychainWrapper.standard.set(response.data.token, forKey: "token")
+                    self.getMe()
+                } else {
+                    // 로그인 실패 시, 닉네임 생성 화면으로 이동
+                    self.tag = 2
+                    // 회원가입을 위해 소셜 로그인 토큰 값과 소셜 정보 저장
+                    KeychainWrapper.standard.set(authData, forKey: "authData")
+                    UserDefaults.standard.setValue(providerType, forKey: "providerType")
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
+    
+    func getMe(){
+        UserService.shared.getMe{ (result) in
+            switch result{
+            case .success(let response):
+                KeychainWrapper.standard.set(response.data.id, forKey: "memberId")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+
         }
     }
 }

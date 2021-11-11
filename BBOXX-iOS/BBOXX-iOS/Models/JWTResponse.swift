@@ -1,8 +1,6 @@
-import Foundation
-
-struct Response: Codable {
+struct JWTResponse: Codable {
     let code: String
-    let data: Body
+    let data: Jwt
     let message: String
     
     enum CodingKeys: String, CodingKey {
@@ -12,11 +10,11 @@ struct Response: Codable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         code = (try? values.decode(String.self, forKey: .code)) ?? ""
-        data = (try? values.decode(Body.self, forKey: .data)) ?? Body.init()
+        data = (try? values.decode(Jwt.self, forKey: .data)) ?? Jwt.init(valid: false)
         message = (try? values.decode(String.self, forKey: .message)) ?? ""
     }
 }
 
-struct Body: Codable {
-    
+struct Jwt: Codable {
+    let valid: Bool
 }

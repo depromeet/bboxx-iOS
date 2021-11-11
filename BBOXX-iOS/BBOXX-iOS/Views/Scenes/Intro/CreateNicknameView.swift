@@ -1,11 +1,10 @@
 import SwiftUI
+import SwiftKeychainWrapper
 
 struct CreateNicknameView: View {
     
     @ObservedObject var viewModel = CreateNicknameViewModel()
-    
-    @State var tag: Int? = 0
-    
+        
     var body: some View {
         NavigationView {
             VStack {
@@ -51,16 +50,15 @@ struct CreateNicknameView: View {
                 
                 NavigationLink(destination:
                                 MainView()
-                                .navigationBarBackButtonHidden(false)
                                 .navigationBarHidden(true)
-                               , tag: 1, selection: self.$tag) {
+                               , tag: 1, selection: self.$viewModel.tag) {
                     EmptyView()
                 }
                 
                 Button(action: {
-                    self.tag = 1
-                    UserDefaults.standard.set(viewModel.nickname, forKey: "nickname")
-                    viewModel.getMe()
+                    viewModel.signUp(KeychainWrapper.standard.string(forKey: "authData") ?? "",
+                                     viewModel.nickname,
+                                     UserDefaults.standard.string(forKey: "providerType") ?? "")
                 }, label: {
                     Text("마음에 들어")
                         .font(.custom("Pretendard-SemiBold", size: 18))

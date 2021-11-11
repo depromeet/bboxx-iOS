@@ -60,6 +60,7 @@
 		456E5A5D273B84BF0051511D /* FeelingNoteWritingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A59273B84BF0051511D /* FeelingNoteWritingViewModel.swift */; };
 		456E5A62273B84E90051511D /* GrowthNoteWritingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A60273B84E90051511D /* GrowthNoteWritingViewModel.swift */; };
 		456E5A63273B84E90051511D /* GrowthNoteCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A61273B84E90051511D /* GrowthNoteCollectionViewModel.swift */; };
+		457B91E1273CCFC30008B9CB /* JWTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457B91E0273CCFC30008B9CB /* JWTResponse.swift */; };
 		45817753271DBD8700036086 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45817752271DBD8700036086 /* RoundedCorner.swift */; };
 		45817756271DBE0100036086 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45817755271DBE0100036086 /* View+Extension.swift */; };
 		458F31482729285200F4C7EA /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 458F313F2729285200F4C7EA /* Pretendard-Regular.otf */; };
@@ -161,6 +162,7 @@
 		456E5A59273B84BF0051511D /* FeelingNoteWritingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeelingNoteWritingViewModel.swift; sourceTree = "<group>"; };
 		456E5A60273B84E90051511D /* GrowthNoteWritingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowthNoteWritingViewModel.swift; sourceTree = "<group>"; };
 		456E5A61273B84E90051511D /* GrowthNoteCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowthNoteCollectionViewModel.swift; sourceTree = "<group>"; };
+		457B91E0273CCFC30008B9CB /* JWTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTResponse.swift; sourceTree = "<group>"; };
 		45817752271DBD8700036086 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		45817755271DBE0100036086 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		458F313F2729285200F4C7EA /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 				45CE93502720FECF00ED60C5 /* Response.swift */,
 				6AE861972727158E00D0619E /* OnboardingScreen.swift */,
 				6AEAB68E27398D6000D264CF /* Tags.swift */,
+				457B91E0273CCFC30008B9CB /* JWTResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				456E5A3F273B84180051511D /* NotificationCell.swift in Sources */,
 				6AC4143527285C5000935C43 /* MainView.swift in Sources */,
 				456E5A03273B82940051511D /* TargetType.swift in Sources */,
+				457B91E1273CCFC30008B9CB /* JWTResponse.swift in Sources */,
 				6A02124D270A1BA9002828D9 /* APICall.swift in Sources */,
 				45817753271DBD8700036086 /* RoundedCorner.swift in Sources */,
 				456E5A07273B82940051511D /* HTTPHeaderField.swift in Sources */,
