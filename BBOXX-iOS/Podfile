@@ -19,6 +19,9 @@ target 'BBOXX-iOS' do
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
 
+  # Pager View
+  pod 'SwiftUIPager'
+
   # Pods for BBOXX-iOS
 
 end
