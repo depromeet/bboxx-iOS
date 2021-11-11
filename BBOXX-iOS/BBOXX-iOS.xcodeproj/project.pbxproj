@@ -29,7 +29,6 @@
 		456E5A0C273B82A10051511D /* MyAuthenticationCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A0A273B82A10051511D /* MyAuthenticationCredential.swift */; };
 		456E5A14273B82B30051511D /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A0E273B82B20051511D /* NetworkResult.swift */; };
 		456E5A15273B82B30051511D /* DecibelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A0F273B82B20051511D /* DecibelService.swift */; };
-		456E5A16273B82B30051511D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A10273B82B20051511D /* UserService.swift */; };
 		456E5A17273B82B30051511D /* FeelingNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A11273B82B20051511D /* FeelingNoteService.swift */; };
 		456E5A18273B82B30051511D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A12273B82B30051511D /* AuthService.swift */; };
 		456E5A19273B82B30051511D /* GrowthNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E5A13273B82B30051511D /* GrowthNoteService.swift */; };
@@ -101,6 +100,7 @@
 		6AEAB68F27398D6000D264CF /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEAB68E27398D6000D264CF /* Tags.swift */; };
 		6AEAB69127398DE500D264CF /* TagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEAB69027398DE500D264CF /* TagCollectionView.swift */; };
 		6AEAB69327398E6F00D264CF /* SelectTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEAB69227398E6F00D264CF /* SelectTagView.swift */; };
+		6AEF5D57273C1E9900545A13 /* SelectCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEF5D56273C1E9900545A13 /* SelectCategoryView.swift */; };
 		DD4210FBA9708BEA00AE62DB /* Pods_BBOXX_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007B292E7C0B660A83EBD98B /* Pods_BBOXX_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -131,7 +131,6 @@
 		456E5A0A273B82A10051511D /* MyAuthenticationCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAuthenticationCredential.swift; sourceTree = "<group>"; };
 		456E5A0E273B82B20051511D /* NetworkResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		456E5A0F273B82B20051511D /* DecibelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecibelService.swift; sourceTree = "<group>"; };
-		456E5A10273B82B20051511D /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = "../../../../Desktop/bboxx-iOS 복사본/BBOXX-iOS/BBOXX-iOS/Networks/UserService.swift"; sourceTree = "<group>"; };
 		456E5A11273B82B20051511D /* FeelingNoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeelingNoteService.swift; sourceTree = "<group>"; };
 		456E5A12273B82B30051511D /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		456E5A13273B82B30051511D /* GrowthNoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowthNoteService.swift; sourceTree = "<group>"; };
@@ -203,6 +202,7 @@
 		6AEAB68E27398D6000D264CF /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
 		6AEAB69027398DE500D264CF /* TagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionView.swift; sourceTree = "<group>"; };
 		6AEAB69227398E6F00D264CF /* SelectTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTagView.swift; sourceTree = "<group>"; };
+		6AEF5D56273C1E9900545A13 /* SelectCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryView.swift; sourceTree = "<group>"; };
 		EFDA4AFAF25925429B7FB3F5 /* Pods-BBOXX-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBOXX-iOS.release.xcconfig"; path = "Target Support Files/Pods-BBOXX-iOS/Pods-BBOXX-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -380,6 +380,7 @@
 				456E5A22273B83880051511D /* FeelingNoteRemindView.swift */,
 				456E5A23273B83880051511D /* FeelingNoteReviewView.swift */,
 				456E5A20273B83880051511D /* FeelingNoteDeleteCompleteView.swift */,
+				6AEF5D56273C1E9900545A13 /* SelectCategoryView.swift */,
 			);
 			path = FeelingNote;
 			sourceTree = "<group>";
@@ -542,7 +543,6 @@
 				456E5A11273B82B20051511D /* FeelingNoteService.swift */,
 				456E5A13273B82B30051511D /* GrowthNoteService.swift */,
 				456E5A0E273B82B20051511D /* NetworkResult.swift */,
-				456E5A10273B82B20051511D /* UserService.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -678,6 +678,7 @@
 				456E5A35273B83DE0051511D /* GrowthNoteResultView.swift in Sources */,
 				456E5A31273B83DE0051511D /* GrowthNoteCollectionView.swift in Sources */,
 				456E5A4E273B84720051511D /* SignInViewModel.swift in Sources */,
+				6AEF5D57273C1E9900545A13 /* SelectCategoryView.swift in Sources */,
 				456E59F7273B82540051511D /* UserResponse.swift in Sources */,
 				456E59F6273B82540051511D /* NicknameResponse.swift in Sources */,
 				456E5A19273B82B30051511D /* GrowthNoteService.swift in Sources */,
@@ -747,7 +748,6 @@
 				456E5A34273B83DE0051511D /* GrowthNoteWritingView.swift in Sources */,
 				6AB66E322736EB57009DADBE /* Image+Extension.swift in Sources */,
 				456E5A18273B82B30051511D /* AuthService.swift in Sources */,
-				456E5A16273B82B30051511D /* UserService.swift in Sources */,
 				6ACBC5AE2723ECB9002E1E55 /* AppleSignInCoordinator.swift in Sources */,
 				4593F9C8272A38B50006F8A2 /* TagView.swift in Sources */,
 				6AC9D9FA27341CB000F72E0D /* SelectFeelingView.swift in Sources */,
