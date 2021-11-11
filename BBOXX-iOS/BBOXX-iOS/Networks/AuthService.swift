@@ -16,10 +16,11 @@ class AuthService {
         print(providerType)
         
         let header: HTTPHeaders = [
-            "Content-Type" : "application/json;charset=UTF-8",
+            "Content-Type" : "application/json"
         ]
         
-        API.session.request(url, method: .post, parameters: params, headers: header).debugLog().responseJSON { (response) in
+        API.session.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header) .debugLog().responseJSON { (response) in
+            print(header)
             switch response.result {
             case .success(let jsonData):
                 do {
@@ -51,12 +52,11 @@ class AuthService {
             "Content-Type" : "application/json;charset=UTF-8"
         ]
         
-        API.session.request(url, method: .post, parameters: params, headers: header).responseJSON { (response) in
+        API.session.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header) .debugLog().responseJSON { (response) in
             switch response.result {
             case .success(let jsonData):
                 do {
                     let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
-                    print("SignUp : \(jsonData)")
                     let result = try JSONDecoder().decode(TokenResponse.self, from: json)
                     completion(.success(result))
                     
@@ -78,10 +78,10 @@ class AuthService {
             ]
         
         let header: HTTPHeaders = [
-            "Content-Type" : "application/json;charset=UTF-8"
+            "Content-Type" : "application/json"
         ]
         
-        API.session.request(url, method: .post, parameters: params, headers: header).debugLog().responseJSON { (response) in
+        API.session.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header) .debugLog().responseJSON { (response) in
             switch response.result {
             case .success(let jsonData):
                 do {

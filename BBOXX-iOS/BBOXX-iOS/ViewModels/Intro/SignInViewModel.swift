@@ -92,7 +92,7 @@ class SignInViewModel: ObservableObject {
         AuthService.shared.signIn(authData, providerType){(result) in
             switch result{
             case .success(let response):
-                if !response.data.token.isEmpty {
+                if response.data.token != "" {
                     self.tag = 1
                     KeychainWrapper.standard.set(response.data.token, forKey: "token")
                     self.getMe()
@@ -102,7 +102,6 @@ class SignInViewModel: ObservableObject {
                     // 회원가입을 위해 소셜 로그인 토큰 값과 소셜 정보 저장
                     KeychainWrapper.standard.set(authData, forKey: "authData")
                     UserDefaults.standard.setValue(providerType, forKey: "providerType")
-                    print(response.code)
                 }
                 
             case .failure(let error):
