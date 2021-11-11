@@ -12,15 +12,12 @@ class AuthService {
             "authData": authData,
             "providerType": providerType
         ]
-        print(authData)
-        print(providerType)
         
         let header: HTTPHeaders = [
             "Content-Type" : "application/json"
         ]
         
         API.session.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header) .debugLog().responseJSON { (response) in
-            print(header)
             switch response.result {
             case .success(let jsonData):
                 do {
