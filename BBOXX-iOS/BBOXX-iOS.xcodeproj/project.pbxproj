@@ -73,6 +73,7 @@
 		458F314F2729285200F4C7EA /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 458F31462729285200F4C7EA /* Pretendard-ExtraBold.otf */; };
 		458F31502729285200F4C7EA /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 458F31472729285200F4C7EA /* Pretendard-SemiBold.otf */; };
 		4593F9C8272A38B50006F8A2 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593F9C7272A38B50006F8A2 /* TagView.swift */; };
+		45942033273D6EEB001ED27A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45942032273D6EEB001ED27A /* UserService.swift */; };
 		4597749F2734E85A003649F6 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597749E2734E85A003649F6 /* UserDefaults+Extension.swift */; };
 		45A83B37272C71FB0057D4C1 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A83B36272C71FB0057D4C1 /* Secret.swift */; };
 		45AB2119271A9F6800404122 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB2118271A9F6800404122 /* Notification.swift */; };
@@ -175,6 +176,7 @@
 		458F31462729285200F4C7EA /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		458F31472729285200F4C7EA /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		4593F9C7272A38B50006F8A2 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		45942032273D6EEB001ED27A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		4597749E2734E85A003649F6 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		45A83B36272C71FB0057D4C1 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		45AB2118271A9F6800404122 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
@@ -539,6 +541,7 @@
 				456E59FD273B82880051511D /* Base */,
 				456E59FC273B827B0051511D /* OAuth */,
 				456E5A12273B82B30051511D /* AuthService.swift */,
+				45942032273D6EEB001ED27A /* UserService.swift */,
 				456E5A0F273B82B20051511D /* DecibelService.swift */,
 				456E5A11273B82B20051511D /* FeelingNoteService.swift */,
 				456E5A13273B82B30051511D /* GrowthNoteService.swift */,
@@ -686,6 +689,7 @@
 				456E5A06273B82940051511D /* API.swift in Sources */,
 				6AEAB68F27398D6000D264CF /* Tags.swift in Sources */,
 				4597749F2734E85A003649F6 /* UserDefaults+Extension.swift in Sources */,
+				45942033273D6EEB001ED27A /* UserService.swift in Sources */,
 				45CE93512720FECF00ED60C5 /* Response.swift in Sources */,
 				456E5A26273B83880051511D /* FeelingNoteResultView.swift in Sources */,
 				456E5A49273B84580051511D /* NotificationListViewModel.swift in Sources */,
