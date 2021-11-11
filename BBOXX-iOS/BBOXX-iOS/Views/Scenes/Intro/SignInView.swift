@@ -6,7 +6,6 @@ import AuthenticationServices
 struct SignInView: View {
     
     @ObservedObject var viewModel: SignInViewModel
-    @State var shouldMoveToNextView: Bool = false
 
     var body: some View{
         NavigationView{
@@ -49,25 +48,24 @@ struct SignInView: View {
                         }
                     }, label: {})
                     
-                    
-                    NavigationLink(destination:
-                                    CreateNicknameView()
+                    NavigationLink(destination: MainView()
                                     .navigationBarHidden(true), tag: 1, selection: $viewModel.tag) {
                         EmptyView()
                     }
                     
-                    NavigationLink(destination: MainView().navigationBarHidden(true), isActive: $shouldMoveToNextView){
-                        Button(action: {
-                            viewModel.attemptKakaoSignIn{
-                                shouldMoveToNextView = true
-                            } 
-                        }, label: {
-                            Image(ImageAsset.startWithKakaoButton)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: .infinity,maxHeight: 54, alignment: .center)
-                        })
+                    NavigationLink(destination: CreateNicknameView()
+                                    .navigationBarHidden(true), tag: 2, selection: $viewModel.tag) {
+                        EmptyView()
                     }
+                    
+                    Button(action: {
+                        viewModel.attemptKakaoSignIn()
+                    }, label: {
+                        Image(ImageAsset.startWithKakaoButton)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: .infinity,maxHeight: 54, alignment: .center)
+                    })
                 }
                 .padding()
                 Spacer()

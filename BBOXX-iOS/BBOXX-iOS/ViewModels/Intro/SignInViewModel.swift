@@ -60,59 +60,21 @@ class SignInViewModel: ObservableObject {
         }
     }
     
-    func attemptKakaoSignIn(completion: @escaping () -> Void) {
+    func attemptKakaoSignIn() {
         if (UserApi.isKakaoTalkLoginAvailable()) {
             // If KakaoTalk is installed, log in from KakaoTalk
             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                 
-                if let accessToken = oauthToken?.accessToken {
-                    AuthService.shared.signIn(accessToken, ProviderType.kakao.rawValue){(result) in
-                        switch result{
-                        case .success(let response):
-                            switch response.code {
-                            case "200":
-                                KeychainWrapper.standard.set(response.data.token, forKey: "token")
-                                completion()
-                            case "201":
-                                KeychainWrapper.standard.set(response.data.token, forKey: "token")
-                                completion()
-                            default:
-                                // 로그인 실패 시, 닉네임 생성 화면으로 이동
-                                self.tag = 1
-                            }
-                            
-                        case .failure(let error):
-                            print(error.localizedDescription)
-                        }
-                        
-                    }
+                if let authData = oauthToken?.accessToken {
+                    self.signIn(authData, ProviderType.kakao.rawValue)
                 }
             }
         }else{
             // If KakaoTalk is not installed, log in from Safari
             UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                 
-                if let accessToken = oauthToken?.accessToken {
-                    AuthService.shared.signIn(accessToken, ProviderType.kakao.rawValue){(result) in
-                        switch result{
-                        case .success(let response):
-                            switch response.code {
-                            case "200":
-                                KeychainWrapper.standard.set(response.data.token, forKey: "token")
-                                completion()
-                            case "201":
-                                KeychainWrapper.standard.set(response.data.token, forKey: "token")
-                                completion()
-                            default:
-                                // 로그인 실패 시, 닉네임 생성 화면으로 이동
-                                self.tag = 1
-                            }
-                            
-                        case .failure(let error):
-                            print(error.localizedDescription)
-                        }
-                        
-                    }
+                if let authData = oauthToken?.accessToken {
+                    self.signIn(authData, ProviderType.kakao.rawValue)
                 }
             }
         }
@@ -126,37 +88,46 @@ class SignInViewModel: ObservableObject {
         }
     }
     
-    //  authData : 소셜 로그인 Token
-    //  providerType : 소셜 로그인 종류 ("KAKAO", "GOOGLE", "APPLE" ##대문자로 보내야함)
-    //  호출 위치 : 소셜 로그인 후
-    //  response 데이터 token 값이 Jwt
-    //    func signIn(authData: String, providerType: ProviderType)  {
-    //        AuthService.shared.signIn("Tasduat", "KAKAO"){(result) in
-    //            switch result{
-    //            case .success(let response):
-    //                if( response.code == "200"){
-    //
-    //                }
-    //            case .failure(let error):
-    //                print(error.localizedDescription)
-    //            }
-    //
-    //        }
-    //    }
+    func signIn(_ authData: String, _ providerType: String) {
+        AuthService.shared.signIn(authData, providerType){(result) in
+            switch result{
+            case .success(let response):
+                switch response.code {
+                case "200":
+                    self.tag = 1
+                    KeychainWrapper.standard.set(response.data.token, forKey: "token")
+                    self.getMe()
+                case "401", "403":
+                    // 로그인 실패 시, 닉네임 생성 화면으로 이동
+                    self.tag = 2
+                    // 로그인 실패 시, 회원가입을 위해 소셜 로그인 토큰 값과 소셜 정보 저장
+                    KeychainWrapper.standard.set(authData, forKey: "authData")
+                    UserDefaults.standard.setValue(providerType, forKey: "providerType")
+                default:
+                    print(response.code)
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
     
-    //  호출 위치 : 닉네임 확정 후 다음 화면으로 넘어갈때
-    //  response 데이터 token 값이 Jwt
-    //    func signUp() {
-    //        AuthService.shared.signUp("Tasduat", self.nickname, "KAKAO"){(result) in
-    //            switch result{
-    //            case .success(let response):
-    //                if( response.code == "200"){
-    //
-    //                }
-    //            case .failure(let error):
-    //                print(error.localizedDescription)
-    //            }
-    //
-    //        }
-    //    }
+    func getMe(){
+        UserService.shared.getMe{ (result) in
+            switch result{
+            case .success(let response):
+                switch response.code {
+                case "200":
+                    KeychainWrapper.standard.set(response.data.id, forKey: "memberId")
+                default:
+                    print(response.code)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+
+        }
+    }
 }
