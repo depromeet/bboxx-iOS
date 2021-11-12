@@ -7,6 +7,9 @@ struct SelectTagView: View {
     @State var text: String = ""
     var selectedCount = 0
     @State var enableButton: Bool = false
+    var feelingNoteId: Int = 0
+    
+    @State var tag: Int? = 0
     
     var body: some View {
         VStack(spacing: 10) {
@@ -50,8 +53,17 @@ struct SelectTagView: View {
                 TagCollectionView(maxLimit: 150, tags: $tags, fontSize: 16)
                     .frame(height: 280)
                     .padding(.top,20)
-                Button {
-                } label: {
+                
+                // 선택된 태그들 같이 보내야 하는 코드 필요
+                NavigationLink(destination:
+                                GrowthNoteWritingView()
+                                .navigationBarHidden(true), tag: 1, selection: $tag) {
+                    EmptyView()
+                }
+                
+                Button(action: {
+                    self.tag = 1
+                }, label: {
                     Text("이 감정을 글로 써볼래")
                         .fontWeight(.semibold)
                         .foregroundColor(enableButton ? Color(.white) : Color("BboxxGrayColor"))
@@ -59,7 +71,7 @@ struct SelectTagView: View {
                         .padding(.horizontal,85)
                         .background(enableButton ? Color("BboxxGrayColor") : Color(.white))
                         .cornerRadius(10)
-                }
+                })
                 .frame(alignment: .bottom)
                 .padding(15)
                 .disabled(enableButton)

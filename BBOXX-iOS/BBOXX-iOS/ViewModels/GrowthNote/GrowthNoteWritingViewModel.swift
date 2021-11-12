@@ -30,4 +30,19 @@ class GrowthNoteWritingViewModel: ObservableObject {
             buttonState = false
         }
     }
+    
+    func postFeelingNote(_ content: String,
+                         _ feelingNoteId: Int,
+                         _ memberId: Int,
+                         _ tags: [String],
+                         _ title: String) {
+        GrowthNoteService.shared.postGrowthNote(content, feelingNoteId, memberId, tags, title) { (result) in
+            switch result {
+            case .success(let response):
+                print(response.data)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

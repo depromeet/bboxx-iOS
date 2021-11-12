@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftKeychainWrapper
 
 class GrowthNoteCollectionViewModel: ObservableObject {
     
@@ -52,10 +53,10 @@ class GrowthNoteCollectionViewModel: ObservableObject {
         
         dateString = "\(year)년 \(month)월"
         
-        getGrowthNotes(memberId: 0, month: month, year: year)
+        getGrowthNotes(KeychainWrapper.standard.integer(forKey: "memberId") ?? 0, month, year)
     }
     
-    func getGrowthNotes(memberId: Int, month: Int, year: Int) {
+    func getGrowthNotes(_ memberId: Int, _ month: Int, _ year: Int) {
         GrowthNoteService.shared.getGrowthNotes(memberId, month, year) { (result) in
             switch result {
             case .success(let response):

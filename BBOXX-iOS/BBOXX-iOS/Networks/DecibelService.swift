@@ -1,4 +1,5 @@
 import Alamofire
+import SwiftKeychainWrapper
 
 class DecibelService{
     private init() {}
@@ -9,23 +10,24 @@ class DecibelService{
     func postDecibel(_ decibel: Int, _ memberId: Int, _ completion: @escaping (Result<DecibelResponse, Error>) -> ()) {
         let url = Secret.BaseURL + "decibel"
         
-        let params: Parameters = [
-                "decibel": decibel,
-                "memberId": memberId
-            ]
+        var token = "Bearer "
+        token += KeychainWrapper.standard.string(forKey: "token") ?? ""
         
+        let params: Parameters = [
+            "decibel": decibel,
+            "memberId": memberId
+        ]
+      
         let header: HTTPHeaders = [
             "Content-Type" : "application/json;charset=UTF-8",
-            "Accept": "application/hal+json",
-            //"Authorization": token
+            "Authorization": token
         ]
         
-        API.session.request(url, method: .post, parameters: params, headers: header).responseJSON { (response) in
+        API.session.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             switch response.result {
             case .success(let jsonData):
                 do {
                     let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
-                    print("DecibelResponse : \(jsonData)")
                     let result = try JSONDecoder().decode(DecibelResponse.self, from: json)
                     completion(.success(result))
                     
@@ -43,11 +45,12 @@ class DecibelService{
     func getDecibelInfo(_ completion: @escaping (Result<DecibelResponse, Error>) -> ()) {
         let url = Secret.BaseURL + "decibel"
         
+        var token = "Bearer "
+        token += KeychainWrapper.standard.string(forKey: "token") ?? ""
    
         let header: HTTPHeaders = [
             "Content-Type" : "application/json;charset=UTF-8",
-            "Accept": "application/hal+json",
-            //"Authorization": token
+            "Authorization": token
         ]
         
         API.session.request(url, method: .get, headers: header).responseJSON { (response) in

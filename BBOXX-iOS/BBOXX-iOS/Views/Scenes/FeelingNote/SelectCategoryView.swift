@@ -11,12 +11,16 @@ enum Category: String, CaseIterable {
 
 struct SelectCategoryView: View {
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var viewModel = SelectCategoryViewModel()
+    
     @State var enableButton: Bool = false
     var categories = Category.allCases
     @State var showPicker: Bool = false
     @State private var selectedCategory = ""
     private let defaultText = "선택하기"
     
+    @State var tag: Int? = 0
+
     var body: some View {
         VStack(spacing: 10) {
             HStack {
@@ -92,11 +96,20 @@ struct SelectCategoryView: View {
             }
             .padding([.leading, .top], 20)
             .frame(maxWidth: .infinity,maxHeight: .infinity, alignment: .top)
+            
+            NavigationLink(destination:
+                            FeelingNoteWritingView(category: selectedCategory, categoryId: viewModel.categoryId)
+                            .navigationBarHidden(true), tag: 1, selection: $tag) {
+                EmptyView()
+            }
+            
             VStack {
                 ZStack {
                     
                     Button {
+                        self.tag = 1
                         if selectedCategory != "" { enableButton = true }
+                        viewModel.selectCategoryId(selectedCategory)
                     } label: {
                         Text("다 골랐어")
                             .fontWeight(.semibold)
@@ -117,7 +130,7 @@ struct SelectCategoryView: View {
                             }
                         }
                         .background(Color(.white))
-                        .pickerStyle(.wheel)
+                        .pickerStyle(WheelPickerStyle())
                         
                     }
                 }

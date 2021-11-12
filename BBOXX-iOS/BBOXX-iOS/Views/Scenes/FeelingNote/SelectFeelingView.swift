@@ -9,9 +9,14 @@ struct SelectFeelingView: View {
     private let feelingRows = [
         GridItem(.flexible()),GridItem(.flexible()), GridItem(.flexible())
     ]
-    private let imageWidth: CGFloat = 136
-    @State private var completed: Bool = false
-    private var selectedFeelingCount = 0
+    let imageWidth: CGFloat = 136
+    @State var completed: Bool = false
+    @State var selectedFeelingCount = 0
+    
+    var category: String = ""
+    var categoryId: Int = 0
+    var title: String = ""
+    var content: String = ""
     
     var body: some View {
         ZStack {
@@ -60,18 +65,17 @@ struct SelectFeelingView: View {
                     // MARK: Select Feelings
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: feelingRows, alignment: .center, spacing: 0) {
-                            ForEach(0..<13) { num in
+                            ForEach(viewModel.emotions, id: \.id) { emotion in//.indices) { index in
                                 Button(action: {
                                     // TODO: check selected feelings 1~5
-                                    // selectedFeelingCount += 1
+                                    selectedFeelingCount += 1
                                 }) {
                                     // TODO: put fetched feelings in button
-//                                    let url = URL(string: "")!
-//                                    FeelingButton(name: "화가나", imageUrl: url)
+                                    FeelingButton(emotion: emotion)
                                     
-//                                    Circle()
+                                    Circle()
                                     // TODO: load image
-                                    Image("감정일기_scroll-\(num)")
+                                    Image("감정일기_scroll-")
                                         .resizable()
                                         .frame(width: imageWidth, height: imageWidth)
                                 }
@@ -91,7 +95,10 @@ struct SelectFeelingView: View {
                         
                     }
                     
-                    NavigationLink(destination: FeelingNoteWritingView()) {
+                    NavigationLink(destination: FeelingNoteRemindView(
+                                    title: self.title,
+                                    content: self.content,
+                                    category: self.category)) {
                         Button(action: {
                             
                         }) {

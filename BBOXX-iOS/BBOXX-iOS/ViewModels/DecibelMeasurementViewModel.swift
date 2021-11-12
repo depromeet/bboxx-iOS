@@ -1,6 +1,7 @@
 import Foundation
 import AVFoundation
 import SwiftUI
+import SwiftKeychainWrapper
 
 class DecibelMeasurementViewModel: ObservableObject {
     
@@ -85,6 +86,7 @@ class DecibelMeasurementViewModel: ObservableObject {
                 break
             case 0:
                 self.setDecibelMeasurementResultView()
+                self.postDecibel(decibel: Int(self.peak), memberId: KeychainWrapper.standard.integer(forKey: "memberId") ?? 0)
                 self.tag = 1
                 self.endMonitoring()
                 break
@@ -133,6 +135,17 @@ class DecibelMeasurementViewModel: ObservableObject {
             backgroundColor = Color(red: 202 / 255, green: 64 / 255, blue: 64 / 255)
             decibelResultImage = ImageAsset.decibelResultImage6
             break
+        }
+    }
+    
+    func postDecibel(decibel: Int, memberId: Int) {
+        DecibelService.shared.postDecibel(decibel, memberId) { (result) in
+            switch result {
+            case .success( _):
+                break
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
     }
 }

@@ -2,14 +2,22 @@ import Foundation
 
 class SelectFeelingViewModel: ObservableObject {
     // TODO: change type of 'feelings'
-    //var feelings: [Emotion] = []
+    @Published var emotions: [Emotion] = []
     
     init() {
-        self.fetchFeelings()
+        self.getEmotions()
     }
     
-    func fetchFeelings(){
-        // TODO: call API
+    func getEmotions(){
+        FeelingNoteService.shared.getEmotions { (result) in
+            switch result{
+            case .success(let response):
+                self.emotions = response.data.emotions
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+
+        }
     }
 }
 

@@ -93,7 +93,7 @@ struct DecibelMeasurementResultView: View {
                 .padding(.top, 11)
                 
                 HStack(spacing: 15) {
-                    NavigationLink(destination: FeelingNoteWritingView()
+                    NavigationLink(destination: SelectCategoryView()
                                     .navigationBarHidden(true)) {
                         Text("감정일기 쓰기")
                             .font(.custom("Pretendard-SemiBold", size: 18))
