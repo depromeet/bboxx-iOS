@@ -111,22 +111,27 @@ struct SelectCategoryView: View {
             VStack {
                 ZStack {
                     
-                    Button {
-                        self.tag = 1
-                        if selectedCategory != "" { enableButton = true }
-                        viewModel.selectCategoryId(selectedCategory)
-                    } label: {
-                        Text("다 골랐어")
-                            .fontWeight(.semibold)
-                            .foregroundColor(enableButton ? Color(.white) : Color("BboxxGrayColor").opacity(0.4))
-                        .padding(.vertical,20)
-                        .padding(.horizontal,120)
-                        .background(enableButton ? Color("BboxxGrayColor") : Color("disabledButtonColor"))
-                        .cornerRadius(16)
-                }
-                .disabled(enableButton == false)
-                .frame(alignment: .bottom)
-                .padding(.bottom, 50)
+                    NavigationLink(destination:
+                                    FeelingNoteWritingView()
+                                    .navigationBarHidden(true)) {
+                        Button {
+                            self.tag = 1
+                            if selectedCategory != "" { enableButton = true }
+                            viewModel.selectCategoryId(selectedCategory)
+                        } label: {
+                            Text("다 골랐어")
+                                .fontWeight(.semibold)
+                                .foregroundColor(enableButton ? Color(.white) : Color("BboxxGrayColor").opacity(0.4))
+                                .padding(.vertical,20)
+                                .padding(.horizontal,120)
+                                .background(enableButton ? Color("BboxxGrayColor") : Color("disabledButtonColor"))
+                                .cornerRadius(16)
+                            
+                        }
+                        .disabled(enableButton == false)
+                        .frame(alignment: .bottom)
+                        .padding(.bottom, 50)
+                    }
                     
                     if showPicker {
                         VStack {
