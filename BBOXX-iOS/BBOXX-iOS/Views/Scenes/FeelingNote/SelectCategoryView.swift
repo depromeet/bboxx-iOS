@@ -55,15 +55,6 @@ struct SelectCategoryView: View {
                         .foregroundColor(Color("BboxxTextColor"))
                         .frame(maxWidth: .infinity,alignment: .leading)
                     ZStack {
-                        if selectedCategory == "" {
-                            Text("\(selectedCategory)")
-                                .foregroundColor(Color(""))
-                                .padding(.leading, 15)
-                        } else {
-                            Text("\(defaultText)")
-                                .foregroundColor(Color(""))
-                                .padding(.leading, 15)
-                        }
                         
                     Button {
                         showPicker.toggle()
@@ -77,7 +68,21 @@ struct SelectCategoryView: View {
                     }
                     .frame(maxWidth: .infinity,
                            alignment: .leading)
+                        if selectedCategory != "" {
+                            Text("\(selectedCategory)")
+                                .foregroundColor(Color("BboxxTextColor"))
+                                .frame(maxWidth: .infinity,
+                                       alignment: .leading)
+                                .padding(.leading, 20)
+                        } else {
+                            Text("\(defaultText)")
+                                .foregroundColor(Color("BboxxTextColor"))
+                                .frame(maxWidth: .infinity,
+                                       alignment: .leading)
+                                .padding(.leading, 20)
+                        }
                     }
+                    
                     
                     Text("때문에 힘들어")
                         .font(.system(size: 30, weight: .bold))
