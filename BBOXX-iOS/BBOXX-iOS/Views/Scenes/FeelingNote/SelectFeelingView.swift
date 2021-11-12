@@ -65,18 +65,17 @@ struct SelectFeelingView: View {
                     // MARK: Select Feelings
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: feelingRows, alignment: .center, spacing: 0) {
-                            ForEach(0..<13) { num in
+                            ForEach(viewModel.emotions, id: \.id) { emotion in//.indices) { index in
                                 Button(action: {
                                     // TODO: check selected feelings 1~5
-                                    // selectedFeelingCount += 1
+                                    selectedFeelingCount += 1
                                 }) {
                                     // TODO: put fetched feelings in button
-//                                    let url = URL(string: "")!
-//                                    FeelingButton(name: "화가나", imageUrl: url)
+                                    FeelingButton(emotion: emotion)
                                     
-//                                    Circle()
+                                    Circle()
                                     // TODO: load image
-                                    Image("감정일기_scroll-\(num)")
+                                    Image("감정일기_scroll-")
                                         .resizable()
                                         .frame(width: imageWidth, height: imageWidth)
                                 }

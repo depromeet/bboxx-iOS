@@ -5,8 +5,8 @@ struct FeelingButton: View {
     @State private var selected = false
     @State var image: UIImage = UIImage()
     private let imageWidth: CGFloat = 136
-    var name: String
-    var imageUrl: URL
+    
+    var emotion: Emotion
     
     var body: some View {
         
@@ -18,10 +18,10 @@ struct FeelingButton: View {
             ZStack {
                 VStack {
                     Image("")
-                        .data(url: imageUrl)
+                        .data(url: URL(string: emotion.emotionURL)!)
                         .resizable()
                         .frame(width: 78, height: 78)
-                    Text("\(name)")
+                    Text(emotion.status)
                 }
                 .background(selected ? Color.black : Color.white)
                 .clipShape(Circle())
