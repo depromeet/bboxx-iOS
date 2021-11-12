@@ -17,6 +17,8 @@ struct SelectCategoryView: View {
     @State private var selectedCategory = ""
     private let defaultText = "선택하기"
     
+    @State var tag: Int? = 0
+    
     var body: some View {
         VStack(spacing: 10) {
             HStack {
@@ -92,10 +94,18 @@ struct SelectCategoryView: View {
             }
             .padding([.leading, .top], 20)
             .frame(maxWidth: .infinity,maxHeight: .infinity, alignment: .top)
+            
+            NavigationLink(destination:
+                            FeelingNoteWritingView()
+                            .navigationBarHidden(true), tag: 1, selection: $tag) {
+                EmptyView()
+            }
+            
             VStack {
                 ZStack {
                     
                     Button {
+                        self.tag = 1
                         if selectedCategory != "" { enableButton = true }
                     } label: {
                         Text("다 골랐어")
@@ -117,7 +127,7 @@ struct SelectCategoryView: View {
                             }
                         }
                         .background(Color(.white))
-                        .pickerStyle(.wheel)
+                        .pickerStyle(WheelPickerStyle())
                         
                     }
                 }
