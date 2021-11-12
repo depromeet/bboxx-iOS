@@ -50,4 +50,11 @@ enum ImageAsset {
     
     static let select_category_image = "select_category_image"
     static let select_category_pickView = "select_category_pickView"
+    
+    static let onboarding_bboxx_01 = "onboarding_bboxx_01"
+    static let onboarding_bboxx_02 = "onboarding_bboxx_02"
+    static let onboarding_bboxx_03 = "onboarding_bboxx_03"
+    static let onboarding_bboxx_04 = "onboarding_bboxx_04"
+    static let onboarding_bboxx_05 = "onboarding_bboxx_05"
+    static let onboarding_bboxx_06 = "onboarding_bboxx_06"
 }

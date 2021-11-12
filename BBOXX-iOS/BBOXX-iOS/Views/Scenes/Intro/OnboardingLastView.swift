@@ -6,12 +6,12 @@ struct OnboardingLastView: View {
     var body: some View {
         NavigationView {
             HStack(spacing: 0){
-                VStack(spacing: 30){
+                VStack(spacing: 45){
                     let screen = lastOnboardingScreens
                     Text(screen.comment)
-                        .font(.system(size: 23))
-                        .fontWeight(.bold)
-                        .frame(maxWidth: .infinity,alignment: .center)
+                        .font(.custom("Pretendard-Bold", size: 24))
+                        .foregroundColor(Color("BboxxTextColor"))
+                        .multilineTextAlignment(.center)
 
                     Image(screen.image)
                         .resizable()
@@ -20,19 +20,23 @@ struct OnboardingLastView: View {
                         .scaleEffect(getScreenBounds().height < 750 ? 0.7 : 1)
                     VStack(spacing: 10) {
                         NavigationLink(destination: SignInView(viewModel: SignInViewModel()).navigationBarHidden(true)){
-                            Button(action: {}, label: {
+                            Button(action: {
+                                SignInView(viewModel: SignInViewModel())
+                            }, label: {
                                 Text("응, 좋아")
                                     .foregroundColor(Color.white)
+                                    .font(.custom("Pretendard-SemiBold", size: 18))
                             })
                                 .frame(height: 50)
                                 .frame(maxWidth: 350)
                                 .background(
                                     // TODO: Dark Gray
-                                    RoundedRectangle(cornerRadius: 50, style: .continuous).fill(Color.gray)
+                                    RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("BboxxGrayColor"))
+                                        
                                 )
                                 .overlay(
-                                    RoundedRectangle(cornerRadius: 50, style: .continuous)
-                                        .strokeBorder(Color.gray, lineWidth: 1)
+                                    RoundedRectangle(cornerRadius: 15, style: .continuous)
+                                        .strokeBorder(Color("BboxxGrayColor"), lineWidth: 1)
                                 )
                         }
 
