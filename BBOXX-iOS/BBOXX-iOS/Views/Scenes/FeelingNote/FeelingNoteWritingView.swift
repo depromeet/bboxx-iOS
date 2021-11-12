@@ -13,6 +13,7 @@ struct FeelingNoteWritingView: View {
     @State var tag: Int? = 0
     
     var category: String = ""
+    var categoryId: Int = 0
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -115,6 +116,7 @@ struct FeelingNoteWritingView: View {
                         
                         NavigationLink(destination:
                                         SelectFeelingView(category: self.category,
+                                                          categoryId: self.categoryId,
                                                           title: self.title,
                                                           content: self.content)
                                         .navigationBarHidden(true), tag: 1, selection: $tag) {

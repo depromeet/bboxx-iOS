@@ -8,7 +8,7 @@ class SelectCategoryViewModel: ObservableObject {
         
     }
     
-    func selectCategoryId(category: String) {
+    func selectCategoryId(_ category: String) {
         switch category {
         case "직장문제":
             self.categoryId = 1

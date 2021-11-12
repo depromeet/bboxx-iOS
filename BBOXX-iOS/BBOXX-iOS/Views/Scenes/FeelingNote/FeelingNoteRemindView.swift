@@ -1,12 +1,14 @@
 import SwiftUI
+import SwiftKeychainWrapper
 
 struct FeelingNoteRemindView: View {
-    
     @ObservedObject var viewModel = FeelingNoteRemindViewModel()
     
     var title: String = ""
     var content: String = ""
     var category: String = "학업문제"
+    var categoryId: Int = 0
+    var emotionStatusList: [Int] = [] // emotion의 id만 뽑아 배열로 넘겨받기
     
     @State var tag: Int? = 0
     
@@ -81,7 +83,11 @@ struct FeelingNoteRemindView: View {
                         
                         Button(action: {
                             self.tag = 1
-                            
+                            viewModel.postFeelingNote(categorId: categoryId,
+                                                      content: content,
+                                                      emotionStatusList: emotionStatusList,
+                                                      memberId: KeychainWrapper.standard.integer(forKey: "memberId") ?? 0,
+                                                      title: title)
                         }, label: {
                             Text("버릴래")
                                 .font(.custom("Pretendard-SemiBold", size: 18))

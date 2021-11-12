@@ -11,6 +11,8 @@ enum Category: String, CaseIterable {
 
 struct SelectCategoryView: View {
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var viewModel = SelectCategoryViewModel()
+    
     @State var enableButton: Bool = false
     var categories = Category.allCases
     @State var showPicker: Bool = false
@@ -96,7 +98,7 @@ struct SelectCategoryView: View {
             .frame(maxWidth: .infinity,maxHeight: .infinity, alignment: .top)
             
             NavigationLink(destination:
-                            FeelingNoteWritingView(category: selectedCategory)
+                            FeelingNoteWritingView(category: selectedCategory, categoryId: viewModel.categoryId)
                             .navigationBarHidden(true), tag: 1, selection: $tag) {
                 EmptyView()
             }
@@ -107,6 +109,7 @@ struct SelectCategoryView: View {
                     Button {
                         self.tag = 1
                         if selectedCategory != "" { enableButton = true }
+                        viewModel.selectCategoryId(selectedCategory)
                     } label: {
                         Text("다 골랐어")
                             .fontWeight(.semibold)

@@ -2,7 +2,7 @@ import Foundation
 
 class SelectFeelingViewModel: ObservableObject {
     // TODO: change type of 'feelings'
-    var emotions: [Emotion] = []
+    @Published var emotions: [Emotion] = []
     
     init() {
         self.getEmotions()

@@ -11,9 +11,10 @@ struct SelectFeelingView: View {
     ]
     let imageWidth: CGFloat = 136
     @State var completed: Bool = false
-    var selectedFeelingCount = 0
+    @State var selectedFeelingCount = 0
     
     var category: String = ""
+    var categoryId: Int = 0
     var title: String = ""
     var content: String = ""
     
