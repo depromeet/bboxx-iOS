@@ -17,14 +17,13 @@ class AuthService {
             "Content-Type" : "application/json"
         ]
         
-        API.session.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header) .debugLog().responseJSON { (response) in
+        API.session.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             switch response.result {
             case .success(let jsonData):
                 do {
                     let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
                     let result = try JSONDecoder().decode(TokenResponse.self, from: json)
                     completion(.success(result))
-                    print(result)
                     
                 } catch(let error) {
                     print(error)

@@ -12,6 +12,8 @@ struct FeelingNoteWritingView: View {
     
     @State var tag: Int? = 0
     
+    var category: String = ""
+    
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -112,7 +114,9 @@ struct FeelingNoteWritingView: View {
                             .padding(.trailing, 31)
                         
                         NavigationLink(destination:
-                                        FeelingNoteRemindView(title: self.title, content: self.content)
+                                        SelectFeelingView(category: self.category,
+                                                          title: self.title,
+                                                          content: self.content)
                                         .navigationBarHidden(true), tag: 1, selection: $tag) {
                             EmptyView()
                         }

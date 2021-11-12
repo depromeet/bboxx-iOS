@@ -1,4 +1,5 @@
 import Alamofire
+import SwiftKeychainWrapper
 
 class UserService {
     private init() {}
@@ -35,10 +36,12 @@ class UserService {
     func getMe(_ completion: @escaping (Result<UserResponse, Error>) -> ()) {
         let url = Secret.BaseURL + "me"
         
+        var token = "Bearer "
+        token += KeychainWrapper.standard.string(forKey: "token") ?? ""
+      
         let header: HTTPHeaders = [
             "Content-Type" : "application/json;charset=UTF-8",
-            "Accept": "application/hal+json",
-            //"Authorization": token
+            "Authorization": token
         ]
         
         API.session.request(url, method: .get, headers: header).responseJSON { (response) in
@@ -46,7 +49,6 @@ class UserService {
             case .success(let jsonData):
                 do {
                     let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
-                    print(jsonData)
                     let result = try JSONDecoder().decode(UserResponse.self, from: json)
                     completion(.success(result))
                     

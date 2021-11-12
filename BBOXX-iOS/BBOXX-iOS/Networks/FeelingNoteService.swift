@@ -1,4 +1,5 @@
 import Alamofire
+import SwiftKeychainWrapper
 
 class FeelingNoteService{
     private init() {}
@@ -6,14 +7,15 @@ class FeelingNoteService{
     static let shared = FeelingNoteService()
     
     //  호출 위치 : 감정일기 이모션들 가져올때
-    func getEmotions( _ completion: @escaping (Result<EmotionsResponse, Error>) -> ()) {
+    func getEmotions(_ completion: @escaping (Result<EmotionsResponse, Error>) -> ()) {
         let url = Secret.BaseURL + "emotions"
         
+        var token = "Bearer "
+        token += KeychainWrapper.standard.string(forKey: "token") ?? ""
       
         let header: HTTPHeaders = [
             "Content-Type" : "application/json;charset=UTF-8",
-            "Accept": "application/hal+json",
-            //"Authorization": token
+            "Authorization": token
         ]
         
         API.session.request(url, method: .get,  headers: header).responseJSON { (response) in
@@ -21,7 +23,6 @@ class FeelingNoteService{
             case .success(let jsonData):
                 do {
                     let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
-                   
                     let result = try JSONDecoder().decode(EmotionsResponse.self, from: json)
                     completion(.success(result))
                     
@@ -39,6 +40,9 @@ class FeelingNoteService{
     func postFeelingNote(_ categoryId: Int,_ content: String,_ emotionStatusList: [Int],_ memberId: Int, _ title: String, _ completion: @escaping (Result<Response, Error>) -> ()) {
         let url = Secret.BaseURL + "emotions"
         
+        var token = "Bearer "
+        token += KeychainWrapper.standard.string(forKey: "token") ?? ""
+        
         let params: Parameters = [
             "categoryId": categoryId,
             "content": content,
@@ -49,8 +53,7 @@ class FeelingNoteService{
       
         let header: HTTPHeaders = [
             "Content-Type" : "application/json;charset=UTF-8",
-            "Accept": "application/hal+json",
-            //"Authorization": token
+            "Authorization": token
         ]
         
         API.session.request(url, method: .post, parameters: params,  headers: header).responseJSON { (response) in

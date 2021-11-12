@@ -9,9 +9,13 @@ struct SelectFeelingView: View {
     private let feelingRows = [
         GridItem(.flexible()),GridItem(.flexible()), GridItem(.flexible())
     ]
-    private let imageWidth: CGFloat = 136
-    @State private var completed: Bool = false
-    private var selectedFeelingCount = 0
+    let imageWidth: CGFloat = 136
+    @State var completed: Bool = false
+    var selectedFeelingCount = 0
+    
+    var category: String = ""
+    var title: String = ""
+    var content: String = ""
     
     var body: some View {
         ZStack {
@@ -91,7 +95,10 @@ struct SelectFeelingView: View {
                         
                     }
                     
-                    NavigationLink(destination: FeelingNoteWritingView()) {
+                    NavigationLink(destination: FeelingNoteRemindView(
+                                    title: self.title,
+                                    content: self.content,
+                                    category: self.category)) {
                         Button(action: {
                             
                         }) {

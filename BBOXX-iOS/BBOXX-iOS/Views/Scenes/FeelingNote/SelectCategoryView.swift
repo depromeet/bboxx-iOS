@@ -18,7 +18,7 @@ struct SelectCategoryView: View {
     private let defaultText = "선택하기"
     
     @State var tag: Int? = 0
-    
+
     var body: some View {
         VStack(spacing: 10) {
             HStack {
@@ -96,7 +96,7 @@ struct SelectCategoryView: View {
             .frame(maxWidth: .infinity,maxHeight: .infinity, alignment: .top)
             
             NavigationLink(destination:
-                            FeelingNoteWritingView()
+                            FeelingNoteWritingView(category: selectedCategory)
                             .navigationBarHidden(true), tag: 1, selection: $tag) {
                 EmptyView()
             }

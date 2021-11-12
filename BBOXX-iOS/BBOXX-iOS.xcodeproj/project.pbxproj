@@ -75,6 +75,7 @@
 		4593F9C8272A38B50006F8A2 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593F9C7272A38B50006F8A2 /* TagView.swift */; };
 		45942033273D6EEB001ED27A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45942032273D6EEB001ED27A /* UserService.swift */; };
 		4597749F2734E85A003649F6 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597749E2734E85A003649F6 /* UserDefaults+Extension.swift */; };
+		45A6839C273E01AC00C77371 /* SelectCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6839B273E01AC00C77371 /* SelectCategoryViewModel.swift */; };
 		45A83B37272C71FB0057D4C1 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A83B36272C71FB0057D4C1 /* Secret.swift */; };
 		45AB2119271A9F6800404122 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB2118271A9F6800404122 /* Notification.swift */; };
 		45B7B6872728EB15006B8B9E /* CustomTwoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7B6862728EB15006B8B9E /* CustomTwoButton.swift */; };
@@ -178,6 +179,7 @@
 		4593F9C7272A38B50006F8A2 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		45942032273D6EEB001ED27A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		4597749E2734E85A003649F6 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		45A6839B273E01AC00C77371 /* SelectCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewModel.swift; sourceTree = "<group>"; };
 		45A83B36272C71FB0057D4C1 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		45AB2118271A9F6800404122 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		45B7B6862728EB15006B8B9E /* CustomTwoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTwoButton.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				456E5A57273B84BF0051511D /* FeelingNoteRemindViewModel.swift */,
 				456E5A56273B84BF0051511D /* FeelingNoteResultViewModel.swift */,
 				456E5A58273B84BF0051511D /* FeelingNoteReviewViewModel.swift */,
+				45A6839B273E01AC00C77371 /* SelectCategoryViewModel.swift */,
 			);
 			path = FeelingNote;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				456E5A19273B82B30051511D /* GrowthNoteService.swift in Sources */,
 				4527B84227083E0E003FD4F9 /* ContentView.swift in Sources */,
 				456E5A06273B82940051511D /* API.swift in Sources */,
+				45A6839C273E01AC00C77371 /* SelectCategoryViewModel.swift in Sources */,
 				6AEAB68F27398D6000D264CF /* Tags.swift in Sources */,
 				4597749F2734E85A003649F6 /* UserDefaults+Extension.swift in Sources */,
 				45942033273D6EEB001ED27A /* UserService.swift in Sources */,
