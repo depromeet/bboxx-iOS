@@ -40,7 +40,7 @@ class GrowthNoteService{
     }
     
     //  요청 위치 : 성장일기 쓸때
-    func postGrowthNote(_ content: String, _ emotionDiaryId: Int, _ memberId: Int,_ tags: String, _ title: String, _ completion: @escaping (Result<Response, Error>) -> ()) {
+    func postGrowthNote(_ content: String, _ emotionDiaryId: Int, _ memberId: Int,_ tags: [String], _ title: String, _ completion: @escaping (Result<Response, Error>) -> ()) {
         let url = Secret.BaseURL + "improvement-diaries"
         
         let params: Parameters = [

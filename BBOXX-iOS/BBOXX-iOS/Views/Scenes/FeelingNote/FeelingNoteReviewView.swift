@@ -68,8 +68,7 @@ struct FeelingNoteReviewView: View {
                     .padding(.top, 20)
                     
                     VStack {
-                        // 추후 destination 파라미터 값 성장일기 태그 선택 뷰로 수정 필요
-                        NavigationLink(destination: GrowthNoteWritingView().navigationBarHidden(true)) {
+                        NavigationLink(destination: SelectTagView().navigationBarHidden(true)) {
                             Text("다시보니 괜찮아졌어")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
                                 .foregroundColor(.white)

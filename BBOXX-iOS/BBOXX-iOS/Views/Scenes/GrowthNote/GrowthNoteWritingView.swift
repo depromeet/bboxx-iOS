@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftKeychainWrapper
 
 struct GrowthNoteWritingView: View {
     
@@ -6,6 +7,9 @@ struct GrowthNoteWritingView: View {
     
     @State private var title: String = ""
     @State private var content: String = ""
+    
+    var feelingNoteId: Int = 0
+    var tags: [String] = []
     
     @State private var cardShown: Bool = false
     @State private var cardDismissal: Bool = false
@@ -119,6 +123,11 @@ struct GrowthNoteWritingView: View {
                         
                         Button(action: {
                             self.tag = 1
+                            viewModel.postFeelingNote(content,
+                                                      feelingNoteId,
+                                                      KeychainWrapper.standard.integer(forKey: "memberId") ?? 0,
+                                                      tags,
+                                                      title)
                         }, label: {
                             Text("다 썼어")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
