@@ -129,14 +129,32 @@ struct SelectCategoryView: View {
                 .padding(.bottom, 50)
                     
                     if showPicker {
-                        Picker("선택하기", selection: $selectedCategory) {
-                            ForEach(categories, id: \.self) { category in
-                                Text(category.rawValue)
+                        VStack {
+                            HStack {
+                                Spacer()
+                                Button {
+                                    showPicker = false
+                                    enableButton = true
+                                    print($selectedCategory)
+                                } label: {
+                                    Text("Done")
+                                        .font(.custom("Pretendard-Bold", size: 15))
+                                        .foregroundColor(Color("BboxxTextColor"))
+                                }
                             }
+                            .padding(.trailing, 30)
+                            .padding(.top, 30)
+                            
+                            Picker("선택하기", selection: $selectedCategory) {
+                                ForEach(categories, id: \.self) { category in
+                                    Text(category.rawValue).tag(category.rawValue)
+                                }
+                            }
+                            .background(Color(.white))
+                            .pickerStyle(WheelPickerStyle())
                         }
                         .background(Color(.white))
-                        .pickerStyle(WheelPickerStyle())
-                        
+                        .frame(width: .infinity, height: 150)
                     }
                 }
             }
