@@ -24,9 +24,7 @@ struct GrowthNoteCollectionView: View {
                     .padding(.top, 16)
                     .padding(.trailing, 24)
                 }
-                
-                Spacer()
-                
+                                
                 HStack {
                     Text("성장일기")
                         .font(.custom("Pretendard-Bold", size: 24))
