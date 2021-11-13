@@ -27,7 +27,7 @@ struct SelectFeelingView: View {
                         Button(action: {
                             self.presentationMode.wrappedValue.dismiss()
                         }, label: {
-                            Image(ImageAsset.main_empty_selection_backButton)
+                            Image(ImageAsset.backButton)
                                 .renderingMode(.template)
                                 .resizable()
                                 .frame(width: 24, height: 24)
