@@ -16,7 +16,7 @@ struct MainView: View {
             ZStack {
                 Color("BboxxBackgroundColor")
                     .ignoresSafeArea()
-                Image(ImageAsset.main_all_background)
+                Image(ImageAsset.main_background)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .edgesIgnoringSafeArea(.all)
@@ -39,7 +39,7 @@ struct MainView: View {
                         maxHeight: 30,
                         alignment: .topTrailing
                     )
-                    .padding(.top, 20)
+                    .padding(.top, 50)
                     .padding(.trailing, 15)
                     Spacer()
                     Text("\(today, formatter: dateformat)")
@@ -54,25 +54,41 @@ struct MainView: View {
                         .padding(.leading, 30)
                         .offset(y: 15)
                     Spacer()
-                    HStack(spacing: 140) {
+                    HStack(spacing: 10) {
                         NavigationLink(destination: MainEmptySelectionView().navigationBarHidden(true)) {
-                            Image(ImageAsset.emptyingIcon)
-                                .resizable()
-                                .frame(width: 60, height: 60)
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 19.0)
+                                    .foregroundColor(Color("main_button_background_color"))
+                            VStack {
+                                Image(ImageAsset.emptyingIcon)
+                                    .resizable()
+                                    .frame(width: 60, height: 60)
+                                    Text("비우기")
+                                    .foregroundColor(.white)
+                                }.padding(10.0)
+                            }
                         }
-                        .frame(width: 20, height: 20)
+                        .frame(width: 160, height: 80)
                         .padding(.trailing, 6)
                         NavigationLink(destination: NotificationListView().navigationBarHidden(true)) {
-                            Image(ImageAsset.timeMachineIcon)
-                                .resizable()
-                                .frame(width: 60, height: 60)
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 19.0)
+                                    .foregroundColor(Color("main_button_background_color"))
+                            VStack {
+                                Image(ImageAsset.timeMachineIcon)
+                                    .resizable()
+                                    .frame(width: 60, height: 60)
+                                    Text("타임머신")
+                                    .foregroundColor(.white)
+                                }.padding(10.0)
+                            }
                         }
-                        .frame(width: 20, height: 20)
+                        .frame(width: 160, height: 80)
                         .padding(.trailing, 6)
                     }
                     .padding(.bottom, 40)
                     Button {
-                        print("Edit button was tapped")
+                        self.showGrowthView.toggle()
                     } label: {
                         Image(ImageAsset.main_down)
                             .resizable()
@@ -85,6 +101,15 @@ struct MainView: View {
                     .padding(.trailing, 6)
                 }
                 .edgesIgnoringSafeArea(.all)
+            }
+            .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                        .onEnded({ value in
+                            if value.translation.height < 0 {
+                                self.showGrowthView.toggle()
+                            }
+                        }))
+            .fullScreenCover(isPresented: $showGrowthView){
+                GrowthNoteCollectionView()
             }
         }
     }
