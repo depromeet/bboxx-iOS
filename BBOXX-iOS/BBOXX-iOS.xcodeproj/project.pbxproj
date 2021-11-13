@@ -85,6 +85,9 @@
 		6A02124D270A1BA9002828D9 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A02124C270A1BA9002828D9 /* APICall.swift */; };
 		6A02125C270A1EBC002828D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A02125B270A1EBC002828D9 /* AppDelegate.swift */; };
 		6A20E5E22723CBFF00876996 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A20E5E12723CBFF00876996 /* SignInView.swift */; };
+		6AB01FC2274005CF005012FB /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB01FC1274005CF005012FB /* ImageLoader.swift */; };
+		6AB01FC42740062F005012FB /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB01FC32740062F005012FB /* AsyncImage.swift */; };
+		6AB01FC627400694005012FB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB01FC527400694005012FB /* ImageCache.swift */; };
 		6AB66E2E2736CBF6009DADBE /* SelectFeelingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB66E2D2736CBF6009DADBE /* SelectFeelingViewModel.swift */; };
 		6AB66E322736EB57009DADBE /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB66E312736EB57009DADBE /* Image+Extension.swift */; };
 		6AB66E342736EBB8009DADBE /* FeelingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB66E332736EBB8009DADBE /* FeelingButton.swift */; };
@@ -189,6 +192,9 @@
 		6A02124C270A1BA9002828D9 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		6A02125B270A1EBC002828D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A20E5E12723CBFF00876996 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		6AB01FC1274005CF005012FB /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		6AB01FC32740062F005012FB /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		6AB01FC527400694005012FB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		6AB66E2D2736CBF6009DADBE /* SelectFeelingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeelingViewModel.swift; sourceTree = "<group>"; };
 		6AB66E312736EB57009DADBE /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		6AB66E332736EBB8009DADBE /* FeelingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingButton.swift; sourceTree = "<group>"; };
@@ -549,6 +555,9 @@
 				456E5A11273B82B20051511D /* FeelingNoteService.swift */,
 				456E5A13273B82B30051511D /* GrowthNoteService.swift */,
 				456E5A0E273B82B20051511D /* NetworkResult.swift */,
+				6AB01FC1274005CF005012FB /* ImageLoader.swift */,
+				6AB01FC32740062F005012FB /* AsyncImage.swift */,
+				6AB01FC527400694005012FB /* ImageCache.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -733,11 +742,14 @@
 				6AB66E342736EBB8009DADBE /* FeelingButton.swift in Sources */,
 				456E5A3F273B84180051511D /* NotificationCell.swift in Sources */,
 				6AC4143527285C5000935C43 /* MainView.swift in Sources */,
+				6AB01FC627400694005012FB /* ImageCache.swift in Sources */,
 				456E5A03273B82940051511D /* TargetType.swift in Sources */,
 				457B91E1273CCFC30008B9CB /* JWTResponse.swift in Sources */,
 				6A02124D270A1BA9002828D9 /* APICall.swift in Sources */,
 				45817753271DBD8700036086 /* RoundedCorner.swift in Sources */,
 				456E5A07273B82940051511D /* HTTPHeaderField.swift in Sources */,
+				6AB01FC42740062F005012FB /* AsyncImage.swift in Sources */,
+				6AB01FC2274005CF005012FB /* ImageLoader.swift in Sources */,
 				45817756271DBE0100036086 /* View+Extension.swift in Sources */,
 				6A20E5E22723CBFF00876996 /* SignInView.swift in Sources */,
 				6AB66E2E2736CBF6009DADBE /* SelectFeelingViewModel.swift in Sources */,
