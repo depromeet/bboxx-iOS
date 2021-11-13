@@ -3,16 +3,15 @@ import Foundation
 class SelectFeelingViewModel: ObservableObject {
     // TODO: change type of 'feelings'
     @Published var emotions: [Emotion] = []
-    
     init() {
         self.getEmotions()
     }
     
     func getEmotions(){
-        FeelingNoteService.shared.getEmotions { (result) in
+        FeelingNoteService.shared.getEmotions { [weak self] result in
             switch result{
             case .success(let response):
-                self.emotions = response.data.emotions
+                self?.emotions = response.data.emotions
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -20,8 +19,3 @@ class SelectFeelingViewModel: ObservableObject {
         }
     }
 }
-
-// TODO: remove
-//struct Emotion: Identifiable {
-//    var id: ObjectIdentifier
-//}
