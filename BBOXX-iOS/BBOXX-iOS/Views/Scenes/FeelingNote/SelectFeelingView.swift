@@ -10,7 +10,7 @@ struct SelectFeelingView: View {
         GridItem(.flexible()),GridItem(.flexible()), GridItem(.flexible())
     ]
     let imageWidth: CGFloat = 136
-    @State var completed: Bool = false
+    @State var completed: Bool = true
     @State var selectedFeelingCount = 0
     
     var category: String = ""
@@ -69,14 +69,21 @@ struct SelectFeelingView: View {
                                 Button(action: {
                                     // TODO: check selected feelings 1~5
                                     selectedFeelingCount += 1
+                                    if selectedFeelingCount > 0 && selectedFeelingCount < 6 {
+                                        completed = true
+                                    }
                                 }) {
                                     // TODO: put fetched feelings in button
                                     FeelingButton(emotion: emotion)
                                     
                                     Circle()
-                                    // TODO: load image
-                                    Image("감정일기_scroll-")
-                                        .resizable()
+                                    
+                                    let imageURL = URL(string: emotion.emotionURL)!
+                                    AsyncImage(
+                                        url: imageURL,
+                                        placeholder: { Text("Loading ...") },
+                                        image: { Image(uiImage: $0).resizable() }
+                                    )
                                         .frame(width: imageWidth, height: imageWidth)
                                 }
                                 // TODO: remove
@@ -104,10 +111,10 @@ struct SelectFeelingView: View {
                         }) {
                             Text("다 골랐어")
                                 .font(.system(size: 20))
-                                .foregroundColor(Color("BboxxGrayColor"))
+                                .foregroundColor(completed ? Color(.white) : Color("BboxxGrayColor").opacity(0.4))
                                 .padding([.top, .bottom], 20)
                                 .padding([.leading, .trailing], 90)
-                                .background(Color.gray)
+                                .background(completed ? Color("BboxxGrayColor") : Color("disabledButtonColor"))
                                 .cornerRadius(10)
                             
                         }
