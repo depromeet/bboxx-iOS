@@ -78,7 +78,7 @@ struct MainView: View {
                                 Image(ImageAsset.timeMachineIcon)
                                     .resizable()
                                     .frame(width: 60, height: 60)
-                                    Text("비우기")
+                                    Text("타임머신")
                                     .foregroundColor(.white)
                                 }.padding(10.0)
                             }
