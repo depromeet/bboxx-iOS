@@ -4,12 +4,6 @@ struct NotificationListView: View {
     
     @ObservedObject var viewModel = NotificationListViewModel()
     
-    @State var notificationList: [Notification] = [
-        Notification(currentDate: "10. 23.", date: "n일 전", content: "자이언트펭귄! 한달 전(2021년 10월 20일)에 쓴 일기가 도착했어 📬 한번 읽어볼래? 자이언트펭귄! 한달 전(2021년 10월 20일)에 쓴 일기가 도착했어 📬 한번 읽어볼래"),
-        Notification(currentDate: "10. 23.", date: "n일 전", content: "자이언트펭귄! 한달 전(2021년 10월 20일)에 쓴 일기가 도착했어 📬 한번 읽어볼래? 자이언트펭귄! 한달 전(2021년 10월 20일)에 쓴 일기가 도착했어 📬 한번 읽어볼래"),
-        Notification(currentDate: "10. 23.", date: "n일 전", content: "자이언트펭귄! 한달 전(2021년 10월 20일)에 쓴 일기가 도착했어 📬 한번 읽어볼래? 자이언트펭귄! 한달 전(2021년 10월 20일)에 쓴 일기가 도착했어 📬 한번 읽어볼래")
-    ]
-    
     @Environment(\.presentationMode) var presentationMode
     
     init() {
@@ -53,7 +47,7 @@ struct NotificationListView: View {
                         Spacer()
                     }
                     
-                    if notificationList.count == 0 {
+                    if viewModel.notifications.count == 0 {
                         Spacer()
                         
                         Image(ImageAsset.emptyBoxIcon)
@@ -70,7 +64,7 @@ struct NotificationListView: View {
 
                     } else {
                         List() {
-                            ForEach(self.notificationList, id: \.id) { noti in
+                            ForEach(viewModel.notifications, id: \.id) { noti in
                                 ZStack {
                                     NavigationLink(destination:
                                                     FeelingNoteReviewView().navigationBarHidden(true)
@@ -97,7 +91,7 @@ struct NotificationListView: View {
     
     func deleteNotification(at offsets: IndexSet) {
         if let first = offsets.first {
-            notificationList.remove(at: first)
+            viewModel.notifications.remove(at: first)
         }
     }
 }
