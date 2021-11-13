@@ -88,7 +88,7 @@ struct MainView: View {
                     }
                     .padding(.bottom, 40)
                     Button {
-                        print("Edit button was tapped")
+                        self.showGrowthView.toggle()
                     } label: {
                         Image(ImageAsset.main_down)
                             .resizable()
@@ -101,6 +101,15 @@ struct MainView: View {
                     .padding(.trailing, 6)
                 }
                 .edgesIgnoringSafeArea(.all)
+            }
+            .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                        .onEnded({ value in
+                            if value.translation.height < 0 {
+                                self.showGrowthView.toggle()
+                            }
+                        }))
+            .fullScreenCover(isPresented: $showGrowthView){
+                GrowthNoteCollectionView()
             }
         }
     }
