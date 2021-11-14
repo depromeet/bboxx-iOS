@@ -33,10 +33,28 @@ class GrowthNoteCollectionViewModel: ObservableObject {
     
     func leftButtonDidTap() {
         // 이전 달로 이동
+        if month == 1 {
+            year -= 1
+            month = 12
+        } else {
+            month -= 1
+        }
+        dateString = "\(year)년 \(month)월"
+        
+        getGrowthNotes(KeychainWrapper.standard.integer(forKey: "memberId") ?? 0, month, year)
     }
     
     func rightButtonDidTap() {
         // 다음 달로 이동
+        if month == 12 {
+            year += 1
+            month = 1
+        } else {
+            month += 1
+        }
+        dateString = "\(year)년 \(month)월"
+        
+        getGrowthNotes(KeychainWrapper.standard.integer(forKey: "memberId") ?? 0, month, year)
     }
     
     func convertCurrentDate() {        

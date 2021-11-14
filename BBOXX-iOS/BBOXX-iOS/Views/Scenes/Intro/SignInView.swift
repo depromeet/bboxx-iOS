@@ -5,7 +5,7 @@ import AuthenticationServices
 // TODO: manage the asset names("") with Enum
 struct SignInView: View {
     
-    @ObservedObject var viewModel: SignInViewModel
+    @ObservedObject var viewModel = SignInViewModel()
 
     var body: some View{
         NavigationView{
