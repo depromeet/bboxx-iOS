@@ -65,29 +65,16 @@ struct SelectFeelingView: View {
                     // MARK: Select Feelings
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: feelingRows, alignment: .center, spacing: 0) {
-                            ForEach(viewModel.emotions, id: \.id) { emotion in//.indices) { index in
+                            ForEach(viewModel.emotions, id: \.id) { emotion in
                                 Button(action: {
-                                    // TODO: check selected feelings 1~5
                                     selectedFeelingCount += 1
                                     if selectedFeelingCount > 0 && selectedFeelingCount < 6 {
                                         completed = true
+                                        viewModel.selectedEmotions[emotion.status] = true
                                     }
                                 }) {
-                                    // TODO: put fetched feelings in button
-                                    FeelingButton(emotion: emotion)
-                                    
-                                    Circle()
-                                    
-                                    let imageURL = URL(string: emotion.emotionURL)!
-                                    AsyncImage(
-                                        url: imageURL,
-                                        placeholder: { Text("Loading ...") },
-                                        image: { Image(uiImage: $0).resizable() }
-                                    )
-                                        .frame(width: imageWidth, height: imageWidth)
+                                    FeelingButton(emotion: emotion, viewModel: viewModel)
                                 }
-                                // TODO: remove
-                                .buttonStyle(PlainButtonStyle())
                                 Circle()
                                     .frame(maxWidth: 50, maxHeight: 50)
                                     .foregroundColor(Color("BboxxBackgroundColor"))
