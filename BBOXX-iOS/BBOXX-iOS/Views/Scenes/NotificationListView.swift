@@ -82,9 +82,14 @@ struct NotificationListView: View {
                                             viewModel.getFeelingNote(feelingNoteId: noti.emotionDiaryId) {
                                                 self.tag = 1
                                             }
-                                            
-                                            self.feelingNoteId = noti.emotionDiaryId
                                         }
+                                        .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                                                    .onEnded({ value in
+                                                        if value.translation.width < 0 {
+                                                            self.feelingNoteId = noti.emotionDiaryId
+                                                        }
+                                                    }))
+                                    
                                 }
                             }
                             .onDelete(perform: deleteNotification)
