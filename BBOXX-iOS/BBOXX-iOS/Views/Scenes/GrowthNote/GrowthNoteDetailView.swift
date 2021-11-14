@@ -2,13 +2,13 @@ import SwiftUI
 
 struct GrowthNoteDetailView: View {
     
-    var growthNote = GrowthNote(content: "", createAt: "", emotionDiaryId: 0, id: 0, memberId: 0, tags: [], title: "", updateAt: "")
-    
-    var backgroundColor: Color = .white
+    var growthNote: GrowthNote
+    var backgroundColor: Color
     
     @Environment(\.presentationMode) var presentationMode
     
-    init(backgroundColor: Color) {
+    init(growthNote: GrowthNote, backgroundColor: Color) {
+        self.growthNote = growthNote
         self.backgroundColor = backgroundColor
     }
     
@@ -32,7 +32,7 @@ struct GrowthNoteDetailView: View {
                 .padding(.top, 16)
                 .padding(.leading, 16)
                 
-                Text(self.growthNote.createAt)
+                Text(convertDate())
                     .font(.custom("Pretendard-Medium", size: 12))
                     .foregroundColor(.white)
                 
@@ -69,5 +69,17 @@ struct GrowthNoteDetailView: View {
         .background(backgroundColor.ignoresSafeArea())
         
         .navigationBarHidden(true)
+    }
+    
+    func convertDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM"
+        let convertDate = dateFormatter.date(from: growthNote.createAt) // Date 타입으로 변환
+                
+        let myDateFormatter = DateFormatter()
+        myDateFormatter.dateFormat = "yyyy년 M월" // 2020년 08월 13일 오후 04시 30분
+        myDateFormatter.locale = Locale(identifier:"ko_KR") // PM, AM을 언어에 맞게 setting (ex: PM -> 오후)
+        
+        return myDateFormatter.string(from: convertDate!)
     }
 }
