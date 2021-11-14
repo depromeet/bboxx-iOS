@@ -21,7 +21,7 @@ class FeelingNoteReviewViewModel: ObservableObject {
         FeelingNoteService.shared.deleteFeelingNote(feelingNoteId) { (result) in
             switch result {
             case .success(let response):
-                print(response.data)
+                print(response)
             case .failure(let error):
                 print(error.localizedDescription)
             }

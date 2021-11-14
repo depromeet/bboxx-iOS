@@ -7,6 +7,7 @@ struct NotificationListView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State var tag: Int? = 0
+    @State var feelingNoteId: Int? = 0
     
     init() {
         UITableView.appearance().backgroundColor = UIColor(named: "BboxxBackgroundColor")
@@ -81,6 +82,8 @@ struct NotificationListView: View {
                                             viewModel.getFeelingNote(feelingNoteId: noti.emotionDiaryId) {
                                                 self.tag = 1
                                             }
+                                            
+                                            self.feelingNoteId = noti.emotionDiaryId
                                         }
                                 }
                             }
@@ -101,6 +104,7 @@ struct NotificationListView: View {
     func deleteNotification(at offsets: IndexSet) {
         if let first = offsets.first {
             viewModel.notifications.remove(at: first)
+            viewModel.deleteFeelingNote(feelingNoteId: self.feelingNoteId ?? 0)
         }
     }
 }

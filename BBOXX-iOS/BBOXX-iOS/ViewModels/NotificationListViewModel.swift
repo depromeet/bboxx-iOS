@@ -45,4 +45,15 @@ class NotificationListViewModel: ObservableObject {
             }
         }
     }
+    
+    func deleteFeelingNote(feelingNoteId: Int) {
+        FeelingNoteService.shared.deleteFeelingNote(feelingNoteId) { (result) in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
