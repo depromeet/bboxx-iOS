@@ -75,8 +75,8 @@ struct MainView: View {
                                 }.padding(10.0)
                             }
                         }
-                        .frame(width: 157, height: 110)
-                        
+                        .frame(maxWidth: .infinity, maxHeight: 110)
+
                         NavigationLink(destination: NotificationListView().navigationBarHidden(true)) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20.0)
@@ -93,7 +93,7 @@ struct MainView: View {
                                 }.padding(10.0)
                             }
                         }
-                        .frame(width: 157, height: 110)
+                        .frame(maxWidth: .infinity, maxHeight: 110)
                     }
                     .padding(.leading, 24)
                     .padding(.trailing, 24)
