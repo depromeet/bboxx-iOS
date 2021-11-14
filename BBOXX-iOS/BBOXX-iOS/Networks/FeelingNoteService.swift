@@ -76,7 +76,7 @@ class FeelingNoteService{
     }
     
     //  호출 위치 : 감정일기 불러올때
-    func getFeelingNote(_ emotionId: Int, _ completion: @escaping (Result<FeelingNoteResponse, Error>) -> ()) {
+    func getFeelingNote(_ feelingNoteId: Int, _ completion: @escaping (Result<FeelingNoteResponse, Error>) -> ()) {
         let url = Secret.BaseURL + "emotions"
         
         var token = "Bearer "
@@ -88,7 +88,7 @@ class FeelingNoteService{
         ]
         
         let params: Parameters = [
-            "emotionId": emotionId
+            "emotionId": feelingNoteId
         ]
         
         API.session.request(url, method: .get, parameters: params, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
@@ -110,7 +110,7 @@ class FeelingNoteService{
         }.resume()
     }
     
-    func deleteFeelingNote(_ emotionId: Int, _ completion: @escaping (Result<Response, Error>) -> ()) {
+    func deleteFeelingNote(_ feelingNoteId: Int, _ completion: @escaping (Result<Response, Error>) -> ()) {
         let url = Secret.BaseURL + "emotions"
         
         var token = "Bearer "
@@ -122,7 +122,7 @@ class FeelingNoteService{
         ]
         
         let params: Parameters = [
-            "emotionId": emotionId
+            "emotionId": feelingNoteId
         ]
         
         API.session.request(url, method: .delete, parameters: params, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in

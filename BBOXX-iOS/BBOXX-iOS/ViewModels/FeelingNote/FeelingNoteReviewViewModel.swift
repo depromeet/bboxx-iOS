@@ -16,4 +16,15 @@ class FeelingNoteReviewViewModel: ObservableObject {
         dateFormatter.locale = Locale(identifier:"ko_KR")
         dateString = dateFormatter.string(from: nowDate)
     }
+    
+    func deleteFeelingNote(feelingNoteId: Int) {
+        FeelingNoteService.shared.deleteFeelingNote(feelingNoteId) { (result) in
+            switch result {
+            case .success(let response):
+                print(response.data)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

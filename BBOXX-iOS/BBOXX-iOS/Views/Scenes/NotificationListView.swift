@@ -6,6 +6,8 @@ struct NotificationListView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    @State var tag: Int? = 0
+    
     init() {
         UITableView.appearance().backgroundColor = UIColor(named: "BboxxBackgroundColor")
         UITableViewCell.appearance().selectionStyle = .none
@@ -67,12 +69,19 @@ struct NotificationListView: View {
                             ForEach(viewModel.notifications, id: \.id) { noti in
                                 ZStack {
                                     NavigationLink(destination:
-                                                    FeelingNoteReviewView().navigationBarHidden(true)
+                                                    FeelingNoteReviewView(feelingNote: viewModel.feelingNote).navigationBarHidden(true),
+                                                   tag: 1,
+                                                   selection: self.$tag
                                     ) {
                                         EmptyView()
                                     }
                                     
                                     NotificationCell(notification: noti)
+                                        .onTapGesture {
+                                            viewModel.getFeelingNote(feelingNoteId: noti.emotionDiaryId) {
+                                                self.tag = 1
+                                            }
+                                        }
                                 }
                             }
                             .onDelete(perform: deleteNotification)
