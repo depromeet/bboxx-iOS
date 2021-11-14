@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "img_온보딩_빡스02.png",
+      "filename" : "img_온보딩_빡스02-3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "img_온보딩_빡스02-1.png",
+      "filename" : "img_온보딩_빡스02-4.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "img_온보딩_빡스02-2.png",
+      "filename" : "img_온보딩_빡스02.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
