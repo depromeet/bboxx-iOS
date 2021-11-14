@@ -14,6 +14,7 @@ enum ImageAsset {
     static let main_shouting_character = "main_shouting_character"
     static let timeMachineIcon = "timeMachineIcon"
     static let main_background_character = "main_background_character"
+    static let main_background = "main_background"
     static let main_all_background = "main_all_background"
     static let profileIcon = "profileIcon"
     static let main_down = "main_down"

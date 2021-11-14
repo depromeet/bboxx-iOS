@@ -55,15 +55,6 @@ struct SelectCategoryView: View {
                         .foregroundColor(Color("BboxxTextColor"))
                         .frame(maxWidth: .infinity,alignment: .leading)
                     ZStack {
-                        if selectedCategory == "" {
-                            Text("\(selectedCategory)")
-                                .foregroundColor(Color(""))
-                                .padding(.leading, 15)
-                        } else {
-                            Text("\(defaultText)")
-                                .foregroundColor(Color(""))
-                                .padding(.leading, 15)
-                        }
                         
                     Button {
                         showPicker.toggle()
@@ -77,7 +68,21 @@ struct SelectCategoryView: View {
                     }
                     .frame(maxWidth: .infinity,
                            alignment: .leading)
+                        if selectedCategory != "" {
+                            Text("\(selectedCategory)")
+                                .foregroundColor(Color("BboxxTextColor"))
+                                .frame(maxWidth: .infinity,
+                                       alignment: .leading)
+                                .padding(.leading, 20)
+                        } else {
+                            Text("\(defaultText)")
+                                .foregroundColor(Color("BboxxTextColor"))
+                                .frame(maxWidth: .infinity,
+                                       alignment: .leading)
+                                .padding(.leading, 20)
+                        }
                     }
+                    
                     
                     Text("때문에 힘들어")
                         .font(.system(size: 30, weight: .bold))
@@ -106,32 +111,55 @@ struct SelectCategoryView: View {
             VStack {
                 ZStack {
                     
-                    Button {
-                        self.tag = 1
-                        if selectedCategory != "" { enableButton = true }
-                        viewModel.selectCategoryId(selectedCategory)
-                    } label: {
-                        Text("다 골랐어")
-                            .fontWeight(.semibold)
-                            .foregroundColor(enableButton ? Color(.white) : Color("BboxxGrayColor").opacity(0.4))
-                        .padding(.vertical,20)
-                        .padding(.horizontal,120)
-                        .background(enableButton ? Color("BboxxGrayColor") : Color("disabledButtonColor"))
-                        .cornerRadius(16)
-                }
-                .disabled(enableButton == false)
-                .frame(alignment: .bottom)
-                .padding(.bottom, 50)
+                    NavigationLink(destination:
+                                    FeelingNoteWritingView()
+                                    .navigationBarHidden(true)) {
+                        Button {
+                            self.tag = 1
+                            if selectedCategory != "" { enableButton = true }
+                            viewModel.selectCategoryId(selectedCategory)
+                        } label: {
+                            Text("다 골랐어")
+                                .fontWeight(.semibold)
+                                .foregroundColor(enableButton ? Color(.white) : Color("BboxxGrayColor").opacity(0.4))
+                                .padding(.vertical,20)
+                                .padding(.horizontal,120)
+                                .background(enableButton ? Color("BboxxGrayColor") : Color("disabledButtonColor"))
+                                .cornerRadius(16)
+                            
+                        }
+                        .disabled(enableButton == false)
+                        .frame(alignment: .bottom)
+                        .padding(.bottom, 50)
+                    }
                     
                     if showPicker {
-                        Picker("선택하기", selection: $selectedCategory) {
-                            ForEach(categories, id: \.self) { category in
-                                Text(category.rawValue)
+                        VStack {
+                            HStack {
+                                Spacer()
+                                Button {
+                                    showPicker = false
+                                    enableButton = true
+                                    print($selectedCategory)
+                                } label: {
+                                    Text("Done")
+                                        .font(.custom("Pretendard-Bold", size: 15))
+                                        .foregroundColor(Color("BboxxTextColor"))
+                                }
                             }
+                            .padding(.trailing, 30)
+                            .padding(.top, 30)
+                            
+                            Picker("선택하기", selection: $selectedCategory) {
+                                ForEach(categories, id: \.self) { category in
+                                    Text(category.rawValue).tag(category.rawValue)
+                                }
+                            }
+                            .background(Color(.white))
+                            .pickerStyle(WheelPickerStyle())
                         }
                         .background(Color(.white))
-                        .pickerStyle(WheelPickerStyle())
-                        
+                        .frame(width: .infinity, height: 150)
                     }
                 }
             }
