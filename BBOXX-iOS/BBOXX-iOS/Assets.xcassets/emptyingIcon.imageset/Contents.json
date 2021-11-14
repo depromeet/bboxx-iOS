@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "emotion.png",
+      "filename" : "emptyingIcon.1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "emotion-1.png",
+      "filename" : "emptyingIcon.2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "emotion-2.png",
+      "filename" : "emptyingIcon.3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
