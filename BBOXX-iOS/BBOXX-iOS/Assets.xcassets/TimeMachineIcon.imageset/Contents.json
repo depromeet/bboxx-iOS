@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "diary.png",
+      "filename" : "timeMachineIcon.1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "diary-1.png",
+      "filename" : "timeMachineIcon.2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "diary-2.png",
+      "filename" : "timeMachineIcon.3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

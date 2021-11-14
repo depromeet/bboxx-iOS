@@ -12,7 +12,7 @@ struct GrowthNoteResponse: Codable{
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         code = (try? values.decode(String.self, forKey: .code)) ?? ""
-        data = (try? values.decode([GrowthNote]?.self, forKey: .data)) ?? [GrowthNote(content: "", createAt: "", emotionDiaryId: -1, id: -1, memberId: -1, tags: nil, title: "", updateAt: "")]
+        data = (try? values.decode([GrowthNote].self, forKey: .data)) ?? []
         message = (try? values.decode(String.self, forKey: .message)) ?? ""
     }
 }

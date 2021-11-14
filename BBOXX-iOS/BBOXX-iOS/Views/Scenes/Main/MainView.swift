@@ -20,88 +20,105 @@ struct MainView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .edgesIgnoringSafeArea(.all)
-                    .frame(
-                        maxWidth: .infinity,
-                        maxHeight: .infinity,
-                        alignment: .bottom
-                    )
-                    .padding(.bottom, -60)
-                VStack {
-                    Button {
-                        // move to next page
-                    } label: {
-                        Image(ImageAsset.profileIcon)
-                            .resizable()
-                            .frame(width: 30, height: 30)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                
+                    .padding(.bottom, -35)
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        Spacer()
+                        
+                        Button {
+                            // move to next page
+                        } label: {
+                            Image(ImageAsset.profileIcon)
+                                .renderingMode(.template)
+                                .resizable()
+                                .foregroundColor(Color("BboxxTextColor").opacity(0.7))
+                                .frame(width: 24, height: 24)
+                        }
+                        .padding(.top, 16)
+                        .padding(.trailing, 16)
                     }
-                    .frame(
-                        maxWidth: .infinity,
-                        maxHeight: 30,
-                        alignment: .topTrailing
-                    )
-                    .padding(.top, 50)
-                    .padding(.trailing, 15)
-                    Spacer()
+                    
+                    
                     Text("\(today, formatter: dateformat)")
-                        .font(.system(size: 20))
-                        .frame(maxWidth: .infinity, maxHeight: 40, alignment: .topLeading)
-                        .padding(.leading, 30)
-                        .offset(y: 15)
-                    Text("\(viewModel.nickName)야! \n오늘도 좋은 하루보내 🌼")
-                        .font(.system(size: 30))
-                        .bold()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                        .padding(.leading, 30)
-                        .offset(y: 15)
+                        .font(.custom("Pretendard-Medium", size: 16))
+                        .foregroundColor(Color("BboxxTextColor"))
+                        
+                        .padding(.top, 26)
+                        .padding(.leading, 24)
+                    
+                    Text("\(viewModel.nickName)야! \n오늘도 좋은 하루보내🌼")
+                        .font(.custom("Pretendard-SemiBold", size: 26))
+                        .foregroundColor(Color("BboxxGrayColor"))
+
+                        .padding(.top, 10)
+                        .padding(.leading, 24)
+
                     Spacer()
-                    HStack(spacing: 10) {
+                    
+                    HStack(spacing: 14) {
                         NavigationLink(destination: MainEmptySelectionView().navigationBarHidden(true)) {
                             ZStack {
-                                RoundedRectangle(cornerRadius: 19.0)
+                                RoundedRectangle(cornerRadius: 20.0)
                                     .foregroundColor(Color("main_button_background_color"))
-                            VStack {
-                                Image(ImageAsset.emptyingIcon)
-                                    .resizable()
-                                    .frame(width: 60, height: 60)
+                                VStack {
+                                    Image(ImageAsset.emptyingIcon)
+                                        .resizable()
+                                        .frame(width: 53, height: 53)
+                                    
                                     Text("비우기")
-                                    .foregroundColor(.white)
+                                        .font(.custom("Pretendard-Medium", size: 16))
+                                        .foregroundColor(.white)
+                                    
                                 }.padding(10.0)
                             }
                         }
-                        .frame(width: 160, height: 80)
-                        .padding(.trailing, 6)
+                        .frame(maxWidth: .infinity, maxHeight: 110)
+
                         NavigationLink(destination: NotificationListView().navigationBarHidden(true)) {
                             ZStack {
-                                RoundedRectangle(cornerRadius: 19.0)
+                                RoundedRectangle(cornerRadius: 20.0)
                                     .foregroundColor(Color("main_button_background_color"))
-                            VStack {
-                                Image(ImageAsset.timeMachineIcon)
-                                    .resizable()
-                                    .frame(width: 60, height: 60)
+                                VStack {
+                                    Image(ImageAsset.timeMachineIcon)
+                                        .resizable()
+                                        .frame(width: 53, height: 53)
+                                    
                                     Text("타임머신")
-                                    .foregroundColor(.white)
+                                        .font(.custom("Pretendard-Medium", size: 16))
+                                        .foregroundColor(.white)
+                                    
                                 }.padding(10.0)
                             }
                         }
-                        .frame(width: 160, height: 80)
-                        .padding(.trailing, 6)
+                        .frame(maxWidth: .infinity, maxHeight: 110)
                     }
-                    .padding(.bottom, 40)
-                    Button {
-                        self.showGrowthView.toggle()
-                    } label: {
-                        Image(ImageAsset.main_down)
-                            .resizable()
-                            .frame(width: 40, height: 40)
+                    .padding(.leading, 24)
+                    .padding(.trailing, 24)
+                    
+                    HStack {
+                        Spacer()
+                        
+                        Button {
+                            self.showGrowthView.toggle()
+                        } label: {
+                            Image(ImageAsset.main_down)
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                        }
+                        .fullScreenCover(isPresented: $showGrowthView){
+                            GrowthNoteCollectionView()
+                        }
+                        
+                        Spacer()
                     }
-                    .fullScreenCover(isPresented: $showGrowthView){
-                        GrowthNoteCollectionView()
-                    }
-                    .frame(width: 60, height: 60)
-                    .padding(.trailing, 6)
+                    .padding(.top, 34)
+                    .padding(.bottom, 10)
                 }
-                .edgesIgnoringSafeArea(.all)
-            }
+            }.navigationBarHidden(true)
+
             .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
                         .onEnded({ value in
                             if value.translation.height < 0 {
