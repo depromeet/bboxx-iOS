@@ -56,7 +56,7 @@ class FeelingNoteService{
             "Authorization": token
         ]
         
-        API.session.request(url, method: .post, parameters: params,  headers: header).responseJSON { (response) in
+        API.session.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             switch response.result {
             case .success(let jsonData):
                 do {
@@ -79,17 +79,19 @@ class FeelingNoteService{
     func getFeelingNote(_ emotionId: Int, _ completion: @escaping (Result<FeelingNoteResponse, Error>) -> ()) {
         let url = Secret.BaseURL + "emotions"
         
+        var token = "Bearer "
+        token += KeychainWrapper.standard.string(forKey: "token") ?? ""
+      
         let header: HTTPHeaders = [
             "Content-Type" : "application/json;charset=UTF-8",
-            "Accept": "application/hal+json",
-            //"Authorization": token
+            "Authorization": token
         ]
         
         let params: Parameters = [
             "emotionId": emotionId
         ]
         
-        API.session.request(url, method: .get, parameters: params, headers: header).responseJSON { (response) in
+        API.session.request(url, method: .get, parameters: params, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             switch response.result {
             case .success(let jsonData):
                 do {
@@ -111,13 +113,19 @@ class FeelingNoteService{
     func deleteFeelingNote(_ emotionId: Int, _ completion: @escaping (Result<Response, Error>) -> ()) {
         let url = Secret.BaseURL + "emotions"
         
+        var token = "Bearer "
+        token += KeychainWrapper.standard.string(forKey: "token") ?? ""
+      
         let header: HTTPHeaders = [
             "Content-Type" : "application/json;charset=UTF-8",
-            "Accept": "application/hal+json",
-            //"Authorization": token
+            "Authorization": token
         ]
         
-        API.session.request(url, method: .delete,  headers: header).responseJSON { (response) in
+        let params: Parameters = [
+            "emotionId": emotionId
+        ]
+        
+        API.session.request(url, method: .delete, parameters: params, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             switch response.result {
             case .success(let jsonData):
                 do {

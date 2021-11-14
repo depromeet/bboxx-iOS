@@ -1,11 +1,14 @@
-import Foundation
+import SwiftKeychainWrapper
 
 class NotificationListViewModel: ObservableObject {
     
     var dateString: String = ""
     
+    @Published var notifications: [Notification] = []
+    
     init() {
         convertCurrentDate()
+        getNotifications(memberId: KeychainWrapper.standard.integer(forKey: "memberId") ?? 0)
     }
     
     func convertCurrentDate() {
@@ -15,5 +18,17 @@ class NotificationListViewModel: ObservableObject {
         dateFormatter.dateFormat = "MM. dd."
         dateFormatter.locale = Locale(identifier:"ko_KR")
         dateString = dateFormatter.string(from: nowDate)
+    }
+    
+    func getNotifications(memberId: Int) {
+        NotificationService.shared.getNotifications(memberId) { (result) in
+            switch result {
+            case .success(let response):
+                self.notifications = response.data
+                print(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }

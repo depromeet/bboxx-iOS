@@ -4,6 +4,8 @@ struct GrowthNoteCollectionView: View {
     
     @ObservedObject var viewModel = GrowthNoteCollectionViewModel()
     
+    @State var showMainView = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -22,9 +24,7 @@ struct GrowthNoteCollectionView: View {
                     .padding(.top, 16)
                     .padding(.trailing, 24)
                 }
-                
-                Spacer()
-                
+                                
                 HStack {
                     Text("성장일기")
                         .font(.custom("Pretendard-Bold", size: 24))
@@ -110,10 +110,22 @@ struct GrowthNoteCollectionView: View {
 
                 }
                 
-            }.navigationBarHidden(true)
+            }
+            .navigationBarHidden(true)
+            
             
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BboxxBackgroundColor").ignoresSafeArea())
+            
+            .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                        .onEnded({ value in
+                            if value.translation.height > 0 {
+                                self.showMainView.toggle()
+                            }
+                        }))
+            .fullScreenCover(isPresented: $showMainView){
+                MainView()
+            }
         }
     }
 }

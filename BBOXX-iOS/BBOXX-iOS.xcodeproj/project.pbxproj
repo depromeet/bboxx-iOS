@@ -74,10 +74,11 @@
 		458F31502729285200F4C7EA /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 458F31472729285200F4C7EA /* Pretendard-SemiBold.otf */; };
 		4593F9C8272A38B50006F8A2 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593F9C7272A38B50006F8A2 /* TagView.swift */; };
 		45942033273D6EEB001ED27A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45942032273D6EEB001ED27A /* UserService.swift */; };
+		45955D85273FB67D00A9085B /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45955D84273FB67D00A9085B /* NotificationService.swift */; };
+		45955D88273FB6FE00A9085B /* NotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45955D87273FB6FE00A9085B /* NotificationResponse.swift */; };
 		4597749F2734E85A003649F6 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597749E2734E85A003649F6 /* UserDefaults+Extension.swift */; };
 		45A6839C273E01AC00C77371 /* SelectCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6839B273E01AC00C77371 /* SelectCategoryViewModel.swift */; };
 		45A83B37272C71FB0057D4C1 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A83B36272C71FB0057D4C1 /* Secret.swift */; };
-		45AB2119271A9F6800404122 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB2118271A9F6800404122 /* Notification.swift */; };
 		45B7B6872728EB15006B8B9E /* CustomTwoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7B6862728EB15006B8B9E /* CustomTwoButton.swift */; };
 		45C84DAA27240396000E4886 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45C84DA927240396000E4886 /* GoogleService-Info.plist */; };
 		45C84DB527240462000E4886 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C84DB427240462000E4886 /* Secret.swift */; };
@@ -178,10 +179,11 @@
 		458F31472729285200F4C7EA /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		4593F9C7272A38B50006F8A2 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		45942032273D6EEB001ED27A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		45955D84273FB67D00A9085B /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		45955D87273FB6FE00A9085B /* NotificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationResponse.swift; sourceTree = "<group>"; };
 		4597749E2734E85A003649F6 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		45A6839B273E01AC00C77371 /* SelectCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewModel.swift; sourceTree = "<group>"; };
 		45A83B36272C71FB0057D4C1 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
-		45AB2118271A9F6800404122 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		45B7B6862728EB15006B8B9E /* CustomTwoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTwoButton.swift; sourceTree = "<group>"; };
 		45C84DA927240396000E4886 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45C84DB427240462000E4886 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
@@ -429,11 +431,11 @@
 				456E59EF273B82540051511D /* NicknameResponse.swift */,
 				456E59F3273B82540051511D /* TokenResponse.swift */,
 				456E59F0273B82540051511D /* UserResponse.swift */,
-				45AB2118271A9F6800404122 /* Notification.swift */,
 				45CE93502720FECF00ED60C5 /* Response.swift */,
 				6AE861972727158E00D0619E /* OnboardingScreen.swift */,
 				6AEAB68E27398D6000D264CF /* Tags.swift */,
 				457B91E0273CCFC30008B9CB /* JWTResponse.swift */,
+				45955D87273FB6FE00A9085B /* NotificationResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -549,6 +551,7 @@
 				456E5A11273B82B20051511D /* FeelingNoteService.swift */,
 				456E5A13273B82B30051511D /* GrowthNoteService.swift */,
 				456E5A0E273B82B20051511D /* NetworkResult.swift */,
+				45955D84273FB67D00A9085B /* NotificationService.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -713,12 +716,14 @@
 				456E5A5A273B84BF0051511D /* FeelingNoteResultViewModel.swift in Sources */,
 				6AC4143C272C37E100935C43 /* OnboardingLastView.swift in Sources */,
 				456E5A53273B84830051511D /* MainViewModel.swift in Sources */,
+				45955D88273FB6FE00A9085B /* NotificationResponse.swift in Sources */,
 				456E5A28273B83880051511D /* FeelingNoteReviewView.swift in Sources */,
 				456E5A0C273B82A10051511D /* MyAuthenticationCredential.swift in Sources */,
 				456E5A04273B82940051511D /* APIEventLogger.swift in Sources */,
 				6AE8619A272717B200D0619E /* OffsetPageTabView.swift in Sources */,
 				456E59E6273B81F70051511D /* ProviderType.swift in Sources */,
 				6AC41442272C57B400935C43 /* OnboardingViewModel.swift in Sources */,
+				45955D85273FB67D00A9085B /* NotificationService.swift in Sources */,
 				456E5A17273B82B30051511D /* FeelingNoteService.swift in Sources */,
 				4527B84027083E0E003FD4F9 /* BBOXX_iOSApp.swift in Sources */,
 				45A83B37272C71FB0057D4C1 /* Secret.swift in Sources */,
@@ -728,7 +733,6 @@
 				456E59FA273B82540051511D /* TokenResponse.swift in Sources */,
 				456E5A27273B83880051511D /* FeelingNoteRemindView.swift in Sources */,
 				6A02125C270A1EBC002828D9 /* AppDelegate.swift in Sources */,
-				45AB2119271A9F6800404122 /* Notification.swift in Sources */,
 				456E5A3D273B84180051511D /* DecibelMeasurementView.swift in Sources */,
 				6AB66E342736EBB8009DADBE /* FeelingButton.swift in Sources */,
 				456E5A3F273B84180051511D /* NotificationCell.swift in Sources */,
