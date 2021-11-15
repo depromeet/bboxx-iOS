@@ -9,10 +9,7 @@ import SwiftKeychainWrapper
 import UIKit
 
 class SignInViewModel: ObservableObject {
-    
-    private(set) var commentFirstLine = "아래 방법 중에 하나로 시작하면"
-    private(set) var commentSecondLine = "나랑 함께할 수 있어"
-    
+        
     enum SignInState {
         case signedIn
         case signedOut
