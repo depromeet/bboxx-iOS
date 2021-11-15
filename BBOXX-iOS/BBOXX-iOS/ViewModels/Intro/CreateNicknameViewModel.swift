@@ -1,19 +1,11 @@
 import Foundation
 import SwiftKeychainWrapper
 
-// 참고 : https://velog.io/@jins0704/Alamofire%EC%97%90-%EB%8C%80%ED%95%B4
-
-// Network Logging 을 위함 참고한 곳 : https://ios-development.tistory.com/733
-
 class CreateNicknameViewModel: ObservableObject {
     
     @Published var nickname: String = ""
     
     @Published var tag: Int? = 0
-    
-    init() {
-        createNickname()        
-    }
     
     func redoButtonDidTap() {
         createNickname()
@@ -24,7 +16,6 @@ class CreateNicknameViewModel: ObservableObject {
             switch result {
             case .success(let response):
                 self.nickname = response.data.nickname
-                UserDefaults.standard.set(self.nickname, forKey: "nickname")
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -50,6 +41,7 @@ class CreateNicknameViewModel: ObservableObject {
             switch result{
             case .success(let response):
                 KeychainWrapper.standard.set(response.data.id, forKey: "memberId")
+                UserDefaults.standard.set(self.nickname, forKey: "nickname")
             case .failure(let error):
                 print(error.localizedDescription)
             }

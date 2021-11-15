@@ -113,6 +113,7 @@ class SignInViewModel: ObservableObject {
             switch result{
             case .success(let response):
                 KeychainWrapper.standard.set(response.data.id, forKey: "memberId")
+                UserDefaults.standard.set(response.data.nickname, forKey: "nickname")
             case .failure(let error):
                 print(error.localizedDescription)
             }
