@@ -38,10 +38,10 @@ struct SplashView: View {
         }
         .ignoresSafeArea(.all)
         .onAppear {
-            // holding initial 6 sec
+            // holding initial 4 sec
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 removeSplash1 = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     removeSplash2 = true
                        
                 }

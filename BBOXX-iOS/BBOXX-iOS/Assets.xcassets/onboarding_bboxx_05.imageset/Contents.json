@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "img_온보딩_빡스05-3.png",
+      "filename" : "onboarding_bboxx_05.1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "img_온보딩_빡스05-4.png",
+      "filename" : "onboarding_bboxx_05.2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "img_온보딩_빡스05.png",
+      "filename" : "onboarding_bboxx_05.3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
