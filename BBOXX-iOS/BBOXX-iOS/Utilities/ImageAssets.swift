@@ -18,6 +18,8 @@ enum ImageAsset {
     static let main_all_background = "main_all_background"
     static let profileIcon = "profileIcon"
     static let main_down = "main_down"
+    static let splash_open = "splash_open"
+    static let splash_close = "splash_close"
     static let splash_logo = "splash_logo"
     static let splash_background1 = "splash_background1"
     static let splash_background2 = "splash_background2"
