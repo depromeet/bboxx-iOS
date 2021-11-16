@@ -4,6 +4,8 @@ struct TagCollectionView: View {
     @State var tags: [Tag]
     @State private var totalHeight = CGFloat.zero
     
+    @State var selectedTags: [String] = []
+    
     var body: some View {
         VStack {
             GeometryReader { geometry in
@@ -46,15 +48,19 @@ struct TagCollectionView: View {
 
     private func item(for text: String) -> some View {
         Button(action: {
-            print("들어옴")
+            if selectedTags.contains(text) { // 갯수 제한 필요 최소 1, 최대 5
+                selectedTags.removeAll { $0 == text}
+            } else {
+                selectedTags.append(text)
+            }
         }, label: {
             Text(text)
                 .font(.custom("Pretendard-Medium", size: 16))
-                .foregroundColor(Color("BboxxGrayColor").opacity(0.6))
+                .foregroundColor(!self.selectedTags.contains(text) ? Color("BboxxGrayColor").opacity(0.6) : .white)
                 .padding()
                 .lineLimit(1)
         })
-        .background(Color(.white))
+        .background(!self.selectedTags.contains(text) ? Color(.white) : Color("BboxxTextColor"))
         .frame(height: 42)
         .cornerRadius(20)
     }
