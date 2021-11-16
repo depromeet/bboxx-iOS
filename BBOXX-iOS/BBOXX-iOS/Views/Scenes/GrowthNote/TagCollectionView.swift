@@ -38,9 +38,10 @@ struct TagCollectionView: View {
     func RowView(tag: Tag) -> some View {
         
         Text(tag.text)
-            .font(.system(size: fontSize))
-            .padding(.horizontal,14)
-            .padding(.vertical,8)
+            .font(.custom("Pretendard-Medium", size: fontSize))
+            .foregroundColor(Color("BboxxGrayColor").opacity(0.6))
+            .padding(.horizontal,16)
+            .padding(.vertical,10)
             .background(
                 Capsule()
                     .fill(Color(.white))
