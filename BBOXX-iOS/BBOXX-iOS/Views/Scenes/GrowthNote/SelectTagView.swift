@@ -50,10 +50,11 @@ struct SelectTagView: View {
                         
                         Spacer()
                         
-                        TagCollectionView(maxLimit: 150, tags: $tags, fontSize: 16)
-                            .frame(height: 280)
-                            
-                            .padding(.leading, -10)
+                        ScrollView() {
+                            TagCollectionView(tags: self.tags)
+                                .padding(.top, 20)
+                                .padding(.bottom, 20)
+                        }
                         
                         Spacer()
                         
