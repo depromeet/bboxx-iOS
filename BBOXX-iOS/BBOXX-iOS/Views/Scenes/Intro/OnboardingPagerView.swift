@@ -10,26 +10,31 @@ struct OnboardingPagerView: View {
     var data = Array(0..<6)
     
     var body: some View {
-        VStack{
-            Pager(page: self.page,
-                  data: self.data,
-                  id: \.self) { page in
-                if pageOffset >= 5 {
-                    OnboardingLastView()
-                } else {
-                    self.pageView(page)
+        NavigationView {
+            VStack{
+                Pager(page: self.page,
+                      data: self.data,
+                      id: \.self) { page in
+                    if pageOffset >= 5 {
+                        OnboardingLastView()
+                    } else {
+                        self.pageView(page)
+                    }
                 }
+                .pageOffset(pageOffset)
+                .swipeInteractionArea(.allAvailable)
+                
+                NavigationLink(destination: SignInView().navigationBarHidden(true)) {
+                    Text("건너뛰기")
+                        .font(.custom("Pretendard-Medium", size: 16))
+                        .foregroundColor(Color("BboxxGrayColor").opacity(0.6))
+                }
+                .padding(.bottom, 65)
             }
-                  .pageOffset(pageOffset)
-                  .swipeInteractionArea(.allAvailable)
-            NavigationLink(destination: OnboardingLastView().navigationBarHidden(true)) {
-                Text("건너뛰기")
-                    .fontWeight(.semibold)
-                    .foregroundColor(.gray)
-            }
-            .padding(.bottom, 60)
-        }.background(Color("BboxxBackgroundColor").ignoresSafeArea())
-        
+            .navigationBarHidden(true)
+            
+            .background(Color("BboxxBackgroundColor").ignoresSafeArea())
+        }
     }
     
     func pageView(_ page: Int) -> some View {
@@ -43,7 +48,7 @@ struct OnboardingPagerView: View {
                 .multilineTextAlignment(.center)
             Image(image)
                 .resizable()
-                .frame(width: 200, height: 200, alignment: .center)
+                .frame(width: 240, height: 240, alignment: .center)
            
             }.frame(alignment: .top)
             
