@@ -3,6 +3,7 @@ import Foundation
 class SelectFeelingViewModel: ObservableObject {
     typealias FeelingTitle = String
     typealias IsSelected = Bool
+    @Published var completed: Bool = true
     @Published var emotions: [Emotion] = []
     var selectedEmotions: [FeelingTitle: IsSelected] = [:]
     var selectedFeelingCount = 0

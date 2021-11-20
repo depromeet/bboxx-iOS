@@ -67,7 +67,7 @@ struct SelectFeelingView: View {
                         LazyHGrid(rows: feelingRows, alignment: .center, spacing: 0) {
                             ForEach(viewModel.emotions, id: \.id) { emotion in
                                 Button(action: {
-                                    selectedFeelingCount += 1
+                                    selectedFeelingCount = viewModel.selectedEmotions.filter{$0.value == true}.count
                                     if selectedFeelingCount > 0 && selectedFeelingCount < 6 {
                                         completed = true
                                         viewModel.selectedEmotions[emotion.status] = true
@@ -76,44 +76,46 @@ struct SelectFeelingView: View {
                                     FeelingButton(emotion: emotion, viewModel: viewModel)
                                 }
                                 Circle()
-                                    .frame(maxWidth: 50, maxHeight: 50)
+                                    .frame(maxWidth: 136, maxHeight: 136)
                                     .foregroundColor(Color("BboxxBackgroundColor"))
                             }
                         }
+                        .id(UUID().uuidString)
                         .padding(.top, 10)
                         .padding(.bottom, 10)
                         .padding(.leading, 25)
                         .padding(.trailing, 25)
                         .background(Color("BboxxBackgroundColor"))
-                        .frame(maxWidth: imageWidth * 10, maxHeight: geometry.size.height / 2 - 10)
+//                        .frame(maxWidth: imageWidth * 10, maxHeight: geometry.size.height / 2 - 10)
                         
-                    }
+                    }.frame(maxWidth: imageWidth * 10, maxHeight: geometry.size.height / 2 - 10)
                     
                     NavigationLink(destination: FeelingNoteRemindView(
                                     title: self.title,
                                     content: self.content,
                                     category: self.category)) {
                         Button(action: {
-                            
                         }) {
                             Text("다 골랐어")
-                                .font(.system(size: 20))
-                                .foregroundColor(completed ? Color(.white) : Color("BboxxGrayColor").opacity(0.4))
+                                .fixedSize()
+                                .foregroundColor(Color("BboxxGrayColor"))
+                                .font(.custom("Pretendard-Regular", size: 20))
+                                .foregroundColor(viewModel.completed ? Color(.white) : Color("BboxxGrayColor").opacity(0.4))
                                 .padding([.top, .bottom], 20)
                                 .padding([.leading, .trailing], 90)
-                                .background(completed ? Color("BboxxGrayColor") : Color("disabledButtonColor"))
+                                .background(viewModel.completed ? Color("BboxxGrayColor") : Color("disabledButtonColor"))
                                 .cornerRadius(10)
                             
                         }
                         .buttonStyle(PlainButtonStyle())
-                        .frame(width: geometry.size.width * 0.75, height: 70 ,alignment: .bottom)
+                        .frame(width: geometry.size.width * 0.9, height: 70 ,alignment: .bottom)
                     }
                     .padding(.bottom, 50)
                     .padding(.leading, 20)
                     .padding(.trailing, 20)
                 }
-                .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height - 20, alignment: .top)
-                .padding(.top, 30)
+                .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height , alignment: .top)
+                .padding(.top, 20)
                 
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 .ignoresSafeArea(edges: .all)

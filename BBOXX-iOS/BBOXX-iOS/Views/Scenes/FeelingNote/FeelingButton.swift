@@ -2,7 +2,7 @@ import SwiftUI
 
 struct FeelingButton: View {
     
-    @State private var selected = false
+    @State private var selected: Bool = false
     @State var image: UIImage = UIImage()
     private let imageWidth: CGFloat = 136
     
@@ -13,6 +13,9 @@ struct FeelingButton: View {
         
         Button(action: {
             self.selected.toggle()
+            if selected {
+                viewModel.selectedEmotions[emotion.status] = true
+            }
         }) {
             VStack {
                 AsyncImage(
@@ -23,6 +26,9 @@ struct FeelingButton: View {
                     .frame(width: 78, height: 78)
                 Text(emotion.status)
                     .foregroundColor(selected ? Color.white : Color.black)
+                    .fixedSize()
+                    .foregroundColor(Color("BboxxGrayColor"))
+                    .font(.custom("Pretendard-Regular", size: 14))
             }
             .frame(width: imageWidth, height: imageWidth)
             .background(selected ? Color.black : Color.white)
