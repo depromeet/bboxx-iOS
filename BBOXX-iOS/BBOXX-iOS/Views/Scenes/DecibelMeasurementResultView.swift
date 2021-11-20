@@ -2,6 +2,8 @@ import SwiftUI
 
 struct DecibelMeasurementResultView: View {
     
+    @ObservedObject var viewModel = DecibelMeasurementResultViewModel()
+    
     var decibel: Int = 0
     var title: String = ""
     var backgroundColor: Color = Color.white
@@ -103,7 +105,11 @@ struct DecibelMeasurementResultView: View {
                             .cornerRadius(16)
                     }
                     
-                    Button(action: {}, label: {
+                    Button(action: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            viewModel.saveImage(image: viewModel.takeCapture())
+                        }
+                    }, label: {
                         Text("감정 공유하기")
                             .font(.custom("Pretendard-SemiBold", size: 18))
                             .foregroundColor(.white)

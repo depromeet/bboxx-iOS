@@ -9,33 +9,39 @@ struct SplashView: View {
         
         ZStack{
             OnboardingPagerView()
+            
             ZStack {
                 Color("BboxxGrayColor")
-                Image(ImageAsset.splash_background2)
+                
+                VStack{
+                    Image(ImageAsset.splash_logo)
+                        .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.height / 1.5)
+                    Spacer()
+                }
+                
+                Image(ImageAsset.splash_open)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .ignoresSafeArea(.all)
-                    .background(Color("BboxxGrayColor"))
-                    .edgesIgnoringSafeArea(.bottom)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                
                 ZStack {
-                    Image(ImageAsset.splash_background1)
+                    Image(ImageAsset.splash_close)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .ignoresSafeArea(.all)
-                        .background(Color("BboxxGrayColor"))
-                        .edgesIgnoringSafeArea(.bottom)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                 }
                 .opacity(removeSplash1 ? 0 : 1)
+                    
             }
             .opacity(removeSplash2 ? 0 : 1)
             
         }
         .ignoresSafeArea(.all)
         .onAppear {
-            // holding initial 6 sec
+            // holding initial 4 sec
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 removeSplash1 = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     removeSplash2 = true
                        
                 }

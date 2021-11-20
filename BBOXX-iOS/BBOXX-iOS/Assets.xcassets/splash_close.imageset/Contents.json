@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "onboarding_bboxx_04.1x.png",
+      "filename" : "splash_close.1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "onboarding_bboxx_04.2x.png",
+      "filename" : "splash_close.2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "onboarding_bboxx_04.3x.png",
+      "filename" : "splash_close.3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
