@@ -3,31 +3,37 @@ import SwiftUI
 struct TagCollectionView: View {
 
     var maxLimit: Int
-    @Binding var tags: [Tag]
+    let viewModel: SelectTagViewModel
     var fontSize: CGFloat = 16
-    
     
     var body: some View {
        
         VStack(alignment: .leading, spacing: 15) {
             ScrollView(.horizontal, showsIndicators: false) {
                 
-                VStack(alignment: .leading, spacing: 20) {
-
+                VStack(alignment: .leading, spacing: 10) {
+                    
                     ForEach(getRows(),id: \.self){rows in
                         
                         HStack(spacing: 10){
                             
-                            ForEach(rows){row in
-                                
-                                RowView(tag: row)
+                            // TODO: need to fix forEach loop
+                            ForEach(0..<viewModel.tags.count){ index in
+                                let row = viewModel.tags[index]
+                                RowView(tag: row, isSelected: viewModel.selected[index])
+                                    .onTapGesture {
+                                        if viewModel.selected[index] {
+                                            viewModel.selected[index] = false
+                                        } else {
+                                            viewModel.selected[index] = true
+                                        }
+                                    }
                             }
                         }
                     }
                 }
                 .frame(alignment: .leading)
                 .padding(.vertical)
-                .padding(.bottom,20)
             }
             .frame(maxWidth: .infinity)
             .padding(.leading, 10)
@@ -35,24 +41,25 @@ struct TagCollectionView: View {
     }
     
     @ViewBuilder
-    func RowView(tag: Tag) -> some View {
+    func RowView(tag: Tag, isSelected: Bool) -> some View {
         
         Text(tag.text)
-            .font(.system(size: fontSize))
+            .font(.custom("Pretendard-SemiBold", size: fontSize))
+            .foregroundColor(Color("BboxxTextColor"))
             .padding(.horizontal,14)
             .padding(.vertical,8)
             .background(
                 Capsule()
-                    .fill(Color(.white))
+                    .fill(isSelected ? Color(.black) : Color(.white))
             )
-            .foregroundColor(Color("BboxxTextColor"))
+            .foregroundColor(isSelected ? Color(.white) : Color("BboxxTextColor"))
             .lineLimit(1)
             .contentShape(Capsule())
     }
     
     func getIndex(tag: Tag) -> Int {
         
-        let index = tags.firstIndex { currentTag in
+        let index = viewModel.tags.firstIndex { currentTag in
             return tag.id == currentTag.id
         } ?? 0
         
@@ -66,7 +73,7 @@ struct TagCollectionView: View {
         var totalWidth: CGFloat = 0
         let screenWidth: CGFloat = UIScreen.main.bounds.width / 2.2
         
-        tags.forEach { tag in
+        viewModel.tags.forEach { tag in
             
             totalWidth += (tag.size + 40)
             
@@ -107,7 +114,7 @@ func addTag(tags: [Tag],
     
     if (getSize(tags: tags) + text.count) < maxLimit{
         completion(false,tag)
-    }else{
+    } else {
         completion(true,tag)
     }
 }

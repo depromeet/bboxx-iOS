@@ -3,13 +3,17 @@ import SwiftUI
 struct SelectTagView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @State var tags: [Tag] = TagList().tags
+//    @State var tags: [Tag] = TagList().tags
     @State var text: String = ""
     var selectedCount = 0
     @State var enableButton: Bool = false
     var feelingNoteId: Int = 0
-    
+    @ObservedObject var viewModel: SelectTagViewModel
     @State var tag: Int? = 0
+    
+    init() {
+        self.viewModel = SelectTagViewModel(tags: TagList().tags)
+    }
     
     var body: some View {
         VStack(spacing: 10) {
@@ -50,7 +54,7 @@ struct SelectTagView: View {
                         .frame(maxWidth: .infinity,alignment: .leading)
                 }
                 
-                TagCollectionView(maxLimit: 150, tags: $tags, fontSize: 16)
+                TagCollectionView(maxLimit: 150, viewModel: viewModel, fontSize: 16)
                     .frame(height: 280)
                     .padding(.top,20)
                 
