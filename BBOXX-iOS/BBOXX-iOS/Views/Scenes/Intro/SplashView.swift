@@ -38,16 +38,17 @@ struct SplashView: View {
         }
         .ignoresSafeArea(.all)
         .onAppear {
-            // holding initial 4 sec
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                removeSplash1 = true
+            SystemPermissionChecker.shared.checkCurrentNotiPermission(completion: {
+                // holding initial 4 sec
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    removeSplash2 = true
-                       
+                    removeSplash1 = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        removeSplash2 = true
+                           
+                    }
+                        
                 }
-                    
-            }
-            
+            })
         }
     }
 }
