@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct SelectTagView: View {
-    
+        
     @Environment(\.presentationMode) var presentationMode
-    @State var tags: [Tag] = TagList().tags
     @State var text: String = ""
-    var selectedCount = 0
-    @State var enableButton: Bool = false
     var feelingNoteId: Int = 0
+    
+    @State var selectedTags: [String] = []
+    @State var enableButton: Bool = true
     
     @State var tag: Int? = 0
     
@@ -51,16 +51,16 @@ struct SelectTagView: View {
                         Spacer()
                         
                         ScrollView() {
-                            TagCollectionView(tags: self.tags)
+                            TagCollectionView(selectedTags: $selectedTags, enableButton: $enableButton)
                                 .padding(.top, 20)
                                 .padding(.bottom, 20)
                         }
                         
                         Spacer()
                         
-                        // 선택된 태그들 같이 보내야 하는 코드 필요
+                        // 선택된 태그들 같이 보내는 코드 필요
                         NavigationLink(destination:
-                                        GrowthNoteWritingView()
+                                        GrowthNoteWritingView(feelingNoteId: self.feelingNoteId, tags: self.selectedTags)
                                         .navigationBarHidden(true), tag: 1, selection: $tag) {
                             EmptyView()
                         }
@@ -70,10 +70,10 @@ struct SelectTagView: View {
                         }, label: {
                             Text("이 감정을 글로 써볼래")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
-                                .foregroundColor(.white)
+                                .foregroundColor(enableButton ? Color("BboxxGrayColor").opacity(0.4) : .white)
                         })
                         .frame(maxWidth: .infinity, maxHeight: 56)
-                        .background(Color("BboxxTextColor"))
+                        .background(enableButton ? Color("BboxxGrayColor").opacity(0.2) : Color("BboxxTextColor"))
                         .cornerRadius(16)
                         .disabled(enableButton)
                         

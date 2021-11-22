@@ -70,7 +70,7 @@ struct FeelingNoteReviewView: View {
                     .padding(.top, 20)
                     
                     VStack { // SelectTagView로 넘어갈 때, 감정일기 id 값 넘겨줘야 함
-                        NavigationLink(destination: SelectTagView().navigationBarHidden(true)) {
+                        NavigationLink(destination: SelectTagView(feelingNoteId: self.feelingNote?.id ?? 0).navigationBarHidden(true)) {
                             Text("다시보니 괜찮아졌어")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
                                 .foregroundColor(.white)

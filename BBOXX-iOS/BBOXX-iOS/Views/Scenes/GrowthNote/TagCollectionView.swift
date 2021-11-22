@@ -1,10 +1,17 @@
 import SwiftUI
 
 struct TagCollectionView: View {
-    @State var tags: [Tag]
+    @State var tags: [Tag] = TagList().tags
     @State private var totalHeight = CGFloat.zero
     
-    @State var selectedTags: [String] = []
+    @Binding var selectedTags: [String]
+    @Binding var enableButton: Bool
+    
+    init(selectedTags: Binding<[String]>,
+         enableButton: Binding<Bool>) {
+        _selectedTags = selectedTags
+        _enableButton = enableButton
+    }
     
     var body: some View {
         VStack {
@@ -53,6 +60,8 @@ struct TagCollectionView: View {
             } else {
                 selectedTags.append(text)
             }
+            
+            self.checkButtonState()
         }, label: {
             Text(text)
                 .font(.custom("Pretendard-Medium", size: 16))
@@ -72,6 +81,17 @@ struct TagCollectionView: View {
                 binding.wrappedValue = rect.size.height
             }
             return .clear
+        }
+    }
+    
+    private func checkButtonState() {
+        switch selectedTags.count {
+        case 0:
+            enableButton = true
+        case 1...5:
+            enableButton = false
+        default:
+            enableButton = true
         }
     }
 }
