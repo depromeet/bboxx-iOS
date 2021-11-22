@@ -20,75 +20,59 @@ struct SelectFeelingView: View {
     
     var body: some View {
         ZStack {
+            Color("BboxxBackgroundColor").ignoresSafeArea()
+
             GeometryReader { geometry in
-                Color("BboxxBackgroundColor").ignoresSafeArea()
-                VStack(spacing: 40) {
-                    HStack {
-                        Button(action: {
-                            self.presentationMode.wrappedValue.dismiss()
-                        }, label: {
-                            Image(ImageAsset.backButton)
-                                .renderingMode(.template)
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(Color("BboxxGrayColor"))
-                        })
-                        
-                        Spacer()
-                    }
+                VStack(alignment: .leading) {
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Image(ImageAsset.backButton)
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(Color("BboxxGrayColor"))
+                    })
                     .padding(.top, 16)
                     .padding(.leading, 16)
                     
-                    // MARK: Top Comments
-                    HStack {
-                        VStack(spacing: 20) {
-                            HStack {
-                                Text("지금 네 감정을\n이 중에서 골라볼래?")
-                                    .fixedSize()
-                                    .font(.custom("Pretendard-Bold", size: 24))
-                                Spacer()
-                            }
-                            
-                            HStack {
-                                Text("최대 5개까지 고를 수 있어")
-                                    .fixedSize()
-                                    .foregroundColor(Color("BboxxGrayColor"))
-                                    .font(.custom("Pretendard-Regular", size: 14))
-                                Spacer()
-                            }
-                        }
-                    }
-                    .padding(.leading, 25)
-                    .frame(alignment: .leading)
+                    Text("지금 네 감정을\n이 중에서 골라볼래?")
+                        .font(.custom("Pretendard-Bold", size: 24))
                     
+                        .padding(.top, 23)
+                        .padding(.leading, 24)
+                        
+                    Text("최대 5개까지 고를 수 있어.")
+                        .fixedSize()
+                        .foregroundColor(Color("BboxxGrayColor"))
+                        .font(.custom("Pretendard-Regular", size: 14))
+                        
+                        .padding(.top, 10)
+                        .padding(.leading, 24)
                     
                     // MARK: Select Feelings
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: feelingRows, alignment: .center, spacing: 0) {
                             ForEach(viewModel.emotions, id: \.id) { emotion in
-                                Button(action: {
-                                    selectedFeelingCount = viewModel.selectedEmotions.filter{$0.value == true}.count
-                                    if selectedFeelingCount > 0 && selectedFeelingCount < 6 {
-                                        completed = true
-                                        viewModel.selectedEmotions[emotion.status] = true
+                                HStack {
+                                    Button(action: {
+                                        selectedFeelingCount = viewModel.selectedEmotions.filter{$0.value == true}.count
+                                        if selectedFeelingCount > 0 && selectedFeelingCount < 6 {
+                                            completed = true
+                                            viewModel.selectedEmotions[emotion.status] = true
+                                        }
+                                    }) {
+                                        FeelingButton(emotion: emotion, viewModel: viewModel)
                                     }
-                                }) {
-                                    FeelingButton(emotion: emotion, viewModel: viewModel)
+                                    Circle()
+                                        .frame(maxWidth: 136, maxHeight: 136)
+                                        .foregroundColor(Color("BboxxBackgroundColor"))
                                 }
-                                Circle()
-                                    .frame(maxWidth: 136, maxHeight: 136)
-                                    .foregroundColor(Color("BboxxBackgroundColor"))
                             }
+                            .id(UUID().uuidString)
                         }
-                        .id(UUID().uuidString)
-                        .padding(.top, 10)
-                        .padding(.bottom, 10)
-                        .padding(.leading, 25)
-                        .padding(.trailing, 25)
-                        .background(Color("BboxxBackgroundColor"))
-//                        .frame(maxWidth: imageWidth * 10, maxHeight: geometry.size.height / 2 - 10)
-                        
-                    }.frame(maxWidth: imageWidth * 10, maxHeight: geometry.size.height / 2 - 10)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     
                     NavigationLink(destination: FeelingNoteRemindView(
                                     title: self.title,
@@ -97,29 +81,23 @@ struct SelectFeelingView: View {
                         Button(action: {
                         }) {
                             Text("다 골랐어")
-                                .fixedSize()
-                                .foregroundColor(Color("BboxxGrayColor"))
-                                .font(.custom("Pretendard-Regular", size: 20))
-                                .foregroundColor(viewModel.completed ? Color(.white) : Color("BboxxGrayColor").opacity(0.4))
-                                .padding([.top, .bottom], 20)
-                                .padding([.leading, .trailing], 90)
-                                .background(viewModel.completed ? Color("BboxxGrayColor") : Color("disabledButtonColor"))
-                                .cornerRadius(10)
-                            
+                                .foregroundColor(.white)
+                                .font(.custom("Pretendard-SemiBold", size: 18))                            
                         }
-                        .buttonStyle(PlainButtonStyle())
-                        .frame(width: geometry.size.width * 0.9, height: 70 ,alignment: .bottom)
+                        .frame(maxWidth: .infinity, maxHeight: 56)
+                        .background(Color("BboxxGrayColor"))
+                        .cornerRadius(16)
+                        
+                        .padding(.top, 20)
+                        .padding(.leading, 24)
+                        .padding(.trailing, 24)
+                        .padding(.bottom, 30)
                     }
-                    .padding(.bottom, 50)
-                    .padding(.leading, 20)
-                    .padding(.trailing, 20)
+                    
                 }
-                .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height , alignment: .top)
                 .padding(.top, 20)
                 
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
-                .ignoresSafeArea(edges: .all)
-            
         }
         
     }
