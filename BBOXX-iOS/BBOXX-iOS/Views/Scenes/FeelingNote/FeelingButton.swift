@@ -2,20 +2,32 @@ import SwiftUI
 
 struct FeelingButton: View {
     
-    @State private var selected: Bool = false
     @State var image: UIImage = UIImage()
     private let imageWidth: CGFloat = 110
     
     var emotion: Emotion
-    var viewModel: SelectFeelingViewModel
     
+    @Binding var selectedEmotionIdList: [Int]
+    //@Binding var selectedEmotionImageList: [Image] = []
+    
+    @Binding var enableButton: Bool
+    
+    init(selectedEmotionIdList: Binding<[Int]>, enableButton: Binding<Bool>, emotion: Emotion) {
+        _selectedEmotionIdList = selectedEmotionIdList
+        _enableButton = enableButton
+        self.emotion = emotion
+    }
+
     var body: some View {
         
         Button(action: {
-            self.selected.toggle()
-            if selected {
-                viewModel.selectedEmotions[emotion.status] = true
+            if selectedEmotionIdList.contains(emotion.id) { // 갯수 제한 필요 최소 1, 최대 5
+                selectedEmotionIdList.removeAll { $0 == emotion.id}
+            } else {
+                selectedEmotionIdList.append(emotion.id)
             }
+            
+            checkButtonState()
         }) {
             VStack {
                 AsyncImage(
@@ -25,15 +37,25 @@ struct FeelingButton: View {
                 )
                     .frame(width: 65, height: 65)
                 Text(emotion.status)
-                    .foregroundColor(selected ? Color.white : Color("BboxxGrayColor"))
+                    .foregroundColor(!selectedEmotionIdList.contains(emotion.id) ? Color.white : Color("BboxxGrayColor"))
                     .fixedSize()
                     .font(.custom("Pretendard-Medium", size: 14))
             }
             .frame(width: imageWidth, height: imageWidth)
-            .background(selected ? Color("BboxxGrayColor") : Color.white)
+            .background(!selectedEmotionIdList.contains(emotion.id) ? Color("BboxxGrayColor") : Color.white)
             .clipShape(Circle())
         }
         .frame(width: imageWidth, height: imageWidth)
     }
     
+    private func checkButtonState() {
+        switch selectedEmotionIdList.count {
+        case 0:
+            enableButton = true
+        case 1...5:
+            enableButton = false
+        default:
+            enableButton = true
+        }
+    }
 }

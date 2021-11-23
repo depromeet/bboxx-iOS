@@ -6,17 +6,15 @@ struct SelectFeelingView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel = SelectFeelingViewModel()
     
-    private let feelingRows = [
-        GridItem(.flexible()),GridItem(.flexible()), GridItem(.flexible())
-    ]
     let imageWidth: CGFloat = 136
-    @State var completed: Bool = true
-    @State var selectedFeelingCount = 0
     
     var category: String = ""
     var categoryId: Int = 0
     var title: String = ""
     var content: String = ""
+    
+    @State var selectedEmotionIdList: [Int] = []
+    @State var enableButton: Bool = true
     
     var body: some View {
         ZStack {
@@ -54,7 +52,7 @@ struct SelectFeelingView: View {
                             HStack {
                                 ForEach(0..<3) { column in // create 3 columns
                                     Button(action: {}, label: {
-                                        FeelingButton(emotion: viewModel.emotions[row * 3 + column], viewModel: viewModel)
+                                        FeelingButton(selectedEmotionIdList: self.$selectedEmotionIdList, enableButton: self.$enableButton, emotion: viewModel.emotions[row * 3 + column])
                                         
                                     })
                                     Circle()
@@ -77,12 +75,13 @@ struct SelectFeelingView: View {
                     Button(action: {
                     }) {
                         Text("다 골랐어")
-                            .foregroundColor(.white)
+                            .foregroundColor(enableButton ? Color("BboxxGrayColor").opacity(0.4) : .white)
                             .font(.custom("Pretendard-SemiBold", size: 18))
                     }
                     .frame(maxWidth: .infinity, maxHeight: 56)
-                    .background(Color("BboxxGrayColor"))
+                    .background(enableButton ? Color("BboxxGrayColor").opacity(0.2) : Color("BboxxTextColor"))
                     .cornerRadius(16)
+                    .disabled(enableButton)
                     
                     .padding(.top, 20)
                     .padding(.leading, 24)
@@ -95,12 +94,5 @@ struct SelectFeelingView: View {
         }.navigationBarHidden(true)
         
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-}
-
-
-struct SelectFeelingView_Previews: PreviewProvider {
-    static var previews: some View {
-        SelectFeelingView().previewDevice("iPhone 13")
     }
 }
