@@ -120,17 +120,17 @@ struct SelectCategoryView: View {
                             viewModel.selectCategoryId(selectedCategory)
                         } label: {
                             Text("다 골랐어")
-                                .fontWeight(.semibold)
+                                .font(.custom("Pretendard-SemiBold", size: 18))
                                 .foregroundColor(enableButton ? Color(.white) : Color("BboxxGrayColor").opacity(0.4))
-                                .padding(.vertical,20)
-                                .padding(.horizontal,120)
-                                .background(enableButton ? Color("BboxxGrayColor") : Color("disabledButtonColor"))
-                                .cornerRadius(16)
-                            
                         }
-                        .disabled(enableButton == false)
-                        .frame(alignment: .bottom)
-                        .padding(.bottom, 50)
+                        .frame(maxWidth: .infinity, maxHeight: 56)
+                        .background(enableButton ? Color("BboxxGrayColor") : Color("disabledButtonColor"))
+                        .cornerRadius(16)
+                        .disabled(!enableButton)
+                        
+                        .padding(.leading, 24)
+                        .padding(.trailing, 24)
+                        .padding(.bottom, 30)
                     }
                     
                     if showPicker {
@@ -159,7 +159,7 @@ struct SelectCategoryView: View {
                             .pickerStyle(WheelPickerStyle())
                         }
                         .background(Color(.white))
-                        .frame(width: .infinity, height: 150)
+                        .frame(maxWidth: .infinity, maxHeight: 150)
                     }
                 }
             }
