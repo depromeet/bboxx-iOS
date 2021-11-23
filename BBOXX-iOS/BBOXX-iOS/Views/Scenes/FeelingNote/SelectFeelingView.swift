@@ -7,6 +7,7 @@ struct SelectFeelingView: View {
     @ObservedObject var viewModel = SelectFeelingViewModel()
     
     let imageWidth: CGFloat = 136
+    var flexibleLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var category: String = ""
     var categoryId: Int = 0
@@ -15,6 +16,8 @@ struct SelectFeelingView: View {
     
     @State var selectedEmotionIdList: [Int] = []
     @State var enableButton: Bool = true
+    
+    @State var tag: Int? = 0
     
     var body: some View {
         ZStack {
@@ -47,47 +50,46 @@ struct SelectFeelingView: View {
                     .padding(.leading, 24)
                 
                 ScrollView() {
-                    VStack(spacing: 10){
-                        ForEach(0..<3) { row in
-                            HStack {
-                                ForEach(0..<3) { column in // create 3 columns
-                                    Button(action: {}, label: {
-                                        FeelingButton(selectedEmotionIdList: self.$selectedEmotionIdList, enableButton: self.$enableButton, emotion: viewModel.emotions[row * 3 + column])
-                                        
-                                    })
-                                    Circle()
-                                        .frame(maxWidth: 100, maxHeight: 100)
-                                        .foregroundColor(Color("BboxxBackgroundColor"))
-                                    
-                                }
-                            }
+                    LazyVGrid(columns: flexibleLayout) {
+                        ForEach(viewModel.emotions, id: \.id) { emotion in
+                            Button(action: {}, label: {
+                                FeelingButton(selectedEmotionIdList: self.$selectedEmotionIdList, enableButton: self.$enableButton, emotion: emotion)
+                                
+                            })
+                            Circle()
+                                .frame(maxWidth: 100, maxHeight: 100)
+                                .foregroundColor(Color("BboxxBackgroundColor"))
+                            
                         }
                     }
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 
                 .padding(.top, 15)
-                .padding(.leading, 5)
                 
                 NavigationLink(destination: FeelingNoteRemindView(
                                 title: self.title,
                                 content: self.content,
-                                category: self.category)) {
-                    Button(action: {
-                    }) {
-                        Text("다 골랐어")
-                            .foregroundColor(enableButton ? Color("BboxxGrayColor").opacity(0.4) : .white)
-                            .font(.custom("Pretendard-SemiBold", size: 18))
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: 56)
-                    .background(enableButton ? Color("BboxxGrayColor").opacity(0.2) : Color("BboxxTextColor"))
-                    .cornerRadius(16)
-                    .disabled(enableButton)
-                    
-                    .padding(.top, 20)
-                    .padding(.leading, 24)
-                    .padding(.trailing, 24)
-                    .padding(.bottom, 30)
+                                category: self.category,
+                                emotionStatusList: self.selectedEmotionIdList), tag: 1, selection: self.$tag) {
+                    EmptyView()
                 }
+                
+                Button(action: {
+                    self.tag = 1
+                }) {
+                    Text("다 골랐어")
+                        .foregroundColor(enableButton ? Color("BboxxGrayColor").opacity(0.4) : .white)
+                        .font(.custom("Pretendard-SemiBold", size: 18))
+                }
+                .frame(maxWidth: .infinity, maxHeight: 56)
+                .background(enableButton ? Color("BboxxGrayColor").opacity(0.2) : Color("BboxxTextColor"))
+                .cornerRadius(16)
+                .disabled(enableButton)
+                
+                .padding(.top, 20)
+                .padding(.leading, 24)
+                .padding(.trailing, 24)
+                .padding(.bottom, 30)
             }
             .padding(.top, 20)
             

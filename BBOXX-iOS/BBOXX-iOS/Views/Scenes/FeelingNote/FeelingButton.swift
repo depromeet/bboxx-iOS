@@ -37,12 +37,12 @@ struct FeelingButton: View {
                 )
                     .frame(width: 65, height: 65)
                 Text(emotion.status)
-                    .foregroundColor(!selectedEmotionIdList.contains(emotion.id) ? Color.white : Color("BboxxGrayColor"))
+                    .foregroundColor(selectedEmotionIdList.contains(emotion.id) ? Color.white : Color("BboxxGrayColor"))
                     .fixedSize()
                     .font(.custom("Pretendard-Medium", size: 14))
             }
             .frame(width: imageWidth, height: imageWidth)
-            .background(!selectedEmotionIdList.contains(emotion.id) ? Color("BboxxGrayColor") : Color.white)
+            .background(selectedEmotionIdList.contains(emotion.id) ? Color("BboxxGrayColor") : Color.white)
             .clipShape(Circle())
         }
         .frame(width: imageWidth, height: imageWidth)
