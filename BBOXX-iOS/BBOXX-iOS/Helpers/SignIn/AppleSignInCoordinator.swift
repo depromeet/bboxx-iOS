@@ -26,15 +26,28 @@ class AppleSignInCoordinator: NSObject, ASAuthorizationControllerDelegate {
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
             
-            // Get user details
-            let userIdentifier = appleIDCredential.user
-            let fullName = appleIDCredential.fullName
-            let email = appleIDCredential.email ?? ""
-            let name = (fullName?.givenName ?? "") + (" ") + (fullName?.familyName ?? "")
-            // TODO: - Make network request to backend
-            // Save user details or fetch them
-            // Sign in with Apple only gives full name and email once
-            // signInService.callAppleAuthCallback()
+            // 유저 정보
+//            let userIdentifier = appleIDCredential.user
+//            let fullName = appleIDCredential.fullName
+//            let email = appleIDCredential.email ?? ""
+//            let name = (fullName?.givenName ?? "") + (" ") + (fullName?.familyName ?? "")
+            
+            // 토큰
+            guard let appleToken = appleIDCredential.identityToken else { return }
+            do {
+                let token = try JSONDecoder().decode(String.self, from: appleToken)
+                // 로그인 요청
+                AuthService.shared.signIn(token, "APPLE") { result in
+                    switch result {
+                    case .success(let response):
+                        print(response)
+                    case .failure(let error):
+                        debugPrint("error occured: \(error)")
+                    }
+                }
+            } catch {
+                debugPrint("error occured: \(error)")
+            }
         default:
             break
         }
