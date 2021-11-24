@@ -11,10 +11,7 @@ struct FeelingNoteWritingView: View {
     @State private var cardDismissal: Bool = false
     
     @State var tag: Int? = 0
-    
-    var category: String = ""
-    var categoryId: Int = 0
-    
+        
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -115,9 +112,7 @@ struct FeelingNoteWritingView: View {
                             .padding(.trailing, 31)
                         
                         NavigationLink(destination:
-                                        SelectFeelingView(category: self.category,
-                                                          categoryId: self.categoryId,
-                                                          title: self.title,
+                                        SelectFeelingView(title: self.title,
                                                           content: self.content)
                                         .navigationBarHidden(true), tag: 1, selection: $tag) {
                             EmptyView()

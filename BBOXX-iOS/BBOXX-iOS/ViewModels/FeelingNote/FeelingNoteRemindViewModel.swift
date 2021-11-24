@@ -4,6 +4,13 @@ class FeelingNoteRemindViewModel: ObservableObject {
     
     @Published var emotions: [Emotion] = []
     
+    var categoryId: Int {
+        return UserDefaults.standard.integer(forKey: "categoryId")
+    }
+    var category: String {
+        return UserDefaults.standard.string(forKey: "category") ?? ""
+    }
+    
     init() {
         getEmotions()
     }

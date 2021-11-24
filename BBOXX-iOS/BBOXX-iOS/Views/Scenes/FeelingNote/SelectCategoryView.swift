@@ -16,7 +16,7 @@ struct SelectCategoryView: View {
     @State var enableButton: Bool = false
     var categories = Category.allCases
     @State var showPicker: Bool = false
-    @State private var selectedCategory = ""
+    @State private var selectedCategory: String = ""
     private let defaultText = "선택하기"
     
     @State var tag: Int? = 0
@@ -103,35 +103,31 @@ struct SelectCategoryView: View {
             .frame(maxWidth: .infinity,maxHeight: .infinity, alignment: .top)
             
             NavigationLink(destination:
-                            FeelingNoteWritingView(category: selectedCategory, categoryId: viewModel.categoryId)
+                            FeelingNoteWritingView()
                             .navigationBarHidden(true), tag: 1, selection: $tag) {
                 EmptyView()
             }
             
             VStack {
                 ZStack {
-                    
-                    NavigationLink(destination:
-                                    FeelingNoteWritingView()
-                                    .navigationBarHidden(true)) {
-                        Button {
-                            self.tag = 1
-                            if selectedCategory != "" { enableButton = true }
-                            viewModel.selectCategoryId(selectedCategory)
-                        } label: {
-                            Text("다 골랐어")
-                                .font(.custom("Pretendard-SemiBold", size: 18))
-                                .foregroundColor(enableButton ? Color(.white) : Color("BboxxGrayColor").opacity(0.4))
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: 56)
-                        .background(enableButton ? Color("BboxxGrayColor") : Color("disabledButtonColor"))
-                        .cornerRadius(16)
-                        .disabled(!enableButton)
-                        
-                        .padding(.leading, 24)
-                        .padding(.trailing, 24)
-                        .padding(.bottom, 30)
+                    Button {
+                        self.tag = 1
+                        if selectedCategory != "" { enableButton = true }
+                        viewModel.selectCategoryId(selectedCategory)
+                    } label: {
+                        Text("다 골랐어")
+                            .font(.custom("Pretendard-SemiBold", size: 18))
+                            .foregroundColor(enableButton ? Color(.white) : Color("BboxxGrayColor").opacity(0.4))
                     }
+                    .frame(maxWidth: .infinity, maxHeight: 56)
+                    .background(enableButton ? Color("BboxxGrayColor") : Color("disabledButtonColor"))
+                    .cornerRadius(16)
+                    .disabled(!enableButton)
+                    
+                    .padding(.leading, 24)
+                    .padding(.trailing, 24)
+                    .padding(.bottom, 30)
+                    
                     
                     if showPicker {
                         VStack {

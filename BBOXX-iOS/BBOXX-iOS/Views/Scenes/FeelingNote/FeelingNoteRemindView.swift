@@ -4,10 +4,8 @@ import SwiftKeychainWrapper
 struct FeelingNoteRemindView: View {
     @ObservedObject var viewModel = FeelingNoteRemindViewModel()
     
-    var title: String = ""
-    var content: String = ""
-    var category: String = "학업문제"
-    var categoryId: Int = 0
+    var title: String
+    var content: String
     var emotionStatusList: [Int] = [] // emotion의 id만 뽑아 배열로 넘겨받기
     
     @State var tag: Int? = 0
@@ -30,7 +28,7 @@ struct FeelingNoteRemindView: View {
                                 .font(.custom("Pretendard-Medium", size: 28))
                                 .foregroundColor(Color("BboxxTextColor"))
                             
-                            Text(category)
+                            Text(viewModel.category)
                                 .font(.custom("Pretendard-Bold", size: 28))
                                 .foregroundColor(Color("BboxxGrayColor"))
                                 
@@ -90,7 +88,7 @@ struct FeelingNoteRemindView: View {
                         
                         Button(action: {
                             self.tag = 1
-                            viewModel.postFeelingNote(categorId: categoryId,
+                            viewModel.postFeelingNote(categorId: viewModel.categoryId,
                                                       content: content,
                                                       emotionStatusList: emotionStatusList,
                                                       memberId: KeychainWrapper.standard.integer(forKey: "memberId") ?? 0,
