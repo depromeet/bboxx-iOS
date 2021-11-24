@@ -4,10 +4,8 @@ import SwiftKeychainWrapper
 struct FeelingNoteRemindView: View {
     @ObservedObject var viewModel = FeelingNoteRemindViewModel()
     
-    var title: String = ""
-    var content: String = ""
-    var category: String = "학업문제"
-    var categoryId: Int = 0
+    var title: String
+    var content: String
     var emotionStatusList: [Int] = [] // emotion의 id만 뽑아 배열로 넘겨받기
     
     @State var tag: Int? = 0
@@ -30,7 +28,7 @@ struct FeelingNoteRemindView: View {
                                 .font(.custom("Pretendard-Medium", size: 28))
                                 .foregroundColor(Color("BboxxTextColor"))
                             
-                            Text(category)
+                            Text(viewModel.category)
                                 .font(.custom("Pretendard-Bold", size: 28))
                                 .foregroundColor(Color("BboxxGrayColor"))
                                 
@@ -62,16 +60,23 @@ struct FeelingNoteRemindView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false){
                             HStack(spacing: 20) {
-                                ForEach(0..<10) { index in
-                                    Image("")
-                                        .frame(width: 80, height: 80)
-                                        .background(Color("BboxxGrayColor"))
+                                ForEach(emotionStatusList, id: \.self) { emotionId in
+                                    ForEach(viewModel.emotions, id: \.id) { emotion in
+                                        if emotionId == emotion.id {
+                                            AsyncImage(
+                                                url: URL(string: emotion.emotionURL)!,
+                                                placeholder: { Text("Loading..") },
+                                                image: { Image(uiImage: $0).resizable() }
+                                            )
+                                        }
+                                    }
                                 }
+                                .frame(width: 90, height: 90)
                             }
                         }
-                        .frame(height: 80)
+                        .frame(height: 90)
                         
-                        .padding(.top, 40)
+                        .padding(.top, 20)
                         .padding(.trailing, -24)
                         
                         NavigationLink(destination:
@@ -83,7 +88,7 @@ struct FeelingNoteRemindView: View {
                         
                         Button(action: {
                             self.tag = 1
-                            viewModel.postFeelingNote(categorId: categoryId,
+                            viewModel.postFeelingNote(categorId: viewModel.categoryId,
                                                       content: content,
                                                       emotionStatusList: emotionStatusList,
                                                       memberId: KeychainWrapper.standard.integer(forKey: "memberId") ?? 0,

@@ -5,6 +5,7 @@ struct Tag: Identifiable, Hashable {
     var id = UUID().uuidString
     var text: String
     var size: CGFloat = 0
+    var isSelected: Bool = false
 }
 
 // Select Tags in Growth Note 
