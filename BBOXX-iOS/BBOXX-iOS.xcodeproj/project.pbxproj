@@ -207,6 +207,7 @@
 		6AC4143427285C5000935C43 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6AC4143B272C37E100935C43 /* OnboardingLastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLastView.swift; sourceTree = "<group>"; };
 		6AC41441272C57B400935C43 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		6AC93260274E6B9F0022E577 /* BBOXX-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BBOXX-iOS.entitlements"; sourceTree = "<group>"; };
 		6AC9D9F927341CB000F72E0D /* SelectFeelingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeelingView.swift; sourceTree = "<group>"; };
 		6ACBC5AD2723ECB9002E1E55 /* AppleSignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInCoordinator.swift; sourceTree = "<group>"; };
 		6ACBC5B22723ED70002E1E55 /* ImageAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
@@ -255,6 +256,7 @@
 		4527B83E27083E0E003FD4F9 /* BBOXX-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				6AC93260274E6B9F0022E577 /* BBOXX-iOS.entitlements */,
 				456E59E4273B81E80051511D /* Enum */,
 				458F3152272929AA00F4C7EA /* Supporting Files */,
 				6ACBC5AF2723ECEF002E1E55 /* Networks */,
@@ -599,6 +601,9 @@
 		4527B83427083E0E003FD4F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
@@ -912,6 +917,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BBOXX-iOS/BBOXX-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"BBOXX-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 93A6S4WHC4;
@@ -936,6 +942,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BBOXX-iOS/BBOXX-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"BBOXX-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 93A6S4WHC4;
