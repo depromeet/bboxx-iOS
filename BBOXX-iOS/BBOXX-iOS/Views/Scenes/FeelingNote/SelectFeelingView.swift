@@ -50,16 +50,12 @@ struct SelectFeelingView: View {
                     .padding(.leading, 24)
                 
                 ScrollView() {
-                    LazyVGrid(columns: flexibleLayout) {
+                    LazyVGrid(columns: flexibleLayout, spacing: 30) {
                         ForEach(viewModel.emotions, id: \.id) { emotion in
                             Button(action: {}, label: {
                                 FeelingButton(selectedEmotionIdList: self.$selectedEmotionIdList, enableButton: self.$enableButton, emotion: emotion)
                                 
                             })
-                            Circle()
-                                .frame(maxWidth: 100, maxHeight: 100)
-                                .foregroundColor(Color("BboxxBackgroundColor"))
-                            
                         }
                     }
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
