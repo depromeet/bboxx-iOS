@@ -2,7 +2,7 @@ import SwiftUI
 
 class SelectCategoryViewModel: ObservableObject {
     
-    @Published var categoryId: Int = 0
+    var categoryId: Int = 0
     
     init() {
         
@@ -25,5 +25,8 @@ class SelectCategoryViewModel: ObservableObject {
         default:
             break
         }
+        
+        UserDefaults.standard.setValue(categoryId, forKey: "categoryId")
+        UserDefaults.standard.setValue(category, forKey: "category")
     }
 }

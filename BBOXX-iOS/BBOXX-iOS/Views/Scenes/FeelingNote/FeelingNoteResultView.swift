@@ -42,11 +42,16 @@ struct FeelingNoteResultView: View {
                     
                     .padding(.top, 10)
                 
-                Image(ImageAsset.hugIcon)
-                    .resizable()
-                    .frame(maxWidth: .infinity, maxHeight: 315, alignment: .center)
+                HStack {
+                    Spacer()
                     
-                    .padding(.top, 20)
+                    Image(ImageAsset.hugIcon)
+                        .resizable()
+                        .frame(maxWidth: 240, maxHeight: 240, alignment: .center)
+                    
+                    Spacer()
+                }
+                .padding(.top, 20)
                 
                 Spacer()
                 
@@ -92,5 +97,11 @@ struct FeelingNoteResultView: View {
             .background(Color("BboxxBackgroundColor").ignoresSafeArea())
             .navigationBarHidden(true)
         }
+    }
+}
+
+struct FeelingNoteResultView_Previews: PreviewProvider {
+    static var previews: some View {
+        FeelingNoteResultView()
     }
 }

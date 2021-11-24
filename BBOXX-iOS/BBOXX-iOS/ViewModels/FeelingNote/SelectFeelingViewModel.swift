@@ -1,12 +1,8 @@
 import Foundation
 
 class SelectFeelingViewModel: ObservableObject {
-    typealias FeelingTitle = String
-    typealias IsSelected = Bool
-    @Published var completed: Bool = true
+    
     @Published var emotions: [Emotion] = []
-    var selectedEmotions: [FeelingTitle: IsSelected] = [:]
-    var selectedFeelingCount = 0
     
     init() {
         self.getEmotions()
@@ -17,9 +13,6 @@ class SelectFeelingViewModel: ObservableObject {
             switch result{
             case .success(let response):
                 self?.emotions = response.data.emotions
-                response.data.emotions.forEach { emotion in
-                    self?.selectedEmotions[emotion.status] = false
-                }
             case .failure(let error):
                 print(error.localizedDescription)
             }

@@ -9,15 +9,13 @@ struct SelectFeelingView: View {
     let imageWidth: CGFloat = 136
     var flexibleLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
-    var category: String = ""
-    var categoryId: Int = 0
-    var title: String = ""
-    var content: String = ""
-    
     @State var selectedEmotionIdList: [Int] = []
     @State var enableButton: Bool = true
     
     @State var tag: Int? = 0
+    
+    var title: String?
+    var content: String?
     
     var body: some View {
         ZStack {
@@ -50,16 +48,12 @@ struct SelectFeelingView: View {
                     .padding(.leading, 24)
                 
                 ScrollView() {
-                    LazyVGrid(columns: flexibleLayout) {
+                    LazyVGrid(columns: flexibleLayout, spacing: 30) {
                         ForEach(viewModel.emotions, id: \.id) { emotion in
                             Button(action: {}, label: {
                                 FeelingButton(selectedEmotionIdList: self.$selectedEmotionIdList, enableButton: self.$enableButton, emotion: emotion)
                                 
                             })
-                            Circle()
-                                .frame(maxWidth: 100, maxHeight: 100)
-                                .foregroundColor(Color("BboxxBackgroundColor"))
-                            
                         }
                     }
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -67,10 +61,8 @@ struct SelectFeelingView: View {
                 .padding(.top, 15)
                 
                 NavigationLink(destination: FeelingNoteRemindView(
-                                title: self.title,
-                                content: self.content,
-                                category: self.category,
-                                emotionStatusList: self.selectedEmotionIdList), tag: 1, selection: self.$tag) {
+                                title: self.title ?? "",
+                                content: self.content ?? "", emotionStatusList: self.selectedEmotionIdList), tag: 1, selection: self.$tag) {
                     EmptyView()
                 }
                 
