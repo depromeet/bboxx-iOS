@@ -1,4 +1,5 @@
 import AuthenticationServices
+import UIKit
 
 // Used in Sign In view model
 class AppleSignInCoordinator: NSObject, ASAuthorizationControllerDelegate {
@@ -34,27 +35,20 @@ class AppleSignInCoordinator: NSObject, ASAuthorizationControllerDelegate {
             
             // 토큰
             guard let appleToken = appleIDCredential.identityToken else { return }
-            do {
-                let token = try JSONDecoder().decode(String.self, from: appleToken)
-                // 로그인 요청
-                AuthService.shared.signIn(token, "APPLE") { result in
-                    switch result {
-                    case .success(let response):
-                        print(response)
-                    case .failure(let error):
-                        debugPrint("error occured: \(error)")
-                    }
-                }
-            } catch {
-                debugPrint("error occured: \(error)")
-            }
+            guard let token = String(data: appleToken, encoding: .utf8) else { return }
+            // 로그인 요청
+            self.signInViewModel.signIn(token, ProviderType.apple.rawValue)
         default:
             break
         }
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        // TODO: add alert
+        let alert = UIAlertController()
+        alert.title = "로그인 실패"
+        alert.message = "다시 시도해주세요 🥺"
+        
+        // TODO: import Google Crashlytics Log
         print(error.localizedDescription)
     }
 }
