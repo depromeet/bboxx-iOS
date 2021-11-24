@@ -31,28 +31,22 @@ struct SelectCategoryView: View {
                         .renderingMode(.template)
                         .resizable()
                         .frame(width: 24, height: 24)
-                        .foregroundColor(Color("BboxxGrayColor"))
+                        .foregroundColor(Color("BboxxGrayColor").opacity(0.7))
                         .frame(
                             alignment: .topTrailing
                         )
                     
                         .padding(.top, 16)
-                        .padding(.trailing, -8)
+                        .padding(.leading, 16)
                 }
                 Spacer()
             }
-            .background(
-                
-                Color("BboxxBackgroundColor")
-                    .ignoresSafeArea()
-            )
-            .padding(.leading, 20)
+            
             VStack(spacing: 80){
                 VStack(spacing: 20) {
                     Text("있잖아.. 나 오늘")
-                        .font(.system(size: 30, weight: .bold))
-                        .font(.custom("Pretendard-Bold", size: 30))
-                        .foregroundColor(Color("BboxxTextColor"))
+                        .font(.custom("Pretendard-Bold", size: 28))
+                        .foregroundColor(Color("BboxxGrayColor"))
                         .frame(maxWidth: .infinity,alignment: .leading)
                     ZStack {
                         
@@ -85,9 +79,8 @@ struct SelectCategoryView: View {
                     
                     
                     Text("때문에 힘들어")
-                        .font(.system(size: 30, weight: .bold))
-                        .font(.custom("Pretendard-Bold", size: 30))
-                        .foregroundColor(Color("BboxxTextColor"))
+                        .font(.custom("Pretendard-Bold", size: 28))
+                        .foregroundColor(Color("BboxxGrayColor"))
                         .frame(maxWidth: .infinity,alignment: .leading)
                 }
                 
@@ -99,7 +92,7 @@ struct SelectCategoryView: View {
                 
                 
             }
-            .padding([.leading, .top], 20)
+            .padding([.leading, .top], 24)
             .frame(maxWidth: .infinity,maxHeight: .infinity, alignment: .top)
             
             NavigationLink(destination:
