@@ -8,8 +8,6 @@ struct FeelingButton: View {
     var emotion: Emotion
     
     @Binding var selectedEmotionIdList: [Int]
-    //@Binding var selectedEmotionImageList: [Image] = []
-    
     @Binding var enableButton: Bool
     
     init(selectedEmotionIdList: Binding<[Int]>, enableButton: Binding<Bool>, emotion: Emotion) {

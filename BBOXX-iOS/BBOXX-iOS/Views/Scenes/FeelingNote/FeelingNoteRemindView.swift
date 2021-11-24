@@ -62,16 +62,23 @@ struct FeelingNoteRemindView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false){
                             HStack(spacing: 20) {
-                                ForEach(0..<10) { index in
-                                    Image("")
-                                        .frame(width: 80, height: 80)
-                                        .background(Color("BboxxGrayColor"))
+                                ForEach(emotionStatusList, id: \.self) { emotionId in
+                                    ForEach(viewModel.emotions, id: \.id) { emotion in
+                                        if emotionId == emotion.id {
+                                            AsyncImage(
+                                                url: URL(string: emotion.emotionURL)!,
+                                                placeholder: { Text("Loading..") },
+                                                image: { Image(uiImage: $0).resizable() }
+                                            )
+                                        }
+                                    }
                                 }
+                                .frame(width: 90, height: 90)
                             }
                         }
-                        .frame(height: 80)
+                        .frame(height: 90)
                         
-                        .padding(.top, 40)
+                        .padding(.top, 20)
                         .padding(.trailing, -24)
                         
                         NavigationLink(destination:
