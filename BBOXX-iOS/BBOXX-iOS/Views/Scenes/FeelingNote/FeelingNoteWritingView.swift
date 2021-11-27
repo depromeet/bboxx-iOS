@@ -96,12 +96,12 @@ struct FeelingNoteWritingView: View {
                             placeholder: Text("지금 내 감정은..").foregroundColor(Color("BboxxGrayColor").opacity(0.2)),
                             text: $title
                         )
-                            .font(.custom("Pretendard-Bold", size: 20))
-                            .foregroundColor(Color("BboxxTextColor"))
-                            
-                            .padding(.top, 16)
-                            .padding(.leading, 24)
-                            .padding(.trailing, 56)
+                        .font(.custom("Pretendard-Bold", size: 20))
+                        .foregroundColor(Color("BboxxTextColor"))
+                        
+                        .padding(.top, 16)
+                        .padding(.leading, 24)
+                        .padding(.trailing, 56)
                         
                         Divider()
                             .padding(.top, 10)
