@@ -62,7 +62,7 @@ struct SelectFeelingView: View {
                 
                 NavigationLink(destination: FeelingNoteRemindView(
                                 title: self.title ?? "",
-                                content: self.content ?? "", emotionStatusList: self.selectedEmotionIdList), tag: 1, selection: self.$tag) {
+                                content: self.content ?? "", emotionStatusList: self.selectedEmotionIdList).navigationBarHidden(true), tag: 1, selection: self.$tag) {
                     EmptyView()
                 }
                 
