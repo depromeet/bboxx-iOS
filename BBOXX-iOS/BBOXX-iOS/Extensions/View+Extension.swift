@@ -8,4 +8,10 @@ extension View {
     func getScreenBounds()->CGRect{
         return UIScreen.main.bounds
     }
+    
+    // 키보드 내림
+    func endTextEditing() {
+      UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                      to: nil, from: nil, for: nil)
+    }
 }

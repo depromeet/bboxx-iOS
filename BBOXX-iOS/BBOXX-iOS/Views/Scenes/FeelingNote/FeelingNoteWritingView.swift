@@ -33,6 +33,10 @@ struct FeelingNoteWritingView: View {
                             alignment: .topLeading
                         )
                         .padding(.leading, 16)
+                        .onTapGesture {
+                            // 키보드 내림
+                            self.endTextEditing()
+                        }
                         
                         Spacer()
                         
