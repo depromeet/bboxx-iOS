@@ -4,11 +4,16 @@ struct SplashView: View {
     
     @State var removeSplash1: Bool = false
     @State var removeSplash2: Bool = false
+    @ObservedObject var viewModel = SplashViewModel()
     
     var body: some View {
         
         ZStack{
-            OnboardingPagerView()
+            if viewModel.checkFirstRun() {
+                OnboardingPagerView()
+            } else {
+                SignInView()
+            }
             
             ZStack {
                 Color("BboxxGrayColor")
