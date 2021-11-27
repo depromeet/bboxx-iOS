@@ -57,4 +57,7 @@ enum ImageAsset {
     static let onboarding_bboxx_04 = "onboarding_bboxx_04"
     static let onboarding_bboxx_05 = "onboarding_bboxx_05"
     static let onboarding_bboxx_06 = "onboarding_bboxx_06"
+    
+    static let upButton = "upButton"
+    static let downButton = "downButton"
 }
