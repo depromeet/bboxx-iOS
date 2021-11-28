@@ -8,9 +8,6 @@ struct GrowthNoteWritingView: View {
     @State private var title: String = ""
     @State private var content: String = ""
     
-    var feelingNoteId: Int = 0
-    var tags: [String] = []
-    
     @State private var cardShown: Bool = false
     @State private var cardDismissal: Bool = false
     
@@ -18,7 +15,13 @@ struct GrowthNoteWritingView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    init() {
+    var feelingNoteId: Int = 0
+    var tags: [String] = []
+    
+    init(feelingNoteId: Int, tags: [String]) {
+        self.feelingNoteId = feelingNoteId
+        self.tags = tags
+        
         UITextView.appearance().backgroundColor = .clear
     }
     

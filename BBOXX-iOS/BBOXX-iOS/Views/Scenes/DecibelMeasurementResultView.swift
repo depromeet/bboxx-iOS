@@ -4,23 +4,9 @@ struct DecibelMeasurementResultView: View {
     
     @ObservedObject var viewModel = DecibelMeasurementResultViewModel()
     
-    var decibel: Int = 0
-    var title: String = ""
-    var backgroundColor: Color = Color.white
-    var decibelResultImage: String = ImageAsset.decibelResultImage1
-    
-    @Environment(\.presentationMode) var presentationMode
-
-    init(decibel: Float, title: String, backgroundColor: Color, decibelResultImage: String) {
-        self.decibel = Int(decibel)
-        self.title = title
-        self.backgroundColor = backgroundColor
-        self.decibelResultImage = decibelResultImage
-    }
-    
     var body: some View {
         ZStack {
-            Color(UIColor(backgroundColor)).ignoresSafeArea()
+            Color(UserDefaults.standard.colorForKey(key: "backgroundColor") ?? UIColor.white).ignoresSafeArea()
             
             VStack(alignment: .leading) {
                 HStack {
@@ -42,13 +28,13 @@ struct DecibelMeasurementResultView: View {
                 
                 Spacer()
                 
-                Text(title)
+                Text(UserDefaults.standard.string(forKey: "title") ?? "")
                     .font(.custom("Pretendard-Bold", size: 20))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
                 
                 HStack {
-                    Text("\(self.decibel)")
+                    Text("\(UserDefaults.standard.integer(forKey: "decibel"))")
                         .font(.custom("Pretendard-SemiBold", size: 100))
                         .foregroundColor(.white)
                     
@@ -88,7 +74,7 @@ struct DecibelMeasurementResultView: View {
                 HStack {
                     Spacer()
                     
-                    Image(decibelResultImage)
+                    Image(UserDefaults.standard.string(forKey: "decibelResultImage") ?? "")
                         .resizable()
                         .frame(width: 199, height: 217)
                 }

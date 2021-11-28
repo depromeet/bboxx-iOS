@@ -5,6 +5,7 @@ struct DecibelMeasurementView: View {
     @ObservedObject var viewModel = DecibelMeasurementViewModel()
     
     @State var showMic = true
+    @State var tag: Int? = 0
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -43,18 +44,17 @@ struct DecibelMeasurementView: View {
                             .multilineTextAlignment(.center)
                     }
                     
-                    NavigationLink(destination: DecibelMeasurementResultView(
-                        decibel: self.viewModel.peak,
-                        title: self.viewModel.title,
-                        backgroundColor: self.viewModel.backgroundColor,
-                        decibelResultImage: self.viewModel.decibelResultImage
-                    )
-                    .navigationBarHidden(true), tag: 1, selection: self.$viewModel.tag) {
+                    NavigationLink(destination: DecibelMeasurementResultView().navigationBarHidden(true),
+                                   tag: 1, selection: self.$tag) {
                         EmptyView()
                     }
                     
                     Button(action: {
                         self.startMeasuring()
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.tag = 1
+                        }
                     }) {
                         if showMic {
                             Image(ImageAsset.micButton)
