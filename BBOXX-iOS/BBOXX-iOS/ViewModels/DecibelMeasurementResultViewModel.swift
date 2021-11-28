@@ -2,6 +2,20 @@ import SwiftUI
 import Photos
 
 class DecibelMeasurementResultViewModel: ObservableObject {
+    
+    var decibel: Int {
+        return UserDefaults.standard.integer(forKey: "decibel")
+    }
+    var decibelResultTitle: String {
+        return UserDefaults.standard.string(forKey: "decibelResultTitle") ?? ""
+    }
+    var decibelResultBgColor: UIColor {
+        return UserDefaults.standard.colorForKey(key: "decibelResultBgColor") ?? UIColor.white
+    }
+    var decibelResultImage: String {
+        return UserDefaults.standard.string(forKey: "decibelResultImage") ?? ""
+    }
+    
     func takeCapture() -> UIImage {
         var image: UIImage?
         guard let currentLayer = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.layer else { return UIImage() }
