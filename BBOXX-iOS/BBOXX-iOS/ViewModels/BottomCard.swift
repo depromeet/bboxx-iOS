@@ -79,7 +79,7 @@ struct BottomCard<Content: View>: View {
 
                 .frame(minWidth: 0, maxWidth: .infinity, maxHeight: height)
                 .offset(y: cardDismissal && cardShown ? 0 : height)
-                .animation(Animation.default.delay(0.2))
+                .animation(isFeelingNoteCard ? Animation.default.delay(0) : Animation.default.delay(0.2))
                 
             }
         }

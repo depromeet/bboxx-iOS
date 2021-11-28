@@ -4,7 +4,7 @@ struct GrowthNoteDetailContentView: View {
     
     var growthNote: GrowthNote
     var backgroundColor: Color
-    @State var currentIsGrowthNote: Bool = false
+    @State var currentIsGrowthNote: Bool = true
     @State private var reader: ScrollViewProxy?
     @State private var cardShown: Bool = false
     @State private var cardDismissal: Bool = false
@@ -88,6 +88,7 @@ struct GrowthNoteDetailContentView: View {
                 }
                 
             }
+            .background(currentIsGrowthNote ? Color(.clear) : backgroundColor )
         }
         .padding(.top, 5)
         .padding(.bottom, 20)
