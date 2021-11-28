@@ -6,7 +6,7 @@ struct DecibelMeasurementResultView: View {
     
     var body: some View {
         ZStack {
-            Color(UserDefaults.standard.colorForKey(key: "backgroundColor") ?? UIColor.white).ignoresSafeArea()
+            Color(viewModel.decibelResultBgColor).ignoresSafeArea()
             
             VStack(alignment: .leading) {
                 HStack {
@@ -28,13 +28,13 @@ struct DecibelMeasurementResultView: View {
                 
                 Spacer()
                 
-                Text(UserDefaults.standard.string(forKey: "title") ?? "")
+                Text(viewModel.decibelResultTitle)
                     .font(.custom("Pretendard-Bold", size: 20))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
                 
                 HStack {
-                    Text("\(UserDefaults.standard.integer(forKey: "decibel"))")
+                    Text("\(viewModel.decibel)")
                         .font(.custom("Pretendard-SemiBold", size: 100))
                         .foregroundColor(.white)
                     
@@ -74,7 +74,7 @@ struct DecibelMeasurementResultView: View {
                 HStack {
                     Spacer()
                     
-                    Image(UserDefaults.standard.string(forKey: "decibelResultImage") ?? "")
+                    Image(viewModel.decibelResultImage)
                         .resizable()
                         .frame(width: 199, height: 217)
                 }
