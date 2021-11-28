@@ -95,3 +95,41 @@ struct GrowthNoteDetailContentView: View {
         
     }
 }
+
+struct FeelingNoteCardContent: View {
+    
+    var writtenDate: String = ""
+    var title: String = ""
+    var note: String = ""
+    
+    init(writtenDate: String, title: String, note: String) {
+        self.writtenDate = writtenDate
+        self.title = title
+        self.note = note
+    }
+    
+    var body: some View {
+        VStack(alignment: .center) {
+            Text(writtenDate)
+                .font(.custom("Pretendard-Regular", size: 12))
+                .foregroundColor(Color("BboxxTextColor"))
+            
+                .padding(.top, 15)
+            
+            Text(title)
+                .font(.custom("Pretendard-Bold", size: 28))
+                .foregroundColor(Color("BboxxTextColor"))
+            
+                .padding(.top, 5)
+            ScrollView {
+                Text(note)
+                    .font(.custom("Pretendard-Regular", size: 16))
+                    .foregroundColor(Color("BboxxGrayColor"))
+                
+                    .padding(.top, 6)
+            }
+        }
+        .frame(width: UIScreen.main.bounds.width - 10)
+        
+    }
+}
