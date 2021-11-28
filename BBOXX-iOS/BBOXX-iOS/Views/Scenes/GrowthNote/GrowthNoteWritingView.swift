@@ -8,15 +8,22 @@ struct GrowthNoteWritingView: View {
     @State private var title: String = ""
     @State private var content: String = ""
     
-    var feelingNoteId: Int = 0
-    var tags: [String] = []
-    
     @State private var cardShown: Bool = false
     @State private var cardDismissal: Bool = false
     
     @State var tag: Int? = 0
     
     @Environment(\.presentationMode) var presentationMode
+    
+    var feelingNoteId: Int = 0
+    var tags: [String] = []
+    
+    init(feelingNoteId: Int, tags: [String]) {
+        self.feelingNoteId = feelingNoteId
+        self.tags = tags
+        
+        UITextView.appearance().backgroundColor = .clear
+    }
     
     var body: some View {
         NavigationView {
@@ -92,12 +99,16 @@ struct GrowthNoteWritingView: View {
                         .padding(.leading, 24)
                         .padding(.trailing, 24)
                         
-                        TextField("지금 내 생각은..", text: $title)
-                            .font(.custom("Pretendard-Bold", size: 20))
-                            
-                            .padding(.top, 16)
-                            .padding(.leading, 24)
-                            .padding(.trailing, 56)
+                        CustomTextField(
+                            placeholder: Text("지금 내 생각은..").foregroundColor(Color("BboxxGrayColor").opacity(0.2)),
+                            text: $title
+                        )
+                        .font(.custom("Pretendard-Bold", size: 20))
+                        .foregroundColor(Color("BboxxTextColor"))
+                        
+                        .padding(.top, 16)
+                        .padding(.leading, 24)
+                        .padding(.trailing, 56)
                         
                         Divider()
                             .padding(.top, 10)
@@ -107,6 +118,7 @@ struct GrowthNoteWritingView: View {
                         TextEditor(text: $content)
                             .font(.custom("Pretendard-Regular", size: 16))
                             .foregroundColor(Color("BboxxTextColor"))
+                            .background(Color.white)
                             .onChange(of: content, perform: { value in
                                 self.viewModel.checkButtonState(title: title, content: content)
                             })

@@ -74,7 +74,7 @@ struct BottomCard<Content: View>: View {
                 .background(Color.white)
                 .cornerRadius(24, corners: [.topLeft, .topRight])
 
-                .frame(minWidth: 0, maxWidth: .infinity, maxHeight: height)
+                .frame(maxWidth: .infinity, maxHeight: height)
                 .offset(y: cardDismissal && cardShown ? 0 : height)
                 .animation(Animation.default.delay(0.2))
                 
@@ -116,11 +116,15 @@ struct CardContent: View {
                 
                 .padding(.top, 8)
             
-            Image(ImageAsset.trashIcon)
-                .resizable()
-                .frame(width: 180, height: 180, alignment: .center)
+            HStack {
+                Image(ImageAsset.trashIcon)
+                    .resizable()
+                    .frame(maxWidth: 200, maxHeight: 200, alignment: .center)
+                    
+                    .padding(.top, 20)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
 
-                .padding(.top, 20)
             
         }
         

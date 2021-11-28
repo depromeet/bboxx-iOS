@@ -1,19 +1,21 @@
 import Foundation
+import UIKit
+
 extension UserDefaults {
 
-    private enum Keys {
-
-        static let nickName = "nickName"
-
-    }
-
-    class var nickNameKey: String {
-        get {
-            return UserDefaults.standard.string(forKey: Keys.nickName) ?? "사랑스러운딸기"
+    func colorForKey(key: String) -> UIColor? {
+        var color: UIColor?
+        if let colorData = data(forKey: key) {
+            color = NSKeyedUnarchiver.unarchiveObject(with: colorData) as? UIColor
         }
-        set {
-            UserDefaults.standard.set(newValue, forKey: Keys.nickName)
-        }
+        return color
     }
-
+    
+    func setColor(color: UIColor?, forKey key: String) {
+        var colorData: NSData?
+        if let color = color {
+            colorData = NSKeyedArchiver.archivedData(withRootObject: color) as NSData?
+        }
+        set(colorData, forKey: key)
+    }
 }

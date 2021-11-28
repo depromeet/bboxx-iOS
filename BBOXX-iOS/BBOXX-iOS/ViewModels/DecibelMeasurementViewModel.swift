@@ -17,7 +17,6 @@ class DecibelMeasurementViewModel: ObservableObject {
     var timeLeft = 3
     var secondsImage = ImageAsset.threeSeconds
     
-    @Published var tag: Int? = 0
     var title: String = ""
     var backgroundColor: Color = Color.white
     var decibelResultImage: String = ImageAsset.decibelResultImage1
@@ -87,7 +86,6 @@ class DecibelMeasurementViewModel: ObservableObject {
             case 0:
                 self.setDecibelMeasurementResultView()
                 self.postDecibel(decibel: Int(self.peak), memberId: KeychainWrapper.standard.integer(forKey: "memberId") ?? 0)
-                self.tag = 1
                 self.endMonitoring()
                 break
             default:
@@ -136,6 +134,11 @@ class DecibelMeasurementViewModel: ObservableObject {
             decibelResultImage = ImageAsset.decibelResultImage6
             break
         }
+        
+        UserDefaults.standard.set(Int(self.peak), forKey: "decibel")
+        UserDefaults.standard.set(self.title, forKey: "decibelResultTitle")
+        UserDefaults.standard.setColor(color: UIColor(backgroundColor), forKey: "decibelResultBgColor")
+        UserDefaults.standard.set(self.decibelResultImage, forKey: "decibelResultImage")
     }
     
     func postDecibel(decibel: Int, memberId: Int) {

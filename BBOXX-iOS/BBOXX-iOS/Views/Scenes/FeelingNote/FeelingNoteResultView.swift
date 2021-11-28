@@ -27,7 +27,6 @@ struct FeelingNoteResultView: View {
                     }
                 }
                 
-                Spacer()
                 
                 Text("\(viewModel.nickName)야,\n좀 후련해졌어?")
                     .font(.custom("Pretendard-Bold", size: 24))
@@ -41,6 +40,8 @@ struct FeelingNoteResultView: View {
                     .opacity(0.7)
                     
                     .padding(.top, 10)
+                
+                Spacer()
                 
                 HStack {
                     Spacer()
