@@ -4,6 +4,7 @@ struct GrowthNoteDetailContentView: View {
     
     var growthNote: GrowthNote
     var backgroundColor: Color
+    @ObservedObject var viewModel: GrowthNoteDetailContentViewModel
     @State var currentIsGrowthNote: Bool = true
     @State private var reader: ScrollViewProxy?
     @State private var cardShown: Bool = false
@@ -11,9 +12,10 @@ struct GrowthNoteDetailContentView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    init(growthNote: GrowthNote, backgroundColor: Color) {
+    init(growthNote: GrowthNote, backgroundColor: Color = Color("main_button_background_color")) {
         self.growthNote = growthNote
         self.backgroundColor = backgroundColor
+        self.viewModel = GrowthNoteDetailContentViewModel(emotionId: growthNote.emotionDiaryId)
     }
     
     var body: some View {
@@ -78,12 +80,16 @@ struct GrowthNoteDetailContentView: View {
                     }
                 }
                 
-                
+                // 성장일기와 연결되어있는 감정일기 표시
                 BottomCard(cardShown: self.$cardShown,
                            cardDismissal: self.$cardDismissal,
                            height: UIScreen.main.bounds.height - 25,
                            isFeelingNoteCard: true) {
-                    FeelingNoteCardContent(writtenDate: growthNote.createAt, title: growthNote.title, note: growthNote.content)
+                    if let parentFeelingNote = self.viewModel.feelingNote {
+                        FeelingNoteCardContent(writtenDate: parentFeelingNote.createdAt, title: parentFeelingNote.title, note: parentFeelingNote.content)
+                    } else {
+                        FeelingNoteCardContent(writtenDate: "", title: "", note: "감정일기를 불러오는데\n 실패했습니다.😵\n 다시 시도해주세요. 😭")
+                    }
                     Spacer()
                 }
                 

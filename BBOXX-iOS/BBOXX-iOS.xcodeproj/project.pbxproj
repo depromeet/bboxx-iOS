@@ -98,6 +98,7 @@
 		6AC4143527285C5000935C43 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC4143427285C5000935C43 /* MainView.swift */; };
 		6AC4143C272C37E100935C43 /* OnboardingLastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC4143B272C37E100935C43 /* OnboardingLastView.swift */; };
 		6AC41442272C57B400935C43 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC41441272C57B400935C43 /* OnboardingViewModel.swift */; };
+		6AC70EA52753BB3300EADC88 /* GrowthNoteDetailContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC70EA42753BB3300EADC88 /* GrowthNoteDetailContentViewModel.swift */; };
 		6AC9D9FA27341CB000F72E0D /* SelectFeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC9D9F927341CB000F72E0D /* SelectFeelingView.swift */; };
 		6ACBC5AE2723ECB9002E1E55 /* AppleSignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACBC5AD2723ECB9002E1E55 /* AppleSignInCoordinator.swift */; };
 		6ACBC5B32723ED70002E1E55 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACBC5B22723ED70002E1E55 /* ImageAssets.swift */; };
@@ -209,6 +210,7 @@
 		6AC4143427285C5000935C43 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6AC4143B272C37E100935C43 /* OnboardingLastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLastView.swift; sourceTree = "<group>"; };
 		6AC41441272C57B400935C43 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		6AC70EA42753BB3300EADC88 /* GrowthNoteDetailContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthNoteDetailContentViewModel.swift; sourceTree = "<group>"; };
 		6AC93260274E6B9F0022E577 /* BBOXX-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BBOXX-iOS.entitlements"; sourceTree = "<group>"; };
 		6AC9D9F927341CB000F72E0D /* SelectFeelingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeelingView.swift; sourceTree = "<group>"; };
 		6ACBC5AD2723ECB9002E1E55 /* AppleSignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInCoordinator.swift; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 				456E5A61273B84E90051511D /* GrowthNoteCollectionViewModel.swift */,
 				456E5A60273B84E90051511D /* GrowthNoteWritingViewModel.swift */,
 				6A4BC1D5274803E8001E83F2 /* SelectTagViewModel.swift */,
+				6AC70EA42753BB3300EADC88 /* GrowthNoteDetailContentViewModel.swift */,
 			);
 			path = GrowthNote;
 			sourceTree = "<group>";
@@ -770,6 +773,7 @@
 				456E5A07273B82940051511D /* HTTPHeaderField.swift in Sources */,
 				6AB01FC42740062F005012FB /* AsyncImage.swift in Sources */,
 				6AB01FC2274005CF005012FB /* ImageLoader.swift in Sources */,
+				6AC70EA52753BB3300EADC88 /* GrowthNoteDetailContentViewModel.swift in Sources */,
 				45817756271DBE0100036086 /* View+Extension.swift in Sources */,
 				6A20E5E22723CBFF00876996 /* SignInView.swift in Sources */,
 				6AB66E2E2736CBF6009DADBE /* SelectFeelingViewModel.swift in Sources */,
