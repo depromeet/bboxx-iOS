@@ -35,6 +35,7 @@ struct SelectFeelingView: View {
                 
                 Text("지금 네 감정을\n이 중에서 골라볼래?")
                     .font(.custom("Pretendard-Bold", size: 24))
+                    .foregroundColor(Color("BboxxGrayColor"))
                     
                     .padding(.top, 23)
                     .padding(.leading, 24)
