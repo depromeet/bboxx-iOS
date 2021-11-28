@@ -24,4 +24,8 @@ class OnboardingViewModel: ObservableObject {
             }
         })
     }
+    
+    func isLastView(_ currentPage: Int) -> Bool {
+        return currentPage >= 5
+    }
 }
