@@ -11,7 +11,6 @@ extension View {
     
     // 키보드 내림
     func endTextEditing() {
-      UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
-                                      to: nil, from: nil, for: nil)
+        UIApplication.shared.windows.first{$0.isKeyWindow }?.endEditing(true)
     }
 }

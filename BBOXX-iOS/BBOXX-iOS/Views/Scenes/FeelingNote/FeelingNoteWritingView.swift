@@ -24,6 +24,7 @@ struct FeelingNoteWritingView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Button(action: {
+                            self.endTextEditing()
                             cardShown.toggle()
                             cardDismissal.toggle()
                         }, label: {
