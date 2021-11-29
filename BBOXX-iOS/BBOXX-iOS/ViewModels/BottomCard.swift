@@ -5,17 +5,20 @@ struct BottomCard<Content: View>: View {
         
     @Binding var cardShown: Bool
     @Binding var cardDismissal: Bool
+    var isFeelingNoteCard: Bool
     
     let height: CGFloat
     
     init(cardShown: Binding<Bool>,
          cardDismissal: Binding<Bool>,
          height: CGFloat,
+         isFeelingNoteCard: Bool = false,
          @ViewBuilder content: () -> Content
     ) {
         self.height = height
         _cardShown = cardShown
         _cardDismissal = cardDismissal
+        self.isFeelingNoteCard = isFeelingNoteCard
         self.content = content()
     }
     
@@ -25,7 +28,7 @@ struct BottomCard<Content: View>: View {
             GeometryReader { _ in
                 EmptyView()
             }
-            .background(Color.gray.opacity(0.5))
+            .background(isFeelingNoteCard ? Color.clear : Color.gray.opacity(0.5))
             .opacity(cardShown ? 1 : 0)
             .animation(Animation.easeIn)
             .onTapGesture {
@@ -76,7 +79,7 @@ struct BottomCard<Content: View>: View {
 
                 .frame(maxWidth: .infinity, maxHeight: height)
                 .offset(y: cardDismissal && cardShown ? 0 : height)
-                .animation(Animation.default.delay(0.2))
+                .animation(isFeelingNoteCard ? Animation.default.delay(0) : Animation.default.delay(0.2))
                 
             }
         }

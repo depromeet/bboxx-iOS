@@ -142,6 +142,8 @@ struct SelectCategoryView: View {
                             Picker("선택하기", selection: $selectedCategory) {
                                 ForEach(categories, id: \.self) { category in
                                     Text(category.rawValue).tag(category.rawValue)
+                                        .font(.custom("Pretendard-Regular", size: 22))
+                                        .foregroundColor(Color("BboxxTextColor"))
                                 }
                             }
                             .background(Color(.white))

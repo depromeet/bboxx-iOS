@@ -92,7 +92,7 @@ struct GrowthNoteCollectionView: View {
                         HStack(spacing: 16) {
                             ForEach(Array(viewModel.growthNoteList.enumerated()), id: \.offset) { index, growthNote in
                                 NavigationLink(destination:
-                                                GrowthNoteDetailView(growthNote: growthNote, backgroundColor: viewModel.setBackgroundColor(index)).navigationBarHidden(true)) {
+                                                GrowthNoteDetailContentView(growthNote: growthNote, backgroundColor: viewModel.setBackgroundColor(index)).navigationBarHidden(true)) {
                                     GrowthNoteCell(growthNote: growthNote,
                                                    backgroundColor: viewModel.setBackgroundColor(index))
                                 }
