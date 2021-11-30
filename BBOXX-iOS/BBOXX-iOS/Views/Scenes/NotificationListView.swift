@@ -54,7 +54,8 @@ struct NotificationListView: View {
                         Spacer()
                         
                         Image(ImageAsset.emptyBoxIcon)
-                            .frame(width: 160, height: 160)
+                            .resizable()
+                            .frame(width: 200, height: 200)
                         
                         Text("아직 타임머신이 도착하지 않았어.")
                             .font(.custom("Pretendard-Bold", size: 18))

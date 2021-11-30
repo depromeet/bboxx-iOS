@@ -43,12 +43,15 @@ struct GrowthNoteCollectionView: View {
                             .frame(width: 24, height: 24)
                     })
                     
-                    Text(viewModel.dateString)
-                        .font(.custom("Pretendard-SemiBold", size: 18))
-                        .foregroundColor(Color("BboxxTextColor"))
+                    Button(action: {
                         
-                        .padding(.leading, 10)
-                        .padding(.trailing, 10)
+                    }, label: {
+                        Text(viewModel.dateString)
+                            .font(.custom("Pretendard-SemiBold", size: 18))
+                            .foregroundColor(Color("BboxxTextColor"))
+                    })
+                    .padding(.leading, 10)
+                    .padding(.trailing, 10)
                     
                     Button(action: {
                         self.viewModel.rightButtonDidTap()
@@ -64,7 +67,7 @@ struct GrowthNoteCollectionView: View {
                         
                         Image(ImageAsset.emptyBoxIcon)
                             .resizable()
-                            .frame(width: 160, height: 160, alignment: .center)
+                            .frame(width: 200, height: 200, alignment: .center)
                         
                         Text("아직 쓴 글이 없어.\n네가 얼만큼 성장했는지 글로 써봐.")
                             .font(.custom("Pretendard-SemiBold", size: 18))
