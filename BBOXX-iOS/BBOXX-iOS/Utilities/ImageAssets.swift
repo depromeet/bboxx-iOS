@@ -60,4 +60,17 @@ enum ImageAsset {
     
     static let upButton = "upButton"
     static let downButton = "downButton"
+    
+    static let janIcon = "janIcon"
+    static let febIcon = "febIcon"
+    static let marIcon = "marIcon"
+    static let aprIcon = "aprIcon"
+    static let mayIcon = "mayIcon"
+    static let junIcon = "junIcon"
+    static let julIcon = "julIcon"
+    static let augIcon = "augIcon"
+    static let sepIcon = "sepIcon"
+    static let octIcon = "octIcon"
+    static let novIcon = "novIcon"
+    static let decIcon = "decIcon"
 }
