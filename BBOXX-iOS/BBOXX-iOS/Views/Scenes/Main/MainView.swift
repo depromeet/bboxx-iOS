@@ -38,7 +38,7 @@ struct MainView: View {
                                 .frame(width: 24, height: 24)
                         }
                         .padding(.top, 16)
-                        .padding(.trailing, 16)
+                        .padding(.trailing, 24)
                     }
                     
                     
