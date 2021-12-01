@@ -33,7 +33,7 @@ struct MainView: View {
                             .foregroundColor(Color("BboxxTextColor").opacity(0.7))
                             .frame(width: 24, height: 24)
                             .padding(.top, 16)
-                            .padding(.trailing, 16)
+                            .padding(.trailing, 24)
                     }
                     
                     
