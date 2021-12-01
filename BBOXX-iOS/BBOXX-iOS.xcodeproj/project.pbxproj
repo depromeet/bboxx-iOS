@@ -11,7 +11,6 @@
 		4527B84227083E0E003FD4F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4527B84127083E0E003FD4F9 /* ContentView.swift */; };
 		4527B84427083E11003FD4F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4527B84327083E11003FD4F9 /* Assets.xcassets */; };
 		4527B84727083E11003FD4F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4527B84627083E11003FD4F9 /* Preview Assets.xcassets */; };
-		454053772755F9F60093224E /* CalendarBottomCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454053762755F9F60093224E /* CalendarBottomCard.swift */; };
 		4561E19E275265E400F95747 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4561E19D275265E400F95747 /* CustomTextField.swift */; };
 		456E59E6273B81F70051511D /* ProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E59E5273B81F70051511D /* ProviderType.swift */; };
 		456E59E9273B820B0051511D /* Value+Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E59E8273B820B0051511D /* Value+Codable+Extension.swift */; };
@@ -126,7 +125,6 @@
 		4527B84327083E11003FD4F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4527B84627083E11003FD4F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4527B84827083E11003FD4F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		454053762755F9F60093224E /* CalendarBottomCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBottomCard.swift; sourceTree = "<group>"; };
 		4561E19D275265E400F95747 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		456E59E5273B81F70051511D /* ProviderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderType.swift; sourceTree = "<group>"; };
 		456E59E8273B820B0051511D /* Value+Codable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Value+Codable+Extension.swift"; sourceTree = "<group>"; };
@@ -307,7 +305,6 @@
 				456E5A43273B84580051511D /* DecibelMeasurementViewModel.swift */,
 				456E5A45273B84580051511D /* NotificationListViewModel.swift */,
 				4561E19D275265E400F95747 /* CustomTextField.swift */,
-				454053762755F9F60093224E /* CalendarBottomCard.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -788,7 +785,6 @@
 				6A20E5E22723CBFF00876996 /* SignInView.swift in Sources */,
 				6AB66E2E2736CBF6009DADBE /* SelectFeelingViewModel.swift in Sources */,
 				456E5A0B273B82A10051511D /* MyAuthenticator.swift in Sources */,
-				454053772755F9F60093224E /* CalendarBottomCard.swift in Sources */,
 				6ACBC5B52723EE67002E1E55 /* SplashView.swift in Sources */,
 				456E5A5D273B84BF0051511D /* FeelingNoteWritingViewModel.swift in Sources */,
 				6A357D8727527AD4005EBE41 /* SplashViewModel.swift in Sources */,

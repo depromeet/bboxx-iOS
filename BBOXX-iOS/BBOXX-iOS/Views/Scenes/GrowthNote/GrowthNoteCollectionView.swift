@@ -9,6 +9,8 @@ struct GrowthNoteCollectionView: View {
     @State private var cardShown: Bool = false
     @State private var cardDismissal: Bool = false
     
+    var flexibleLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -132,7 +134,59 @@ struct GrowthNoteCollectionView: View {
                     MainView()
                 }
                 
-                CalendarBottomCard(cardShown: self.$cardShown, cardDismissal: self.$cardDismissal, height: UIScreen.main.bounds.height/2)
+                BottomCard(cardShown: self.$cardShown, cardDismissal: self.$cardDismissal, height: UIScreen.main.bounds.height/2) {
+                    HStack(alignment: .center) {
+                        Button(action: {
+                            viewModel.year -= 1
+                        }, label: {
+                            Image(ImageAsset.leftSmallIcon)
+                                .renderingMode(.template)
+                                .foregroundColor(Color("BboxxGrayColor").opacity(0.3))
+                        })
+                        .frame(width: 24, height: 24)
+                        .disabled(true)
+                        
+                        Text((String(viewModel.year)))
+                            .font(.custom("Pretendard-SemiBold", size: 18))
+                            .foregroundColor(Color("BboxxTextColor"))
+                            
+                        .padding(.leading, 10)
+                        .padding(.trailing, 10)
+                        
+                        Button(action: {
+                            viewModel.year += 1
+                        }, label: {
+                            Image(ImageAsset.rightSmallIcon)
+                                .renderingMode(.template)
+                                .foregroundColor(Color("BboxxGrayColor").opacity(0.3))
+                        })
+                        .frame(width: 24, height: 24)
+                        .disabled(true)
+                    }
+                    .padding(.top, 41)
+                    
+                    HStack {
+                        Spacer()
+                        
+                        LazyVGrid(columns: flexibleLayout, spacing: 16) {
+                            ForEach(Array(viewModel.months.enumerated()), id: \.offset) { index, month in
+                                Button(action: {
+                                    viewModel.monthButtonDidTap(month: index+1)
+                                    
+                                    self.cardDismissal.toggle()
+                                    self.cardShown.toggle()
+                                }, label: {
+                                    Image(month)
+                                        .resizable()
+                                        .frame(width: 60, height: 60)
+                                })
+                            }
+                        }.frame(maxWidth: 290, maxHeight: .infinity)
+                        
+                        Spacer()
+                    }
+                    .padding(.bottom, 20)
+                }
             }
         }
     }
