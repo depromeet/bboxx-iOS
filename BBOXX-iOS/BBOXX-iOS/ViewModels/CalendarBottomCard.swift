@@ -45,7 +45,10 @@ struct CalendarBottomCard: View {
                             //self.viewModel.leftButtonDidTap()
                         }, label: {
                             Image(ImageAsset.leftSmallIcon)
+                                .renderingMode(.template)
+                                .foregroundColor(Color("BboxxGrayColor").opacity(0.3))
                                 .frame(width: 24, height: 24)
+                                .disabled(true)
                         })
                         
                         Text("2021")
@@ -59,19 +62,28 @@ struct CalendarBottomCard: View {
                             //self.viewModel.rightButtonDidTap()
                         }, label: {
                             Image(ImageAsset.rightSmallIcon)
+                                .renderingMode(.template)
+                                .foregroundColor(Color("BboxxGrayColor").opacity(0.3))
                                 .frame(width: 24, height: 24)
+                                .disabled(true)
                         })
                     }
-                    .padding(.top, 20)
+                    .padding(.top, 41)
                     
-                    LazyVGrid(columns: flexibleLayout, spacing: 16) {
-                        ForEach(months, id: \.self) { month in
-                            Image(month)
-                                .resizable()
-                                .frame(width: 60, height: 60)
-                        }
-                    }.frame(maxWidth: .infinity, maxHeight: .infinity)
-
+                    HStack {
+                        Spacer()
+                        
+                        LazyVGrid(columns: flexibleLayout, spacing: 16) {
+                            ForEach(months, id: \.self) { month in
+                                Image(month)
+                                    .resizable()
+                                    .frame(width: 60, height: 60)
+                            }
+                        }.frame(maxWidth: 290, maxHeight: .infinity)
+                        
+                        Spacer()
+                    }
+                    .padding(.bottom, 20)
                 }
                 .background(Color.white)
                 .cornerRadius(24, corners: [.topLeft, .topRight])
