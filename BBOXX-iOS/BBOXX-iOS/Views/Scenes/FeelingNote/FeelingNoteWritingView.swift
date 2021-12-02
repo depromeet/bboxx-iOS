@@ -103,6 +103,9 @@ struct FeelingNoteWritingView: View {
                         )
                         .font(.custom("Pretendard-Bold", size: 20))
                         .foregroundColor(Color("BboxxTextColor"))
+                        .onChange(of: title, perform: { value in
+                            self.viewModel.checkButtonState(title: title, content: content)
+                        })
                         
                         .padding(.top, 16)
                         .padding(.leading, 24)
@@ -165,7 +168,8 @@ struct FeelingNoteWritingView: View {
                     CardContent(title: "그만 쓰고싶어?", subTitle: "돌아가면 쓰던 글이 지워져.")
                     HStack {
                         Button(action: {
-                            self.dismiss()
+                            cardShown.toggle()
+                            cardDismissal.toggle()
                         }, label: {
                             Text("계속 할래")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
@@ -198,13 +202,6 @@ struct FeelingNoteWritingView: View {
             .navigationBarHidden(true)
         }
         
-    }
-    
-    func dismiss() {
-        cardDismissal.toggle()
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.25, execute: {
-            cardShown.toggle()
-        })
     }
 }
 

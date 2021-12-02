@@ -4,14 +4,10 @@ import SwiftKeychainWrapper
 class GrowthNoteCollectionViewModel: ObservableObject {
     
     @Published var dateString: String = ""
-    var year: Int = 0
+    @Published var year: Int = 0
     var month: Int = 0
         
     var growthNoteList: [GrowthNote] = []
-    
-    init() {
-        convertCurrentDate()
-    }
     
     let backgroundColors: [Color] = [
         Color(red: 164 / 255, green: 93 / 255, blue: 99 / 255),
@@ -26,6 +22,16 @@ class GrowthNoteCollectionViewModel: ObservableObject {
         Color(red: 151 / 255, green: 138 / 255, blue: 123 / 255),
         Color(red: 94 / 255, green: 78 / 255, blue: 65 / 255),
     ]
+    
+    var months = [
+        ImageAsset.janIcon, ImageAsset.febIcon, ImageAsset.marIcon, ImageAsset.aprIcon,
+        ImageAsset.mayIcon, ImageAsset.junIcon, ImageAsset.julIcon, ImageAsset.augIcon,
+        ImageAsset.sepIcon, ImageAsset.octIcon, ImageAsset.novIcon, ImageAsset.decIcon
+                ]
+    
+    init() {
+        convertCurrentDate()
+    }
     
     func setBackgroundColor(_ index: Int) -> Color {
         return backgroundColors[index % 11]
@@ -83,5 +89,11 @@ class GrowthNoteCollectionViewModel: ObservableObject {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func monthButtonDidTap(month: Int) {
+        dateString = "\(year)년 \(month)월"
+        
+        getGrowthNotes(KeychainWrapper.standard.integer(forKey: "memberId") ?? 0, month, year)
     }
 }
