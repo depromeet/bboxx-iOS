@@ -1,7 +1,8 @@
-import Foundation
 import AVFoundation
+import Foundation
 import SwiftUI
 import SwiftKeychainWrapper
+import UIKit
 
 class DecibelMeasurementViewModel: ObservableObject {
     
@@ -21,13 +22,16 @@ class DecibelMeasurementViewModel: ObservableObject {
     var backgroundColor: Color = Color.white
     var decibelResultImage: String = ImageAsset.decibelResultImage1
     
+    @Published var showingAlert = false
+    
     init() {
         // 3 오디오 권한 확인
         let audioSession = AVAudioSession.sharedInstance()
         if audioSession.recordPermission != .granted {
             audioSession.requestRecordPermission { (isGranted) in
                 if !isGranted {
-                    fatalError("You must allow audio recording for this demo to work")
+                    self.showingAlert = true
+
                 }
             }
         }
