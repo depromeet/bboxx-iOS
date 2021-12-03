@@ -72,9 +72,12 @@ struct DecibelMeasurementView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .alert(isPresented: $viewModel.showingAlert) {
-                    Alert(title: Text("마이크 권한이 필요합니다"),
+                    Alert(title: Text("마이크 접근 권한이 필요합니다"),
                           message: Text("설정에서 마이크의 액세스를 허용해 주세요"),
-                          dismissButton: .default(Text("닫기")))
+                          primaryButton: .cancel(Text("닫기")),
+                          secondaryButton: .default(Text("설정"), action: {
+                            viewModel.settingButtonDidTap()
+                          }))
                 }
                 
             }.navigationBarHidden(true)

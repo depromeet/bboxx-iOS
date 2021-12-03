@@ -37,6 +37,12 @@ class DecibelMeasurementViewModel: ObservableObject {
         }
     }
     
+    func settingButtonDidTap() {
+        if let appSettings = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
+        }
+    }
+    
     func setUpMonitoring() {
         let audioSession = AVAudioSession.sharedInstance()
         
