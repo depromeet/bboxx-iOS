@@ -27,18 +27,13 @@ struct MainView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Spacer()
-                        
-                        Button {
-                            // move to next page
-                        } label: {
-                            Image(ImageAsset.profileIcon)
-                                .renderingMode(.template)
-                                .resizable()
-                                .foregroundColor(Color("BboxxTextColor").opacity(0.7))
-                                .frame(width: 24, height: 24)
-                        }
-                        .padding(.top, 16)
-                        .padding(.trailing, 24)
+                        Image(ImageAsset.profileIcon)
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(Color("BboxxTextColor").opacity(0.7))
+                            .frame(width: 24, height: 24)
+                            .padding(.top, 16)
+                            .padding(.trailing, 24)
                     }
                     
                     

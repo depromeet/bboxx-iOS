@@ -18,17 +18,13 @@ struct GrowthNoteCollectionView: View {
                     HStack {
                         Spacer()
                         
-                        Button(action: {
-                            
-                        }, label: {
-                            Image(ImageAsset.profileIcon)
-                                .renderingMode(.template)
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(Color("BboxxTextColor").opacity(0.7))
-                        })
-                        .padding(.top, 16)
-                        .padding(.trailing, 24)
+                        Image(ImageAsset.profileIcon)
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(Color("BboxxTextColor").opacity(0.7))
+                            .padding(.top, 16)
+                            .padding(.trailing, 24)
                     }
                     
                     HStack {
