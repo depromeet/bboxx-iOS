@@ -7,6 +7,10 @@ class CreateNicknameViewModel: ObservableObject {
     
     @Published var tag: Int? = 0
     
+    init() {
+        createNickname()
+    }
+    
     func redoButtonDidTap() {
         createNickname()
     }
