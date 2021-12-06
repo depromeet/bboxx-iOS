@@ -1,7 +1,5 @@
 import Combine
-import FirebaseAuth
 import Firebase
-import GoogleSignIn
 import KakaoSDKAuth
 import KakaoSDKUser
 import SwiftUI
@@ -23,38 +21,6 @@ class SignInViewModel: ObservableObject {
     
     func attemptAppleSignIn() {
         appleSignInCoordinator.handleAuthorizationAppleIDButtonPress()
-    }
-    
-    func attemptGoogleSignIn() {
-        if GIDSignIn.sharedInstance.currentUser == nil {
-            // TODO: presenting Sign In View
-            guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-            
-            // Create Google Sign In configuration object.
-            let config = GIDConfiguration(clientID: clientID)
-            
-            // Sign in flow
-            GIDSignIn.sharedInstance.signIn(with: config, presenting: (UIApplication.shared.windows.first?.rootViewController)!) { [unowned self] user, error in
-                
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
-                }
-                
-                guard
-                    let authentication = user?.authentication,
-                    let idToken = authentication.idToken
-                else {
-                    return
-                }
-                
-                // TODO: Credential
-                //                let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-                //                                                               accessToken: authentication.accessToken)
-                
-                // Using Token
-            }
-        }
     }
     
     func attemptKakaoSignIn() {

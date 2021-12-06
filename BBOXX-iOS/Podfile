@@ -14,11 +14,6 @@ target 'BBOXX-iOS' do
   pod 'KakaoSDKUser'
   pod 'KakaoSDKLink'
   
-  # Google Login
-  pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'GoogleSignIn'
-
   # Pager View
   pod 'SwiftUIPager'
 

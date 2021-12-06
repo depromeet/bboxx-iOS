@@ -1,8 +1,6 @@
 import UIKit
 import Firebase
-import GoogleSignIn
 import UserNotifications
-
 import KakaoSDKCommon
 import KakaoSDKAuth
 
@@ -17,7 +15,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             return AuthController.handleOpenUrl(url: url, options: options)
         }
         
-        return GIDSignIn.sharedInstance.handle(url)
+        return true
     }
     
     func application(
