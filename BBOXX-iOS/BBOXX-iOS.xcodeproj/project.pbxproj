@@ -12,6 +12,7 @@
 		4527B84427083E11003FD4F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4527B84327083E11003FD4F9 /* Assets.xcassets */; };
 		4527B84727083E11003FD4F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4527B84627083E11003FD4F9 /* Preview Assets.xcassets */; };
 		4561E19E275265E400F95747 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4561E19D275265E400F95747 /* CustomTextField.swift */; };
+		456B84A2276335A30009174F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B84A1276335A30009174F /* ProfileView.swift */; };
 		456E59E6273B81F70051511D /* ProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E59E5273B81F70051511D /* ProviderType.swift */; };
 		456E59E9273B820B0051511D /* Value+Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E59E8273B820B0051511D /* Value+Codable+Extension.swift */; };
 		456E59F4273B82540051511D /* FeelingNoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E59ED273B82540051511D /* FeelingNoteResponse.swift */; };
@@ -127,6 +128,7 @@
 		4527B84627083E11003FD4F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4527B84827083E11003FD4F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4561E19D275265E400F95747 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		456B84A1276335A30009174F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		456E59E5273B81F70051511D /* ProviderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderType.swift; sourceTree = "<group>"; };
 		456E59E8273B820B0051511D /* Value+Codable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Value+Codable+Extension.swift"; sourceTree = "<group>"; };
 		456E59ED273B82540051511D /* FeelingNoteResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeelingNoteResponse.swift; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 			children = (
 				6AC4143427285C5000935C43 /* MainView.swift */,
 				6AB89642272C777F006D35ED /* MainEmptySelectionView.swift */,
+				456B84A1276335A30009174F /* ProfileView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				456E5A5C273B84BF0051511D /* FeelingNoteReviewViewModel.swift in Sources */,
 				456E5A15273B82B30051511D /* DecibelService.swift in Sources */,
 				456E5A05273B82940051511D /* MyRequestInterceptor.swift in Sources */,
+				456B84A2276335A30009174F /* ProfileView.swift in Sources */,
 				456E5A25273B83880051511D /* FeelingNoteDeleteCompleteView.swift in Sources */,
 				456E5A3C273B84180051511D /* NotificationListView.swift in Sources */,
 				456E5A35273B83DE0051511D /* GrowthNoteResultView.swift in Sources */,
