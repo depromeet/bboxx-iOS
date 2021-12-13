@@ -2,10 +2,10 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @ObservedObject var viewModel = ProfileViewModel()
+    
     @Environment(\.presentationMode) var presentationMode
-    
-    @State var notiBinding = true
-    
+        
     var body: some View {
         ZStack {
             Color("BboxxGrayColor")
@@ -68,9 +68,12 @@ struct ProfileView: View {
                         
                         Spacer()
                                                 
-                        Toggle("", isOn: $notiBinding)
+                        Toggle("", isOn: $viewModel.notiBinding)
                             .toggleStyle(SwitchToggleStyle(tint: Color.black))
                             .frame(width: 80, height: 80)
+                            .onChange(of: viewModel.notiBinding, perform: { value in
+                                viewModel.toggleSwitch()
+                            })
                             
                             .padding(.trailing, 24)
 
@@ -93,7 +96,7 @@ struct ProfileView: View {
                         
                         Spacer()
                         
-                        Text("ver. 1.0.0")
+                        Text("ver. 1.1.0")
                             .font(.custom("Pretendard-Medium", size: 14))
                             .foregroundColor(Color("BboxxGrayColor").opacity(0.4))
                         
