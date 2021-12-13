@@ -1,8 +1,10 @@
 import UIKit
 import Firebase
+import Foundation
 import UserNotifications
 import KakaoSDKCommon
 import KakaoSDKAuth
+import SwiftKeychainWrapper
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
@@ -15,7 +17,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             return AuthController.handleOpenUrl(url: url, options: options)
         }
         
-        return true
+        return false
     }
     
     func application(
@@ -100,7 +102,10 @@ extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         let deviceToken: [String: String] = ["token": fcmToken ?? ""]
         // 이 토큰은 FCM 알림 테스트에 사용됩니다.
+
         debugPrint("🔔 Device Token: ", deviceToken)
+        KeychainWrapper.standard.set(deviceToken["token"] ?? "", forKey: "FCMToken")
+
     }
 }
 
