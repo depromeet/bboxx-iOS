@@ -4,6 +4,8 @@ struct ProfileView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    @State var notiBinding = true
+    
     var body: some View {
         ZStack {
             Color("BboxxGrayColor")
@@ -49,17 +51,30 @@ struct ProfileView: View {
                 .cornerRadius(20, corners: [.bottomLeft, .bottomRight])
                 
                 VStack(alignment: .leading) {
-                    Text("푸시알림")
-                        .font(.custom("Pretendard-Bold", size: 18))
-                        .foregroundColor(Color("BboxxGrayColor"))
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("푸시알림")
+                                .font(.custom("Pretendard-Bold", size: 18))
+                                .foregroundColor(Color("BboxxGrayColor"))
+                                
+                                .padding(.top, 24)
+                            
+                            Text("알림을 켜면 이전 감정을 받아볼 수 있어")
+                                .font(.custom("Pretendard-Regular", size: 12))
+                                .foregroundColor(Color("BboxxGrayColor").opacity(0.4))
+                            
+                                .padding(.top, 6)
+                        }
                         
-                        .padding(.top, 24)
-                    
-                    Text("알림을 켜면 이전 감정을 받아볼 수 있어")
-                        .font(.custom("Pretendard-Regular", size: 12))
-                        .foregroundColor(Color("BboxxGrayColor").opacity(0.4))
-                    
-                        .padding(.top, 6)
+                        Spacer()
+                                                
+                        Toggle("", isOn: $notiBinding)
+                            .toggleStyle(SwitchToggleStyle(tint: Color.black))
+                            .frame(width: 80, height: 80)
+                            
+                            .padding(.trailing, 24)
+
+                    }
                     
                     Divider()
                         .padding(.top, 24)
