@@ -96,7 +96,7 @@ struct ProfileView: View {
                         
                         Spacer()
                         
-                        Text("ver. 1.1.0")
+                        Text("ver. 1.0.0")
                             .font(.custom("Pretendard-Medium", size: 14))
                             .foregroundColor(Color("BboxxGrayColor").opacity(0.4))
                         
@@ -109,7 +109,9 @@ struct ProfileView: View {
                 .padding(.leading, 24)
                 
                 Spacer()
-            }
+                
+            }.navigationBarHidden(true)
+            
             .background(Color("BboxxBackgroundColor"))
             .edgesIgnoringSafeArea(.bottom)
         }

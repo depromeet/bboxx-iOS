@@ -24,9 +24,11 @@ class ProfileViewModel: ObservableObject {
     
     func registerToken(memberId: Int, FCMToken: String) {
         NotificationService.shared.registerToken(memberId, FCMToken) { (result) in
+            print(memberId)
+            print(FCMToken)
             switch result {
-            case .success(let response):
-                print(response.data)
+            case .success( _):
+                break
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -36,8 +38,8 @@ class ProfileViewModel: ObservableObject {
     func deregisterToken(memberId: Int) {
         NotificationService.shared.deregisterToken(memberId) { (result) in
             switch result {
-            case .success(let response):
-                print(response.data)
+            case .success( _):
+               break
             case .failure(let error):
                 print(error.localizedDescription)
             }
