@@ -37,7 +37,7 @@ struct ProfileView: View {
                         
                         .padding(.leading, 24)
                     
-                    Text("자이언트 펭귄")
+                    Text(viewModel.nickname)
                         .font(.custom("Pretendard-Bold", size: 28))
                         .foregroundColor(.white)
                         

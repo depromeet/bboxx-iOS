@@ -4,7 +4,15 @@ import SwiftUI
 
 class ProfileViewModel: ObservableObject {
     
+    var nickname: String {
+        return UserDefaults.standard.string(forKey: "nickname") ?? "사랑스러운딸기"
+    }
+    
     @Published var notiBinding = true
+    
+    init() {
+        registerToken(memberId: KeychainWrapper.standard.integer(forKey: "memberId") ?? 0, FCMToken: KeychainWrapper.standard.string(forKey: "FCMToken") ?? "")
+    }
     
     func toggleSwitch() {
         if notiBinding {
