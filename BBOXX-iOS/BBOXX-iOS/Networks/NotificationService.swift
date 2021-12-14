@@ -55,7 +55,7 @@ struct NotificationService {
             "token": FCMToken
         ]
         
-        API.session.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: header).responseJSON { (response) in
+        API.session.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             switch response.result {
             case .success(let jsonData):
                 do {
@@ -88,7 +88,7 @@ struct NotificationService {
             "ownerId": memberId
         ]
         
-        API.session.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: header).responseJSON { (response) in
+        API.session.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             switch response.result {
             case .success(let jsonData):
                 do {

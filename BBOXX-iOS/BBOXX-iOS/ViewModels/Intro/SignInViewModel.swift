@@ -41,14 +41,6 @@ class SignInViewModel: ObservableObject {
                 }
             }
         }
-        
-        UserApi.shared.me() {(user, error) in
-            // Get user information
-            let email = user?.kakaoAccount?.email
-            let age = user?.kakaoAccount?.ageRange
-            let gender = user?.kakaoAccount?.gender
-            print("\(email), \(age), \(gender)")
-        }
     }
     
     func signIn(_ authData: String, _ providerType: String) {
