@@ -45,6 +45,16 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>http://ec2-3-35-36-228.ap-northeast-2.compute.amazonaws.com:8080/</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
 	</dict>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>마이크 허용하시겠습니까?</string>
