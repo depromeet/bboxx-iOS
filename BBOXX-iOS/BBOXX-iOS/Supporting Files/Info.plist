@@ -52,9 +52,9 @@
 		<true/>
 	</dict>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>마이크 허용하시겠습니까?</string>
+	<string>데시벨 측정을 위해 마이크 접근 권한이 필요합니다</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>사진첩 접근을 허용하시겠습니까?</string>
+	<string>데시벨 측정 결과 화면을 캡처하여 사진첩에 저장하기 위해 사진첩 접근 권한이 필요합니다</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Pretendard-Thin.otf</string>
