@@ -17,7 +17,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             return AuthController.handleOpenUrl(url: url, options: options)
         }
         
-        return false
+        return true
     }
     
     func application(
