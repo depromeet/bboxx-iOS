@@ -18,9 +18,9 @@ class SystemPermissionChecker {
             case .denied, .notDetermined, .ephemeral: // 거절, 아직 결정 안함, 짧게 허용(iOS 14.0 +)
                 completion()
             @unknown default:
-                self?.requestNotiAuthorization(completion: {
+//                self?.requestNotiAuthorization(completion: {
                     completion()
-                })
+//                })
             }
         })
     }
