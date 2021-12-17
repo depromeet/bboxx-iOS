@@ -24,6 +24,8 @@ struct GrowthNoteResultView: View {
                     }
                 }
                 
+                Spacer()
+                
                 Text("네 감정을 담은 성장일기를 썼어")
                     .font(.custom("Pretendard-Bold", size: 24))
                     .foregroundColor(Color("BboxxTextColor"))
@@ -41,8 +43,9 @@ struct GrowthNoteResultView: View {
                     .frame(maxWidth: 240, maxHeight: 240)
                 
                     .padding(.top, 43)
+                    .padding(.bottom, 70)
                 
-                
+                Spacer()
                 Spacer()
                 
                 NavigationLink(destination:

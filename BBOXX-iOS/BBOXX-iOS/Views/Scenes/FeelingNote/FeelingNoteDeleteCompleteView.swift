@@ -49,7 +49,9 @@ struct FeelingNoteDeleteCompleteView: View {
                 .cornerRadius(16)
                 
                 .padding(.bottom, 30)
-            }
+                
+            }.navigationBarHidden(true)
+            
             .padding(.leading, 24)
             .padding(.trailing, 24)
             
