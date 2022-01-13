@@ -1,6 +1,47 @@
-# bboxx-iOS
-Depromeet 10th 3조 돈벌어야조 iOS 👉🏻 🤬 🔥🗑 빡침쓰레기통 BBOXX
+# BBOXX(빡쓰)
+Depromeet 10th 3조 돈벌어야조 iOS 👉🏻 🤬 🔥🗑 빡침쓰레기통 BBOXX <br><br>
+<img src="https://i.imgur.com/rf7W5rd.jpg" width="80%">  <br>
+<img src="https://i.imgur.com/mo8jmjw.jpg" width="80%">  <br>
+<img src="https://i.imgur.com/zq2eNzk.jpg" width="80%">  <br>
+<img src="https://i.imgur.com/NXOy3nj.jpg" width="80%">  <br>
+<img src="https://i.imgur.com/IeyHGgI.jpg" width="80%">  <br>
+<img src="https://i.imgur.com/cnrElvR.jpg" width="80%">  <br>
 
+
+## 개발 환경
+
+- `Swift 5`
+- Minimum Target Version: `iOS 14`
+- Xcode `12.4` & `13.1`
+- Dependency Manager: `CocoaPods` `Swift Package Manager`
+
+## 라이브러리
+
+| 라이브러리 명 | 목적 |
+| --- | --- |
+| `Alamofire` | 네트워크 통신 |
+| `SwiftKeychainWrapper` | 중요 데이터 암호화 저장 |
+| `SwiftUIPager` | 간편한 페이징 처리 |
+| `KakaoSDKCommon` | 카카오 소셜 로그인 |
+| `KakaoSDKAuth` | 카카오 소셜 로그인 |
+| `KakaoSDKUser` | 카카오 소셜 로그인 |
+| `KakaoSDKLink` | 카카오 소셜 로그인 |
+| `Firebase` | FCM |
+
+## 버전 관리
+`v1.0.0`: _2021.12.17_
+`v1.0.1`: _2021.12.23_
+
+## 리팩토링
+| 타이틀 | 작업범위 | 목적 | 작업자 | 날짜 |
+| --- | --- | --- | --- | --- |
+| 상수 통일(Asset, Font 등등) |  |  |  |  |
+| 네트워크 테스트 |  |  |  |  |
+| ViewModel 테스트 |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+
+------ 
 ## Rules
 
 ### Branch Rule 
@@ -16,19 +57,3 @@ develop: default
 3. feature 개발 후 develop 브랜치를 향하여 Pull Request   
 ⎿ 24시간 안에 다른 iOS 개발자가 확인 후 코멘트 or approve    
 4. PR 요청자가 스스로  merge
-
-## Architecture
-
-~~Clean Architecture for SwiftUI~~ -> **MVVM**
-
-~~BBOXX iOS 아키텍쳐: [Clean Architecture for SwiftUI](https://nalexn.github.io/clean-architecture-swiftui/)~~
-
-~~✔️ 3개의 레이어~~  
-  ~~① Presentation layer~~   
-  ~~② Business Logic layer~~   
-  ~~③ Data Access layer~~  
-  
-~~<img src = "https://user-images.githubusercontent.com/52783516/135765846-36c0681e-fc4f-420d-aacf-1d2b3195ec72.png" width = "60%">~~
-~~(출처: Clean Architecture for SwiftUI)~~
-
-~~Wiki: [State and Data Flow & Clean Architecture for SwiftUI](https://github.com/depromeet/bboxx-iOS/wiki/State-and-Data-Flow-&--Clean-Architecture-for-SwiftUI)~~
