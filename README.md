@@ -1,5 +1,8 @@
 # BBOXX(빡쓰)
+
 Depromeet 10th 3조 돈벌어야조 iOS 👉🏻 🤬 🔥🗑 빡침쓰레기통 BBOXX <br><br>
+[<img src="https://user-images.githubusercontent.com/52783516/149344077-32d9e68e-79bb-4d24-aab4-8c320a241d7c.png" width="15%">](https://apps.apple.com/kr/app/%EB%B9%A1%EC%93%B0/id1597106306?l=en)
+<br><br> 
 <img src="https://i.imgur.com/rf7W5rd.jpg" width="80%">  <br>
 <img src="https://i.imgur.com/mo8jmjw.jpg" width="80%">  <br>
 <img src="https://i.imgur.com/zq2eNzk.jpg" width="80%">  <br>
